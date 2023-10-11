@@ -1,7 +1,17 @@
 const xlsx = require("xlsx");
 const fs = require("fs");
-const { getList, createFile, remove } = require("./Code/List");
+const { getList, createFile, remove, splitFile } = require("./Code/List");
 const generateCodeIndex = require("./Code/generateId");
+const {
+  maxArrLength,
+  benefitCore,
+  enumData,
+  indexData,
+  UAE,
+  NE,
+  NE_Dubai,
+  AbuDhabi,
+} = require("./Code/constants");
 
 let resCount = process.argv.find((v) => v.includes("res"));
 if (!resCount) {
@@ -21,51 +31,6 @@ if (!folderName) {
 folderName = folderName.split(":")[1];
 
 let Arr = new Array(resCount).fill(null);
-
-const benefitCore = [
-  ["Claims Handling", "-core.benefitTypes.claimHandling-"],
-  ["Chronic Condition Cover", "-core.benefitTypes.chronicConditions-"],
-  [
-    "Pre-existing Condition Cover",
-    "-core.benefitTypes.preExistingCoverCondition-",
-  ],
-  ["Accommodation Type", "-core.benefitTypes.accomodation-"],
-  ["Diagnostics & Test", "-core.benefitTypes.diagnosticsAndTest-"],
-  ["Organ Transplant", "-core.benefitTypes.organTransplant-"],
-  ["Surgeries & Anesthesia", "-core.benefitTypes.surgeriesAndAnthesia-"],
-  ["Oncology", "-core.benefitTypes.oncology-"],
-  [
-    "In-patient (Hospitalization & Surgery)",
-    "-core.benefitTypes.inPatientHospitializationandsurgery-",
-  ],
-  ["Physiotherapy", "-core.benefitTypes.physiotherapy-"],
-  ["Out-patient Consultations", "-core.benefitTypes.outPatientConsultation-"],
-  ["Out-patient Specialists", "-core.benefitTypes.specialist-"],
-  ["Out-patient Medicines", "-core.benefitTypes.medicine-"],
-  ["Vaccination", "-core.benefitTypes.vaccination-"],
-  ["Scans & Diagnostic Tests", "-core.benefitTypes.tests-"],
-  ["Out-patient benefits", "-core.benefitTypes.outPatientBenefit-"],
-  [
-    "Maternity (Consultations, Scans and Delivery)",
-    "-core.benefitTypes.maternity-",
-  ],
-  ["Maternity Waiting Period", "-core.benefitTypes.maternityWaitingPeriod-"],
-  ["Complications of Pregnancy", "-core.benefitTypes.complicationOfPregnancy-"],
-  ["New Born Cover", "-core.benefitTypes.newBornCoverage-"],
-  ["Dental", "-core.benefitTypes.dental-"],
-  ["Dental Waiting Period", "-core.benefitTypes.dentalWaitingPeriod-"],
-  ["Optical Benefits", "-core.benefitTypes.optical-"],
-  ["Wellness & Health Screening", "-core.benefitTypes.wellness-"],
-  ["Emergency Evacuation", "-core.benefitTypes.emergencyEvacution-"],
-  ["Alternative Medicines", "-core.benefitTypes.alternativeMedicine-"],
-  ["Mental Health Benefit", "-core.benefitTypes.mentalHealth-"],
-  ["Member Web Portal", "-core.benefitTypes.memberWebPortal-"],
-  ["Mobile Application", "-core.benefitTypes.mobileApplication-"],
-  ["Virtual / Tele Doctor", "-core.benefitTypes.virtualTele-"],
-  ["Other Services", "-core.benefitTypes.otherServices-"],
-  ["Extended Evacuation", "-core.benefitTypes.extendedEvacuation-"],
-  ["Non Emergency Evacuation", "-core.benefitTypes.nonEmergency-"],
-];
 
 const code = () => {
   const replaceChar = (word) => {
@@ -174,51 +139,7 @@ const code = () => {
 
   // ----------------------- Index ---------------------------
   function createIndex() {
-    const data = `
-        const Provider = require('./provider/index');
-        const Plans = require('./plans/index');
-        const PricingTables = require('./PricingTable/index');
-        const Coverages = require('./coverage/index');
-        const Modifiers = require('./modifiers/index');
-        let data = [
-          // Provider data
-          {
-            model: "Provider",
-            modelPath: "models/provider-model.js",
-            documents: Provider,
-          },
-
-          // Plans
-          {
-            model: "Plan",
-            modelPath: "models/plan-model.js",
-            documents: Plans,
-          },
-
-          // Pricing Tables
-          {
-            model: "PricingTable",
-            modelPath: "models/pricing-table-model.js",
-            documents: PricingTables,
-          },
-
-          // Coverage information
-          {
-            model: "Coverage",
-            modelPath: "models/coverage-model.js",
-            documents: Coverages,
-          },
-
-          {
-            // Plan modifiers
-            model: "Modifier",
-            modelPath: "models/modifier-model.js",
-            documents: Modifiers,
-          },
-        ];
-
-        module.exports = data`;
-    fs.appendFile(`Output/index.js`, data, function (err) {
+    fs.appendFile(`Output/index.js`, indexData, function (err) {
       try {
         if (err) throw err;
         console.log(`index Created!`);
@@ -233,43 +154,7 @@ const code = () => {
   // ----------------------- Enum ---------------------------
   function createEnum() {
     try {
-      const data = `
-        let data = {
-             gender: {
-                female: "female",
-                male: "male",
-              },
-            currency: {
-                USD: "USD",
-                AED: "AED",
-              },
-           category: {
-                primary: "Primary",
-                primary_investor: "Primary - Investor",
-                dependent: "Dependent",
-                dependent_parent: "Dependent - Parent",
-                primary_lsb: "Primary (Low Salary Band)",
-                dependent_lsb: "Dependent (Low Salary Band)",
-              },
-            customer: {
-              min_age: "CUSTOMER_MIN_AGE",
-              max_age: "CUSTOMER_MAX_AGE",
-              gender: "CUSTOMER_GENDER",
-            },
-            conditions: {
-              modifier: "MODIFIER_INCLUDED",
-              coverage: "COVERAGE_EQUALS_TO",
-              plans: "PLAN_EQUALS_TO",
-              deductible: "DEDUCTIBLE_EQUALS_TO"
-            },
-            maritalStatus: {
-              single: "single",
-              married: "married"
-            }
-          };
-
-        module.exports = data`;
-      fs.appendFileSync(`Output/enum.js`, data);
+      fs.appendFileSync(`Output/enum.js`, enumData);
       console.log(`Enum Created!`);
     } catch (error) {
       console.log(`error: ${error.message}`);
@@ -325,27 +210,6 @@ const code = () => {
 
   // --------------------------------- Coverage File ---------------------------------------------------
   function coverage(store, DATA, id) {
-    let UAE = [
-      ["AE-DU", "AE-AZ", "AE-AJ", "AE-FU", "AE-SH", "AE-RK", "AE-UQ"],
-      [],
-    ];
-    let NE = [
-      ["AE-AJ", "AE-FU", "AE-SH", "AE-RK", "AE-UQ"],
-      ["AE-DU", "AE-AZ"],
-    ];
-    let Dubai = [
-      ["AE-DU"],
-      ["AE-AZ", "AE-AJ", "AE-FU", "AE-SH", "AE-RK", "AE-UQ"],
-    ];
-    let AbuDhabi = [
-      ["AE-AZ"],
-      ["AE-DU", "AE-AJ", "AE-FU", "AE-SH", "AE-RK", "AE-UQ"],
-    ];
-    let NE_Dubai = [
-      ["AE-AJ", "AE-FU", "AE-SH", "AE-RK", "AE-UQ", "AE-DU"],
-      ["AE-AZ"],
-    ];
-
     let coveredCountries = [
       "US",
       "AU",
@@ -557,7 +421,6 @@ const code = () => {
       "MA",
       "SO",
     ];
-
     let coverage_data = store.coverages.map((v) => {
       let clone = {
         _id: `-${provider}.coverages${id}.${v.coverageName[0]}-`,
@@ -770,8 +633,10 @@ const code = () => {
   // -----------------------------------------------------------------------------------------------------
 
   // ----------------------------------Pricing Table -----------------------------------------------------
+  let addUp = ["", 1];
   function rateTable(store, Id, DATA, n, rateSheet) {
     try {
+      let splitted;
       const conversion =
         DATA[0].rateIn == "USD"
           ? 1
@@ -779,26 +644,7 @@ const code = () => {
           ? DATAs[0][0].conversionRate
           : 3.6725;
       let PricingTable = [];
-      let UAE = [
-        ["AE-DU", "AE-AZ", "AE-AJ", "AE-FU", "AE-SH", "AE-RK", "AE-UQ"],
-        [],
-      ];
-      let NE = [
-        ["AE-AJ", "AE-FU", "AE-SH", "AE-RK", "AE-UQ"],
-        ["AE-DU", "AE-AZ"],
-      ];
-      let Dubai = [
-        ["AE-DU"],
-        ["AE-AZ", "AE-AJ", "AE-FU", "AE-SH", "AE-RK", "AE-UQ"],
-      ];
-      let AbuDhabi = [
-        ["AE-AZ"],
-        ["AE-DU", "AE-AJ", "AE-FU", "AE-SH", "AE-RK", "AE-UQ"],
-      ];
-      let NE_Dubai = [
-        ["AE-AJ", "AE-FU", "AE-SH", "AE-RK", "AE-UQ", "AE-DU"],
-        ["AE-AZ"],
-      ];
+      let tableCount = 1;
       for (const key in Id.pricingTables) {
         let plan = Id.pricingTables[key];
         let originalName = (z) => {
@@ -878,13 +724,9 @@ const code = () => {
                 store.frequency[0],
               `n - ${n}`
             );
-          if (
-            pricing.length == 0 &&
-            DATA[0].planCopay == "-Enum.maritalStatus.single-"
-          )
-            continue;
+          if (pricing.length == 0 && DATA[0].planCopay == "single") continue;
           let table;
-          if (store.filters.networkType == "-Enum.maritalStatus.single-") {
+          if (store.filters.networkType == "single") {
             table = pricing.map((t) => {
               let str = {
                 fromAge: t.ageStart,
@@ -949,6 +791,18 @@ const code = () => {
               return { ...str };
             });
           }
+          if (table.length > maxArrLength) {
+            splitted = splitFile(table, key, "PricingTable", addUp[1]);
+            if (splitted == 1) {
+              addUp[0] += `const table${addUp[1]} = require("../${key}/${key}1.js"); `;
+              addUp[1]++;
+            } else {
+              for (i = 1; i <= splitted; i++) {
+                addUp[0] += `const table${addUp[1]} = require("../${key}/${key}${addUp[1]}.js"); `;
+                addUp[1]++;
+              }
+            }
+          }
           let res = store.coverages.find((vv) => vv.coverageName == v);
           let check =
             planValue.toString().includes("AED") ||
@@ -994,8 +848,18 @@ const code = () => {
                 ? NE_Dubai[1]
                 : AbuDhabi[1],
             coverage: [`-${provider}.coverages${n}.${v}-`],
-            baseAnnualPremium: [...table],
+            baseAnnualPremium: splitted
+              ? `-[...tables${tableCount}]-`
+              : [...table],
           };
+          if (addUp[1] > 0 && splitted) {
+            let str = `let tables${tableCount} = [`;
+            for (i = addUp[1] - splitted; i < addUp[1]; i++) {
+              str += "...table" + i + ", ";
+            }
+            addUp[0] += str + "]; ";
+            tableCount++;
+          }
           PricingTable.push({ ...clone });
         }
       }
@@ -1014,6 +878,7 @@ const code = () => {
     );
     return [...acc, ...data];
   }, []);
+
   createFile(
     "PricingTable",
     "index",
@@ -1023,7 +888,8 @@ const code = () => {
     true,
     GlobalDatas[0].filters.networkType != "-Enum.maritalStatus.single-"
       ? "Prices are based on deductible so prices are list as 0"
-      : ""
+      : "",
+    addUp[0]
   );
   // -----------------------------------------------------------------------------------------------------
 

@@ -1,4 +1,5 @@
 const fs = require("fs");
+const { maxArrLength } = require("./constants");
 
 const remove = (str, n) => {
   !str && console.log("n --> ", n, str);
@@ -211,7 +212,8 @@ const createFile = (
   provider,
   core = false,
   Enum = false,
-  comment = false
+  comment = false,
+  addUp = false
 ) => {
   try {
     data = JSON.stringify(data);
@@ -219,20 +221,38 @@ const createFile = (
     data = data.replace(/-"/g, "");
     data = data.replace(/\n/g, "");
 
-    if (!fs.existsSync(`Output/${folder}`)) fs.mkdirSync(`Output/${folder}`);
-    fs.appendFileSync(
-      `Output/${folder}/${fileName}.js`,
-      `const ${provider} = require("../core-index.js")
+    let str = `${addUp ? addUp : ""}
+      const ${provider} = require("../core-index.js")
       ${Enum ? "const Enum = require('../../enum.js')" : ""}
     ${core ? 'const core = require("../../core");' : ""}
     ${comment ? `// ${comment}` : ""}
     let ${folder} = ${data} ;
-    module.exports = ${folder} ;`
-    );
+    module.exports = ${folder} ;`;
+
+    if (!fs.existsSync(`Output/${folder}`)) fs.mkdirSync(`Output/${folder}`);
+    fs.appendFileSync(`Output/${folder}/${fileName}.js`, str);
     console.log(`${folder}/${fileName} Created!`);
   } catch (error) {
     console.log(`error: ${error.message}`);
   }
+};
+
+const splitFile = (arr, key, folder, num) => {
+  if (!fs.existsSync(`Output/${folder}`)) fs.mkdirSync(`Output/${folder}`);
+  if (!fs.existsSync(`Output/${folder}/${key}`))
+    fs.mkdirSync(`Output/${folder}/${key}`);
+  let count = Math.ceil(arr.length / maxArrLength);
+  for (let i = 1; i <= count; i++) {
+    let data = `
+    let table = ${JSON.stringify(arr.splice(0, maxArrLength))};
+    module.exports = table;
+    `;
+    data = data.replace(/"-/g, "");
+    data = data.replace(/-"/g, "");
+    fs.appendFileSync(`Output/${folder}/${key}/${key + num}.js`, data);
+    num++;
+  }
+  return count;
 };
 
 const ageRange = (arr) => {
@@ -254,7 +274,7 @@ const ageRange = (arr) => {
   return range;
 };
 
-module.exports = { getList, createFile, remove };
+module.exports = { getList, createFile, remove, splitFile };
 
 // const resOne = () => {
 //   const planSheet = xlsx.readFile(`./Input/${folderName}/benefits.xlsx`);
