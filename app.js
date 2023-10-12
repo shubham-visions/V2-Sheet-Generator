@@ -633,7 +633,6 @@ const code = () => {
   // -----------------------------------------------------------------------------------------------------
 
   // ----------------------------------Pricing Table -----------------------------------------------------
-  let addUp = ["", 1];
   function rateTable(store, Id, DATA, n, rateSheet) {
     try {
       let splitted;
@@ -689,7 +688,7 @@ const code = () => {
             //   });
             //   throw new Error();
             // }
-            if (DATA[0].planCopay == "-Enum.maritalStatus.single-") {
+            if (DATA[0].planCopay == "single") {
               return (
                 n.planName == originalName(key) &&
                 n.coverage ==
@@ -709,10 +708,7 @@ const code = () => {
             );
           });
 
-          if (
-            pricing.length == 0 &&
-            DATA[0].planCopay != "-Enum.maritalStatus.single-"
-          )
+          if (pricing.length == 0 && DATA[0].planCopay != "single")
             throw new Error(
               store.coPays[0][0][0] +
                 " | " +
@@ -868,6 +864,7 @@ const code = () => {
       console.log("error --> ", { msg: error.message, stack: error.stack });
     }
   }
+  let addUp = ["", 1];
   let pricingArr = Arr.reduce((acc, v, i) => {
     let data = rateTable(
       GlobalDatas[i],
@@ -886,7 +883,7 @@ const code = () => {
     provider,
     false,
     true,
-    GlobalDatas[0].filters.networkType != "-Enum.maritalStatus.single-"
+    GlobalDatas[0].filters.networkType != "single"
       ? "Prices are based on deductible so prices are list as 0"
       : "",
     addUp[0]
@@ -1170,8 +1167,10 @@ const code = () => {
       }
       // deductible -----------------------------------------
       if (key == "deductible") {
+        let splitted;
         let clonearray = [];
         let count = 1;
+        let tableCount = 1;
         store["pricingTables"].forEach((plan) => {
           let [planName, coverage] = plan;
           store.Networks.forEach((net) => {
@@ -1336,9 +1335,37 @@ const code = () => {
 
                     return { ...str };
                   });
-                  clone.premiumMod.conditionalPrices = table;
+                  if (table.length > maxArrLength) {
+                    // console.log("length >>", table.length);
+                    splitted = splitFile(
+                      table,
+                      plan[0][0],
+                      "modifiers",
+                      addUp2[1]
+                    );
+                    if (splitted == 1) {
+                      addUp2[0] += `const table${addUp2[1]} = require("../${plan[0][0]}/${plan[0][0]}1.js"); `;
+                      addUp2[1]++;
+                    } else {
+                      for (i = 1; i <= splitted; i++) {
+                        addUp2[0] += `const table${addUp2[1]} = require("../${plan[0][0]}/${plan[0][0]}${addUp2[1]}.js"); `;
+                        addUp2[1]++;
+                      }
+                    }
+                  }
+                  clone.premiumMod.conditionalPrices = splitted
+                    ? `-[...tables${tableCount}]-`
+                    : [...table];
                 });
                 if (clone.premiumMod.conditionalPrices.length == 0) return;
+                if (addUp2[1] > 0 && splitted) {
+                  let str = `let tables${tableCount} = [`;
+                  for (i = addUp2[1] - splitted; i < addUp2[1]; i++) {
+                    str += "...table" + i + ", ";
+                  }
+                  addUp2[0] += str + "]; ";
+                  tableCount++;
+                }
                 clonearray.push(clone);
                 count++;
               });
@@ -1519,10 +1546,7 @@ const code = () => {
                     n.network == net[1]
                   );
                 });
-                if (
-                  DATA[0].planCopay == "-Enum.maritalStatus.single-" &&
-                  pricing.length == 0
-                )
+                if (DATA[0].planCopay == "single" && pricing.length == 0)
                   return;
                 if (pricing.length == 0) {
                   throw new Error(
@@ -1919,6 +1943,7 @@ const code = () => {
     // }
     return newArr;
   }
+  let addUp2 = ["", 1];
   let modifierArr = Arr.reduce((acc, v, i) => {
     let data = modifiers(
       GlobalDatas[i],
@@ -1929,7 +1954,16 @@ const code = () => {
     );
     return [...acc, ...data];
   }, []);
-  createFile("modifiers", "index", modifierArr, provider, true, true);
+  createFile(
+    "modifiers",
+    "index",
+    modifierArr,
+    provider,
+    true,
+    true,
+    false,
+    addUp2[0]
+  );
   // ----------------------------------------------------------------------
 };
 
