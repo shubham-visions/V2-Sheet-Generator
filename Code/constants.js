@@ -13,7 +13,7 @@ let NE_Dubai = [
   ["AE-AZ"],
 ];
 
-const maxArrLength = 150;
+const maxArrLength = false;
 
 const benefitCore = [
   ["Claims Handling", "-core.benefitTypes.claimHandling-"],
@@ -123,10 +123,17 @@ const enumData = `
                 primary_lsb: "Primary (Low Salary Band)",
                 dependent_lsb: "Dependent (Low Salary Band)",
               },
+              relation:{
+                Child:"Child",
+                Spouse:"Spouse",
+              },
             customer: {
               min_age: "CUSTOMER_MIN_AGE",
               max_age: "CUSTOMER_MAX_AGE",
               gender: "CUSTOMER_GENDER",
+              category: "CUSTOMER_CATEGORY",
+              maritalStatus: "CUSTOMER_MARITAL_STATUS",
+              relation:"CUSTOMER_RELATION"
             },
             conditions: {
               modifier: "MODIFIER_INCLUDED",

@@ -1,6 +1,12 @@
 const xlsx = require("xlsx");
 const fs = require("fs");
-const { getList, createFile, remove, splitFile } = require("./Code/List");
+const {
+  getList,
+  createFile,
+  remove,
+  splitFile,
+  generateShortCode,
+} = require("./Code/List");
 const generateCodeIndex = require("./Code/generateId");
 const {
   maxArrLength,
@@ -11,6 +17,7 @@ const {
   NE,
   NE_Dubai,
   AbuDhabi,
+  Dubai,
 } = require("./Code/constants");
 
 let resCount = process.argv.find((v) => v.includes("res"));
@@ -612,6 +619,15 @@ const code = () => {
       for (const key in Id.pricingTables[plan[0]]) {
         tableIds.push(`-${provider}.pricingTables${n}.${plan[0]}.${key}-`);
       }
+      let have_NotIncludedBenefits = store.filters.notIncludedBenefits.find(
+        (v) => v.plan == plan[0]
+      );
+      if (have_NotIncludedBenefits) {
+        modifiersId = modifiersId.filter((id) => {
+          let benefit = id.split(".")[3]?.replace("-", "");
+          return !have_NotIncludedBenefits.benefits.includes(benefit);
+        });
+      }
       let clone = {
         _id: `-${provider}.plans${n}.${plan[0]}-`,
         provider: `-${provider}.providers-`,
@@ -636,6 +652,7 @@ const code = () => {
   function rateTable(store, Id, DATA, n, rateSheet) {
     try {
       let splitted;
+      let short_coverageName;
       const conversion =
         DATA[0].rateIn == "USD"
           ? 1
@@ -646,6 +663,7 @@ const code = () => {
       let tableCount = 1;
       for (const key in Id.pricingTables) {
         let plan = Id.pricingTables[key];
+        addUp[1] = 1;
         let originalName = (z) => {
           return store.plans.find((v) => v[0] == z)[1];
         };
@@ -757,6 +775,7 @@ const code = () => {
                 str.maritalStatus = "-Enum.maritalStatus.single-";
               }
               if (t.category) str.category = `-Enum.category.${t.category}-`;
+              if (t.relation) str.relation = `-Enum.relation.${t.relation}-`;
               return { ...str };
             });
           } else {
@@ -787,17 +806,15 @@ const code = () => {
               return { ...str };
             });
           }
-          if (table.length > maxArrLength) {
-            splitted = splitFile(table, key, "PricingTable", addUp[1]);
-            if (splitted == 1) {
-              addUp[0] += `const table${addUp[1]} = require("../${key}/${key}1.js"); `;
-              addUp[1]++;
-            } else {
-              for (i = 1; i <= splitted; i++) {
-                addUp[0] += `const table${addUp[1]} = require("../${key}/${key}${addUp[1]}.js"); `;
-                addUp[1]++;
-              }
-            }
+          if (maxArrLength) {
+            short_coverageName = generateShortCode(v);
+            splitted = splitFile(
+              table,
+              key,
+              "PricingTable",
+              short_coverageName
+            );
+            addUp[0] += `const ${key}_${short_coverageName} = require("./${key}/${key}_${short_coverageName}.js"); `;
           }
           let res = store.coverages.find((vv) => vv.coverageName == v);
           let check =
@@ -845,17 +862,10 @@ const code = () => {
                 : AbuDhabi[1],
             coverage: [`-${provider}.coverages${n}.${v}-`],
             baseAnnualPremium: splitted
-              ? `-[...tables${tableCount}]-`
+              ? `-[...${key}_${short_coverageName}]-`
               : [...table],
           };
-          if (addUp[1] > 0 && splitted) {
-            let str = `let tables${tableCount} = [`;
-            for (i = addUp[1] - splitted; i < addUp[1]; i++) {
-              str += "...table" + i + ", ";
-            }
-            addUp[0] += str + "]; ";
-            tableCount++;
-          }
+          addUp[1]++;
           PricingTable.push({ ...clone });
         }
       }
@@ -926,6 +936,14 @@ const code = () => {
         while (d[key]?.includes("\n")) d[key] = d[key].replace("\n", " ");
         let { PlanName } = d;
         if (!PlanName) return;
+        let have_NotIncludedBenefits = store.filters.notIncludedBenefits.find(
+          (v) => v.plan == remove(PlanName)[0]
+        );
+        if (
+          have_NotIncludedBenefits &&
+          have_NotIncludedBenefits.benefits.includes(remove(key)[0])
+        )
+          return;
         if (modifiers.length == 0)
           modifiers[key] = [{ plans: [PlanName], value: d[key] }];
         else if (modifiers[key]) {
@@ -1170,9 +1188,10 @@ const code = () => {
         let splitted;
         let clonearray = [];
         let count = 1;
-        let tableCount = 1;
+        let fileName;
         store["pricingTables"].forEach((plan) => {
           let [planName, coverage] = plan;
+          addUp2[1] = 1;
           store.Networks.forEach((net) => {
             let bool = DATA.find((v) => {
               if (v.PlanName == planName[1]) {
@@ -1183,13 +1202,31 @@ const code = () => {
               return false;
             });
             if (!bool) return;
+            if (maxArrLength && !included.includes(net[1])) {
+              included.push(net[1]);
+              comment += `// ${net[1]} network - ${generateShortCode(
+                net[1]
+              )} \n`;
+            }
             coverage.forEach((cc) => {
               let c_id = `-${provider}.coverages${n}.${cc[0]}-`;
+              if (maxArrLength && !included.includes(cc[1])) {
+                included.push(cc[1]);
+                comment += `// ${cc[1]} coverage - ${generateShortCode(
+                  cc[1]
+                )} \n`;
+              }
               store["coPays"].forEach((v1, index) => {
                 let [copays, scope] = v1;
                 let [copay] = copays;
                 if (!scope.includes("all") && scope.includes(planName[1]))
                   return;
+                if (maxArrLength && !included.includes(copay)) {
+                  included.push(copay);
+                  comment += `// ${copay} copay - ${generateShortCode(
+                    copay
+                  )} \n`;
+                }
                 let copayArr = [];
                 clone = {
                   id: "option-" + count,
@@ -1320,54 +1357,56 @@ const code = () => {
                     };
                     if (t.married === 0) {
                       str.conditions.push({
-                        type: "CUSTOMER_MARITAL_STATUS",
+                        type: "-Enum.customer.maritalStatus-",
                         value: "-Enum.maritalStatus.married-",
                       });
                     }
                     if (t.married === 1) {
                       str.conditions.push({
-                        type: "CUSTOMER_MARITAL_STATUS",
+                        type: "-Enum.customer.maritalStatus-",
                         value: "-Enum.maritalStatus.single-",
                       });
                     }
                     if (t.category)
-                      str.category = `-Enum.category.${t.category}-`;
+                      str.conditions.push({
+                        type: "-Enum.customer.category-",
+                        value: `-Enum.category.${t.category}-`,
+                      });
+                    if (t.relation)
+                      str.conditions.push({
+                        type: "-Enum.customer.relation-",
+                        value: `-Enum.relation.${t.relation}-`,
+                      });
 
                     return { ...str };
                   });
-                  if (table.length > maxArrLength) {
+                  if (maxArrLength) {
                     // console.log("length >>", table.length);
+                    fileName = `${plan[0][0]}_${generateShortCode(
+                      cc[0]
+                    )}_${generateShortCode(net[0])}_${generateShortCode(
+                      copay
+                    )}`;
                     splitted = splitFile(
                       table,
                       plan[0][0],
                       "modifiers",
-                      addUp2[1]
+                      fileName
+                        .split("_")
+                        .filter((v, i) => i !== 0)
+                        .join("_")
                     );
-                    if (splitted == 1) {
-                      addUp2[0] += `const table${addUp2[1]} = require("../${plan[0][0]}/${plan[0][0]}1.js"); `;
-                      addUp2[1]++;
-                    } else {
-                      for (i = 1; i <= splitted; i++) {
-                        addUp2[0] += `const table${addUp2[1]} = require("../${plan[0][0]}/${plan[0][0]}${addUp2[1]}.js"); `;
-                        addUp2[1]++;
-                      }
-                    }
+
+                    addUp2[0] += `const ${fileName} = require("./${plan[0][0]}/${fileName}.js"); `;
                   }
                   clone.premiumMod.conditionalPrices = splitted
-                    ? `-[...tables${tableCount}]-`
+                    ? `-[...${fileName}]-`
                     : [...table];
                 });
                 if (clone.premiumMod.conditionalPrices.length == 0) return;
-                if (addUp2[1] > 0 && splitted) {
-                  let str = `let tables${tableCount} = [`;
-                  for (i = addUp2[1] - splitted; i < addUp2[1]; i++) {
-                    str += "...table" + i + ", ";
-                  }
-                  addUp2[0] += str + "]; ";
-                  tableCount++;
-                }
                 clonearray.push(clone);
                 count++;
+                addUp2[1]++;
               });
             });
           });
@@ -1943,7 +1982,9 @@ const code = () => {
     // }
     return newArr;
   }
+  let comment = "// ";
   let addUp2 = ["", 1];
+  let included = [];
   let modifierArr = Arr.reduce((acc, v, i) => {
     let data = modifiers(
       GlobalDatas[i],
@@ -1961,7 +2002,7 @@ const code = () => {
     provider,
     true,
     true,
-    false,
+    comment,
     addUp2[0]
   );
   // ----------------------------------------------------------------------

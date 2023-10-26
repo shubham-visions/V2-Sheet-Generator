@@ -51,7 +51,7 @@ const getList = (arr) => {
       startDate: arr[0].startDate,
       endDate: arr[0].endDate,
       residency: arr[0].residency,
-      filters: { networkType: "", frequency: "" },
+      filters: { networkType: "", frequency: "", notIncludedBenefits: [] },
     };
 
     if (arr[0].NetworkDetails.includes("/"))
@@ -144,6 +144,31 @@ const getList = (arr) => {
         ? v.split("/").map((v) => remove(v))
         : [remove(v)];
       Global.pricingTables.push([plan, area]);
+    });
+
+    // Not included benefits -----------------------------------
+    arr.forEach((benefits) => {
+      for (let key in benefits) {
+        if (
+          benefits[key] &&
+          (benefits[key] == "N/A" ||
+            benefits[key].toLowerCase() == "not available")
+        ) {
+          let index = Global.filters.notIncludedBenefits.findIndex(
+            (v) => v.plan == remove(benefits["PlanName"])[0]
+          );
+          if (index == -1) {
+            Global.filters.notIncludedBenefits.push({
+              plan: remove(benefits["PlanName"])[0],
+              benefits: [remove(key)[0]],
+            });
+          } else {
+            Global.filters.notIncludedBenefits[index].benefits.push(
+              remove(key)[0]
+            );
+          }
+        }
+      }
     });
 
     return Global;
@@ -241,18 +266,30 @@ const splitFile = (arr, key, folder, num) => {
   if (!fs.existsSync(`Output/${folder}`)) fs.mkdirSync(`Output/${folder}`);
   if (!fs.existsSync(`Output/${folder}/${key}`))
     fs.mkdirSync(`Output/${folder}/${key}`);
-  let count = Math.ceil(arr.length / maxArrLength);
-  for (let i = 1; i <= count; i++) {
-    let data = `
-    let table = ${JSON.stringify(arr.splice(0, maxArrLength))};
+  // let count = Math.ceil(arr.length / maxArrLength);
+  // for (let i = 1; i <= count; i++) {
+  let count;
+  let data = `
+    let table = ${JSON.stringify(arr)};
     module.exports = table;
     `;
-    data = data.replace(/"-/g, "");
-    data = data.replace(/-"/g, "");
-    fs.appendFileSync(`Output/${folder}/${key}/${key + num}.js`, data);
-    num++;
+  data = data.replace(/"-/g, "");
+  data = data.replace(/-"/g, "");
+  fs.appendFileSync(`Output/${folder}/${key}/${key}_${num}.js`, data);
+  // }
+  return count || 1;
+};
+
+const generateShortCode = (str) => {
+  if (str.includes("nil")) return "Nil";
+  if (str.includes("10")) return "10";
+  if (str.includes("20")) return "20";
+  let shortStr = "";
+  for (let i = 0; i < str.length; i++) {
+    let code = str[i].charCodeAt(0);
+    if (code >= 65 && code <= 90) shortStr += str[i];
   }
-  return count;
+  return shortStr;
 };
 
 const ageRange = (arr) => {
@@ -274,7 +311,7 @@ const ageRange = (arr) => {
   return range;
 };
 
-module.exports = { getList, createFile, remove, splitFile };
+module.exports = { getList, createFile, remove, splitFile, generateShortCode };
 
 // const resOne = () => {
 //   const planSheet = xlsx.readFile(`./Input/${folderName}/benefits.xlsx`);
