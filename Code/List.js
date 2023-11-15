@@ -51,7 +51,14 @@ const getList = (arr) => {
       startDate: arr[0].startDate,
       endDate: arr[0].endDate,
       residency: arr[0].residency,
-      filters: { networkType: "", frequency: "", notIncludedBenefits: [] },
+      filters: {
+        networkType: "",
+        frequency: "",
+        notIncludedBenefits: [],
+        addons: [],
+        bundleBenefits: [],
+        dependentBenefits: [],
+      },
     };
 
     if (arr[0].NetworkDetails.includes("/"))
@@ -152,7 +159,7 @@ const getList = (arr) => {
         if (
           benefits[key] &&
           (benefits[key] == "N/A" ||
-            benefits[key].toLowerCase() == "not available")
+            benefits[key].toString().toLowerCase() == "not available")
         ) {
           let index = Global.filters.notIncludedBenefits.findIndex(
             (v) => v.plan == remove(benefits["PlanName"])[0]
@@ -170,6 +177,52 @@ const getList = (arr) => {
         }
       }
     });
+
+    // Addon Premiums -----------------------------------
+    arr[0].addons &&
+      arr.forEach(({ addons }) => {
+        if (!addons) return;
+        let values = addons.split(" & ");
+        let struc = {
+          benefitName: true,
+          label: true,
+          rateSheetLabel: true,
+          type: true,
+          flag: "",
+          description: "",
+          conditions: "",
+        };
+        values.forEach((value) => {
+          let [field, fieldValue] = value.split(":");
+          if (
+            field != "description" &&
+            field != "flag" &&
+            field != "conditions" &&
+            (!struc[field] || !(fieldValue && fieldValue.trim()))
+          )
+            throw new Error("Incorrect Addon feildName " + field);
+          field = field.trim();
+          fieldValue = fieldValue.trim();
+          struc[field] = fieldValue;
+        });
+        Global.filters.addons.push(struc);
+      });
+
+    // bundle benefits -----------------------------------
+    arr[0]["bundle benefits"] &&
+      arr.forEach((v) => {
+        if (v["bundle benefits"]) return;
+        let values = v["bundle benefits"].split("/");
+        Global.filters.bundleBenefits.push(...values);
+      });
+
+    // Dependent benefits -----------------------------------
+    arr[0]["dependent benefits"] &&
+      arr.forEach((v) => {
+        if (v["dependent benefits"]) return;
+        let [core, dependent] = v["dependent benefits"].split(" - ");
+        Global.filters.dependentBenefits.push({ core, dependent });
+      });
 
     return Global;
   } catch (error) {
@@ -262,7 +315,7 @@ const createFile = (
   }
 };
 
-const splitFile = (arr, key, folder, num) => {
+const splittingFile = (arr, key, folder, num) => {
   if (!fs.existsSync(`Output/${folder}`)) fs.mkdirSync(`Output/${folder}`);
   if (!fs.existsSync(`Output/${folder}/${key}`))
     fs.mkdirSync(`Output/${folder}/${key}`);
@@ -292,26 +345,72 @@ const generateShortCode = (str) => {
   return shortStr;
 };
 
-const ageRange = (arr) => {
-  let range = [];
+const groupingCollection = (arr, col) => {
+  // [ageStart,ageEnd,rates]
+  let range = [[arr[0].ageStart, arr[0].ageStart, arr[0][col]]];
 
-  arr.forEach((v, index) => {
-    if (range.length === 0) {
-      range.push([0, null, v.rate]);
+  arr.forEach((v, i) => {
+    if (i == 0) return;
+    let currentItem = range[range.length - 1]; // current item of ranage Arr
+    if (currentItem[2] == v[col]) {
+      if (i == arr.length - 1) currentItem[1] = v.ageEnd;
+      return;
     }
-    if (v.rate != range[range.length - 1][2]) {
-      range[range.length - 1].splice(1, 1, index - 1);
-      range.push([v.age, null, v.rate]);
-    }
-    if (index == arr.length - 1) {
-      range[range.length - 1].splice(1, 1, index);
-    }
+    currentItem[1] = v.ageStart - 1;
+    range.push([v.ageStart, v.ageEnd, v[col]]);
   });
 
   return range;
 };
 
-module.exports = { getList, createFile, remove, splitFile, generateShortCode };
+const extractAddon = (arr, addon, search = "") => {
+  const Enum = {
+    network: "-Enum.conditions.modifier-",
+    coverage: "-Enum.conditions.coverage-",
+    planName: "-Enum.conditions.plans-",
+    gender: "-Enum.customer.gender-",
+    ageStart: "-Enum.customer.min_age-",
+    ageEnd: "-Enum.customer.max_age-",
+    curreny: "-Enum.currency.USD-",
+  };
+  let includedRates = [];
+  arr = arr.filter((v) => v[addon]);
+  let rates = arr.reduce((acc, v) => {
+    if (v[addon] && !includedRates.includes(v[addon])) {
+      includedRates.push(v[addon]);
+      return [...acc, v];
+    }
+    return acc;
+  }, []);
+  if (rates.length == 0) throw new Error("Addon not found");
+  let fields = [];
+  let sheetLabels = Object.keys(Enum);
+  if (arr.find((v) => v.married)) {
+    Enum.married = "-Enum.customer.maritalStatus-";
+  }
+  for (let key in sheetLabels) {
+    if (rates[0][key] != rates[1][key]) fields.push(key);
+  }
+  return rates.map((v) => {
+    let conditions = fields.map((f) => {
+      return { type: Enum[f], value: v[f] };
+    });
+    return {
+      conditions,
+      price: [{ value: v[addon], currency: Enum.curreny }],
+    };
+  });
+};
+
+module.exports = {
+  getList,
+  createFile,
+  remove,
+  splittingFile,
+  generateShortCode,
+  groupingCollection,
+  extractAddon,
+};
 
 // const resOne = () => {
 //   const planSheet = xlsx.readFile(`./Input/${folderName}/benefits.xlsx`);

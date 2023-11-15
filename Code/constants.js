@@ -13,8 +13,6 @@ let NE_Dubai = [
   ["AE-AZ"],
 ];
 
-const maxArrLength = false;
-
 const benefitCore = [
   ["Claims Handling", "-core.benefitTypes.claimHandling-"],
   ["Chronic Condition Cover", "-core.benefitTypes.chronicConditions-"],
@@ -58,6 +56,9 @@ const benefitCore = [
   ["Other Services", "-core.benefitTypes.otherServices-"],
   ["Extended Evacuation", "-core.benefitTypes.extendedEvacuation-"],
   ["Non Emergency Evacuation", "-core.benefitTypes.nonEmergency-"],
+  ["Dental 1", "-core.benefitTypes.dental-"],
+  ["Dental Waiting Period 1", "-core.benefitTypes.dentalWaitingPeriod-"],
+  ["-Medical Evacuation-", "-core.benefitTypes.medicalEvacution-"],
 ];
 
 const indexData = `
@@ -123,10 +124,14 @@ const enumData = `
                 primary_lsb: "Primary (Low Salary Band)",
                 dependent_lsb: "Dependent (Low Salary Band)",
               },
-              relation:{
+            relation:{
                 Child:"Child",
                 Spouse:"Spouse",
               },
+            ageCalculationMethod:{
+                standard:"STANDARD",
+                advanced:"HALF_YEAR_IN_ADVANCE"
+              }
             customer: {
               min_age: "CUSTOMER_MIN_AGE",
               max_age: "CUSTOMER_MAX_AGE",
@@ -150,7 +155,6 @@ const enumData = `
         module.exports = data`;
 
 module.exports = {
-  maxArrLength,
   benefitCore,
   indexData,
   enumData,
