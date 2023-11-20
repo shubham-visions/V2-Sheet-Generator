@@ -108,51 +108,55 @@ const indexData = `
 
 const enumData = `
         let data = {
-             gender: {
-                female: "female",
-                male: "male",
-              },
-            currency: {
-                USD: "USD",
-                AED: "AED",
-              },
-           category: {
-                primary: "Primary",
-                primary_investor: "Primary - Investor",
-                dependent: "Dependent",
-                dependent_parent: "Dependent - Parent",
-                primary_lsb: "Primary (Low Salary Band)",
-                dependent_lsb: "Dependent (Low Salary Band)",
-              },
-            relation:{
-                Child:"Child",
-                Spouse:"Spouse",
-              },
-            ageCalculationMethod:{
-                standard:"STANDARD",
-                advanced:"HALF_YEAR_IN_ADVANCE"
-              }
-            customer: {
-              min_age: "CUSTOMER_MIN_AGE",
-              max_age: "CUSTOMER_MAX_AGE",
-              gender: "CUSTOMER_GENDER",
-              category: "CUSTOMER_CATEGORY",
-              maritalStatus: "CUSTOMER_MARITAL_STATUS",
-              relation:"CUSTOMER_RELATION"
-            },
-            conditions: {
-              modifier: "MODIFIER_INCLUDED",
-              coverage: "COVERAGE_EQUALS_TO",
-              plans: "PLAN_EQUALS_TO",
-              deductible: "DEDUCTIBLE_EQUALS_TO"
-            },
-            maritalStatus: {
-              single: "single",
-              married: "married"
-            }
-          };
+  gender: {
+    female: "female",
+    male: "male",
+  },
+  currency: {
+    USD: "USD",
+    AED: "AED",
+  },
+  category: {
+    primary: "Primary",
+    primary_investor: "Primary - Investor",
+    dependent: "Dependent",
+    dependent_parent: "Dependent - Parent",
+    primary_lsb: "Primary (Low Salary Band)",
+    dependent_lsb: "Dependent (Low Salary Band)",
+  },
+  relation: {
+    Child: "Child",
+    Spouse: "Spouse",
+  },
+  ageCalculationMethod: {
+    standard: "STANDARD",
+    advanced: "HALF_YEAR_IN_ADVANCE",
+  },
+  conversionRateType: {
+    benefit: "BENEFIT",
+    premium: "PREMIUM",
+  },
+  customer: {
+    min_age: "CUSTOMER_MIN_AGE",
+    max_age: "CUSTOMER_MAX_AGE",
+    gender: "CUSTOMER_GENDER",
+    category: "CUSTOMER_CATEGORY",
+    maritalStatus: "CUSTOMER_MARITAL_STATUS",
+    relation: "CUSTOMER_RELATION",
+  },
+  conditions: {
+    modifier: "MODIFIER_INCLUDED",
+    coverage: "COVERAGE_EQUALS_TO",
+    plans: "PLAN_EQUALS_TO",
+    deductible: "DEDUCTIBLE_EQUALS_TO",
+  },
+  maritalStatus: {
+    single: "single",
+    married: "married",
+  },
+};
 
-        module.exports = data`;
+module.exports = data;`;
 
 module.exports = {
   benefitCore,
