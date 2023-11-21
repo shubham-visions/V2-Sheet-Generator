@@ -57,8 +57,8 @@ let Arr = new Array(resCount).fill(null);
     while (word.includes(" ")) {
       word = word.replace(" ", "");
     }
-    word = word.replace("/", "");
-    word = word.replace("-", "");
+    // word = word.replace("/", "");
+    // word = word.replace("-", "");
     return word;
   };
   const convertXlsx = (sheet) => {
