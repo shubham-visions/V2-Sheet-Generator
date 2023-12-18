@@ -116,6 +116,11 @@ const enumData = `
     USD: "USD",
     AED: "AED",
   },
+   userType: {
+    All: "all",
+    Pro: "pro",
+    Starter: "starter",
+  },
   category: {
     primary: "Primary",
     primary_investor: "Primary - Investor",
@@ -143,6 +148,7 @@ const enumData = `
     category: "CUSTOMER_CATEGORY",
     maritalStatus: "CUSTOMER_MARITAL_STATUS",
     relation: "CUSTOMER_RELATION",
+    config: "CUSTOMER_CONFIG",
   },
   conditions: {
     modifier: "MODIFIER_INCLUDED",
@@ -158,6 +164,129 @@ const enumData = `
 
 module.exports = data;`;
 
+const singleChild = {
+  _0: {
+    type: "-Enum.customer.config-",
+    value: [
+      {
+        type: "-Enum.customer.category-",
+        value: "-Enum.category.primary-",
+        count: "==1",
+      },
+      {
+        type: "-Enum.customer.relation-",
+        value: "-Enum.category.Spouse-",
+        count: "==0",
+      },
+      {
+        type: "-Enum.customer.relation-",
+        value: "-Enum.category.Child-",
+        count: ">=0",
+      },
+    ],
+  },
+  _1: {
+    type: "-Enum.customer.config-",
+    value: [
+      {
+        type: "-Enum.customer.category-",
+        value: "-Enum.category.primary-",
+        count: "==1",
+      },
+      {
+        type: "-Enum.customer.relation-",
+        value: "-Enum.category.Spouse-",
+        count: "==1",
+      },
+      {
+        type: "-Enum.customer.relation-",
+        value: "-Enum.category.Child-",
+        count: "==1",
+      },
+    ],
+  },
+  _2a: {
+    type: "-Enum.customer.config-",
+    value: [
+      {
+        type: "-Enum.customer.category-",
+        value: "-Enum.category.primary-",
+        count: "==1",
+      },
+      {
+        type: "-Enum.customer.relation-",
+        value: "-Enum.category.Spouse-",
+        count: "==1",
+      },
+      {
+        type: "-Enum.customer.relation-",
+        value: "-Enum.category.Child-",
+        count: ">=2",
+      },
+    ],
+  },
+  _2b: {
+    type: "-Enum.customer.config-",
+    value: [
+      {
+        type: "-Enum.customer.category-",
+        value: "-Enum.category.primary-",
+        count: "==1",
+      },
+      {
+        type: "-Enum.customer.relation-",
+        value: "-Enum.category.Spouse-",
+        count: "==1",
+      },
+      {
+        type: "-Enum.customer.relation-",
+        value: "-Enum.category.Child-",
+        count: "==0",
+      },
+    ],
+  },
+  _below_3: {
+    type: "-Enum.customer.config-",
+    value: [
+      {
+        type: "-Enum.customer.category-",
+        value: "-Enum.category.primary-",
+        count: "==1",
+      },
+      {
+        type: "-Enum.customer.relation-",
+        value: "-Enum.category.Spouse-",
+        count: ">=0",
+      },
+      {
+        type: "-Enum.customer.relation-",
+        value: "-Enum.category.Child-",
+        count: "<=3",
+      },
+    ],
+  },
+  _above_3: {
+    type: "-Enum.customer.config-",
+    value: [
+      {
+        type: "-Enum.customer.category-",
+        value: "-Enum.category.primary-",
+        count: "==1",
+      },
+      {
+        type: "-Enum.customer.relation-",
+        value: "-Enum.category.Spouse-",
+        count: ">=0",
+      },
+      {
+        type: "-Enum.customer.relation-",
+        value: "-Enum.category.Child-",
+        count: ">=4",
+      },
+    ],
+  },
+};
+
 module.exports = {
   benefitCore,
   indexData,
@@ -167,4 +296,5 @@ module.exports = {
   Dubai,
   AbuDhabi,
   NE_Dubai,
+  singleChild,
 };

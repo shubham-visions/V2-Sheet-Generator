@@ -74,7 +74,9 @@ const generateCodeIndex = (data, benefits, DATA, n = false) => {
                 }')-`;
               });
             } else {
-              b = `-generateMongoIdFromString('${data.Provider} ${v}')-`;
+              b = `-generateMongoIdFromString('${data.Provider} ${v} ${
+                n ? n : ""
+              }')-`;
             }
 
             obj[v] = b;
@@ -101,7 +103,10 @@ const generateCodeIndex = (data, benefits, DATA, n = false) => {
       struc.modifiers.benefits[
         "Healthy Connect Module"
       ] = `-generateMongoIdFromString('Healthy Connect Module')-`;
-
+    if (data.filters.addons.includes("Repat"))
+      struc.modifiers.benefits[
+        "extendedEvacuation"
+      ] = `-generateMongoIdFromString('${data.Provider} Extended Evacuation ${n}')-`;
     return struc;
   } catch (error) {
     console.log({ err: error.message, stack: error.stack });
