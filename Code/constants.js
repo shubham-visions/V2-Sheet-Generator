@@ -175,12 +175,12 @@ const singleChild = {
       },
       {
         type: "-Enum.customer.relation-",
-        value: "-Enum.category.Spouse-",
+        value: "-Enum.relation.Spouse-",
         count: "==0",
       },
       {
         type: "-Enum.customer.relation-",
-        value: "-Enum.category.Child-",
+        value: "-Enum.relation.Child-",
         count: ">=0",
       },
     ],
@@ -195,12 +195,12 @@ const singleChild = {
       },
       {
         type: "-Enum.customer.relation-",
-        value: "-Enum.category.Spouse-",
+        value: "-Enum.relation.Spouse-",
         count: "==1",
       },
       {
         type: "-Enum.customer.relation-",
-        value: "-Enum.category.Child-",
+        value: "-Enum.relation.Child-",
         count: "==1",
       },
     ],
@@ -215,12 +215,12 @@ const singleChild = {
       },
       {
         type: "-Enum.customer.relation-",
-        value: "-Enum.category.Spouse-",
+        value: "-Enum.relation.Spouse-",
         count: "==1",
       },
       {
         type: "-Enum.customer.relation-",
-        value: "-Enum.category.Child-",
+        value: "-Enum.relation.Child-",
         count: ">=2",
       },
     ],
@@ -235,55 +235,29 @@ const singleChild = {
       },
       {
         type: "-Enum.customer.relation-",
-        value: "-Enum.category.Spouse-",
+        value: "-Enum.relation.Spouse-",
         count: "==1",
       },
       {
         type: "-Enum.customer.relation-",
-        value: "-Enum.category.Child-",
+        value: "-Enum.relation.Child-",
         count: "==0",
       },
     ],
   },
   _below_3: {
-    type: "-Enum.customer.config-",
-    value: [
-      {
-        type: "-Enum.customer.category-",
-        value: "-Enum.category.primary-",
-        count: "==1",
-      },
-      {
-        type: "-Enum.customer.relation-",
-        value: "-Enum.category.Spouse-",
-        count: ">=0",
-      },
-      {
-        type: "-Enum.customer.relation-",
-        value: "-Enum.category.Child-",
-        count: "<=3",
-      },
-    ],
+    type: "-Enum.customer.relation-",
+    value: "-Enum.relation.Child-",
+    orderType: "desc",
+    orderBy: "age",
+    index: "<=2",
   },
   _above_3: {
-    type: "-Enum.customer.config-",
-    value: [
-      {
-        type: "-Enum.customer.category-",
-        value: "-Enum.category.primary-",
-        count: "==1",
-      },
-      {
-        type: "-Enum.customer.relation-",
-        value: "-Enum.category.Spouse-",
-        count: ">=0",
-      },
-      {
-        type: "-Enum.customer.relation-",
-        value: "-Enum.category.Child-",
-        count: ">=4",
-      },
-    ],
+    type: "-Enum.customer.relation-",
+    value: "-Enum.relation.Child-",
+    orderType: "desc",
+    orderBy: "age",
+    index: ">=3",
   },
 };
 

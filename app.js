@@ -739,7 +739,6 @@ let Arr = new Array(resCount).fill(null);
       let tableCount = 1;
       for (const key in Id.pricingTables) {
         let plan = Id.pricingTables[key];
-        console.log("plan --> ", plan, n);
         addUp[1] = 1;
         let originalName = (z) => {
           return store.plans.find((v) => v[0] == z)[1];
@@ -939,6 +938,10 @@ let Arr = new Array(resCount).fill(null);
           PricingTable.push({ ...clone });
         }
       }
+      if (PricingTable.length < store.plans.length)
+        throw new Error(
+          `Plan mising in pricingTable, PricingTable.length - ${PricingTable.length}, store.plans.length - ${store.plans.length}  ${n}`
+        );
       return PricingTable;
     } catch (error) {
       console.log("error --> ", { msg: error.message, stack: error.stack });
@@ -1728,7 +1731,8 @@ let Arr = new Array(resCount).fill(null);
                       if (
                         t.singleChild == 0 ||
                         t.singleChild == 1 ||
-                        t.singleChild == 2
+                        t.singleChild == 2 ||
+                        t.singleChild
                       ) {
                         str.conditions.push(singleChild[`_${t.singleChild}`]);
                       }
