@@ -1793,6 +1793,7 @@ let Arr = new Array(resCount).fill(null);
         };
         newArr.push({ ...str });
       }
+      // network -----------------------------------------
       if (key == "network") {
         if (
           store.filters.networkType == "multiple" ||
@@ -1862,270 +1863,269 @@ let Arr = new Array(resCount).fill(null);
           }
         }
       }
-      let name = key == "paymentFrequency" ? "frequency" : false;
-      // console.log(store[name]);
-      if (!name) return false;
-      // if (!(store[name].length > 1)) return;
       // paymentFrequency -----------------------------------
+      if (key == "paymentFrequency") {
+        let name = "frequency";
 
-      function rateExtraction(fr, struc, obj) {
-        let clonearray = [];
-        let count = 1;
-        store["pricingTables"].forEach((plan) => {
-          let [planName, coverage] = plan;
-          store.Networks.forEach((net) => {
-            let bool = DATA.find((v) => {
-              if (v.PlanName == planName[1]) {
-                return v["Network Details"].includes("/")
-                  ? v["Network Details"].split("/").find((x) => x == net[1])
-                  : v["Network Details"] == net[1];
-              }
-              return false;
-            });
-            if (!bool) return;
-            coverage.forEach((cc) => {
-              let c_id = `-${provider}.coverages${n}.${cc[0]}-`;
-              store["coPays"].forEach((v1, index) => {
-                let [copays, scope] = v1;
-                let [copay] = copays;
-                if (!scope.includes("all") && scope.includes(planName[1]))
-                  return;
-                let copayArr = [];
-                clone = {
-                  id: "option-" + count,
-                  premiumMod: {
-                    type: "conditional-override",
-                    conditionalPrices: [],
-                  },
-                  conditions: [
-                    {
-                      type: "-Enum.conditions.modifier-", // Network modifier with OPTION ID Network_B included
-                      value: [net[1]],
-                    },
-                    {
-                      type: "-Enum.conditions.coverage-",
-                      value: [c_id],
-                    },
-                    {
-                      type: "-Enum.conditions.plans-",
-                      value: [`-${provider}.plans${n}.${planName[0]}-`],
-                    },
-                    { type: "-Enum.conditions.deductible-", value: [copay] },
-                  ],
-                };
-                let pricing = rateSheet.filter((n) => {
-                  // if (n.planName == "Limited") {
-                  //   console.log(
-                  //     n.planName == plan[0][1],
-                  //     n.coverage == cc[1],
-                  //     n.frequency == fr,
-                  //     n.network,
-                  //     " | ",
-                  //     net[1]
-                  //   );
-                  // }
-                  // if (DATA[0].planCopay == "-Enum.maritalStatus.single-")
-                  //   return (
-                  //     n.planName == plan[0][1] &&
-                  //     n.coverage == cc[1] &&
-                  //     n.frequency == fr &&
-                  //     n.network == net[1]
-                  //   );
-                  // let n_check;
-                  // if (n.network != net[1]) {
-                  //   n_check = DATA.find((dd) => dd.PlanName == plan[0][1])[
-                  //     "Network Details"
-                  //   ];
-                  //   n_check = n_check.includes("/")
-                  //     ? n_check.split("/")
-                  //     : [n_check];
-                  //   n_check = n_check.includes(net[1]);
-                  // } else n_check = true;
-                  return (
-                    n.planName == plan[0][1] &&
-                    n.coverage == cc[1] &&
-                    n.copay == copay &&
-                    n.frequency == fr &&
-                    n.network == net[1]
-                  );
-                });
-                if (DATA[0].planCopay == "single" && pricing.length == 0)
-                  return;
-                if (pricing.length == 0) {
-                  throw new Error(
-                    n +
-                      " | '" +
-                      plan[0][1] +
-                      "' | '" +
-                      cc[1] +
-                      "' | '" +
-                      copay +
-                      "' | '" +
-                      fr +
-                      "' | '" +
-                      net[1] +
-                      "' | '" +
-                      DATA[0].planCopay
-                  );
+        function rateExtraction(fr, struc, obj) {
+          let clonearray = [];
+          let count = 1;
+          store["pricingTables"].forEach((plan) => {
+            let [planName, coverage] = plan;
+            store.Networks.forEach((net) => {
+              let bool = DATA.find((v) => {
+                if (v.PlanName == planName[1]) {
+                  return v["Network Details"].includes("/")
+                    ? v["Network Details"].split("/").find((x) => x == net[1])
+                    : v["Network Details"] == net[1];
                 }
-                if (!pricing[0].currency)
-                  throw new Error("Currecny is not included in rateSheet", n);
-                let table = pricing.map((t) => {
-                  let str = {
+                return false;
+              });
+              if (!bool) return;
+              coverage.forEach((cc) => {
+                let c_id = `-${provider}.coverages${n}.${cc[0]}-`;
+                store["coPays"].forEach((v1, index) => {
+                  let [copays, scope] = v1;
+                  let [copay] = copays;
+                  if (!scope.includes("all") && scope.includes(planName[1]))
+                    return;
+                  let copayArr = [];
+                  clone = {
+                    id: "option-" + count,
+                    premiumMod: {
+                      type: "conditional-override",
+                      conditionalPrices: [],
+                    },
                     conditions: [
                       {
-                        type: "-Enum.customer.min_age-",
-                        value: t.ageStart,
+                        type: "-Enum.conditions.modifier-", // Network modifier with OPTION ID Network_B included
+                        value: [net[1]],
                       },
                       {
-                        type: "-Enum.customer.max_age-",
-                        value: t.ageEnd,
+                        type: "-Enum.conditions.coverage-",
+                        value: [c_id],
                       },
                       {
-                        type: "-Enum.customer.gender-",
-                        value: `-Enum.gender.${t.gender}-`,
+                        type: "-Enum.conditions.plans-",
+                        value: [`-${provider}.plans${n}.${planName[0]}-`],
                       },
-                    ],
-                    price: [
-                      {
-                        value: parseFloat(t.rates / conversion),
-                        currency: `-Enum.currency.${t.currency}-`,
-                      },
+                      { type: "-Enum.conditions.deductible-", value: [copay] },
                     ],
                   };
-                  if (t.married === 0) {
-                    str.conditions.push({
-                      type: "CUSTOMER_MARITAL_STATUS",
-                      value: "-Enum.maritalStatus.married-",
-                    });
+                  let pricing = rateSheet.filter((n) => {
+                    // if (n.planName == "Limited") {
+                    //   console.log(
+                    //     n.planName == plan[0][1],
+                    //     n.coverage == cc[1],
+                    //     n.frequency == fr,
+                    //     n.network,
+                    //     " | ",
+                    //     net[1]
+                    //   );
+                    // }
+                    // if (DATA[0].planCopay == "-Enum.maritalStatus.single-")
+                    //   return (
+                    //     n.planName == plan[0][1] &&
+                    //     n.coverage == cc[1] &&
+                    //     n.frequency == fr &&
+                    //     n.network == net[1]
+                    //   );
+                    // let n_check;
+                    // if (n.network != net[1]) {
+                    //   n_check = DATA.find((dd) => dd.PlanName == plan[0][1])[
+                    //     "Network Details"
+                    //   ];
+                    //   n_check = n_check.includes("/")
+                    //     ? n_check.split("/")
+                    //     : [n_check];
+                    //   n_check = n_check.includes(net[1]);
+                    // } else n_check = true;
+                    return (
+                      n.planName == plan[0][1] &&
+                      n.coverage == cc[1] &&
+                      n.copay == copay &&
+                      n.frequency == fr &&
+                      n.network == net[1]
+                    );
+                  });
+                  if (DATA[0].planCopay == "single" && pricing.length == 0)
+                    return;
+                  if (pricing.length == 0) {
+                    throw new Error(
+                      n +
+                        " | '" +
+                        plan[0][1] +
+                        "' | '" +
+                        cc[1] +
+                        "' | '" +
+                        copay +
+                        "' | '" +
+                        fr +
+                        "' | '" +
+                        net[1] +
+                        "' | '" +
+                        DATA[0].planCopay
+                    );
                   }
-                  if (t.married === 1) {
-                    str.conditions.push({
-                      type: "CUSTOMER_MARITAL_STATUS",
-                      value: "-Enum.maritalStatus.single-",
-                    });
-                  }
-                  if (t.category)
-                    str.category = `-Enum.category.${t.category}-`;
+                  if (!pricing[0].currency)
+                    throw new Error("Currecny is not included in rateSheet", n);
+                  let table = pricing.map((t) => {
+                    let str = {
+                      conditions: [
+                        {
+                          type: "-Enum.customer.min_age-",
+                          value: t.ageStart,
+                        },
+                        {
+                          type: "-Enum.customer.max_age-",
+                          value: t.ageEnd,
+                        },
+                        {
+                          type: "-Enum.customer.gender-",
+                          value: `-Enum.gender.${t.gender}-`,
+                        },
+                      ],
+                      price: [
+                        {
+                          value: parseFloat(t.rates / conversion),
+                          currency: `-Enum.currency.${t.currency}-`,
+                        },
+                      ],
+                    };
+                    if (t.married === 0) {
+                      str.conditions.push({
+                        type: "CUSTOMER_MARITAL_STATUS",
+                        value: "-Enum.maritalStatus.married-",
+                      });
+                    }
+                    if (t.married === 1) {
+                      str.conditions.push({
+                        type: "CUSTOMER_MARITAL_STATUS",
+                        value: "-Enum.maritalStatus.single-",
+                      });
+                    }
+                    if (t.category)
+                      str.category = `-Enum.category.${t.category}-`;
 
-                  return { ...str };
+                    return { ...str };
+                  });
+                  clone.premiumMod.conditionalPrices = table;
+                  if (clone.premiumMod.conditionalPrices.length == 0) return;
+                  let newFrequency = { ...struc };
+                  newFrequency.id = newFrequency.id + "-" + count;
+                  newFrequency.premiumMod = clone.premiumMod;
+                  newFrequency.conditions = clone.conditions;
+                  obj.push(newFrequency);
+                  count++;
                 });
-                clone.premiumMod.conditionalPrices = table;
-                if (clone.premiumMod.conditionalPrices.length == 0) return;
-                let newFrequency = { ...struc };
-                newFrequency.id = newFrequency.id + "-" + count;
-                newFrequency.premiumMod = clone.premiumMod;
-                newFrequency.conditions = clone.conditions;
-                obj.push(newFrequency);
-                count++;
               });
             });
           });
-        });
-        return clonearray;
-      }
-
-      store[name].forEach((v1, index) => {
-        if (index > 0) return;
-        if (key == "paymentFrequency") {
-          let str = {
-            _id: `-${provider}.modifiers${n}.paymentFrequency.${v1}-`,
-            plans: [...planIds],
-            title: "Payment Frequency Modifier",
-            label: "Additional Surcharges",
-            type: `-core.modifierTypes.paymentFrequency-`,
-            assignmentType: "PER_CUSTOMER",
-            includedBenefits: [],
-            isOptional: false,
-            description: "",
-            addonCost: {},
-            premiumMod: "",
-            conditions: [],
-            hasOptions: true,
-            options: [
-              {
-                id: "annual-payment-surcharge",
-                label: "Annual",
-                premiumMod: {
+          return clonearray;
+        }
+        // paymentFrequency -----------------------------------------
+        store[name].forEach((v1, index) => {
+          if (index > 0) return;
+          if (key == "paymentFrequency") {
+            let str = {
+              _id: `-${provider}.modifiers${n}.paymentFrequency.${v1}-`,
+              plans: [...planIds],
+              title: "Payment Frequency Modifier",
+              label: "Additional Surcharges",
+              type: `-core.modifierTypes.paymentFrequency-`,
+              assignmentType: "PER_CUSTOMER",
+              includedBenefits: [],
+              isOptional: false,
+              description: "",
+              addonCost: {},
+              premiumMod: "",
+              conditions: [],
+              hasOptions: true,
+              options: [
+                {
+                  id: "annual-payment-surcharge",
+                  label: "Annual",
+                  premiumMod: {
+                    type: "percentage",
+                    price: [
+                      {
+                        value: 0,
+                      },
+                    ],
+                  },
+                },
+              ],
+            };
+            if (DATA[0]["Semi Annual Surcharge"] != "N/A") {
+              let semiAnnual = {
+                id: "semi-annual-payment-surcharge",
+                description: "Semmi-annual payment",
+                title: "Semi-annual payment",
+                label: "Semi-annual",
+                premiumMod: {},
+              };
+              if (DATA.find((v) => v.frequency == "Semi-Annually")) {
+                rateExtraction("Semi-Annually", semiAnnual, str.options);
+              } else {
+                semiAnnual.premiumMod = {
                   type: "percentage",
                   price: [
                     {
-                      value: 0,
+                      value: +parseInt(DATA[0]["Semi Annual Surcharge"]),
                     },
                   ],
-                },
-              },
-            ],
-          };
-          if (DATA[0]["Semi Annual Surcharge"] != "N/A") {
-            let semiAnnual = {
-              id: "semi-annual-payment-surcharge",
-              description: "Semmi-annual payment",
-              title: "Semi-annual payment",
-              label: "Semi-annual",
-              premiumMod: {},
-            };
-            if (DATA.find((v) => v.frequency == "Semi-Annually")) {
-              rateExtraction("Semi-Annually", semiAnnual, str.options);
-            } else {
-              semiAnnual.premiumMod = {
-                type: "percentage",
-                price: [
-                  {
-                    value: +parseInt(DATA[0]["Semi Annual Surcharge"]),
-                  },
-                ],
-              };
-              str.options.push(semiAnnual);
+                };
+                str.options.push(semiAnnual);
+              }
             }
-          }
-          if (DATA[0]["Quarterly Surcharge"] != "N/A") {
-            let quarterly = {
-              id: "quarterly-payment-surcharge",
-              title: "Quarterly Surcharge payment",
-              label: "Quarterly Surcharge",
-              description: "Quarterly Surcharge payment frequency",
-              premiumMod: {},
-            };
-            if (DATA.find((v) => v.frequency == "Quarterly")) {
-              rateExtraction("Quarterly", quarterly, str.options);
-            } else {
-              quarterly.premiumMod = {
-                type: "percentage",
-                price: [
-                  {
-                    value: +parseInt(DATA[0]["Quarterly Surcharge"]),
-                  },
-                ],
+            if (DATA[0]["Quarterly Surcharge"] != "N/A") {
+              let quarterly = {
+                id: "quarterly-payment-surcharge",
+                title: "Quarterly Surcharge payment",
+                label: "Quarterly Surcharge",
+                description: "Quarterly Surcharge payment frequency",
+                premiumMod: {},
               };
-              str.options.push(quarterly);
+              if (DATA.find((v) => v.frequency == "Quarterly")) {
+                rateExtraction("Quarterly", quarterly, str.options);
+              } else {
+                quarterly.premiumMod = {
+                  type: "percentage",
+                  price: [
+                    {
+                      value: +parseInt(DATA[0]["Quarterly Surcharge"]),
+                    },
+                  ],
+                };
+                str.options.push(quarterly);
+              }
             }
-          }
-          if (DATA[0]["Monthly Surcharge"] != "N/A") {
-            let monthly = {
-              id: "monthly-payment-surcharge",
-              title: "Monthly Surcharge payment",
-              label: "Monthly Surcharge",
-              description: "Monthly Surcharge payment frequency",
-              premiumMod: {},
-            };
-            if (DATA.find((v) => v.frequency == "Monthly")) {
-              rateExtraction("Monthly", monthly, str.options);
-            } else {
-              monthly.premiumMod = {
-                type: "percentage",
-                price: [
-                  {
-                    value: +parseInt(DATA[0]["Monthly Surcharge"]),
-                  },
-                ],
+            if (DATA[0]["Monthly Surcharge"] != "N/A") {
+              let monthly = {
+                id: "monthly-payment-surcharge",
+                title: "Monthly Surcharge payment",
+                label: "Monthly Surcharge",
+                description: "Monthly Surcharge payment frequency",
+                premiumMod: {},
               };
-              str.options.push(monthly);
+              if (DATA.find((v) => v.frequency == "Monthly")) {
+                rateExtraction("Monthly", monthly, str.options);
+              } else {
+                monthly.premiumMod = {
+                  type: "percentage",
+                  price: [
+                    {
+                      value: +parseInt(DATA[0]["Monthly Surcharge"]),
+                    },
+                  ],
+                };
+                str.options.push(monthly);
+              }
             }
+            newArr.push({ ...str });
           }
-          newArr.push({ ...str });
-        }
-      });
+        });
+      }
     });
     // custom code here ----------------------------------
     // extra ---------------------------------------------

@@ -128,6 +128,12 @@ const enumData = `
     dependent_parent: "Dependent - Parent",
     primary_lsb: "Primary (Low Salary Band)",
     dependent_lsb: "Dependent (Low Salary Band)",
+    primary_dependent: "Primary - Dependent",
+    dependent_dependent: "Dependent - Dependent",
+    primary_investor_dependent: "Primary - Investor - Dependent",
+    dependent_parent_dependent: "Dependent - Parent - Dependent",
+    primary_lsb_dependent: "Primary (Low Salary Band) - Dependent",
+    dependent_lsb_dependent: "Dependent (Low Salary Band) - Dependent",
   },
   relation: {
     Child: "Child",
@@ -242,6 +248,26 @@ const singleChild = {
         type: "-Enum.customer.relation-",
         value: "-Enum.relation.Child-",
         count: "==0",
+      },
+    ],
+  },
+  _primary: {
+    type: "-Enum.customer.config-",
+    value: [
+      {
+        type: "-Enum.customer.category-",
+        value: "-Enum.category.primary-",
+        count: "==1",
+      },
+    ],
+  },
+  _dependent: {
+    type: "-Enum.customer.config-",
+    value: [
+      {
+        type: "-Enum.customer.category-",
+        value: "-Enum.category.dependent-",
+        count: "==1",
       },
     ],
   },
