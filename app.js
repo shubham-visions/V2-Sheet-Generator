@@ -725,7 +725,7 @@ let Arr = new Array(resCount).fill(null);
   // -----------------------------------------------------------------------------------------------------
 
   // ----------------------------------Pricing Table -----------------------------------------------------
-  function rateTable(store, Id, DATA, n, rateSheet) {
+  function pricingTable(store, Id, DATA, n, rateSheet) {
     try {
       let splitted;
       let short_coverageName;
@@ -803,7 +803,11 @@ let Arr = new Array(resCount).fill(null);
             );
           });
 
-          if (pricing.length == 0 && DATA[0].planCopay != "single")
+          if (
+            pricing.length == 0 &&
+            DATA[0].planCopay != "single" &&
+            !DATA[0].copayIP
+          )
             throw new Error(
               store.coPays[0][0][0] +
                 " | " +
@@ -951,7 +955,7 @@ let Arr = new Array(resCount).fill(null);
   let comment = "";
   let coveragesArr = [];
   let pricingArr = Arr.reduce((acc, v, i) => {
-    let data = rateTable(
+    let data = pricingTable(
       GlobalDatas[i],
       Ids[i],
       DATAs[i],
@@ -1329,45 +1333,247 @@ let Arr = new Array(resCount).fill(null);
       }
       // deductible -----------------------------------------
       if (key == "deductible") {
-        let splitted;
-        let clonearray = [];
-        let count = 1;
-        let fileName;
-        store["pricingTables"].forEach((plan) => {
-          let [planName, coverage] = plan;
-          addUp2[1] = 1;
-          store.Networks.forEach((net) => {
-            let bool = DATA.find((v) => {
-              if (v.PlanName == planName[1]) {
-                return v["Network Details"].includes("/")
-                  ? v["Network Details"].split("/").find((x) => x == net[1])
-                  : v["Network Details"] == net[1];
-              }
-              return false;
-            });
-            if (!bool) return;
-            if (splitFile && !included.includes(net[1])) {
-              included.push(net[1]);
-              comment2 += `// ${generateShortCode(net[1])} - ${
-                net[1]
-              } (network) \n`;
-            }
-            coverage.forEach((cc) => {
-              let c_id = `-${provider}.coverages${n}.${cc[0]}-`;
-              if (splitFile && !included.includes(cc[1])) {
-                included.push(cc[1]);
-                comment2 += `// ${generateShortCode(cc[1])} - ${
-                  cc[1]
-                } (coverage) \n`;
-              }
-              store["coPays"].forEach((v1, index) => {
-                let [copays, scope] = v1;
-                let [copay] = copays;
-                if (!scope.includes("all") && scope.includes(planName[1])) {
-                  return;
+        if (store["coPays"].length > 0) {
+          let splitted;
+          let clonearray = [];
+          let count = 1;
+          let fileName;
+          store["pricingTables"].forEach((plan) => {
+            let [planName, coverage] = plan;
+            addUp2[1] = 1;
+            store.Networks.forEach((net) => {
+              let bool = DATA.find((v) => {
+                if (v.PlanName == planName[1]) {
+                  return v["Network Details"].includes("/")
+                    ? v["Network Details"].split("/").find((x) => x == net[1])
+                    : v["Network Details"] == net[1];
                 }
-                if ([0, 1, "2a", "2b"].includes(rateSheet[0].singleChild)) {
-                  [0, 1, "2a", "2b"].forEach((sc) => {
+                return false;
+              });
+              if (!bool) return;
+              if (splitFile && !included.includes(net[1])) {
+                included.push(net[1]);
+                comment2 += `// ${generateShortCode(net[1])} - ${
+                  net[1]
+                } (network) \n`;
+              }
+              coverage.forEach((cc) => {
+                let c_id = `-${provider}.coverages${n}.${cc[0]}-`;
+                if (splitFile && !included.includes(cc[1])) {
+                  included.push(cc[1]);
+                  comment2 += `// ${generateShortCode(cc[1])} - ${
+                    cc[1]
+                  } (coverage) \n`;
+                }
+
+                store["coPays"].forEach((v1, index) => {
+                  let [copays, scope] = v1;
+                  let [copay] = copays;
+                  if (!scope.includes("all") && scope.includes(planName[1])) {
+                    return;
+                  }
+                  if ([0, 1, "2a", "2b"].includes(rateSheet[0].singleChild)) {
+                    [0, 1, "2a", "2b"].forEach((sc) => {
+                      if (splitFile && !included.includes(copay)) {
+                        included.push(copay);
+                        comment2 += `// ${generateShortCode(
+                          copay
+                        )} - ${copay} (copay) \n`;
+                      }
+                      let copayArr = [];
+                      clone = {
+                        id: "option-" + count,
+                        label: copay,
+                        premiumMod: {
+                          type: "conditional-override",
+                          conditionalPrices: [],
+                        },
+                        conditions: [
+                          {
+                            type: "-Enum.conditions.modifier-", // Network modifier with OPTION ID Network_B included
+                            value: [net[1]],
+                          },
+                          {
+                            type: "-Enum.conditions.coverage-",
+                            value: [c_id],
+                          },
+                          {
+                            type: "-Enum.conditions.plans-",
+                            value: [`-${provider}.plans${n}.${planName[0]}-`],
+                          },
+                          singleChild[`_${sc}`],
+                        ],
+                      };
+                      store["frequency"].forEach((fr, f_index) => {
+                        if (f_index > 0) return;
+                        let pricing = rateSheet.filter((n) => {
+                          // if (
+                          //   n.planName == "IPMI 1" &&
+                          //   n.coverage == "Worldwide excluding USA & Canada"
+                          // ) {
+                          //   console.log(
+                          //     n.planName == plan[0][1],
+                          //     n.coverage == cc[1],
+                          //     n.frequency == fr,
+                          //     n.network,
+                          //     " | ",
+                          //     net[1],
+                          //     cc[1] == "Worldwide excluding USA & Canada",
+                          //     "\n",
+                          //     `-${cc[1]}-`,
+                          //     " | ",
+                          //     n.coverage
+                          //   );
+                          // }
+                          // if (DATA[0].planCopay == "-Enum.maritalStatus.single-")
+                          //   return (
+                          //     n.planName == plan[0][1] &&
+                          //     n.coverage == cc[1] &&
+                          //     n.frequency == fr &&
+                          //     n.network == net[1]
+                          //   );
+                          // let n_check;
+                          // if (n.network != net[1]) {
+                          //   n_check = DATA.find((dd) => dd.PlanName == plan[0][1])[
+                          //     "Network Details"
+                          //   ];
+                          //   n_check = n_check.includes("/")
+                          //     ? n_check.split("/")
+                          //     : [n_check];
+                          //   n_check = n_check.includes(net[1]);
+                          // } else n_check = true;
+                          return (
+                            n.planName == plan[0][1] &&
+                            n.coverage == cc[1] &&
+                            n.copay == copay &&
+                            n.frequency == fr &&
+                            n.network == net[1] &&
+                            n.singleChild == sc
+                          );
+                        });
+                        // console.log(
+                        //   "copay, plan --> ",
+                        //   copay,
+                        //   " || ",
+                        //   planName[1],
+                        //   " | '" +
+                        //     plan[0][1] +
+                        //     "' | '" +
+                        //     cc[1] +
+                        //     "' | '" +
+                        //     copay +
+                        //     "' | '" +
+                        //     fr +
+                        //     "' | '" +
+                        //     net[1]
+                        // );
+
+                        if (
+                          (DATA[0].planCopay == "single" ||
+                            store.filters.networkType == "custom") &&
+                          pricing.length == 0
+                        )
+                          return;
+                        if (pricing.length == 0) {
+                          throw new Error(
+                            n +
+                              " | '" +
+                              plan[0][1] +
+                              "' | '" +
+                              cc[1] +
+                              "' | '" +
+                              copay +
+                              "' | '" +
+                              fr +
+                              "' | '" +
+                              net[1] +
+                              "' | '" +
+                              DATA[0].planCopay
+                          );
+                        }
+                        if (!pricing[0].currency)
+                          throw new Error(
+                            "Currecny is not included in rateSheet",
+                            n
+                          );
+                        let table = pricing.map((t) => {
+                          let str = {
+                            conditions: [
+                              {
+                                type: "-Enum.customer.min_age-",
+                                value: t.ageStart,
+                              },
+                              {
+                                type: "-Enum.customer.max_age-",
+                                value: t.ageEnd,
+                              },
+                              {
+                                type: "-Enum.customer.gender-",
+                                value: `-Enum.gender.${t.gender}-`,
+                              },
+                            ],
+                            price: [
+                              {
+                                value: parseFloat(t.rates / conversion),
+                                currency: `-Enum.currency.${t.currency}-`,
+                              },
+                            ],
+                          };
+                          if (t.married === 0) {
+                            str.conditions.push({
+                              type: "-Enum.customer.maritalStatus-",
+                              value: "-Enum.maritalStatus.married-",
+                            });
+                          }
+                          if (t.married === 1) {
+                            str.conditions.push({
+                              type: "-Enum.customer.maritalStatus-",
+                              value: "-Enum.maritalStatus.single-",
+                            });
+                          }
+                          if (t.category)
+                            str.conditions.push({
+                              type: "-Enum.customer.category-",
+                              value: `-Enum.category.${t.category}-`,
+                            });
+                          if (t.relation)
+                            str.conditions.push({
+                              type: "-Enum.customer.relation-",
+                              value: `-Enum.relation.${t.relation}-`,
+                            });
+
+                          return { ...str };
+                        });
+                        if (splitFile) {
+                          // console.log("length >>", table.length);
+                          fileName = `${plan[0][0]}_${generateShortCode(
+                            cc[0]
+                          )}_${generateShortCode(net[0])}_${generateShortCode(
+                            copay
+                          )}_Config${sc}`;
+                          splitted = splittingFile(
+                            table,
+                            plan[0][0],
+                            "modifiers",
+                            fileName
+                              .split("_")
+                              .filter((v, i) => i !== 0)
+                              .join("_")
+                          );
+
+                          addUp2[0] += `const ${fileName} = require("./${plan[0][0]}/${fileName}.js"); `;
+                        }
+                        clone.premiumMod.conditionalPrices = splitted
+                          ? `-[...${fileName}]-`
+                          : [...table];
+                      });
+                      if (clone.premiumMod.conditionalPrices.length == 0)
+                        return;
+                      clonearray.push(clone);
+                      count++;
+                      addUp2[1]++;
+                    });
+                  } else {
                     if (splitFile && !included.includes(copay)) {
                       included.push(copay);
                       comment2 += `// ${generateShortCode(
@@ -1395,7 +1601,6 @@ let Arr = new Array(resCount).fill(null);
                           type: "-Enum.conditions.plans-",
                           value: [`-${provider}.plans${n}.${planName[0]}-`],
                         },
-                        singleChild[`_${sc}`],
                       ],
                     };
                     store["frequency"].forEach((fr, f_index) => {
@@ -1441,8 +1646,7 @@ let Arr = new Array(resCount).fill(null);
                           n.coverage == cc[1] &&
                           n.copay == copay &&
                           n.frequency == fr &&
-                          n.network == net[1] &&
-                          n.singleChild == sc
+                          n.network == net[1]
                         );
                       });
                       // console.log(
@@ -1462,11 +1666,7 @@ let Arr = new Array(resCount).fill(null);
                       //     net[1]
                       // );
 
-                      if (
-                        (DATA[0].planCopay == "single" ||
-                          store.filters.networkType == "custom") &&
-                        pricing.length == 0
-                      )
+                      if (DATA[0].planCopay == "single" && pricing.length == 0)
                         return;
                       if (pricing.length == 0) {
                         throw new Error(
@@ -1535,7 +1735,14 @@ let Arr = new Array(resCount).fill(null);
                             type: "-Enum.customer.relation-",
                             value: `-Enum.relation.${t.relation}-`,
                           });
-
+                        if (
+                          t.singleChild == 0 ||
+                          t.singleChild == 1 ||
+                          t.singleChild == 2 ||
+                          t.singleChild
+                        ) {
+                          str.conditions.push(singleChild[`_${t.singleChild}`]);
+                        }
                         return { ...str };
                       });
                       if (splitFile) {
@@ -1544,7 +1751,7 @@ let Arr = new Array(resCount).fill(null);
                           cc[0]
                         )}_${generateShortCode(net[0])}_${generateShortCode(
                           copay
-                        )}_Config${sc}`;
+                        )}`;
                         splitted = splittingFile(
                           table,
                           plan[0][0],
@@ -1565,22 +1772,72 @@ let Arr = new Array(resCount).fill(null);
                     clonearray.push(clone);
                     count++;
                     addUp2[1]++;
-                  });
-                } else {
-                  if (splitFile && !included.includes(copay)) {
-                    included.push(copay);
-                    comment2 += `// ${generateShortCode(
-                      copay
-                    )} - ${copay} (copay) \n`;
+                  }
+                });
+              });
+            });
+          });
+
+          str = {
+            _id: `-${provider}.modifiers${n}.deductible-`,
+            plans: [...planIds],
+            title: "Deductible modifier",
+            label: "Deductibles",
+            type: `-core.modifierTypes.deductible-`,
+            assignmentType: "PER_CUSTOMER",
+            includedBenefits: [],
+            isOptional: true,
+            description: "",
+            addonCost: {},
+            premiumMod: "",
+            conditions: [],
+            hasOptions: true,
+            options: clonearray,
+          };
+          newArr.push({ ...str });
+        }
+        if (store["coPayIP"].length > 0) {
+          let splitted;
+          let clonearray = [];
+          let count = 1;
+          let fileName;
+          store["pricingTables"].forEach((plan) => {
+            let [planName, coverage] = plan;
+            addUp2[1] = 1;
+            store.Networks.forEach((net) => {
+              let bool = DATA.find((v) => {
+                if (v.PlanName == planName[1]) {
+                  return v["Network Details"].includes("/")
+                    ? v["Network Details"].split("/").find((x) => x == net[1])
+                    : v["Network Details"] == net[1];
+                }
+                return false;
+              });
+              if (!bool) return;
+              if (splitFile && !included.includes(net[1])) {
+                included.push(net[1]);
+                comment2 += `// ${generateShortCode(net[1])} - ${
+                  net[1]
+                } (network) \n`;
+              }
+              coverage.forEach((cc) => {
+                let c_id = `-${provider}.coverages${n}.${cc[0]}-`;
+                if (splitFile && !included.includes(cc[1])) {
+                  included.push(cc[1]);
+                  comment2 += `// ${generateShortCode(cc[1])} - ${
+                    cc[1]
+                  } (coverage) \n`;
+                }
+                store["coPayIP"].forEach((v1, index) => {
+                  let [copays, scope] = v1;
+                  let [copay] = copays;
+                  if (!scope.includes("all") && scope.includes(planName[1])) {
+                    return;
                   }
                   let copayArr = [];
                   clone = {
                     id: "option-" + count,
                     label: copay,
-                    premiumMod: {
-                      type: "conditional-override",
-                      conditionalPrices: [],
-                    },
                     conditions: [
                       {
                         type: "-Enum.conditions.modifier-", // Network modifier with OPTION ID Network_B included
@@ -1596,202 +1853,115 @@ let Arr = new Array(resCount).fill(null);
                       },
                     ],
                   };
-                  store["frequency"].forEach((fr, f_index) => {
-                    if (f_index > 0) return;
-                    let pricing = rateSheet.filter((n) => {
-                      // if (
-                      //   n.planName == "IPMI 1" &&
-                      //   n.coverage == "Worldwide excluding USA & Canada"
-                      // ) {
-                      //   console.log(
-                      //     n.planName == plan[0][1],
-                      //     n.coverage == cc[1],
-                      //     n.frequency == fr,
-                      //     n.network,
-                      //     " | ",
-                      //     net[1],
-                      //     cc[1] == "Worldwide excluding USA & Canada",
-                      //     "\n",
-                      //     `-${cc[1]}-`,
-                      //     " | ",
-                      //     n.coverage
-                      //   );
-                      // }
-                      // if (DATA[0].planCopay == "-Enum.maritalStatus.single-")
-                      //   return (
-                      //     n.planName == plan[0][1] &&
-                      //     n.coverage == cc[1] &&
-                      //     n.frequency == fr &&
-                      //     n.network == net[1]
-                      //   );
-                      // let n_check;
-                      // if (n.network != net[1]) {
-                      //   n_check = DATA.find((dd) => dd.PlanName == plan[0][1])[
-                      //     "Network Details"
-                      //   ];
-                      //   n_check = n_check.includes("/")
-                      //     ? n_check.split("/")
-                      //     : [n_check];
-                      //   n_check = n_check.includes(net[1]);
-                      // } else n_check = true;
-                      return (
-                        n.planName == plan[0][1] &&
-                        n.coverage == cc[1] &&
-                        n.copay == copay &&
-                        n.frequency == fr &&
-                        n.network == net[1]
-                      );
-                    });
-                    // console.log(
-                    //   "copay, plan --> ",
-                    //   copay,
-                    //   " || ",
-                    //   planName[1],
-                    //   " | '" +
-                    //     plan[0][1] +
-                    //     "' | '" +
-                    //     cc[1] +
-                    //     "' | '" +
-                    //     copay +
-                    //     "' | '" +
-                    //     fr +
-                    //     "' | '" +
-                    //     net[1]
-                    // );
-
-                    if (DATA[0].planCopay == "single" && pricing.length == 0)
-                      return;
-                    if (pricing.length == 0) {
-                      throw new Error(
-                        n +
-                          " | '" +
-                          plan[0][1] +
-                          "' | '" +
-                          cc[1] +
-                          "' | '" +
-                          copay +
-                          "' | '" +
-                          fr +
-                          "' | '" +
-                          net[1] +
-                          "' | '" +
-                          DATA[0].planCopay
-                      );
-                    }
-                    if (!pricing[0].currency)
-                      throw new Error(
-                        "Currecny is not included in rateSheet",
-                        n
-                      );
-                    let table = pricing.map((t) => {
-                      let str = {
-                        conditions: [
-                          {
-                            type: "-Enum.customer.min_age-",
-                            value: t.ageStart,
-                          },
-                          {
-                            type: "-Enum.customer.max_age-",
-                            value: t.ageEnd,
-                          },
-                          {
-                            type: "-Enum.customer.gender-",
-                            value: `-Enum.gender.${t.gender}-`,
-                          },
-                        ],
-                        price: [
-                          {
-                            value: parseFloat(t.rates / conversion),
-                            currency: `-Enum.currency.${t.currency}-`,
-                          },
-                        ],
-                      };
-                      if (t.married === 0) {
-                        str.conditions.push({
-                          type: "-Enum.customer.maritalStatus-",
-                          value: "-Enum.maritalStatus.married-",
-                        });
-                      }
-                      if (t.married === 1) {
-                        str.conditions.push({
-                          type: "-Enum.customer.maritalStatus-",
-                          value: "-Enum.maritalStatus.single-",
-                        });
-                      }
-                      if (t.category)
-                        str.conditions.push({
-                          type: "-Enum.customer.category-",
-                          value: `-Enum.category.${t.category}-`,
-                        });
-                      if (t.relation)
-                        str.conditions.push({
-                          type: "-Enum.customer.relation-",
-                          value: `-Enum.relation.${t.relation}-`,
-                        });
-                      if (
-                        t.singleChild == 0 ||
-                        t.singleChild == 1 ||
-                        t.singleChild == 2 ||
-                        t.singleChild
-                      ) {
-                        str.conditions.push(singleChild[`_${t.singleChild}`]);
-                      }
-                      return { ...str };
-                    });
-                    if (splitFile) {
-                      // console.log("length >>", table.length);
-                      fileName = `${plan[0][0]}_${generateShortCode(
-                        cc[0]
-                      )}_${generateShortCode(net[0])}_${generateShortCode(
-                        copay
-                      )}`;
-                      splitted = splittingFile(
-                        table,
-                        plan[0][0],
-                        "modifiers",
-                        fileName
-                          .split("_")
-                          .filter((v, i) => i !== 0)
-                          .join("_")
-                      );
-
-                      addUp2[0] += `const ${fileName} = require("./${plan[0][0]}/${fileName}.js"); `;
-                    }
-                    clone.premiumMod.conditionalPrices = splitted
-                      ? `-[...${fileName}]-`
-                      : [...table];
-                  });
-                  if (clone.premiumMod.conditionalPrices.length == 0) return;
                   clonearray.push(clone);
                   count++;
                   addUp2[1]++;
-                }
+                });
               });
             });
           });
-        });
-        // for (let i = 0; i < 4; i++) {
-        //   let data = clonearray.splice(0, 54);
-        //   createFile("copay", `index-${i}`, data, provider, true);
-        // }
 
-        str = {
-          _id: `-${provider}.modifiers${n}.deductible-`,
-          plans: [...planIds],
-          title: "Deductible modifier",
-          label: "Deductibles",
-          type: `-core.modifierTypes.deductible-`,
-          assignmentType: "PER_CUSTOMER",
-          includedBenefits: [],
-          isOptional: true,
-          description: "",
-          addonCost: {},
-          premiumMod: "",
-          conditions: [],
-          hasOptions: true,
-          options: clonearray,
-        };
-        newArr.push({ ...str });
+          str = {
+            _id: `-${provider}.modifiers${n}.deductible.IP-`,
+            plans: [...planIds],
+            title: "Deductible modifier",
+            label: "Deductibles",
+            type: `-core.modifierTypes.deductible-`,
+            assignmentType: "PER_CUSTOMER",
+            includedBenefits: [],
+            isOptional: true,
+            description: "",
+            addonCost: {},
+            premiumMod: "",
+            conditions: [],
+            hasOptions: true,
+            options: clonearray,
+          };
+          newArr.push({ ...str });
+        }
+        if (store["coPayOP"].length > 0) {
+          let splitted;
+          let clonearray = [];
+          let count = 1;
+          let fileName;
+          store["pricingTables"].forEach((plan) => {
+            let [planName, coverage] = plan;
+            addUp2[1] = 1;
+            store.Networks.forEach((net) => {
+              let bool = DATA.find((v) => {
+                if (v.PlanName == planName[1]) {
+                  return v["Network Details"].includes("/")
+                    ? v["Network Details"].split("/").find((x) => x == net[1])
+                    : v["Network Details"] == net[1];
+                }
+                return false;
+              });
+              if (!bool) return;
+              if (splitFile && !included.includes(net[1])) {
+                included.push(net[1]);
+                comment2 += `// ${generateShortCode(net[1])} - ${
+                  net[1]
+                } (network) \n`;
+              }
+              coverage.forEach((cc) => {
+                let c_id = `-${provider}.coverages${n}.${cc[0]}-`;
+                if (splitFile && !included.includes(cc[1])) {
+                  included.push(cc[1]);
+                  comment2 += `// ${generateShortCode(cc[1])} - ${
+                    cc[1]
+                  } (coverage) \n`;
+                }
+                store["coPayOP"].forEach((v1, index) => {
+                  let [copays, scope] = v1;
+                  let [copay] = copays;
+                  if (!scope.includes("all") && scope.includes(planName[1])) {
+                    return;
+                  }
+                  let copayArr = [];
+                  clone = {
+                    id: "option-" + count,
+                    label: copay,
+                    conditions: [
+                      {
+                        type: "-Enum.conditions.modifier-", // Network modifier with OPTION ID Network_B included
+                        value: [net[1]],
+                      },
+                      {
+                        type: "-Enum.conditions.coverage-",
+                        value: [c_id],
+                      },
+                      {
+                        type: "-Enum.conditions.plans-",
+                        value: [`-${provider}.plans${n}.${planName[0]}-`],
+                      },
+                    ],
+                  };
+                  clonearray.push(clone);
+                  count++;
+                  addUp2[1]++;
+                });
+              });
+            });
+          });
+
+          str = {
+            _id: `-${provider}.modifiers${n}.deductible.OP-`,
+            plans: [...planIds],
+            title: "Deductible modifier",
+            label: "Deductibles",
+            type: `-core.modifierTypes.deductible-`,
+            assignmentType: "PER_CUSTOMER",
+            includedBenefits: [],
+            isOptional: true,
+            description: "",
+            addonCost: {},
+            premiumMod: "",
+            conditions: [],
+            hasOptions: true,
+            options: clonearray,
+          };
+          newArr.push({ ...str });
+        }
       }
       // network -----------------------------------------
       if (key == "network") {
@@ -2352,5 +2522,75 @@ let Arr = new Array(resCount).fill(null);
     comment2,
     addUp2[0]
   );
-  // ----------------------------------------------------------------------
+  // ----------------------------------------------------------------------------------------------------
+
+  // --------------------------------- Rate Table -------------------------------------------------------
+  function rateTable(store, Id, rateSheet, provider) {
+    try {
+      let result = [];
+      let num = 1;
+      store.plans.forEach((plan) => {
+        store.coverages.forEach((coverages) => {
+          let coverage = coverages.coverageName;
+          ["coPayIP", "coPayOP"].forEach((types) => {
+            store[types].forEach((copays, i) => {
+              let [copay] = copays;
+              let type = types.split("y")[1];
+              let Schema = {
+                _id: `-generateMongoIdFromString("${provider} rateTable ${num}")-`,
+                plans: [`${provider}.plans.${plan[1]}`],
+                filters: [
+                  {
+                    type: "DEDUCTIBLE",
+                    values: [`option-${i + 1}`],
+                    value: `-cigna_global_health.modifiers.deductible.${type}-`,
+                  },
+                  {
+                    type: "COVERAGE",
+                    values: [],
+                    value: `-cigna_global_health.coverages.${coverage[0]}-`,
+                  },
+                ],
+                rates: [],
+              };
+              let rates = rateSheet
+                .filter(
+                  (v) =>
+                    v.type == type &&
+                    v.planName == plan[1] &&
+                    coverage[1] == v.coverages &&
+                    copay[0] == v.copay
+                )
+                .map((v) => {
+                  return {
+                    price: { currency: "-Enum.currency.USD-", price: v.rates },
+                    customer: {
+                      from: v.ageStart,
+                      to: v.ageEnd,
+                    },
+                  };
+                });
+              if (rates.length == 0) {
+                console.log("--> ", type, plan[1], coverage[1], copay);
+
+                throw new Error("rates 0");
+              }
+
+              Schema.rates = rates;
+              result.push(Schema);
+            });
+          });
+        });
+      });
+      return result;
+    } catch (error) {
+      console.log("error --> ", { msg: error.message, stack: error.stack });
+    }
+  }
+  let rateArr = Arr.reduce((acc, v, i) => {
+    let data = rateTable(GlobalDatas[i], Ids[i], rateSheets[i], provider);
+    return [...acc, ...data];
+  }, []);
+
+  createFile("RateTable", "index", rateArr, provider, false, true);
 })();

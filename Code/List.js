@@ -89,6 +89,28 @@ const getList = (arr) => {
           : v.copay.split("/");
         Global.coPays.push([v2, v1]);
       }
+      if (v.copayIP) {
+        if (!Global.coPayIP) Global.coPayIP = [];
+        let v1 = ["all"];
+        let v2 = [
+          v.copayIP
+            .split(", ")
+            .map((v) => (v.includes(" - ") ? v.split(" - ")[0] : v))
+            .join(", "),
+        ];
+        Global.coPayIP.push([[v.copayIP], v1]);
+      }
+      if (v.copayOP) {
+        if (!Global.coPayOP) Global.coPayOP = [];
+        let v1 = ["all"];
+        let v2 = [
+          v.copayOP
+            .split(", ")
+            .map((v) => (v.includes(" - ") ? v.split(" - ")[0] : v))
+            .join(", "),
+        ];
+        Global.coPayOP.push([[v.copayOP], v1]);
+      }
 
       // Discounts -------------------------------
       v.discounts &&
