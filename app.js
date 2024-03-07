@@ -249,6 +249,7 @@ let Arr = new Array(resCount).fill(null);
             type: "-Enum.conversionRateType.premium-",
           },
         ],
+        hasRateTable: true,
       },
     ];
     if (DATAs[0][0].conversionRate)
@@ -1836,7 +1837,7 @@ let Arr = new Array(resCount).fill(null);
                   }
                   let copayArr = [];
                   clone = {
-                    id: "option-" + count,
+                    id: "ip-option-" + count,
                     label: copay,
                     conditions: [
                       {
@@ -1919,7 +1920,7 @@ let Arr = new Array(resCount).fill(null);
                   }
                   let copayArr = [];
                   clone = {
-                    id: "option-" + count,
+                    id: "op-option-" + count,
                     label: copay,
                     conditions: [
                       {
@@ -2538,11 +2539,11 @@ let Arr = new Array(resCount).fill(null);
               let type = types.split("y")[1];
               let Schema = {
                 _id: `-generateMongoIdFromString("${provider} rateTable ${num}")-`,
-                plans: [`${provider}.plans.${plan[1]}`],
+                plans: [`-${provider}.plans.${plan[1]}-`],
                 filters: [
                   {
                     type: "DEDUCTIBLE",
-                    values: [`option-${i + 1}`],
+                    values: [`${type.toLowerCase()}-option-${i + 1}`],
                     value: `-cigna_global_health.modifiers.deductible.${type}-`,
                   },
                   {
