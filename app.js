@@ -1565,9 +1565,20 @@ let Arr = new Array(resCount).fill(null);
             includedResidence: countryCodes.find(codes => codes.code == DATA[0].residency.trim())?.alphaCodes,
             excludedResidence: countryCodes.filter(codes => codes.code != DATA[0].residency.trim())?.alphaCodes,
             coverage: [`-${provider}.coverages${n}.${v}-`],
-            baseAnnualPremium: splitted
-              ? `-[...${key}_${short_coverageName}]-`
-              : [...table],
+            baseAnnualPremium: [
+              {
+                fromAge: 0,
+                toAge: 82,
+                gender: `-Enum.gender.male-`,
+                price: [{ value: 0, currency: `-Enum.currency.USD-` }],
+              },
+              {
+                fromAge: 0,
+                toAge: 82,
+                gender: `-Enum.gender.female-`,
+                price: [{ value: 0, currency: `-Enum.currency.USD-` }],
+              },
+            ]
           };
           addUp[1]++;
           PricingTable.push({ ...clone });
@@ -2498,9 +2509,10 @@ let Arr = new Array(resCount).fill(null);
             title: "Deductible modifier",
             label: "Deductibles",
             type: `-core.modifierTypes.deductible-`,
+            inputLabel: "IP Co/pay",
             assignmentType: "PER_CUSTOMER",
             includedBenefits: [],
-            isOptional: true,
+            isOptional: false,
             description: "",
             addonCost: {},
             premiumMod: "",
@@ -2583,6 +2595,7 @@ let Arr = new Array(resCount).fill(null);
             type: `-core.modifierTypes.deductible-`,
             assignmentType: "PER_CUSTOMER",
             includedBenefits: [],
+            inputLabel: "OP Co/pay",
             isOptional: true,
             description: "",
             addonCost: {},
@@ -3169,7 +3182,7 @@ let Arr = new Array(resCount).fill(null);
               let type = types.split("y")[1];
               let Schema = {
                 _id: `-generateMongoIdFromString('${provider} rateTable ${i + 1}')-`,
-                plans: [`-${provider}.plans${count+1}.${plan[1]}-`],
+                plans: [`-${provider}.plans${count > 0 ? count-1 : ""}.${plan[1]}-`],
                 filters: [
                   {
                     type: "DEDUCTIBLE",
@@ -3179,7 +3192,7 @@ let Arr = new Array(resCount).fill(null);
                   },
                   {
                     type: "COVERAGE",
-                    value: `-cigna_global_health.coverages${count+1}.${coverage[0]}-`,
+                    value: `-cigna_global_health.coverages${count > 0 ? count-1 : ""}.${coverage[0]}-`,
                   },
                 ],
                 rates: [],
@@ -3201,6 +3214,8 @@ let Arr = new Array(resCount).fill(null);
                     },
                   };
                 });
+
+                !rates.length && console.log('rates >> ', type, plan[1], coverage[1], copay[0]);
               // if (rates.length == 0) {
               //   console.log("--> ", type, plan[1], coverage[1], copay);
 
