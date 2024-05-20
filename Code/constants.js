@@ -67,6 +67,7 @@ const indexData = `
         const PricingTables = require('./PricingTable/index');
         const Coverages = require('./coverage/index');
         const Modifiers = require('./modifiers/index');
+        const RateTable = require("./RateTable");
         let data = [
           // Provider data
           {
@@ -101,6 +102,12 @@ const indexData = `
             model: "Modifier",
             modelPath: "models/modifier-model.js",
             documents: Modifiers,
+          },
+          {
+            // Plan modifiers
+            model: "RateTable",
+            modelPath: "models/rate-table-model.js",
+            documents: RateTable,
           },
         ];
 

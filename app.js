@@ -1127,7 +1127,6 @@ let Arr = new Array(resCount).fill(null);
         //     ? NE_Dubai[1]
         //     : AbuDhabi[1],
 
-        resiency: DATA[0].residency,
         includedResidence: countryCodes.find(codes => codes.code == DATA[0].residency.trim())?.alphaCodes,
         excludedResidence: countryCodes.filter(codes => codes.code != DATA[0].residency.trim())?.alphaCodes,
         coveredCountries,
@@ -1561,7 +1560,6 @@ let Arr = new Array(resCount).fill(null);
             //     ? NE_Dubai[1]
             //     : AbuDhabi[1],
 
-            resiency: DATA[0].residency,
             includedResidence: countryCodes.find(codes => codes.code == DATA[0].residency.trim())?.alphaCodes,
             excludedResidence: countryCodes.filter(codes => codes.code != DATA[0].residency.trim())?.alphaCodes,
             coverage: [`-${provider}.coverages${n}.${v}-`],
@@ -3173,20 +3171,20 @@ let Arr = new Array(resCount).fill(null);
     try {
       let result = [];
       let num = 1;
-      store?.plans.forEach((plan) => {
-        store.coverages.forEach((coverages) => {
+      store?.plans.forEach((plan, l) => {
+        store.coverages.forEach((coverages, k) => {
           let coverage = coverages.coverageName;
-          ["coPayIP", "coPayOP"].forEach((types) => {
+          ["coPayIP", "coPayOP"].forEach((types, j) => {
             store[types].forEach((copays, i) => {
               let [copay] = copays;
               let type = types.split("y")[1];
               let Schema = {
-                _id: `-generateMongoIdFromString('${provider} rateTable ${i + 1}')-`,
+                _id: `-generateMongoIdFromString('${provider} rateTable ${l + 1} ${k + 1} ${j + 1} ${i + 1}')-`,
                 plans: [`-${provider}.plans${count > 0 ? count-1 : ""}.${plan[1]}-`],
                 filters: [
                   {
                     type: "DEDUCTIBLE",
-                    // values: [`${type.toLowerCase()}-option-${i + 1}`],
+                    // values: [`${type.toLowerCase()}-option-${l + 1} ${k + 1} ${j + 1} ${i + 1}`],
                     // value: `-cigna_global_health.modifiers.deductible.${type}-`,
                     value: `${type.toLowerCase()}-option-${i + 1}`,
                   },
@@ -3215,7 +3213,8 @@ let Arr = new Array(resCount).fill(null);
                   };
                 });
 
-                !rates.length && console.log('rates >> ', type, plan[1], coverage[1], copay[0]);
+                // !rates.length && console.log('rates >> ', type, plan[1], coverage[1], copay[0]);
+                // rates.length && console.log('found rates >> ', type, plan[1], coverage[1], copay[0]);
               // if (rates.length == 0) {
               //   console.log("--> ", type, plan[1], coverage[1], copay);
 
