@@ -36,10 +36,34 @@ const generateCodeIndex = (data, benefits, DATA, n = false) => {
       if (key == "modifiers") {
         let obj = {};
         data["Modifiers"].forEach((v) => {
+          // if (v == "deductible") {
+          //   obj[v] = `-generateMongoIdFromString('${data.Provider} ${
+          //     n ? n : ""
+          //   } ${v}')-`;
+          // }
+
           if (v == "deductible") {
-            obj[v] = `-generateMongoIdFromString('${data.Provider} ${
-              n ? n : ""
-            } ${v}')-`;
+            // console.log("data.filters >> ", data.filters)
+            // obj[v] = `-generateMongoIdFromString('${data.Provider} ${
+            //   n ? n : ""
+            // } ${v}')-`;
+
+            let b = {};
+
+            if (data.filters.deductibleType != "single") {
+              data["Deductibles"].forEach((v1) => {
+                if (Array.isArray(v1)) v1 = v1[0];
+
+                console.log('v1 >> ', v1)
+                b[v1] = `-generateMongoIdFromString('${data.Provider} ${ n ? n : "" } deductible ${v1}')-`;
+              });
+            } else {
+              b = `-generateMongoIdFromString('${data.Provider} ${v} ${
+                n ? n : ""
+              }')-`;
+            }
+
+            obj[v] = b;
           }
           if (v == "benefits") {
             let b = {};

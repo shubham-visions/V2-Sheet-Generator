@@ -1684,6 +1684,8 @@ let Arr = new Array(resCount).fill(null);
     for (let key in Id.plans) {
       planIds.push(`-${provider}.plans${n}.${key}-`);
     }
+
+    let addonBeneits = ["Dental", "Optical Benefits", "Wellness & Health Screening"]
     store.Modifiers.forEach((key) => {
       // benefits --------------------------------------------
       if (key == "benefits") {
@@ -1732,11 +1734,15 @@ let Arr = new Array(resCount).fill(null);
               ? ""
               : modifiers[key][0].value.toString().includes(" $ ")
               ? ""
-              : modifiers[key][0].value.toString().includes("$copay")
+              : (modifiers[key][0].value.toString().includes("$copay") || modifiers[key][0].value.toString().includes("$outpatient") 
+            || modifiers[key][0].value.toString().includes("$vaccination") || modifiers[key][0].value.toString().includes("$physiotherepy")
+          ||modifiers[key][0].value.toString().includes("$medicines"))
               ? ""
               : modifiers[key][0].value;
-          str.isOptional = false;
-          str.hasOptions = modifiers[key].length > 1;
+          // str.isOptional = false;
+          // str.hasOptions = modifiers[key].length > 1;
+          str.isOptional = addonBeneits.includes(key) ? true : false;
+          str.hasOptions = addonBeneits.includes(key) ? true : modifiers[key].length > 1;
           if (!modifiers[key][0].value.toString().includes("$copay")) {
             str.options = [];
             let count = 1;
@@ -1841,22 +1847,289 @@ let Arr = new Array(resCount).fill(null);
                 return acc;
               }, []);
               $copay.forEach((v) => {
-                let [value, copays] = v.split(" - ");
+                const benefitsVal = v.split(" ^ ");
+                benefitsVal.forEach((e) => {
+                  let [value, copays, planName] = e.split(" - ");
                 let cc = {
                   id: "option-" + count,
                   label: value,
                   description: value,
                   conditions: [
                     {
-                      type: "-Enum.conditions.deductible-",
+                      type: "-Enum.conditions.deductible.OP-",
                       value: copays.includes("/")
                         ? copays.split("/")
                         : [copays],
                     },
+                    {
+                      type: "-Enum.conditions.plans-",
+                      value: [`-${provider}.plans${n}.${planName}-`]
+                    }
                   ],
                 };
                 str.options.push(cc);
                 count++;
+                })
+              });
+            } else
+              store.coPays.forEach((v) => {
+                let [copay, scope] = v;
+                let conditions = [];
+                conditions.push({
+                  type: "-Enum.conditions.deductible.OP-",
+                  value: [copay[0]],
+                });
+                if (!scope.includes("all")) {
+                  let con = {
+                    type: "-Enum.conditions.plans-",
+                    value: [],
+                  };
+                  store.plans.forEach((m) => {
+                    if (!scope.includes(m[1])) return;
+                    con.value.push(`-${provider}.plans${n}.${m[0]}-`);
+                  });
+                  conditions.push(con);
+                }
+                let cc = {
+                  id: "option-" + count,
+                  label: copay[0],
+                  description: copay[0],
+                  conditions: [...conditions],
+                };
+                str.options.push(cc);
+                count++;
+              });
+          }
+
+          if (modifiers[key][0].value.toString().includes("$outPatient")) {
+            console.log("in $outPatientcccccccccccc");
+            str.options = [];
+            str.hasOptions = true;
+            let count = 1;
+            if (DATA[0].$outPatient) {
+              let $outPatient = DATA.reduce((acc, v) => {
+                if (v.$outPatient) return [...acc, v.$outPatient];
+                return acc;
+              }, []);
+              $outPatient.forEach((v) => {
+                const benefitsVal = v.split(" ^ ");
+                benefitsVal.forEach((e) => {
+                  let [value, copays, planName] = e.split(" - ");
+                let cc = {
+                  id: "option-" + count,
+                  label: value,
+                  description: value,
+                  conditions: [
+                    {
+                      type: "-Enum.conditions.deductible.OP-",
+                      value: copays.includes("/")
+                        ? copays.split("/")
+                        : [copays],
+                    },
+                    {
+                      type: "-Enum.conditions.plans-",
+                      value: [`-${provider}.plans${n}.${planName}-`]
+                    }
+                  ],
+                };
+                str.options.push(cc);
+                count++;
+                })
+              });
+            } else
+              store.coPays.forEach((v) => {
+                let [copay, scope] = v;
+                let conditions = [];
+                conditions.push({
+                  type: "-Enum.conditions.deductible.OP-",
+                  value: [copay[0]],
+                });
+                if (!scope.includes("all")) {
+                  let con = {
+                    type: "-Enum.conditions.plans-",
+                    value: [],
+                  };
+                  store.plans.forEach((m) => {
+                    if (!scope.includes(m[1])) return;
+                    con.value.push(`-${provider}.plans${n}.${m[0]}-`);
+                  });
+                  conditions.push(con);
+                }
+                let cc = {
+                  id: "option-" + count,
+                  label: copay[0],
+                  description: copay[0],
+                  conditions: [...conditions],
+                };
+                str.options.push(cc);
+                count++;
+              });
+          }
+
+          if (modifiers[key][0].value.toString().includes("$vaccination")) {
+            console.log("in $vaccinationcccccccccccc");
+            str.options = [];
+            str.hasOptions = true;
+            let count = 1;
+            if (DATA[0].$vaccination) {
+              let $vaccination = DATA.reduce((acc, v) => {
+                if (v.$vaccination) return [...acc, v.$vaccination];
+                return acc;
+              }, []);
+              $vaccination.forEach((v) => {
+                const benefitsVal = v.split(" ^ ");
+                benefitsVal.forEach((e) => {
+                  let [value, copays, planName] = e.split(" - ");
+                let cc = {
+                  id: "option-" + count,
+                  label: value,
+                  description: value,
+                  conditions: [
+                    {
+                      type: "-Enum.conditions.deductible.OP-",
+                      value: copays.includes("/")
+                        ? copays.split("/")
+                        : [copays],
+                    },
+                    {
+                      type: "-Enum.conditions.plans-",
+                      value: [`-${provider}.plans${n}.${planName}-`]
+                    }
+                  ],
+                };
+                str.options.push(cc);
+                count++;
+                })
+              });
+            } else
+              store.coPays.forEach((v) => {
+                let [copay, scope] = v;
+                let conditions = [];
+                conditions.push({
+                  type: "-Enum.conditions.deductible.OP-",
+                  value: [copay[0]],
+                });
+                if (!scope.includes("all")) {
+                  let con = {
+                    type: "-Enum.conditions.plans-",
+                    value: [],
+                  };
+                  store.plans.forEach((m) => {
+                    if (!scope.includes(m[1])) return;
+                    con.value.push(`-${provider}.plans${n}.${m[0]}-`);
+                  });
+                  conditions.push(con);
+                }
+                let cc = {
+                  id: "option-" + count,
+                  label: copay[0],
+                  description: copay[0],
+                  conditions: [...conditions],
+                };
+                str.options.push(cc);
+                count++;
+              });
+          }
+
+          if (modifiers[key][0].value.toString().includes("$physiotherepy")) {
+            console.log("in $physiotherepycccccccccccc");
+            str.options = [];
+            str.hasOptions = true;
+            let count = 1;
+            if (DATA[0].$physiotherepy) {
+              let $physiotherepy = DATA.reduce((acc, v) => {
+                if (v.$physiotherepy) return [...acc, v.$physiotherepy];
+                return acc;
+              }, []);
+              $physiotherepy.forEach((v) => {
+                const benefitsVal = v.split(" ^ ");
+                benefitsVal.forEach((e) => {
+                  let [value, copays, planName] = e.split(" - ");
+                let cc = {
+                  id: "option-" + count,
+                  label: value,
+                  description: value,
+                  conditions: [
+                    {
+                      type: "-Enum.conditions.deductible.OP-",
+                      value: copays.includes("/")
+                        ? copays.split("/")
+                        : [copays],
+                    },
+                    {
+                      type: "-Enum.conditions.plans-",
+                      value: [`-${provider}.plans${n}.${planName}-`]
+                    }
+                  ],
+                };
+                str.options.push(cc);
+                count++;
+                })
+              });
+            } else
+              store.coPays.forEach((v) => {
+                let [copay, scope] = v;
+                let conditions = [];
+                conditions.push({
+                  type: "-Enum.conditions.deductible.OP-",
+                  value: [copay[0]],
+                });
+                if (!scope.includes("all")) {
+                  let con = {
+                    type: "-Enum.conditions.plans-",
+                    value: [],
+                  };
+                  store.plans.forEach((m) => {
+                    if (!scope.includes(m[1])) return;
+                    con.value.push(`-${provider}.plans${n}.${m[0]}-`);
+                  });
+                  conditions.push(con);
+                }
+                let cc = {
+                  id: "option-" + count,
+                  label: copay[0],
+                  description: copay[0],
+                  conditions: [...conditions],
+                };
+                str.options.push(cc);
+                count++;
+              });
+          }
+
+          if (modifiers[key][0].value.toString().includes("$medicines")) {
+            console.log("in $medicinescccccccccccc");
+            str.options = [];
+            str.hasOptions = true;
+            let count = 1;
+            if (DATA[0].$medicines) {
+              let $medicines = DATA.reduce((acc, v) => {
+                if (v.$medicines) return [...acc, v.$medicines];
+                return acc;
+              }, []);
+              $medicines.forEach((v) => {
+                const benefitsVal = v.split(" ^ ");
+                benefitsVal.forEach((e) => {
+                  let [value, copays, planName] = e.split(" - ");
+                let cc = {
+                  id: "option-" + count,
+                  label: value,
+                  description: value,
+                  conditions: [
+                    {
+                      type: "-Enum.conditions.deductible.OP-",
+                      value: copays.includes("/")
+                        ? copays.split("/")
+                        : [copays],
+                    },
+                    {
+                      type: "-Enum.conditions.plans-",
+                      value: [`-${provider}.plans${n}.${planName}-`]
+                    }
+                  ],
+                };
+                str.options.push(cc);
+                count++;
+                })
               });
             } else
               store.coPays.forEach((v) => {

@@ -663,6 +663,7 @@ const getList = (arr) => {
       startDate: arr[0].startDate,
       endDate: arr[0].endDate,
       residency: arr[0].residency,
+      Deductibles: [],
       filters: {
         networkType: "",
         frequency: "",
@@ -719,6 +720,18 @@ const getList = (arr) => {
             .join(", "),
         ];
         Global.coPayOP.push([[v.copayOP], v1]);
+      }
+
+      if (v.Deductible) {
+        if (!Global.Deductibles) Global.Deductibles = [];
+        let v1 = ["all"];
+        let v2 = [
+          v.Deductible
+            .split(", ")
+            .map((v) => (v.includes(" - ") ? v.split(" - ")[0] : v))
+            .join(", "),
+        ];
+        Global.Deductibles.push([[v.Deductible], v2]);
       }
 
       // Discounts -------------------------------
