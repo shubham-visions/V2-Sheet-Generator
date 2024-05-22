@@ -1902,7 +1902,6 @@ let Arr = new Array(resCount).fill(null);
           }
 
           if (modifiers[key][0].value.toString().includes("$outPatient")) {
-            console.log("in $outPatientcccccccccccc");
             str.options = [];
             str.hasOptions = true;
             let count = 1;
@@ -1967,7 +1966,6 @@ let Arr = new Array(resCount).fill(null);
           }
 
           if (modifiers[key][0].value.toString().includes("$vaccination")) {
-            console.log("in $vaccinationcccccccccccc");
             str.options = [];
             str.hasOptions = true;
             let count = 1;
@@ -2032,7 +2030,6 @@ let Arr = new Array(resCount).fill(null);
           }
 
           if (modifiers[key][0].value.toString().includes("$physiotherepy")) {
-            console.log("in $physiotherepycccccccccccc");
             str.options = [];
             str.hasOptions = true;
             let count = 1;
@@ -2097,7 +2094,6 @@ let Arr = new Array(resCount).fill(null);
           }
 
           if (modifiers[key][0].value.toString().includes("$medicines")) {
-            console.log("in $medicinescccccccccccc");
             str.options = [];
             str.hasOptions = true;
             let count = 1;
