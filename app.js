@@ -1328,6 +1328,7 @@ let Arr = new Array(resCount).fill(null);
       let clone = {
         _id: `-${provider}.plans${n}.${plan[0]}-`,
         provider: `-${provider}.providers-`,
+        hasRateTable: true,
         title: plan[1],
         notes: "",
         benefitCategories: benefitTypes,
@@ -1685,11 +1686,14 @@ let Arr = new Array(resCount).fill(null);
       planIds.push(`-${provider}.plans${n}.${key}-`);
     }
 
-    let addonBeneits = ["Dental", "Optical Benefits", "Wellness & Health Screening"]
+    let addonBeneits = ["Dental", "Optical Benefits", "Wellness & Health Screening", "Repatriation-Benefit", "Dental_Waiting_Period", "Out-patient benefits"]
     store.Modifiers.forEach((key) => {
+
       // benefits --------------------------------------------
       if (key == "benefits") {
         for (const key in modifiers) {
+          console.log(key)
+
           if (
             key.charCodeAt(key.length - 1) == 160 ||
             key.charCodeAt(key.length - 1) == 32
@@ -1741,7 +1745,7 @@ let Arr = new Array(resCount).fill(null);
               : modifiers[key][0].value;
           // str.isOptional = false;
           // str.hasOptions = modifiers[key].length > 1;
-          str.isOptional = addonBeneits.includes(key) ? true : false;
+          str.isOptional = addonBeneits.includes(key) && key != "Dental_Waiting_Period" && key != "Optical Benefits" ? true : false;
           str.hasOptions = addonBeneits.includes(key) ? true : modifiers[key].length > 1;
           if (!modifiers[key][0].value.toString().includes("$copay")) {
             str.options = [];
@@ -2745,7 +2749,7 @@ let Arr = new Array(resCount).fill(null);
                   }
                   let copayArr = [];
                   clone = {
-                    id: "ip-option-" + count,
+                    id: "ip-option-" + index,
                     label: copay,
                     conditions: [
                       {

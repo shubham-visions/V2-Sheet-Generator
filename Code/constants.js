@@ -59,6 +59,7 @@ const benefitCore = [
   ["Dental 1", "-core.benefitTypes.dental-"],
   ["Dental Waiting Period 1", "-core.benefitTypes.dentalWaitingPeriod-"],
   ["-Medical Evacuation-", "-core.benefitTypes.medicalEvacution-"],
+  ["Repatriation-Benefit", "-core.benefitTypes.repatriationBenefits-"]
 ];
 
 const indexData = `
@@ -169,6 +170,8 @@ const enumData = `
     plans: "PLAN_EQUALS_TO",
     deductible: "DEDUCTIBLE_EQUALS_TO",
     code: "CODE_EQUALS_TO",
+    deductibleIP: "DEDUCTIBLE_IP_EQUALS_TO",
+    deductibleOP: "DEDUCTIBLE_OP_EQUALS_TO",
   },
   maritalStatus: {
     single: "single",
