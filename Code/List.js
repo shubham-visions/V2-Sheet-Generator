@@ -1027,6 +1027,9 @@ const fetchAddons = (
   num,
   conversion
 ) => {
+  console.log("addonName >> ", folderName,
+  `addon${num > 0 ? num-1 : ""}`,
+  `${addonName.includes(" ") ? addonName.split(" ")[0] : addonName}-info`)
   let info = readFile(
     folderName,
     `addon${num > 0 ? num-1 : ""}`,
