@@ -1692,8 +1692,6 @@ let Arr = new Array(resCount).fill(null);
       // benefits --------------------------------------------
       if (key == "benefits") {
         for (const key in modifiers) {
-          console.log(key)
-
           if (
             key.charCodeAt(key.length - 1) == 160 ||
             key.charCodeAt(key.length - 1) == 32
