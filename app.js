@@ -23,6 +23,24 @@ const {
   singleChild,
 } = require("./Code/constants");
 
+const OPCopayOptions = [
+  'op-option-1',  'op-option-2',  'op-option-3',
+  'op-option-4',  'op-option-5',  'op-option-6',
+  'op-option-7',  'op-option-8',  'op-option-9',
+  'op-option-10', 'op-option-11', 'op-option-12',
+  'op-option-13', 'op-option-14', 'op-option-15',
+  'op-option-16', 'op-option-17', 'op-option-18',
+  'op-option-19', 'op-option-20', 'op-option-21',
+  'op-option-22', 'op-option-23', 'op-option-24',
+  'op-option-25', 'op-option-26', 'op-option-27',
+  'op-option-28', 'op-option-29', 'op-option-30',
+  'op-option-31', 'op-option-32', 'op-option-33',
+  'op-option-34', 'op-option-35', 'op-option-36',
+  'op-option-37', 'op-option-38', 'op-option-39',
+  'op-option-40'
+]
+
+
 const countryCodes = [
   {
     code: "Medium-Asia - Low-Asia - Low",
@@ -715,7 +733,6 @@ console.log('Arr.length >> ', Arr.length);
   //   console.log('d.residency >> ', d.residency);
   // })
 
-  console.log('GlobalDatas >> ', GlobalDatas.length);
   const rateSheets = new Array(resCount)
     .fill(null)
     .map((v, i) =>
@@ -1101,7 +1118,6 @@ console.log('Arr.length >> ', Arr.length);
       "MA",
       "SO",
     ];
-    console.log('DATA[0].residency >> ', DATA[0].residency);
 
     let coverage_data = store.coverages.map((v) => {
 
@@ -1195,8 +1211,8 @@ console.log('Arr.length >> ', Arr.length);
           "Out-patient (Consultations, Lab & Diagnostics, Pharmacy, Physiotherapy)",
         includedBenefits: [
           {
-            userType: "-Enum.userType.All-",
-            benefitTypes: ["-core.benefitTypes.physiotherapy-"],
+            userType: "-Enum.userType.Starter-",
+            benefitTypes: ["-core.benefitTypes.outPatientBenefit-"],
           },
           {
             userType: "-Enum.userType.Pro-",
@@ -1209,8 +1225,8 @@ console.log('Arr.length >> ', Arr.length);
             ],
           },
           {
-            userType: "-Enum.userType.Starter-",
-            benefitTypes: ["-core.benefitTypes.outPatientBenefit-"],
+            userType: "-Enum.userType.All-",
+            benefitTypes: ["-core.benefitTypes.physiotherapy-"],
           },
         ],
       },
@@ -1426,8 +1442,7 @@ console.log('Arr.length >> ', Arr.length);
             return (
               n.planName == originalName(key) &&
               n.coverage ==
-                store.coverages.find((k) => k.coverageName[0] == v)
-                  .coverageName[1] &&
+                store.coverages.find((k) => k.coverageName[0] == v).coverageName[1] &&
               n.copay == plan_copay &&
               n.frequency == store.frequency[0]
             );
@@ -1689,12 +1704,13 @@ console.log('Arr.length >> ', Arr.length);
       planIds.push(`-${provider}.plans${n}.${key}-`);
     }
 
-    let addonBeneits = ["Dental", "Optical Benefits", "Wellness & Health Screening", "Repatriation-Benefit", "Dental_Waiting_Period", "Out-patient benefits"]
-    let perCustomer = ["Dental", "Wellness & Health Screening", "Repatriation-Benefit"]
+    let addonBeneits = ["Dental", "Optical Benefits", "Dental_Waiting_Period", "Wellness & Health Screening", "Alternative Medicines"]
+    let perCustomer = ["Dental"]
     store.Modifiers.forEach((key) => {
 
       // benefits --------------------------------------------
       if (key == "benefits") {
+        console.log("modifiers >> ", modifiers)
         for (const key in modifiers) {
           if (
             key.charCodeAt(key.length - 1) == 160 ||
@@ -1717,6 +1733,7 @@ console.log('Arr.length >> ', Arr.length);
             );
           }
 
+          console.log("key >> ", key)
           let str = {
             _id: `-${provider}.modifiers${n}.benefits.${
               Benefits.find((v) => v.benefits[1] == key).benefits[0]
@@ -1740,14 +1757,16 @@ console.log('Arr.length >> ', Arr.length);
               ? ""
               : modifiers[key][0].value.toString().includes(" $ ")
               ? ""
-              : (modifiers[key][0].value.toString().includes("$copay") || modifiers[key][0].value.toString().includes("$outpatient") 
+              : (modifiers[key][0].value.toString().includes("$copay") || modifiers[key][0].value.toString().includes("$outPatient")
             || modifiers[key][0].value.toString().includes("$vaccination") || modifiers[key][0].value.toString().includes("$physiotherepy")
-          ||modifiers[key][0].value.toString().includes("$medicines"))
-              ? ""
+          ||modifiers[key][0].value.toString().includes("$medicines") ||modifiers[key][0].value.toString().includes("$scans") )
+              ? "Optional Benefits"
               : modifiers[key][0].value;
           // str.isOptional = false;
           // str.hasOptions = modifiers[key].length > 1;
-          str.isOptional = addonBeneits.includes(key) && key != "Dental_Waiting_Period" && key != "Optical Benefits" ? true : false;
+          // str.isOptional = addonBeneits.includes(key) && key != "Dental_Waiting_Period" && key != "Optical Benefits" ? true : false;
+          str.isOptional = key == "Dental" ? true : false;
+
           str.hasOptions = addonBeneits.includes(key) ? true : modifiers[key].length > 1;
           if (!modifiers[key][0].value.toString().includes("$copay")) {
             str.options = [];
@@ -1844,7 +1863,11 @@ console.log('Arr.length >> ', Arr.length);
               }
             });
           } else if (modifiers[key][0].value.toString().includes("$copay")) {
-            str.options = [];
+            str.options = [{
+        id: "option-0",
+        label: "Default",
+        description: "Optional Benefit Available",
+      },];
             str.hasOptions = true;
             let count = 1;
             if (DATA[0].$copay) {
@@ -1862,14 +1885,12 @@ console.log('Arr.length >> ', Arr.length);
                   description: value,
                   conditions: [
                     {
-                      type: "-Enum.conditions.deductibleOP-",
-                      value: copays.includes("/")
-                        ? copays.split("/")
-                        : [copays],
+                      type: "-Enum.conditions.deductible-",
+                      value: OPCopayOptions
                     },
                     {
                       type: "-Enum.conditions.plans-",
-                      value: [`-${provider}.plans${n}.${planName}-`]
+                      value: [`-${provider}.plans${n}.CloseCare-`]
                     }
                   ],
                 };
@@ -1882,7 +1903,7 @@ console.log('Arr.length >> ', Arr.length);
                 let [copay, scope] = v;
                 let conditions = [];
                 conditions.push({
-                  type: "-Enum.conditions.deductibleOP-",
+                  type: "-Enum.conditions.deductible-",
                   value: [copay[0]],
                 });
                 if (!scope.includes("all")) {
@@ -1908,7 +1929,11 @@ console.log('Arr.length >> ', Arr.length);
           }
 
           if (modifiers[key][0].value.toString().includes("$outPatient")) {
-            str.options = [];
+            str.options = [{
+        id: "option-0",
+        label: "Default",
+        description: "Optional Benefit Available",
+      },];
             str.hasOptions = true;
             let count = 1;
             if (DATA[0].$outPatient) {
@@ -1926,14 +1951,12 @@ console.log('Arr.length >> ', Arr.length);
                   description: value,
                   conditions: [
                     {
-                      type: "-Enum.conditions.deductibleOP-",
-                      value: copays.includes("/")
-                        ? copays.split("/")
-                        : [copays],
+                      type: "-Enum.conditions.deductible-",
+                      value: OPCopayOptions
                     },
                     {
                       type: "-Enum.conditions.plans-",
-                      value: [`-${provider}.plans${n}.${planName}-`]
+                      value: [`-${provider}.plans${n}.CloseCare-`]
                     }
                   ],
                 };
@@ -1946,7 +1969,7 @@ console.log('Arr.length >> ', Arr.length);
                 let [copay, scope] = v;
                 let conditions = [];
                 conditions.push({
-                  type: "-Enum.conditions.deductibleOP-",
+                  type: "-Enum.conditions.deductible-",
                   value: [copay[0]],
                 });
                 if (!scope.includes("all")) {
@@ -1972,7 +1995,11 @@ console.log('Arr.length >> ', Arr.length);
           }
 
           if (modifiers[key][0].value.toString().includes("$vaccination")) {
-            str.options = [];
+            str.options = [{
+        id: "option-0",
+        label: "Default",
+        description: "Optional Benefit Available",
+      },];
             str.hasOptions = true;
             let count = 1;
             if (DATA[0].$vaccination) {
@@ -1990,14 +2017,12 @@ console.log('Arr.length >> ', Arr.length);
                   description: value,
                   conditions: [
                     {
-                      type: "-Enum.conditions.deductibleOP-",
-                      value: copays.includes("/")
-                        ? copays.split("/")
-                        : [copays],
+                      type: "-Enum.conditions.deductible-",
+                      value: OPCopayOptions
                     },
                     {
                       type: "-Enum.conditions.plans-",
-                      value: [`-${provider}.plans${n}.${planName}-`]
+                      value: [`-${provider}.plans${n}.CloseCare-`]
                     }
                   ],
                 };
@@ -2010,7 +2035,7 @@ console.log('Arr.length >> ', Arr.length);
                 let [copay, scope] = v;
                 let conditions = [];
                 conditions.push({
-                  type: "-Enum.conditions.deductibleOP-",
+                  type: "-Enum.conditions.deductible-",
                   value: [copay[0]],
                 });
                 if (!scope.includes("all")) {
@@ -2036,7 +2061,11 @@ console.log('Arr.length >> ', Arr.length);
           }
 
           if (modifiers[key][0].value.toString().includes("$physiotherepy")) {
-            str.options = [];
+            str.options = [{
+        id: "option-0",
+        label: "Default",
+        description: "Optional Benefit Available",
+      },];
             str.hasOptions = true;
             let count = 1;
             if (DATA[0].$physiotherepy) {
@@ -2054,14 +2083,12 @@ console.log('Arr.length >> ', Arr.length);
                   description: value,
                   conditions: [
                     {
-                      type: "-Enum.conditions.deductibleOP-",
-                      value: copays.includes("/")
-                        ? copays.split("/")
-                        : [copays],
+                      type: "-Enum.conditions.deductible-",
+                      value: OPCopayOptions
                     },
                     {
                       type: "-Enum.conditions.plans-",
-                      value: [`-${provider}.plans${n}.${planName}-`]
+                      value: [`-${provider}.plans${n}.CloseCare-`]
                     }
                   ],
                 };
@@ -2074,7 +2101,7 @@ console.log('Arr.length >> ', Arr.length);
                 let [copay, scope] = v;
                 let conditions = [];
                 conditions.push({
-                  type: "-Enum.conditions.deductibleOP-",
+                  type: "-Enum.conditions.deductible-",
                   value: [copay[0]],
                 });
                 if (!scope.includes("all")) {
@@ -2100,7 +2127,11 @@ console.log('Arr.length >> ', Arr.length);
           }
 
           if (modifiers[key][0].value.toString().includes("$medicines")) {
-            str.options = [];
+            str.options = [{
+        id: "option-0",
+        label: "Default",
+        description: "Optional Benefit Available",
+      },];
             str.hasOptions = true;
             let count = 1;
             if (DATA[0].$medicines) {
@@ -2118,14 +2149,12 @@ console.log('Arr.length >> ', Arr.length);
                   description: value,
                   conditions: [
                     {
-                      type: "-Enum.conditions.deductibleOP-",
-                      value: copays.includes("/")
-                        ? copays.split("/")
-                        : [copays],
+                      type: "-Enum.conditions.deductible-",
+                      value: OPCopayOptions
                     },
                     {
                       type: "-Enum.conditions.plans-",
-                      value: [`-${provider}.plans${n}.${planName}-`]
+                      value: [`-${provider}.plans${n}.CloseCare-`]
                     }
                   ],
                 };
@@ -2138,7 +2167,73 @@ console.log('Arr.length >> ', Arr.length);
                 let [copay, scope] = v;
                 let conditions = [];
                 conditions.push({
-                  type: "-Enum.conditions.deductibleOP-",
+                  type: "-Enum.conditions.deductible-",
+                  value: [copay[0]],
+                });
+                if (!scope.includes("all")) {
+                  let con = {
+                    type: "-Enum.conditions.plans-",
+                    value: [],
+                  };
+                  store.plans.forEach((m) => {
+                    if (!scope.includes(m[1])) return;
+                    con.value.push(`-${provider}.plans${n}.${m[0]}-`);
+                  });
+                  conditions.push(con);
+                }
+                let cc = {
+                  id: "option-" + count,
+                  label: copay[0],
+                  description: copay[0],
+                  conditions: [...conditions],
+                };
+                str.options.push(cc);
+                count++;
+              });
+          }
+
+          if (modifiers[key][0].value.toString().includes("$scans")) {
+            str.options = [{
+        id: "option-0",
+        label: "Default",
+        description: "Optional Benefit Available",
+      },];
+            str.hasOptions = true;
+            let count = 1;
+            if (DATA[0].$scans) {
+              let $scans = DATA.reduce((acc, v) => {
+                if (v.$scans) return [...acc, v.$scans];
+                return acc;
+              }, []);
+              $scans.forEach((v) => {
+                const benefitsVal = v.split(" ^ ");
+                benefitsVal.forEach((e) => {
+                  let [value, copays, planName] = e.split(" - ");
+                let cc = {
+                  id: "option-" + count,
+                  label: value,
+                  description: value,
+                  conditions: [
+                    {
+                      type: "-Enum.conditions.deductible-",
+                      value: OPCopayOptions
+                    },
+                    {
+                      type: "-Enum.conditions.plans-",
+                      value: [`-${provider}.plans${n}.CloseCare-`]
+                    }
+                  ],
+                };
+                str.options.push(cc);
+                count++;
+                })
+              });
+            } else
+              store.coPays.forEach((v) => {
+                let [copay, scope] = v;
+                let conditions = [];
+                conditions.push({
+                  type: "-Enum.conditions.deductible-",
                   value: [copay[0]],
                 });
                 if (!scope.includes("all")) {
@@ -2180,6 +2275,9 @@ console.log('Arr.length >> ', Arr.length);
             fetchAddons(newArr[i_], addon, folderName, provider, n, conversion);
             return;
           }
+
+          // console.log('newArr >> ', newArr);
+          // console.log('addon >> ', addon);
           let i_ = newArr.findIndex((v) => v.label == addon);
           fetchAddons(newArr[i_], addon, folderName, provider, n, conversion);
         });
@@ -3457,7 +3555,7 @@ console.log('Arr.length >> ', Arr.length);
               let type = types.split("y")[1];
               let Schema = {
                 _id: `-generateMongoIdFromString('${provider} rateTable ${l + Math.floor(Math.random() * 900) + 100} ${k + Math.floor(Math.random() * 900) + 100} ${j + Math.floor(Math.random() * 900) + 100} ${i + Math.floor(Math.random() * 900) + 100}')-`,
-                plans: [`-${provider}.plans${count+1}.${plan[1]}-`],
+                plans: [`-${provider}.plans${count+1}.${plan[1].replace(" ", "")}-`],
                 filters: [
                   {
                     type: "DEDUCTIBLE",
@@ -3467,7 +3565,7 @@ console.log('Arr.length >> ', Arr.length);
                   },
                   {
                     type: "COVERAGE",
-                    value: `-cigna_global_health.coverages${count+1}.${coverage[0]}-`,
+                    value: `-${provider}.coverages${count+1}.${coverage[0]}-`,
                   },
                 ],
                 rates: [],

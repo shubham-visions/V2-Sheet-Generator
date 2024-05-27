@@ -59,7 +59,6 @@ const benefitCore = [
   ["Dental 1", "-core.benefitTypes.dental-"],
   ["Dental Waiting Period 1", "-core.benefitTypes.dentalWaitingPeriod-"],
   ["-Medical Evacuation-", "-core.benefitTypes.medicalEvacution-"],
-  ["Repatriation-Benefit", "-core.benefitTypes.repatriationBenefits-"]
 ];
 
 const indexData = `
