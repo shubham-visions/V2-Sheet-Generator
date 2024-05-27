@@ -865,12 +865,15 @@ const getList = (arr) => {
       });
 
     // Dependent benefits -----------------------------------
-    arr[0]["dependent benefits"] &&
+    arr[0]["dependentbenefits"] &&
       arr.forEach((v) => {
-        if (v["dependent benefits"]) return;
-        let [core, dependent] = v["dependent benefits"].split(" - ");
+        if (!v["dependentbenefits"]) return;
+        let [core, dependent] = v["dependentbenefits"].split(" - ");
+        console.log('aftre');
         Global.filters.dependentBenefits.push({ core, dependent });
       });
+
+      console.log('Global >> ', Global);
 
     return Global;
   } catch (error) {
@@ -1112,8 +1115,8 @@ const fetchAddons = (
                   con.value = `-${provider}.${col == "planName" ? "plans" : "coverages"}${num}.${remove(rate[col])[0]}-`;
                 else if (col == "singleChild")
                   con = singleChild[`_${rate[col]}`];
-                  else if (col == "code")
-                  con = singleChild[`_${rate[col]}`];
+                  // else if (col == "code")
+                  // con = singleChild[`_${rate[col]}`];
                 else if (col == "frequency") {
                   if (rate[col] == "Annually")
                     con.value = ["annual-payment-surcharge"];

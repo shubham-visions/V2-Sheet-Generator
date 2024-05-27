@@ -170,7 +170,6 @@ const enumData = `
     plans: "PLAN_EQUALS_TO",
     deductible: "DEDUCTIBLE_EQUALS_TO",
     code: "CODE_EQUALS_TO",
-    deductibleIP: "DEDUCTIBLE_IP_EQUALS_TO",
     deductibleOP: "DEDUCTIBLE_OP_EQUALS_TO",
   },
   maritalStatus: {

@@ -663,6 +663,9 @@ rateUSD = rateUSD ? (rateUSD.split(":")[1] == "USD" ? true : false) : false;
 
 let Arr = new Array(resCount).fill(null);
 
+console.log('resCount >> ', resCount);
+console.log('Arr.length >> ', Arr.length);
+
 (function () {
   const replaceChar = (word) => {
     word = word.replace(" ", "");
@@ -1687,6 +1690,7 @@ let Arr = new Array(resCount).fill(null);
     }
 
     let addonBeneits = ["Dental", "Optical Benefits", "Wellness & Health Screening", "Repatriation-Benefit", "Dental_Waiting_Period", "Out-patient benefits"]
+    let perCustomer = ["Dental", "Wellness & Health Screening", "Repatriation-Benefit"]
     store.Modifiers.forEach((key) => {
 
       // benefits --------------------------------------------
@@ -1721,7 +1725,7 @@ let Arr = new Array(resCount).fill(null);
             title: key,
             label: key,
             type: "-core.modifierTypes.benefit-",
-            assignmentType: "PER_PLAN",
+            assignmentType: !addonBeneits.includes(key) ? "PER_PLAN" : "PER_CUSTOMER",
             includedBenefits: [benefitCore.find((v) => v[0] == key)[1]],
             isOptional: false,
             description: "",
@@ -1858,7 +1862,7 @@ let Arr = new Array(resCount).fill(null);
                   description: value,
                   conditions: [
                     {
-                      type: "-Enum.conditions.deductible.OP-",
+                      type: "-Enum.conditions.deductibleOP-",
                       value: copays.includes("/")
                         ? copays.split("/")
                         : [copays],
@@ -1878,7 +1882,7 @@ let Arr = new Array(resCount).fill(null);
                 let [copay, scope] = v;
                 let conditions = [];
                 conditions.push({
-                  type: "-Enum.conditions.deductible.OP-",
+                  type: "-Enum.conditions.deductibleOP-",
                   value: [copay[0]],
                 });
                 if (!scope.includes("all")) {
@@ -1922,7 +1926,7 @@ let Arr = new Array(resCount).fill(null);
                   description: value,
                   conditions: [
                     {
-                      type: "-Enum.conditions.deductible.OP-",
+                      type: "-Enum.conditions.deductibleOP-",
                       value: copays.includes("/")
                         ? copays.split("/")
                         : [copays],
@@ -1942,7 +1946,7 @@ let Arr = new Array(resCount).fill(null);
                 let [copay, scope] = v;
                 let conditions = [];
                 conditions.push({
-                  type: "-Enum.conditions.deductible.OP-",
+                  type: "-Enum.conditions.deductibleOP-",
                   value: [copay[0]],
                 });
                 if (!scope.includes("all")) {
@@ -1986,7 +1990,7 @@ let Arr = new Array(resCount).fill(null);
                   description: value,
                   conditions: [
                     {
-                      type: "-Enum.conditions.deductible.OP-",
+                      type: "-Enum.conditions.deductibleOP-",
                       value: copays.includes("/")
                         ? copays.split("/")
                         : [copays],
@@ -2006,7 +2010,7 @@ let Arr = new Array(resCount).fill(null);
                 let [copay, scope] = v;
                 let conditions = [];
                 conditions.push({
-                  type: "-Enum.conditions.deductible.OP-",
+                  type: "-Enum.conditions.deductibleOP-",
                   value: [copay[0]],
                 });
                 if (!scope.includes("all")) {
@@ -2050,7 +2054,7 @@ let Arr = new Array(resCount).fill(null);
                   description: value,
                   conditions: [
                     {
-                      type: "-Enum.conditions.deductible.OP-",
+                      type: "-Enum.conditions.deductibleOP-",
                       value: copays.includes("/")
                         ? copays.split("/")
                         : [copays],
@@ -2070,7 +2074,7 @@ let Arr = new Array(resCount).fill(null);
                 let [copay, scope] = v;
                 let conditions = [];
                 conditions.push({
-                  type: "-Enum.conditions.deductible.OP-",
+                  type: "-Enum.conditions.deductibleOP-",
                   value: [copay[0]],
                 });
                 if (!scope.includes("all")) {
@@ -2114,7 +2118,7 @@ let Arr = new Array(resCount).fill(null);
                   description: value,
                   conditions: [
                     {
-                      type: "-Enum.conditions.deductible.OP-",
+                      type: "-Enum.conditions.deductibleOP-",
                       value: copays.includes("/")
                         ? copays.split("/")
                         : [copays],
@@ -2134,7 +2138,7 @@ let Arr = new Array(resCount).fill(null);
                 let [copay, scope] = v;
                 let conditions = [];
                 conditions.push({
-                  type: "-Enum.conditions.deductible-",
+                  type: "-Enum.conditions.deductibleOP-",
                   value: [copay[0]],
                 });
                 if (!scope.includes("all")) {
@@ -2180,6 +2184,15 @@ let Arr = new Array(resCount).fill(null);
           fetchAddons(newArr[i_], addon, folderName, provider, n, conversion);
         });
 
+                // Dependent benefits --------------------------------------------
+                store.filters.dependentBenefits.map(({ core, dependent }) => {
+                  let benefit = newArr.find((b) => b.title == dependent);
+                  if (!benefit) throw new Error(`not found ${benefit}`);
+                  benefit.dependsOn = `-${provider}.modifiers${n}.benefits.${
+                    Benefits.find((v) => v.benefits[1] == core).benefits[0]
+                  }-`;
+                });
+
         // bundle benefits --------------------------------------------
         store.filters.bundleBenefits.map((v) => {
           let benefit = newArr.find((b) => b.title == v);
@@ -2197,14 +2210,7 @@ let Arr = new Array(resCount).fill(null);
           ];
         });
 
-        // Dependent benefits --------------------------------------------
-        store.filters.dependentBenefits.map(({ core, dependent }) => {
-          let benefit = newArr.find((b) => b.title == dependent);
-          if (!benefit) throw new Error(`not found ${benefit}`);
-          benefit.dependsOn = `-${provider}.modifiers${n}.benefits.${
-            Benefits.find((v) => v.benefits[1] == core).benefits[0]
-          }-`;
-        });
+
       }
       if (key == "discount") {
         let str = {
@@ -2747,7 +2753,7 @@ let Arr = new Array(resCount).fill(null);
                   }
                   let copayArr = [];
                   clone = {
-                    id: "ip-option-" + index,
+                    id: "ip-option-" + (index+1),
                     label: copay,
                     conditions: [
                       {
@@ -3165,7 +3171,7 @@ let Arr = new Array(resCount).fill(null);
               let quarterly = {
                 id: "quarterly-payment-surcharge",
                 title: "Quarterly Surcharge payment",
-                label: "Quarterly Surcharge",
+                label: "Quarterly",
                 description: "Quarterly Surcharge payment frequency",
                 premiumMod: {},
               };
@@ -3187,7 +3193,7 @@ let Arr = new Array(resCount).fill(null);
               let monthly = {
                 id: "monthly-payment-surcharge",
                 title: "Monthly Surcharge payment",
-                label: "Monthly Surcharge",
+                label: "Monthly",
                 description: "Monthly Surcharge payment frequency",
                 premiumMod: {},
               };
@@ -3450,8 +3456,8 @@ let Arr = new Array(resCount).fill(null);
               let [copay] = copays;
               let type = types.split("y")[1];
               let Schema = {
-                _id: `-generateMongoIdFromString('${provider} rateTable ${l + 1} ${k + 1} ${j + 1} ${i + 1}')-`,
-                plans: [`-${provider}.plans${count > 0 ? count-1 : ""}.${plan[1]}-`],
+                _id: `-generateMongoIdFromString('${provider} rateTable ${l + Math.floor(Math.random() * 900) + 100} ${k + Math.floor(Math.random() * 900) + 100} ${j + Math.floor(Math.random() * 900) + 100} ${i + Math.floor(Math.random() * 900) + 100}')-`,
+                plans: [`-${provider}.plans${count+1}.${plan[1]}-`],
                 filters: [
                   {
                     type: "DEDUCTIBLE",
@@ -3461,7 +3467,7 @@ let Arr = new Array(resCount).fill(null);
                   },
                   {
                     type: "COVERAGE",
-                    value: `-cigna_global_health.coverages${count > 0 ? count-1 : ""}.${coverage[0]}-`,
+                    value: `-cigna_global_health.coverages${count+1}.${coverage[0]}-`,
                   },
                 ],
                 rates: [],
