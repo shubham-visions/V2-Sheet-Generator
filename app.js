@@ -40,6 +40,10 @@ const OPCopayOptions = [
   'op-option-40'
 ]
 
+let residencyIPOptions = 1;
+let residencyOPOptions = 1;
+let residencyIPOptionsRatetable = 1;
+let residencyOPOptionsRatetable = 1;
 
 const countryCodes = [
   {
@@ -2851,7 +2855,7 @@ console.log('Arr.length >> ', Arr.length);
                   }
                   let copayArr = [];
                   clone = {
-                    id: "ip-option-" + (index+1),
+                    id: "ip-option-" + residencyIPOptions,
                     label: copay,
                     conditions: [
                       {
@@ -2871,6 +2875,7 @@ console.log('Arr.length >> ', Arr.length);
                   clonearray.push(clone);
                   count++;
                   addUp2[1]++;
+                  residencyIPOptions++
                 });
               });
             });
@@ -2935,7 +2940,7 @@ console.log('Arr.length >> ', Arr.length);
                   }
                   let copayArr = [];
                   clone = {
-                    id: "op-option-" + count,
+                    id: "op-option-" + residencyOPOptions,
                     label: copay,
                     conditions: [
                       {
@@ -2955,6 +2960,7 @@ console.log('Arr.length >> ', Arr.length);
                   clonearray.push(clone);
                   count++;
                   addUp2[1]++;
+                  residencyOPOptions++
                 });
               });
             });
@@ -3561,7 +3567,7 @@ console.log('Arr.length >> ', Arr.length);
                     type: "DEDUCTIBLE",
                     // values: [`${type.toLowerCase()}-option-${l + 1} ${k + 1} ${j + 1} ${i + 1}`],
                     // value: `-cigna_global_health.modifiers.deductible.${type}-`,
-                    value: `${type.toLowerCase()}-option-${i + 1}`,
+                    value: `${type.toLowerCase()}-option-${type.toLowerCase() == "ip" ? residencyIPOptionsRatetable : residencyOPOptionsRatetable}`,
                   },
                   {
                     type: "COVERAGE",
@@ -3598,6 +3604,7 @@ console.log('Arr.length >> ', Arr.length);
 
               Schema.rates = rates;
               result.push(Schema);
+              type.toLowerCase() == "ip" ? residencyIPOptionsRatetable++ : residencyOPOptionsRatetable++
             });
           });
         });
