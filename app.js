@@ -22,6 +22,27 @@ const {
   Dubai,
   singleChild,
 } = require("./Code/constants");
+let residencyIPOptions = 1;
+let residencyOPOptions = 1;
+let residencyIPOptionsRatetable = 1;
+let residencyOPOptionsRatetable = 1;
+
+const OPCopayOptions = [
+  'op-option-1',  'op-option-2',  'op-option-3',
+  'op-option-4',  'op-option-5',  'op-option-6',
+  'op-option-7',  'op-option-8',  'op-option-9',
+  'op-option-10', 'op-option-11', 'op-option-12',
+  'op-option-13', 'op-option-14', 'op-option-15',
+  'op-option-16', 'op-option-17', 'op-option-18',
+  'op-option-19', 'op-option-20', 'op-option-21',
+  'op-option-22', 'op-option-23', 'op-option-24',
+  'op-option-25', 'op-option-26', 'op-option-27',
+  'op-option-28', 'op-option-29', 'op-option-30',
+  'op-option-31', 'op-option-32', 'op-option-33',
+  'op-option-34', 'op-option-35', 'op-option-36',
+  'op-option-37', 'op-option-38', 'op-option-39',
+  'op-option-40'
+]
 
 const countryCodes = [
   {
@@ -1740,14 +1761,14 @@ console.log('Arr.length >> ', Arr.length);
               ? ""
               : modifiers[key][0].value.toString().includes(" $ ")
               ? ""
-              : (modifiers[key][0].value.toString().includes("$copay") || modifiers[key][0].value.toString().includes("$outpatient") 
+              : (modifiers[key][0].value.toString().includes("$copay") || modifiers[key][0].value.toString().includes("$outPatient") 
             || modifiers[key][0].value.toString().includes("$vaccination") || modifiers[key][0].value.toString().includes("$physiotherepy")
           ||modifiers[key][0].value.toString().includes("$medicines"))
               ? ""
               : modifiers[key][0].value;
           // str.isOptional = false;
           // str.hasOptions = modifiers[key].length > 1;
-          str.isOptional = addonBeneits.includes(key) && key != "Dental_Waiting_Period" && key != "Optical Benefits" ? true : false;
+          str.isOptional = addonBeneits.includes(key) && key != "Dental_Waiting_Period" && key != "Optical Benefits" && key != "Out-patient benefits" ? true : false;
           str.hasOptions = addonBeneits.includes(key) ? true : modifiers[key].length > 1;
           if (!modifiers[key][0].value.toString().includes("$copay")) {
             str.options = [];
@@ -1862,10 +1883,8 @@ console.log('Arr.length >> ', Arr.length);
                   description: value,
                   conditions: [
                     {
-                      type: "-Enum.conditions.deductibleOP-",
-                      value: copays.includes("/")
-                        ? copays.split("/")
-                        : [copays],
+                      type: "-Enum.conditions.deductible-",
+                      value: OPCopayOptions
                     },
                     {
                       type: "-Enum.conditions.plans-",
@@ -1882,7 +1901,7 @@ console.log('Arr.length >> ', Arr.length);
                 let [copay, scope] = v;
                 let conditions = [];
                 conditions.push({
-                  type: "-Enum.conditions.deductibleOP-",
+                  type: "-Enum.conditions.deductible-",
                   value: [copay[0]],
                 });
                 if (!scope.includes("all")) {
@@ -1926,10 +1945,8 @@ console.log('Arr.length >> ', Arr.length);
                   description: value,
                   conditions: [
                     {
-                      type: "-Enum.conditions.deductibleOP-",
-                      value: copays.includes("/")
-                        ? copays.split("/")
-                        : [copays],
+                      type: "-Enum.conditions.deductible-",
+                      value: OPCopayOptions
                     },
                     {
                       type: "-Enum.conditions.plans-",
@@ -1946,7 +1963,7 @@ console.log('Arr.length >> ', Arr.length);
                 let [copay, scope] = v;
                 let conditions = [];
                 conditions.push({
-                  type: "-Enum.conditions.deductibleOP-",
+                  type: "-Enum.conditions.deductible-",
                   value: [copay[0]],
                 });
                 if (!scope.includes("all")) {
@@ -1990,10 +2007,8 @@ console.log('Arr.length >> ', Arr.length);
                   description: value,
                   conditions: [
                     {
-                      type: "-Enum.conditions.deductibleOP-",
-                      value: copays.includes("/")
-                        ? copays.split("/")
-                        : [copays],
+                      type: "-Enum.conditions.deductible-",
+                      value: OPCopayOptions
                     },
                     {
                       type: "-Enum.conditions.plans-",
@@ -2010,7 +2025,7 @@ console.log('Arr.length >> ', Arr.length);
                 let [copay, scope] = v;
                 let conditions = [];
                 conditions.push({
-                  type: "-Enum.conditions.deductibleOP-",
+                  type: "-Enum.conditions.deductible-",
                   value: [copay[0]],
                 });
                 if (!scope.includes("all")) {
@@ -2054,10 +2069,8 @@ console.log('Arr.length >> ', Arr.length);
                   description: value,
                   conditions: [
                     {
-                      type: "-Enum.conditions.deductibleOP-",
-                      value: copays.includes("/")
-                        ? copays.split("/")
-                        : [copays],
+                      type: "-Enum.conditions.deductible-",
+                      value: OPCopayOptions
                     },
                     {
                       type: "-Enum.conditions.plans-",
@@ -2074,7 +2087,7 @@ console.log('Arr.length >> ', Arr.length);
                 let [copay, scope] = v;
                 let conditions = [];
                 conditions.push({
-                  type: "-Enum.conditions.deductibleOP-",
+                  type: "-Enum.conditions.deductible-",
                   value: [copay[0]],
                 });
                 if (!scope.includes("all")) {
@@ -2118,10 +2131,8 @@ console.log('Arr.length >> ', Arr.length);
                   description: value,
                   conditions: [
                     {
-                      type: "-Enum.conditions.deductibleOP-",
-                      value: copays.includes("/")
-                        ? copays.split("/")
-                        : [copays],
+                      type: "-Enum.conditions.deductible-",
+                      value: OPCopayOptions
                     },
                     {
                       type: "-Enum.conditions.plans-",
@@ -2138,7 +2149,7 @@ console.log('Arr.length >> ', Arr.length);
                 let [copay, scope] = v;
                 let conditions = [];
                 conditions.push({
-                  type: "-Enum.conditions.deductibleOP-",
+                  type: "-Enum.conditions.deductible-",
                   value: [copay[0]],
                 });
                 if (!scope.includes("all")) {
@@ -2718,8 +2729,13 @@ console.log('Arr.length >> ', Arr.length);
           let clonearray = [];
           let count = 1;
           let fileName;
+          
+          // console.log("1 >> ", store["pricingTables"].length)
+          // console.log("3 >> ", store["coPayIP"].length)
           store["pricingTables"].forEach((plan) => {
             let [planName, coverage] = plan;
+          // console.log("2 >> ", coverage.length)
+
             addUp2[1] = 1;
             store.Networks.forEach((net) => {
               let bool = DATA.find((v) => {
@@ -2753,7 +2769,7 @@ console.log('Arr.length >> ', Arr.length);
                   }
                   let copayArr = [];
                   clone = {
-                    id: "ip-option-" + (index+1),
+                    id: "ip-option-" + residencyIPOptions,
                     label: copay,
                     conditions: [
                       {
@@ -2773,6 +2789,7 @@ console.log('Arr.length >> ', Arr.length);
                   clonearray.push(clone);
                   count++;
                   addUp2[1]++;
+                  residencyIPOptions++;
                 });
               });
             });
@@ -2830,6 +2847,7 @@ console.log('Arr.length >> ', Arr.length);
                   } (coverage) \n`;
                 }
                 store["coPayOP"].forEach((v1, index) => {
+                  console.log("residencyOPOptions >> ", residencyOPOptions)
                   let [copays, scope] = v1;
                   let [copay] = copays;
                   if (!scope.includes("all") && scope.includes(planName[1])) {
@@ -2837,7 +2855,7 @@ console.log('Arr.length >> ', Arr.length);
                   }
                   let copayArr = [];
                   clone = {
-                    id: "op-option-" + count,
+                    id: "op-option-" + residencyOPOptions,
                     label: copay,
                     conditions: [
                       {
@@ -2857,6 +2875,7 @@ console.log('Arr.length >> ', Arr.length);
                   clonearray.push(clone);
                   count++;
                   addUp2[1]++;
+                  residencyOPOptions++;
                 });
               });
             });
@@ -3182,7 +3201,8 @@ console.log('Arr.length >> ', Arr.length);
                   type: "percentage",
                   price: [
                     {
-                      value: +parseInt(DATA[0]["Quarterly Surcharge"]),
+                      // value: +parseInt(DATA[0]["Quarterly Surcharge"]),
+                      value: 7,
                     },
                   ],
                 };
@@ -3204,7 +3224,8 @@ console.log('Arr.length >> ', Arr.length);
                   type: "percentage",
                   price: [
                     {
-                      value: +parseInt(DATA[0]["Monthly Surcharge"]),
+                      // value: +parseInt(DATA[0]["Monthly Surcharge"]),
+                      value: 11.111111111,
                     },
                   ],
                 };
@@ -3463,7 +3484,7 @@ console.log('Arr.length >> ', Arr.length);
                     type: "DEDUCTIBLE",
                     // values: [`${type.toLowerCase()}-option-${l + 1} ${k + 1} ${j + 1} ${i + 1}`],
                     // value: `-cigna_global_health.modifiers.deductible.${type}-`,
-                    value: `${type.toLowerCase()}-option-${i + 1}`,
+                    value: `${type.toLowerCase()}-option-${type.toLowerCase() == "ip" ? residencyIPOptionsRatetable : residencyOPOptionsRatetable}`,
                   },
                   {
                     type: "COVERAGE",
@@ -3500,6 +3521,7 @@ console.log('Arr.length >> ', Arr.length);
 
               Schema.rates = rates;
               result.push(Schema);
+              type.toLowerCase() == "ip" ? residencyIPOptionsRatetable++ : residencyOPOptionsRatetable++
             });
           });
         });
