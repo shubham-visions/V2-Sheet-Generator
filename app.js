@@ -1273,6 +1273,7 @@ console.log('Arr.length >> ', Arr.length);
             userType: "-Enum.userType.All-",
             benefitTypes: [
               "-core.benefitTypes.optical-",
+              "-core.benefitTypes.repatriation-",
               "-core.benefitTypes.wellness-",
               "-core.benefitTypes.emergencyEvacution-",
             ],
@@ -1710,7 +1711,7 @@ console.log('Arr.length >> ', Arr.length);
       planIds.push(`-${provider}.plans${n}.${key}-`);
     }
 
-    let addonBeneits = ["Dental", "Optical Benefits", "Wellness & Health Screening", "Repatriation-Benefit", "Dental_Waiting_Period", "Out-patient benefits"]
+    let addonBeneits = ["Dental", "Optical Benefits", "Wellness & Health Screening", "Repatriation-Benefit", "Dental_Waiting_Period", "Out-patient benefits", "Emergency Evacuation"]
     let perCustomer = ["Dental", "Wellness & Health Screening", "Repatriation-Benefit"]
     store.Modifiers.forEach((key) => {
 
@@ -1768,7 +1769,7 @@ console.log('Arr.length >> ', Arr.length);
               : modifiers[key][0].value;
           // str.isOptional = false;
           // str.hasOptions = modifiers[key].length > 1;
-          str.isOptional = addonBeneits.includes(key) && key != "Dental_Waiting_Period" && key != "Optical Benefits" && key != "Out-patient benefits" ? true : false;
+          str.isOptional = addonBeneits.includes(key) && key != "Dental_Waiting_Period" && key != "Optical Benefits" && key != "Out-patient benefits" && key != "Emergency Evacuation" ? true : false;
           str.hasOptions = addonBeneits.includes(key) ? true : modifiers[key].length > 1;
           if (!modifiers[key][0].value.toString().includes("$copay")) {
             str.options = [];
@@ -2221,7 +2222,6 @@ console.log('Arr.length >> ', Arr.length);
           ];
         });
 
-
       }
       if (key == "discount") {
         let str = {
@@ -2230,7 +2230,7 @@ console.log('Arr.length >> ', Arr.length);
           title: key,
           label: key,
           type: `-core.modifierTypes.discount-`,
-          assignmentType: "PER_PLAN",
+          assignmentType: "PER_CUSTOMER",
           includedBenefits: [],
           isOptional: false,
           description: "",
@@ -2238,26 +2238,92 @@ console.log('Arr.length >> ', Arr.length);
           premiumMod: "",
           conditions: [],
           hasOptions: true,
+          options: []
         };
-        store[key].forEach((v1) => {
-          let [discount, numCustomer] = v1;
-          str.options = {
-            id: `${discount}-discount`,
-            label: `${discount} Discount`,
-            premiumMod: {
-              type: "percentage",
-              price: [{ value: -Number(discount.replace("%", "")) }],
-            },
-            description: `${discount} Discount`,
-            conditions: [
-              {
-                type: "NUM_CUSTOMERS",
-                value: Number(numCustomer),
+        // store[key].forEach((v1) => {
+        //   let [discount, numCustomer] = v1;
+          // str.options = {
+          //   id: `${discount}-discount`,
+          //   label: `${discount} Discount`,
+          //   premiumMod: {
+          //     type: "percentage",
+          //     price: [{ value: -Number(discount.replace("%", "")) }],
+          //   },
+          //   description: `${discount} Discount`,
+          //   conditions: [
+          //     {
+          //       type: "NUM_CUSTOMERS",
+          //       value: Number(numCustomer),
+          //     },
+          //   ],
+          // };
+          // newArr.push(str);
+        // });
+
+        // [1,2].forEach((v) => {
+          // if(v == 1) {
+            str.options.push({
+              id: `option-1`,
+              label: `10% Discount`,
+              premiumMod: {
+                type: "percentage",
+                price: [{ value: -10 }],
               },
-            ],
-          };
-          newArr.push(str);
-        });
+              description: `10% Discount`,
+              conditions: [
+                {
+                  type: "-Enum.conditions.plans-",
+                  value: [`-${provider}.plans${n}.Silver-`],
+                },
+                {
+                  type: "-Enum.customer.min_age-",
+                  value: 60,
+                },
+                {
+                  type: "-Enum.customer.max_age-",
+                  value: 60,
+                },
+              ],
+            });
+              // newArr.push(str);
+
+          // } else {
+            str.options.push({
+              id: "option-2",
+              label: "10% Discount",
+              premiumMod: { type: "percentage", price: [{ value: -10 }] },
+              description: "10% Discount",
+              conditions: [
+                {
+                  type: "-Enum.customer.config-",
+                  value: [
+                    {
+                      type: "-Enum.customer.category-",
+                      value:  `-Enum.category.Primary-`,
+                      count: "==1",
+                    },
+                    {
+                      type: "-Enum.customer.relation-",
+                      value:  `-Enum.relation.Spouse-`,
+                      count: "==1",
+                    },
+                    {
+                      type: "-Enum.customer.relation-",
+                      value: `-Enum.relation.Child-`,
+                      count: "==2",
+                    },
+                  ],
+                },
+              ],
+            })
+              // newArr.push(str);
+
+          // }
+
+        // })
+        newArr.push(str);
+        
+
       }
       // deductible -----------------------------------------
       if (key == "deductible") {
@@ -2847,7 +2913,7 @@ console.log('Arr.length >> ', Arr.length);
                   } (coverage) \n`;
                 }
                 store["coPayOP"].forEach((v1, index) => {
-                  console.log("residencyOPOptions >> ", residencyOPOptions)
+                  // console.log("residencyOPOptions >> ", residencyOPOptions)
                   let [copays, scope] = v1;
                   let [copay] = copays;
                   if (!scope.includes("all") && scope.includes(planName[1])) {
