@@ -1867,11 +1867,7 @@ console.log('Arr.length >> ', Arr.length);
               }
             });
           } else if (modifiers[key][0].value.toString().includes("$copay")) {
-            str.options = [{
-        id: "option-0",
-        label: "Default",
-        description: "Optional Benefit Available",
-      },];
+            str.options = [];
             str.hasOptions = true;
             let count = 1;
             if (DATA[0].$copay) {
@@ -1933,11 +1929,7 @@ console.log('Arr.length >> ', Arr.length);
           }
 
           if (modifiers[key][0].value.toString().includes("$outPatient")) {
-            str.options = [{
-        id: "option-0",
-        label: "Default",
-        description: "Optional Benefit Available",
-      },];
+            str.options = [];
             str.hasOptions = true;
             let count = 1;
             if (DATA[0].$outPatient) {
@@ -1999,11 +1991,7 @@ console.log('Arr.length >> ', Arr.length);
           }
 
           if (modifiers[key][0].value.toString().includes("$vaccination")) {
-            str.options = [{
-        id: "option-0",
-        label: "Default",
-        description: "Optional Benefit Available",
-      },];
+            str.options = [];
             str.hasOptions = true;
             let count = 1;
             if (DATA[0].$vaccination) {
@@ -2065,11 +2053,7 @@ console.log('Arr.length >> ', Arr.length);
           }
 
           if (modifiers[key][0].value.toString().includes("$physiotherepy")) {
-            str.options = [{
-        id: "option-0",
-        label: "Default",
-        description: "Optional Benefit Available",
-      },];
+            str.options = [];
             str.hasOptions = true;
             let count = 1;
             if (DATA[0].$physiotherepy) {
@@ -2131,11 +2115,7 @@ console.log('Arr.length >> ', Arr.length);
           }
 
           if (modifiers[key][0].value.toString().includes("$medicines")) {
-            str.options = [{
-        id: "option-0",
-        label: "Default",
-        description: "Optional Benefit Available",
-      },];
+            str.options = [];
             str.hasOptions = true;
             let count = 1;
             if (DATA[0].$medicines) {
@@ -2197,11 +2177,7 @@ console.log('Arr.length >> ', Arr.length);
           }
 
           if (modifiers[key][0].value.toString().includes("$scans")) {
-            str.options = [{
-        id: "option-0",
-        label: "Default",
-        description: "Optional Benefit Available",
-      },];
+            str.options = [];
             str.hasOptions = true;
             let count = 1;
             if (DATA[0].$scans) {
