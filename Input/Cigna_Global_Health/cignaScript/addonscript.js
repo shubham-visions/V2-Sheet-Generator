@@ -28,7 +28,7 @@ let codes = [
   ];
 
   const files = [
-    "/home/support/Downloads/V2 Generator/Cigna Global Script/V2-Sheet-Generator/Input/Cigna_Global_Health/cignaScript/inputRates/addon.xlsx"
+    "C:/Users/shubh/Documents/V2-Sheet-Generator/Input/Cigna_Global_Health/cignaScript/inputRates/addon.xlsx"
   ]
 
   const xlsx = require("xlsx")
@@ -55,7 +55,7 @@ let codes = [
 
             xlsx.utils.book_append_sheet(wb, ws, sheet);
         })
-        xlsx.writeFile(wb, `/home/support/Downloads/V2 Generator/Cigna Global Script/V2-Sheet-Generator/Input/Cigna_Global_Health/cignaScript/output/addons/addon${i}.xlsx`);
+        xlsx.writeFile(wb, `C:/Users/shubh/Documents/V2-Sheet-Generator/Input/Cigna_Global_Health/cignaScript/output/addons/addon${i}.xlsx`);
     })
     
   })

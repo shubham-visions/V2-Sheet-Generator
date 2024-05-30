@@ -76,6 +76,7 @@ const generateCodeIndex = (data, benefits, DATA, n = false) => {
             obj[v] = b;
             return;
           }
+
           if (v == "discount") {
             let b = {};
             DATA.forEach((v) => {
