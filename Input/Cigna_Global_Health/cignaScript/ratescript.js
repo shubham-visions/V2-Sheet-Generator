@@ -29,12 +29,12 @@ let codes = [
   
 
   const files = [
-    "/home/support/Downloads/V2 Generator/V2-Sheet-Generator/Input/Cigna_Global_Health/cignaScript/inputRates/IP_1.xlsx",
-    "/home/support/Downloads/V2 Generator/V2-Sheet-Generator/Input/Cigna_Global_Health/cignaScript/inputRates/IP_2.xlsx",
-    "/home/support/Downloads/V2 Generator/V2-Sheet-Generator/Input/Cigna_Global_Health/cignaScript/inputRates/IP_3.xlsx",
-    "/home/support/Downloads/V2 Generator/V2-Sheet-Generator/Input/Cigna_Global_Health/cignaScript/inputRates/OP_1.xlsx",
-    "/home/support/Downloads/V2 Generator/V2-Sheet-Generator/Input/Cigna_Global_Health/cignaScript/inputRates/OP_2.xlsx"
-  ]
+    "/home/support/Desktop/Saleslab/V2-Sheet-Generator/Input/Cigna_Global_Health/cignaScript/inputRates/IP_1.xlsx",
+    "/home/support/Desktop/Saleslab/V2-Sheet-Generator/Input/Cigna_Global_Health/cignaScript/inputRates/IP_2.xlsx",
+    "/home/support/Desktop/Saleslab/V2-Sheet-Generator/Input/Cigna_Global_Health/cignaScript/inputRates/IP_3.xlsx",
+    "/home/support/Desktop/Saleslab/V2-Sheet-Generator/Input/Cigna_Global_Health/cignaScript/inputRates/OP_1.xlsx",
+    "/home/support/Desktop/Saleslab/V2-Sheet-Generator/Input/Cigna_Global_Health/cignaScript/inputRates/OP_2.xlsx",
+  ];
 
 
   const ipcopay = {
@@ -152,14 +152,17 @@ const opcopay = {
 
         let countryCodeName = countryCode.replaceAll(" ", "")
         console.log('cData >> ', cData.length);
-        await jsonToCSV(cData, `/home/support/Downloads/V2 Generator/V2-Sheet-Generator/Input/Cigna_Global_Health/cignaScript/output/latestRates/rateSheet${i}.xlsx`)
-        .then(() => {
-          console.log("Sheet Generated Successfully!");
-        })
-        .catch((error) => {
-          console.log("Something went wrong");
-          console.log({ err: error });
-        });
+        await jsonToCSV(
+          cData,
+          `/home/support/Desktop/Saleslab/V2-Sheet-Generator/Input/Cigna_Global_Health/cignaScript/output/latestRates/rateSheet${i}.xlsx`
+        )
+          .then(() => {
+            console.log("Sheet Generated Successfully!");
+          })
+          .catch((error) => {
+            console.log("Something went wrong");
+            console.log({ err: error });
+          });
     })
     
   })
