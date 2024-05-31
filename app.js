@@ -739,9 +739,7 @@ console.log('Arr.length >> ', Arr.length);
 
   const rateSheets = new Array(resCount)
     .fill(null)
-    .map((v, i) =>
-      readFile(folderName, `rateSheet${str[i - 1] ? str[i - 1] : ""}`)
-    );
+    .map((v, i) => readFile(folderName, `rateSheet${i > 0 ? i : ""}`));
   const DATAs = planSheets.map((v) =>
     xlsx.utils.sheet_to_json(v.Sheets[v.SheetNames[0]]).map((v) => {
       let obj = {};
