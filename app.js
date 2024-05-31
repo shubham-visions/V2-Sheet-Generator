@@ -737,10 +737,14 @@ console.log('Arr.length >> ', Arr.length);
   // })
 
   console.log('GlobalDatas >> ', GlobalDatas.length);
+  console.log("resCount ", resCount)
+  console.log("str ", str)
   const rateSheets = new Array(resCount)
     .fill(null)
     .map((v, i) =>
-      readFile(folderName, `rateSheet${str[i - 1] ? str[i - 1] : ""}`)
+      // readFile(folderName, `rateSheet${str[i - 1] ? str[i - 1] : ""}`)
+      readFile(folderName, `rateSheet${i > 0 ? i : ""}`)
+
     );
   const DATAs = planSheets.map((v) =>
     xlsx.utils.sheet_to_json(v.Sheets[v.SheetNames[0]]).map((v) => {
@@ -3597,6 +3601,7 @@ console.log('Arr.length >> ', Arr.length);
       console.log("error --> ", { msg: error.message, stack: error.stack });
     }
   }
+
   let rateArr = Arr.reduce((acc, v, i) => {
     let data = rateTable(GlobalDatas[i], Ids[i], rateSheets[i], provider, i);
     return [...acc, ...data];
