@@ -2839,7 +2839,7 @@ console.log('Arr.length >> ', Arr.length);
                   }
                   let copayArr = [];
                   clone = {
-                    id: "ip-option-" + residencyIPOptions,
+                    id: "ip-option-" + (index+1),
                     label: copay,
                     conditions: [
                       {
@@ -2925,7 +2925,7 @@ console.log('Arr.length >> ', Arr.length);
                   }
                   let copayArr = [];
                   clone = {
-                    id: "op-option-" + residencyOPOptions,
+                    id: "op-option-" + (index+1),
                     label: copay,
                     conditions: [
                       {
@@ -3547,18 +3547,25 @@ console.log('Arr.length >> ', Arr.length);
               let [copay] = copays;
               let type = types.split("y")[1];
               let Schema = {
-                _id: `-generateMongoIdFromString('${provider} rateTable ${l + Math.floor(Math.random() * 900) + 100} ${k + Math.floor(Math.random() * 900) + 100} ${j + Math.floor(Math.random() * 900) + 100} ${i + Math.floor(Math.random() * 900) + 100}')-`,
-                plans: [`-${provider}.plans${count+1}.${plan[1]}-`],
+                _id: `-generateMongoIdFromString('${provider} rateTable ${
+                  l + Math.floor(Math.random() * 900) + 100
+                } ${k + Math.floor(Math.random() * 900) + 100} ${
+                  j + Math.floor(Math.random() * 900) + 100
+                } ${i + Math.floor(Math.random() * 900) + 100}')-`,
+                plans: [`-${provider}.plans${count + 1}.${plan[1]}-`],
                 filters: [
                   {
                     type: "DEDUCTIBLE",
                     // values: [`${type.toLowerCase()}-option-${l + 1} ${k + 1} ${j + 1} ${i + 1}`],
                     // value: `-cigna_global_health.modifiers.deductible.${type}-`,
-                    value: `${type.toLowerCase()}-option-${type.toLowerCase() == "ip" ? residencyIPOptionsRatetable : residencyOPOptionsRatetable}`,
+                    // value: `${type.toLowerCase()}-option-${type.toLowerCase() == "ip" ? residencyIPOptionsRatetable : residencyOPOptionsRatetable}`,
+                    value: `${type.toLowerCase()}-option-${i+1}`,
                   },
                   {
                     type: "COVERAGE",
-                    value: `-cigna_global_health.coverages${count+1}.${coverage[0]}-`,
+                    value: `-cigna_global_health.coverages${count + 1}.${
+                      coverage[0]
+                    }-`,
                   },
                 ],
                 rates: [],
