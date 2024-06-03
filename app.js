@@ -684,9 +684,6 @@ rateUSD = rateUSD ? (rateUSD.split(":")[1] == "USD" ? true : false) : false;
 
 let Arr = new Array(resCount).fill(null);
 
-console.log('resCount >> ', resCount);
-console.log('Arr.length >> ', Arr.length);
-
 (function () {
   const replaceChar = (word) => {
     word = word.replace(" ", "");
@@ -3537,6 +3534,7 @@ console.log('Arr.length >> ', Arr.length);
   // --------------------------------- Rate Table -------------------------------------------------------
   function rateTable(store, Id, rateSheet, provider, count) {
     try {
+      console.log("rateTable called");
       let result = [];
       let num = 1;
       store?.plans.forEach((plan, l) => {
@@ -3598,7 +3596,7 @@ console.log('Arr.length >> ', Arr.length);
 
               Schema.rates = rates;
               result.push(Schema);
-              type.toLowerCase() == "ip" ? residencyIPOptionsRatetable++ : residencyOPOptionsRatetable++
+              // type.toLowerCase() == "ip" ? residencyIPOptionsRatetable++ : residencyOPOptionsRatetable++
             });
           });
         });
@@ -3614,5 +3612,6 @@ console.log('Arr.length >> ', Arr.length);
     return [...acc, ...data];
   }, []);
 
+  console.log("rateArr >> ", rateArr.length);
   createFile("RateTable", "index", rateArr, provider, false, true);
 })();

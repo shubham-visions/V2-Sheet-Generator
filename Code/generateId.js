@@ -54,7 +54,6 @@ const generateCodeIndex = (data, benefits, DATA, n = false) => {
               data["Deductibles"].forEach((v1) => {
                 if (Array.isArray(v1)) v1 = v1[0];
 
-                console.log('v1 >> ', v1)
                 b[v1] = `-generateMongoIdFromString('${data.Provider} ${ n ? n : "" } deductible ${v1}')-`;
               });
             } else {

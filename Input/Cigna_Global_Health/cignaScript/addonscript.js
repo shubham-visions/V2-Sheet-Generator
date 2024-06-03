@@ -28,8 +28,8 @@ let codes = [
   ];
 
   const files = [
-    "C:/Users/shubh/Documents/V2-Sheet-Generator/Input/Cigna_Global_Health/cignaScript/inputRates/addon.xlsx"
-  ]
+    "/home/support/Desktop/Saleslab/V2-Sheet-Generator/Input/Cigna_Global_Health/cignaScript/inputRates/addon.xlsx",
+  ];
 
   const xlsx = require("xlsx")
   const jsonToCSV = require("json-to-csv");
@@ -55,7 +55,10 @@ let codes = [
 
             xlsx.utils.book_append_sheet(wb, ws, sheet);
         })
-        xlsx.writeFile(wb, `C:/Users/shubh/Documents/V2-Sheet-Generator/Input/Cigna_Global_Health/cignaScript/output/addons/addon${i}.xlsx`);
+        xlsx.writeFile(
+          wb,
+          `/home/support/Desktop/Saleslab/V2-Sheet-Generator/Input/Cigna_Global_Health/cignaScript/output/addons/addon${i}.xlsx`
+        );
     })
     
   })

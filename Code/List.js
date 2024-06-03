@@ -869,11 +869,8 @@ const getList = (arr) => {
       arr.forEach((v) => {
         if (!v["dependentbenefits"]) return;
         let [core, dependent] = v["dependentbenefits"].split(" - ");
-        console.log('aftre');
         Global.filters.dependentBenefits.push({ core, dependent });
       });
-
-      console.log('Global >> ', Global);
 
     return Global;
   } catch (error) {
