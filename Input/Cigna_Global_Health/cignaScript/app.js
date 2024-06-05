@@ -96,7 +96,7 @@ let Arr = new Array(resCount).fill(null);
     convertXlsx(v.Sheets[v.SheetNames[0]])
   );
 
-  console.log('resCount >> ', resCount);
+  console.log("resCount >> ", resCount);
   const rateSheets = new Array(resCount)
     .fill(null)
     .map((v, i) =>
@@ -121,7 +121,6 @@ let Arr = new Array(resCount).fill(null);
   );
 
   const provider = DATAs[0][0].companyName;
-
 
   const Ids = GlobalDatas.map((v, i) =>
     generateCodeIndex(v, Benefits, DATAs[i], resCount > 1 ? i + 1 : "")
@@ -249,7 +248,7 @@ let Arr = new Array(resCount).fill(null);
           {
             from: "-Enum.currency.USD-",
             to: "-Enum.currency.AED-",
-            rate: 3.6725,
+            rate: 36.69,
             type: "-Enum.conversionRateType.premium-",
           },
         ],
@@ -262,7 +261,7 @@ let Arr = new Array(resCount).fill(null);
     //   str[0].exchangeRates.push({
     //     from: "-Enum.currency.USD-",
     //     to: "-Enum.currency.AED-",
-    //     rate: 3.6725,
+    //     rate: 36.69,
     //     type: "-Enum.conversionRateType.premium-",
     //   });
     createFile("provider", "index", str, provider, false, true);
@@ -739,7 +738,7 @@ let Arr = new Array(resCount).fill(null);
           ? 1
           : DATAs[0][0].conversionRate
           ? DATAs[0][0].conversionRate
-          : 3.6725;
+          : 36.69;
       let PricingTable = [];
       let tableCount = 1;
       for (const key in Id.pricingTables) {
@@ -757,8 +756,8 @@ let Arr = new Array(resCount).fill(null);
         }
 
         planValue = planValue["Annual Limit"];
-        console.log('rateSheet >> ', rateSheet);
-        console.log('originalName(key) >> ', originalName(key));
+        console.log("rateSheet >> ", rateSheet);
+        console.log("originalName(key) >> ", originalName(key));
         let plan_copay = rateSheet.find(
           (r) => r.planName == originalName(key)
         )?.copay;
@@ -994,7 +993,7 @@ let Arr = new Array(resCount).fill(null);
         ? 1
         : DATAs[0][0].conversionRate
         ? DATAs[0][0].conversionRate
-        : 3.6725;
+        : 36.69;
     let benefitsKeys = DATA[0];
     let modifiers = {};
     for (let key in benefitsKeys) {
@@ -2545,7 +2544,9 @@ let Arr = new Array(resCount).fill(null);
               let [copay] = copays;
               let type = types.split("y")[1];
               let Schema = {
-                _id: `-generateMongoIdFromString('${provider} rateTable ${i + 1}')-`,
+                _id: `-generateMongoIdFromString('${provider} rateTable ${
+                  i + 1
+                }')-`,
                 plans: [`-${provider}.plans.${plan[1]}-`],
                 filters: [
                   {
@@ -2571,7 +2572,10 @@ let Arr = new Array(resCount).fill(null);
                 )
                 .map((v) => {
                   return {
-                    price: { currency: "-Enum.currency.USD-", price: parseFloat(v.rates*12) },
+                    price: {
+                      currency: "-Enum.currency.USD-",
+                      price: parseFloat(v.rates * 12),
+                    },
                     customer: {
                       from: v.ageStart,
                       to: v.ageEnd,

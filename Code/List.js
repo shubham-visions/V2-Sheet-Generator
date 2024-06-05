@@ -548,7 +548,7 @@ const countryCodes = [
       "South Africa",
     ],
     count: 3,
-    alphaCodes: ["SH", 'KE', 'ZA' ],
+    alphaCodes: ["SH", "KE", "ZA"],
   },
   {
     code: "Medium-Americas - High-Americas - High",
@@ -726,8 +726,7 @@ const getList = (arr) => {
         if (!Global.Deductibles) Global.Deductibles = [];
         let v1 = ["all"];
         let v2 = [
-          v.Deductible
-            .split(", ")
+          v.Deductible.split(", ")
             .map((v) => (v.includes(" - ") ? v.split(" - ")[0] : v))
             .join(", "),
         ];
@@ -1029,13 +1028,13 @@ const fetchAddons = (
 ) => {
   let info = readFile(
     folderName,
-    `addon${num > 0 ? num-1 : ""}`,
+    `addon${num > 0 ? num - 1 : ""}`,
     `${addonName.includes(" ") ? addonName.split(" ")[0] : addonName}-info`
   );
 
   // console.log('info[0] >> ', info[0]);
   let addonRates = info[0].sheetName
-    ? readFile(folderName, `addon${num > 0 ? num-1 : ""}`, info[0].sheetName)
+    ? readFile(folderName, `addon${num > 0 ? num - 1 : ""}`, info[0].sheetName)
     : [];
   // createFile(
   //   "Addons",
@@ -1092,7 +1091,7 @@ const fetchAddons = (
                 conditions: [],
                 price: [
                   {
-                    value: parseFloat(rate.rates*12),
+                    value: parseFloat(rate.rates * 12),
                     currency: "-Enum.currency.USD-",
                   },
                 ],
@@ -1109,11 +1108,13 @@ const fetchAddons = (
                     con.value = "-Enum.maritalStatus.married-";
                   else con.value = "-Enum.maritalStatus.single-";
                 } else if (col == "planName" || col == "coverages")
-                  con.value = `-${provider}.${col == "planName" ? "plans" : "coverages"}${num}.${remove(rate[col])[0]}-`;
+                  con.value = `-${provider}.${
+                    col == "planName" ? "plans" : "coverages"
+                  }${num}.${remove(rate[col])[0]}-`;
                 else if (col == "singleChild")
                   con = singleChild[`_${rate[col]}`];
-                  // else if (col == "code")
-                  // con = singleChild[`_${rate[col]}`];
+                // else if (col == "code")
+                // con = singleChild[`_${rate[col]}`];
                 else if (col == "frequency") {
                   if (rate[col] == "Annually")
                     con.value = ["annual-payment-surcharge"];
