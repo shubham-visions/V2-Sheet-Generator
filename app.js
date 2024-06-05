@@ -2282,7 +2282,7 @@ let Arr = new Array(resCount).fill(null);
                 },
                 {
                   type: "-Enum.customer.max_age-",
-                  value: 60,
+                  value: 82,
                 },
               ],
             });
@@ -3534,7 +3534,6 @@ let Arr = new Array(resCount).fill(null);
   // --------------------------------- Rate Table -------------------------------------------------------
   function rateTable(store, Id, rateSheet, provider, count) {
     try {
-      console.log("rateTable called");
       let result = [];
       let num = 1;
       store?.plans.forEach((plan, l) => {
