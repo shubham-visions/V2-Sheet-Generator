@@ -2300,7 +2300,7 @@ let Arr = new Array(resCount).fill(null);
                   value: [
                     {
                       type: "-Enum.customer.category-",
-                      value:  `-Enum.category.Primary-`,
+                      value:  `-Enum.category.primary-`,
                       count: "==1",
                     },
                     {
