@@ -2955,22 +2955,22 @@ let Arr = new Array(resCount).fill(null);
           store["pricingTables"].forEach((plan) => {
             let [planName, coverage] = plan;
             addUp2[1] = 1;
-            // store.Networks.forEach((net) => {
-              // let bool = DATA.find((v) => {
-              //   if (v.PlanName == planName[1]) {
-              //     return v["Network Details"].includes("/")
-              //       ? v["Network Details"].split("/").find((x) => x == net[1])
-              //       : v["Network Details"] == net[1];
-              //   }
-              //   return false;
-              // });
-              // if (!bool) return;
-              // if (splitFile && !included.includes(net[1])) {
-              //   included.push(net[1]);
-              //   comment2 += `// ${generateShortCode(net[1])} - ${
-              //     net[1]
-              //   } (network) \n`;
-              // }
+            store.Networks.forEach((net) => {
+              let bool = DATA.find((v) => {
+                if (v.PlanName == planName[1]) {
+                  return v["Network Details"].includes("/")
+                    ? v["Network Details"].split("/").find((x) => x == net[1])
+                    : v["Network Details"] == net[1];
+                }
+                return false;
+              });
+              if (!bool) return;
+              if (splitFile && !included.includes(net[1])) {
+                included.push(net[1]);
+                comment2 += `// ${generateShortCode(net[1])} - ${
+                  net[1]
+                } (network) \n`;
+              }
               coverage.forEach((cc) => {
                 let c_id = `-${provider}.coverages${n}.${cc[0]}-`;
                 if (splitFile && !included.includes(cc[1])) {
@@ -2991,18 +2991,18 @@ let Arr = new Array(resCount).fill(null);
                     id: "op-option-" + (index + 1),
                     label: copay,
                     conditions: [
-                      // {
-                      //   type: "-Enum.conditions.modifier-", // Network modifier with OPTION ID Network_B included
-                      //   value: [net[1]],
-                      // },
+                      {
+                        type: "-Enum.conditions.modifier-", // Network modifier with OPTION ID Network_B included
+                        value: [net[1]],
+                      },
                       {
                         type: "-Enum.conditions.coverage-",
                         value: [c_id],
                       },
-                      // {
-                      //   type: "-Enum.conditions.plans-",
-                      //   value: [`-${provider}.plans${n}.${planName[0]}-`],
-                      // },
+                      {
+                        type: "-Enum.conditions.plans-",
+                        value: [`-${provider}.plans${n}.${planName[0]}-`],
+                      },
                     ],
                   };
                   clonearray.push(clone);
@@ -3011,7 +3011,7 @@ let Arr = new Array(resCount).fill(null);
                   residencyOPOptions++;
                 });
               });
-            // });
+            });
           });
 
           str = {
@@ -3632,7 +3632,7 @@ let Arr = new Array(resCount).fill(null);
                 ],
                 rates: [],
               };
-              if(type.toLowerCase() == "ip") {
+              if(type.toLowerCase() == "ip" || type.toLowerCase() == "op") {
                 Schema.plans = [
                   `-${provider}.plans.${plan[1].replaceAll(" ", "")}-`,
                 ];
@@ -3646,17 +3646,17 @@ let Arr = new Array(resCount).fill(null);
                   (v) =>
                     {
                       return (
-                        (v.type.toLowerCase() == "ip" &&
+                        // (v.type.toLowerCase() == "ip" &&
                           v.type == type &&
                           v.planName == plan[1] &&
                           coverage[1] == v.coverages &&
                           copay[0] == v.copay &&
-                          net[1] == v.network) ||
+                          net[1] == v.network/* ) ||
                         (v.type.toLowerCase() == "op" &&
                           v.type == type &&
                           // v.planName == plan[1] &&
                           coverage[1] == v.coverages &&
-                          copay[0] == v.copay)
+                          copay[0] == v.copay) */
                       );
                     }
                 )
