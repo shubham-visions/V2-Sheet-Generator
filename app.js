@@ -1499,6 +1499,10 @@ let Arr = new Array(resCount).fill(null);
             );
           if (pricing.length == 0 && DATA[0].planCopay == "single") continue;
           let table;
+          console.log(
+            "store.filters.networkType >> ",
+            store.filters
+          );
           if (store.filters.networkType == "single") {
             table = pricing.map((t) => {
               let str = {
@@ -1780,7 +1784,7 @@ let Arr = new Array(resCount).fill(null);
               benefit_plans.includes(id.split(".")[2].replace("-", ""))
             );
           }
-            console.log("key >> ", key);
+            // console.log("key >> ", key);
 
           let str = {
             _id: `-${provider}.modifiers${n}.benefits.${
