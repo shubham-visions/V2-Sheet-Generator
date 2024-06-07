@@ -44,6 +44,26 @@ const OPCopayOptions = [
   'op-option-40'
 ]
 
+const countryWiseTaxes = [
+  { country: "AT", tax: { label: "TAX", percentage: 0.01 } },
+  { country: "BE", tax: { label: "TAX", percentage: 0.0925 } },
+  { country: "BG", tax: { label: "TAX", percentage: 0.02 } },
+  { country: "DK", tax: { label: "TAX", percentage: 0.011 } },
+  { country: "FR", tax: { label: "TAX", percentage: 0.14 } },
+  { country: "GR", tax: { label: "TAX", percentage: 0.17 } },
+  { country: "HK", tax: { label: "TAX", percentage: 0.001 } },
+  { country: "IE", tax: { label: "TAX", percentage: 0.05 } },
+  { country: "IT", tax: { label: "TAX", percentage: 0.025 } },
+  { country: "KE", tax: { label: "TAX", percentage: 0.012 } },
+  { country: "LU", tax: { label: "TAX", percentage: 0.04 } },
+  { country: "PT", tax: { label: "TAX", percentage: 0.07742 } },
+  { country: "SG", tax: { label: "TAX", percentage: 0.09 } },
+  { country: "SK", tax: { label: "TAX", percentage: 0.08 } },
+  { country: "SI", tax: { label: "TAX", percentage: 0.085 } },
+  { country: "ES", tax: { label: "TAX", percentage: 0.0015 } },
+  { country: "GB", tax: { label: "TAX", percentage: 0.12 } },
+];
+
 const countryCodes = [
   {
     code: "Medium-Asia - Low-Asia - Low",
@@ -894,6 +914,7 @@ let Arr = new Array(resCount).fill(null);
           },
         ],
         hasRateTable: true,
+        countrySpecificTaxes: countryWiseTaxes,
       },
     ];
     if (DATAs[0][0].conversionRate)
