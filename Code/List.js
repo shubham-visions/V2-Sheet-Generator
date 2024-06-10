@@ -939,7 +939,8 @@ const createFile = (
   core = false,
   Enum = false,
   comment = false,
-  addUp = false
+  addUp = false,
+  rateTable = ``
 ) => {
   try {
     data = JSON.stringify(data);
@@ -952,6 +953,7 @@ const createFile = (
       ${Enum ? "const Enum = require('../../enum.js')" : ""}
     ${core ? 'const core = require("../../core");' : ""}
     ${comment ? `// ${comment}` : ""}
+    ${rateTable ? rateTable : ""}
     let ${folder} = ${data} ;
     module.exports = ${folder} ;`;
 
@@ -1029,13 +1031,13 @@ const fetchAddons = (
 ) => {
   let info = readFile(
     folderName,
-    `addon${num > 0 ? num-1 : ""}`,
+    `addon${num > 0 ? num : ""}`,
     `${addonName.includes(" ") ? addonName.split(" ")[0] : addonName}-info`
   );
 
   // console.log('info[0] >> ', info[0]);
   let addonRates = info[0].sheetName
-    ? readFile(folderName, `addon${num > 0 ? num-1 : ""}`, info[0].sheetName)
+    ? readFile(folderName, `addon${num > 0 ? num : ""}`, info[0].sheetName)
     : [];
   // createFile(
   //   "Addons",

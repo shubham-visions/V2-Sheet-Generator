@@ -3627,11 +3627,33 @@ let Arr = new Array(resCount).fill(null);
     }
   }
 
+  fs.mkdirSync(`Output/RateTable`)
+  let residenciesRequire = ``
   let rateArr = Arr.reduce((acc, v, i) => {
     let data = rateTable(GlobalDatas[i], Ids[i], rateSheets[i], provider, i);
-    return [...acc, ...data];
-  }, []);
+    const residencyName = DATAs[i][0].residency.replaceAll(" ", "").replaceAll("-", "")
 
-  console.log("rateArr >> ", rateArr.length);
-  createFile("RateTable", "index", rateArr, provider, false, true);
+    data = JSON.stringify(data);
+    data = data.replace(/"-/g, "");
+    data = data.replace(/-"/g, "");
+    data = data.replace(/\n/g, "");
+    let str = `
+    const ${provider} = require("../core-index.js");
+    const Enum = require('../../enum.js')
+    const Utils = require("../../../services/utils/utils");
+    const utils = new Utils({ config: { logging: false } });
+    const { generateMongoIdFromString } = utils;
+    let ${residencyName} = ${data} ;
+    module.exports = ${residencyName} ;`;
+
+    if (!fs.existsSync(`Output/RateTable/${residencyName}`)) {
+      fs.mkdirSync(`Output/RateTable/${residencyName}`);
+    fs.appendFileSync(`Output/RateTable/${residencyName}/index.js`, str)
+    };
+
+    residenciesRequire += `const ${residencyName} = require("./${residencyName}/index.js");`
+
+    return [...acc, `-${residencyName}-`];
+  }, []);
+  createFile("RateTable", "index", rateArr, provider, false, true, false, false, residenciesRequire);
 })();
