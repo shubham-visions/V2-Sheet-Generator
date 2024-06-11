@@ -1031,13 +1031,13 @@ const fetchAddons = (
 ) => {
   let info = readFile(
     folderName,
-    `addon${num > 0 ? num : ""}`,
+    `addon${num > 0 ? num-1 : ""}`,
     `${addonName.includes(" ") ? addonName.split(" ")[0] : addonName}-info`
   );
 
   // console.log('info[0] >> ', info[0]);
   let addonRates = info[0].sheetName
-    ? readFile(folderName, `addon${num > 0 ? num : ""}`, info[0].sheetName)
+    ? readFile(folderName, `addon${num > 0 ? num-1 : ""}`, info[0].sheetName)
     : [];
   // createFile(
   //   "Addons",
