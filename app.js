@@ -3653,7 +3653,7 @@ let Arr = new Array(resCount).fill(null);
 
     residenciesRequire += `const ${residencyName} = require("./${residencyName}/index.js");`
 
-    return [...acc, `-${residencyName}-`];
+    return [...acc, `-...${residencyName}-`];
   }, []);
   createFile("RateTable", "index", rateArr, provider, false, true, false, false, residenciesRequire);
 })();
