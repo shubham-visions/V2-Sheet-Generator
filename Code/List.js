@@ -942,7 +942,8 @@ const createFile = (
   core = false,
   Enum = false,
   comment = false,
-  addUp = false
+  addUp = false,
+  rateTable = ``
 ) => {
   try {
     data = JSON.stringify(data);
@@ -954,7 +955,8 @@ const createFile = (
       const ${provider} = require("../core-index.js")
       ${Enum ? "const Enum = require('../../enum.js')" : ""}
     ${core ? 'const core = require("../../core");' : ""}
-    ${comment ? `// ${comment}` : ""}
+      ${comment ? `// ${comment}` : ""}
+    ${rateTable ? rateTable : ""}
     let ${folder} = ${data} ;
     module.exports = ${folder} ;`;
 
