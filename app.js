@@ -1068,6 +1068,10 @@ const countryCodes = [
     code: "Zone 4",
     alphaCodes: ["US", "UM"],
   },
+  {
+    code: "FrenchZone",
+    alphaCodes: ["FR"],
+  },
 ];
 
 let resCount = process.argv.find((v) => v.includes("res"));
@@ -1966,9 +1970,9 @@ let Arr = new Array(resCount).fill(null);
                       currency: `-Enum.currency.${
                         check ? planValue.split(" ")[0] : "EUR"
                       }-`,
-                      value: check
-                        ? Number(planValue.split(" ")[1].split(",").join(""))
-                        : planValue,
+                      value: check == "EUR 1,500,000" ? 1500000 : 3000000,
+                      // ? Number(planValue.split(" ")[1].split(",").join(""))
+                      // : planValue,
                     },
                   ]
                 : [],
@@ -1995,8 +1999,12 @@ let Arr = new Array(resCount).fill(null);
             //     ? NE_Dubai[1]
             //     : AbuDhabi[1],
 
-            includedResidence: countryCodes.find(codes => codes.code == DATA[0].residency.trim())?.alphaCodes,
-            excludedResidence: countryCodes.filter(codes => codes.code != DATA[0].residency.trim())?.alphaCodes,
+            includedResidence: countryCodes.find(
+              (codes) => codes.code == DATA[0].residency.trim()
+            )?.alphaCodes,
+            excludedResidence: countryCodes.filter(
+              (codes) => codes.code != DATA[0].residency.trim()
+            )?.alphaCodes,
             coverage: [`-${provider}.coverages${n}.${v}-`],
             baseAnnualPremium: [
               {
@@ -2011,7 +2019,7 @@ let Arr = new Array(resCount).fill(null);
                 gender: `-Enum.gender.female-`,
                 price: [{ value: 0, currency: `-Enum.currency.USD-` }],
               },
-            ]
+            ],
           };
           addUp[1]++;
           PricingTable.push({ ...clone });
@@ -2120,7 +2128,19 @@ let Arr = new Array(resCount).fill(null);
       planIds.push(`-${provider}.plans${n}.${key}-`);
     }
 
-    let addonBeneits = ["Dental", "Optical Benefits", "Dental Waiting Period", "Wellness & Health Screening", "Alternative Medicines"]
+    let addonBeneits = [
+      "Dental",
+      "Optical Benefits",
+      "Dental Waiting Period",
+      "Wellness & Health Screening",
+      "Alternative Medicines",
+      "Out-patient Consultations",
+      "Out-patient Specialists",
+      "Out-patient Medicines",
+      "Vaccination",
+      "Scans & Diagnostic Tests",
+      "Physiotherapy",
+    ];
     let perCustomer = ["Dental"]
 
     // console.log("store.Modifiers ", store.Modifiers);
@@ -2697,6 +2717,12 @@ let Arr = new Array(resCount).fill(null);
         store.filters.bundleBenefits.map((v) => {
           // console.log('v ', v)
           let benefit = newArr.find((b) => b.title == v);
+          // console.log("benefit ", benefit);
+          // console.log(
+          //   "store.filters.bundleBenefits ",
+          //   store.filters.bundleBenefits
+          // );
+
           if (!benefit) throw new Error(`not found ${benefit}`);
           benefit.dependentModifiers = [
             ...store.filters.bundleBenefits.reduce((acc, item) => {
@@ -2736,13 +2762,19 @@ let Arr = new Array(resCount).fill(null);
             premiumMod: { type: "percentage", price: [{ value: -10 }] },
             description: "10% Discount on Child under 18",
             conditions: [
-              { type: Enum.customer.min_age, value: 0 },
-              { type: Enum.customer.max_age, value: 19 },
               {
-                type: Enum.customer.relation,
-                value: Enum.relation.Child,
+                type: "-Enum.customer.min_age-",
+                value: 0,
               },
-              { type: Enum.customer.count, value: 3, count: ">=2" },
+              {
+                type: "-Enum.customer.max_age-",
+                value: 18,
+              },
+              {
+                type: "-Enum.customer.relation-",
+                value: "-Enum.relation.Child-",
+              },
+              { type: "-Enum.customer.count-", value: 2, count: ">=2" },
             ],
           };
           newArr.push(str);
@@ -3966,7 +3998,7 @@ let Arr = new Array(resCount).fill(null);
                   j + Math.floor(Math.random() * 900) + 100
                 } ${i + Math.floor(Math.random() * 900) + 100}')-`,
                 plans: [
-                  `-${provider}.plans${count + 1}.${plan[1].replace(" ", "")}-`,
+                  `-${provider}.plans${count + 1}.${plan[1].replaceAll(" ", "")}-`,
                 ],
                 filters: [
                   {
