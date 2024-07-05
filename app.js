@@ -2695,6 +2695,7 @@ let Arr = new Array(resCount).fill(null);
 
         // bundle benefits --------------------------------------------
         store.filters.bundleBenefits.map((v) => {
+          // console.log('v ', v)
           let benefit = newArr.find((b) => b.title == v);
           if (!benefit) throw new Error(`not found ${benefit}`);
           benefit.dependentModifiers = [
@@ -2729,18 +2730,19 @@ let Arr = new Array(resCount).fill(null);
         store[key].forEach((v1) => {
           let [discount, numCustomer] = v1;
           str.options = {
-            id: `${discount}-discount`,
-            label: `${discount} Discount`,
-            premiumMod: {
-              type: "percentage",
-              price: [{ value: -Number(discount.replace("%", "")) }],
-            },
-            description: `${discount} Discount`,
+            id: "option-1",
+            label: "10% Discount on Child under 18",
+            assignmentType: "PER_CUSTOMER",
+            premiumMod: { type: "percentage", price: [{ value: -10 }] },
+            description: "10% Discount on Child under 18",
             conditions: [
+              { type: Enum.customer.min_age, value: 0 },
+              { type: Enum.customer.max_age, value: 19 },
               {
-                type: "NUM_CUSTOMERS",
-                value: Number(numCustomer),
+                type: Enum.customer.relation,
+                value: Enum.relation.Child,
               },
+              { type: Enum.customer.count, value: 3, count: ">=2" },
             ],
           };
           newArr.push(str);
@@ -3949,14 +3951,13 @@ let Arr = new Array(resCount).fill(null);
       let result = [];
       let num = 1;
       store?.plans.forEach((plan, l) => {
-        console.log("plan ", plan);
         store.coverages.forEach((coverages, k) => {
           let coverage = coverages.coverageName;
           ["coPayIP", "coPayOP"].forEach((types, j) => {
             store[types].forEach((copays, i) => {
               let [copay] = copays;
 
-              console.log("copay ", copay);
+              // console.log("copay ", copay);
               let type = types.split("y")[1];
               let Schema = {
                 _id: `-generateMongoIdFromString('${provider} rateTable ${

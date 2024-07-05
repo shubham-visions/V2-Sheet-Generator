@@ -726,8 +726,7 @@ const getList = (arr) => {
         if (!Global.Deductibles) Global.Deductibles = [];
         let v1 = ["all"];
         let v2 = [
-          v.Deductible
-            .split(", ")
+          v.Deductible.split(", ")
             .map((v) => (v.includes(" - ") ? v.split(" - ")[0] : v))
             .join(", "),
         ];
@@ -857,10 +856,19 @@ const getList = (arr) => {
       });
 
     // bundle benefits -----------------------------------
-    arr[0]["bundle benefits"] &&
+    // arr[0]["bundle benefits"] &&
+    //   arr.forEach((v) => {
+    //     if (v["bundle benefits"]) return;
+    //     let values = v["bundle benefits"].split("/");
+    //     Global.filters.bundleBenefits.push(...values);
+    //   });
+
+    // bundle benefits -----------------------------------
+    // console.log(">>>>>", arr[0]);
+    arr[0]["bundlebenefits"] &&
       arr.forEach((v) => {
-        if (v["bundle benefits"]) return;
-        let values = v["bundle benefits"].split("/");
+        if (!v["bundlebenefits"]) return;
+        let values = v["bundlebenefits"].split("/");
         Global.filters.bundleBenefits.push(...values);
       });
 
@@ -1029,15 +1037,33 @@ const fetchAddons = (
   num,
   conversion
 ) => {
-  let info = readFile(
-    folderName,
-    "addon",
-    `${addonName}`
-  );
+  // let info = readFile(
+  //   folderName,
+  //   "addon",
+  //   `${addonName}`
+  // );
 
-  let addonRates = info[0].sheetName
-    ? readFile(folderName, "addon", info[0].sheetName)
-    : [];
+  // let addonRates = info[0].sheetName
+  //   ? readFile(folderName, "addon", info[0].sheetName)
+  //   : [];
+
+    let info = readFile(
+      folderName,
+      `addon${num > 0 ? num - 1 : ""}`,
+      `${addonName}`
+    );
+
+    // console.log('benefit >> ', benefit);
+
+    // console.log('info[0] >> ', info);
+    let addonRates = info[0].sheetName
+      ? readFile(
+          folderName,
+          `addon${num > 0 ? num - 1 : ""}`,
+          info[0].sheetName
+        )
+      : [];
+
   // createFile(
   //   "Addons",
   //   addonName.includes(" ") ? addonName.split(" ")[0] : addonName,
