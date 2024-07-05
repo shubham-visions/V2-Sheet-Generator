@@ -1114,9 +1114,6 @@ rateUSD = rateUSD ? (rateUSD.split(":")[1] == "USD" ? true : false) : false;
 
 let Arr = new Array(resCount).fill(null);
 
-console.log('resCount >> ', resCount);
-console.log('Arr.length >> ', Arr.length);
-
 (function () {
   const replaceChar = (word) => {
     word = word.replace(" ", "");
@@ -2135,14 +2132,17 @@ console.log('Arr.length >> ', Arr.length);
       planIds.push(`-${provider}.plans${n}.${key}-`);
     }
 
-    let addonBeneits = ["Dental", "Optical Benefits", "Dental_Waiting_Period", "Wellness & Health Screening", "Alternative Medicines"]
+    let addonBeneits = ["Dental", "Optical Benefits", "Dental Waiting Period", "Wellness & Health Screening", "Alternative Medicines"]
     let perCustomer = ["Dental"]
+
+    // console.log("store.Modifiers ", store.Modifiers);
     store.Modifiers.forEach((key) => {
 
       // benefits --------------------------------------------
       if (key == "benefits") {
-        console.log("modifiers >> ", modifiers)
         for (const key in modifiers) {
+
+          // console.log("key ", key);
           if (
             key.charCodeAt(key.length - 1) == 160 ||
             key.charCodeAt(key.length - 1) == 32
@@ -2164,7 +2164,6 @@ console.log('Arr.length >> ', Arr.length);
             );
           }
 
-          console.log("key >> ", key)
           let str = {
             _id: `-${provider}.modifiers${n}.benefits.${
               Benefits.find((v) => v.benefits[1] == key).benefits[0]
@@ -2173,7 +2172,9 @@ console.log('Arr.length >> ', Arr.length);
             title: key,
             label: key,
             type: "-core.modifierTypes.benefit-",
-            assignmentType: !addonBeneits.includes(key) ? "PER_PLAN" : "PER_CUSTOMER",
+            assignmentType: !addonBeneits.includes(key)
+              ? "PER_PLAN"
+              : "PER_CUSTOMER",
             includedBenefits: [benefitCore.find((v) => v[0] == key)[1]],
             isOptional: false,
             description: "",
@@ -2188,9 +2189,12 @@ console.log('Arr.length >> ', Arr.length);
               ? ""
               : modifiers[key][0].value.toString().includes(" $ ")
               ? ""
-              : (modifiers[key][0].value.toString().includes("$copay") || modifiers[key][0].value.toString().includes("$outPatient")
-            || modifiers[key][0].value.toString().includes("$vaccination") || modifiers[key][0].value.toString().includes("$physiotherepy")
-          ||modifiers[key][0].value.toString().includes("$medicines") ||modifiers[key][0].value.toString().includes("$scans") )
+              : modifiers[key][0].value.toString().includes("$copay") ||
+                modifiers[key][0].value.toString().includes("$outPatient") ||
+                modifiers[key][0].value.toString().includes("$vaccination") ||
+                modifiers[key][0].value.toString().includes("$physiotherepy") ||
+                modifiers[key][0].value.toString().includes("$medicines") ||
+                modifiers[key][0].value.toString().includes("$scans")
               ? "Optional Benefits"
               : modifiers[key][0].value;
           // str.isOptional = false;
@@ -2198,7 +2202,9 @@ console.log('Arr.length >> ', Arr.length);
           // str.isOptional = addonBeneits.includes(key) && key != "Dental_Waiting_Period" && key != "Optical Benefits" ? true : false;
           str.isOptional = key == "Dental" ? true : false;
 
-          str.hasOptions = addonBeneits.includes(key) ? true : modifiers[key].length > 1;
+          str.hasOptions = addonBeneits.includes(key)
+            ? true
+            : modifiers[key].length > 1;
           if (!modifiers[key][0].value.toString().includes("$copay")) {
             str.options = [];
             let count = 1;
@@ -2306,24 +2312,24 @@ console.log('Arr.length >> ', Arr.length);
                 const benefitsVal = v.split(" ^ ");
                 benefitsVal.forEach((e) => {
                   let [value, copays, planName] = e.split(" - ");
-                let cc = {
-                  id: "option-" + count,
-                  label: value,
-                  description: value,
-                  conditions: [
-                    {
-                      type: "-Enum.conditions.deductible-",
-                      value: OPCopayOptions
-                    },
-                    {
-                      type: "-Enum.conditions.plans-",
-                      value: [`-${provider}.plans${n}.CloseCare-`]
-                    }
-                  ],
-                };
-                str.options.push(cc);
-                count++;
-                })
+                  let cc = {
+                    id: "option-" + count,
+                    label: value,
+                    description: value,
+                    conditions: [
+                      {
+                        type: "-Enum.conditions.deductible-",
+                        value: OPCopayOptions,
+                      },
+                      {
+                        type: "-Enum.conditions.plans-",
+                        value: [`-${provider}.plans${n}.CloseCare-`],
+                      },
+                    ],
+                  };
+                  str.options.push(cc);
+                  count++;
+                });
               });
             } else
               store.coPays.forEach((v) => {
@@ -2368,24 +2374,24 @@ console.log('Arr.length >> ', Arr.length);
                 const benefitsVal = v.split(" ^ ");
                 benefitsVal.forEach((e) => {
                   let [value, copays, planName] = e.split(" - ");
-                let cc = {
-                  id: "option-" + count,
-                  label: value,
-                  description: value,
-                  conditions: [
-                    {
-                      type: "-Enum.conditions.deductible-",
-                      value: OPCopayOptions
-                    },
-                    {
-                      type: "-Enum.conditions.plans-",
-                      value: [`-${provider}.plans${n}.CloseCare-`]
-                    }
-                  ],
-                };
-                str.options.push(cc);
-                count++;
-                })
+                  let cc = {
+                    id: "option-" + count,
+                    label: value,
+                    description: value,
+                    conditions: [
+                      {
+                        type: "-Enum.conditions.deductible-",
+                        value: OPCopayOptions,
+                      },
+                      {
+                        type: "-Enum.conditions.plans-",
+                        value: [`-${provider}.plans${n}.CloseCare-`],
+                      },
+                    ],
+                  };
+                  str.options.push(cc);
+                  count++;
+                });
               });
             } else
               store.coPays.forEach((v) => {
@@ -2430,24 +2436,24 @@ console.log('Arr.length >> ', Arr.length);
                 const benefitsVal = v.split(" ^ ");
                 benefitsVal.forEach((e) => {
                   let [value, copays, planName] = e.split(" - ");
-                let cc = {
-                  id: "option-" + count,
-                  label: value,
-                  description: value,
-                  conditions: [
-                    {
-                      type: "-Enum.conditions.deductible-",
-                      value: OPCopayOptions
-                    },
-                    {
-                      type: "-Enum.conditions.plans-",
-                      value: [`-${provider}.plans${n}.CloseCare-`]
-                    }
-                  ],
-                };
-                str.options.push(cc);
-                count++;
-                })
+                  let cc = {
+                    id: "option-" + count,
+                    label: value,
+                    description: value,
+                    conditions: [
+                      {
+                        type: "-Enum.conditions.deductible-",
+                        value: OPCopayOptions,
+                      },
+                      {
+                        type: "-Enum.conditions.plans-",
+                        value: [`-${provider}.plans${n}.CloseCare-`],
+                      },
+                    ],
+                  };
+                  str.options.push(cc);
+                  count++;
+                });
               });
             } else
               store.coPays.forEach((v) => {
@@ -2492,24 +2498,24 @@ console.log('Arr.length >> ', Arr.length);
                 const benefitsVal = v.split(" ^ ");
                 benefitsVal.forEach((e) => {
                   let [value, copays, planName] = e.split(" - ");
-                let cc = {
-                  id: "option-" + count,
-                  label: value,
-                  description: value,
-                  conditions: [
-                    {
-                      type: "-Enum.conditions.deductible-",
-                      value: OPCopayOptions
-                    },
-                    {
-                      type: "-Enum.conditions.plans-",
-                      value: [`-${provider}.plans${n}.CloseCare-`]
-                    }
-                  ],
-                };
-                str.options.push(cc);
-                count++;
-                })
+                  let cc = {
+                    id: "option-" + count,
+                    label: value,
+                    description: value,
+                    conditions: [
+                      {
+                        type: "-Enum.conditions.deductible-",
+                        value: OPCopayOptions,
+                      },
+                      {
+                        type: "-Enum.conditions.plans-",
+                        value: [`-${provider}.plans${n}.CloseCare-`],
+                      },
+                    ],
+                  };
+                  str.options.push(cc);
+                  count++;
+                });
               });
             } else
               store.coPays.forEach((v) => {
@@ -2554,24 +2560,24 @@ console.log('Arr.length >> ', Arr.length);
                 const benefitsVal = v.split(" ^ ");
                 benefitsVal.forEach((e) => {
                   let [value, copays, planName] = e.split(" - ");
-                let cc = {
-                  id: "option-" + count,
-                  label: value,
-                  description: value,
-                  conditions: [
-                    {
-                      type: "-Enum.conditions.deductible-",
-                      value: OPCopayOptions
-                    },
-                    {
-                      type: "-Enum.conditions.plans-",
-                      value: [`-${provider}.plans${n}.CloseCare-`]
-                    }
-                  ],
-                };
-                str.options.push(cc);
-                count++;
-                })
+                  let cc = {
+                    id: "option-" + count,
+                    label: value,
+                    description: value,
+                    conditions: [
+                      {
+                        type: "-Enum.conditions.deductible-",
+                        value: OPCopayOptions,
+                      },
+                      {
+                        type: "-Enum.conditions.plans-",
+                        value: [`-${provider}.plans${n}.CloseCare-`],
+                      },
+                    ],
+                  };
+                  str.options.push(cc);
+                  count++;
+                });
               });
             } else
               store.coPays.forEach((v) => {
@@ -2616,24 +2622,24 @@ console.log('Arr.length >> ', Arr.length);
                 const benefitsVal = v.split(" ^ ");
                 benefitsVal.forEach((e) => {
                   let [value, copays, planName] = e.split(" - ");
-                let cc = {
-                  id: "option-" + count,
-                  label: value,
-                  description: value,
-                  conditions: [
-                    {
-                      type: "-Enum.conditions.deductible-",
-                      value: OPCopayOptions
-                    },
-                    {
-                      type: "-Enum.conditions.plans-",
-                      value: [`-${provider}.plans${n}.CloseCare-`]
-                    }
-                  ],
-                };
-                str.options.push(cc);
-                count++;
-                })
+                  let cc = {
+                    id: "option-" + count,
+                    label: value,
+                    description: value,
+                    conditions: [
+                      {
+                        type: "-Enum.conditions.deductible-",
+                        value: OPCopayOptions,
+                      },
+                      {
+                        type: "-Enum.conditions.plans-",
+                        value: [`-${provider}.plans${n}.CloseCare-`],
+                      },
+                    ],
+                  };
+                  str.options.push(cc);
+                  count++;
+                });
               });
             } else
               store.coPays.forEach((v) => {
@@ -2689,14 +2695,15 @@ console.log('Arr.length >> ', Arr.length);
           fetchAddons(newArr[i_], addon, folderName, provider, n, conversion);
         });
 
-                // Dependent benefits --------------------------------------------
-                store.filters.dependentBenefits.map(({ core, dependent }) => {
-                  let benefit = newArr.find((b) => b.title == dependent);
-                  if (!benefit) throw new Error(`not found ${benefit}`);
-                  benefit.dependsOn = `-${provider}.modifiers${n}.benefits.${
-                    Benefits.find((v) => v.benefits[1] == core).benefits[0]
-                  }-`;
-                });
+        // Dependent benefits --------------------------------------------
+        store.filters.dependentBenefits.map(({ core, dependent }) => {
+          // console.log("core, dependent", newArr, dependent);  
+          let benefit = newArr.find((b) => b.title == dependent);
+          if (!benefit) throw new Error(`not found ${benefit}`);
+          benefit.dependsOn = `-${provider}.modifiers${n}.benefits.${
+            Benefits.find((v) => v.benefits[1] == core).benefits[0]
+          }-`;
+        });
 
         // bundle benefits --------------------------------------------
         store.filters.bundleBenefits.map((v) => {
@@ -2714,8 +2721,6 @@ console.log('Arr.length >> ', Arr.length);
             }, []),
           ];
         });
-
-
       }
       if (key == "discount") {
         let str = {

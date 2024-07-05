@@ -102,7 +102,7 @@ function check(v1, v2) {
     ["Complications of Pregnancy", "Complications of Pregnancy"],
     ["New Born Cover", "New Born Cover"],
     ["Dental", "Dental"],
-    ["Dental Waiting Period", "Dental_Waiting_Period"],
+    ["Dental Waiting Period", "Dental Waiting Period"],
     ["Alternative Medicines", "Alternative Medicines"],
     ["Emergency Evacuation", "Emergency-Evacuation"],
     ["Virtual / Tele Doctor", "Virtual / Tele Doctor"],

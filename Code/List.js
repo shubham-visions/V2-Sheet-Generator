@@ -869,11 +869,8 @@ const getList = (arr) => {
       arr.forEach((v) => {
         if (!v["dependentbenefits"]) return;
         let [core, dependent] = v["dependentbenefits"].split(" - ");
-        console.log('aftre');
         Global.filters.dependentBenefits.push({ core, dependent });
       });
-
-      console.log('Global >> ', Global);
 
     return Global;
   } catch (error) {
@@ -1032,17 +1029,18 @@ const fetchAddons = (
   num,
   conversion
 ) => {
+  console.log("addonName >> ", addonName);
   let info = readFile(
     folderName,
-    `addon${num > 0 ? num-1 : ""}`,
-    `${addonName.includes(" ") ? addonName.split(" ")[0] : addonName}-info`
+    "addon",
+    `${addonName}`
   );
 
-  // console.log('benefit >> ', benefit);
+  console.log("folderName ", folderName);
 
-  // console.log('info[0] >> ', info[0]);
+  console.log("info >> ", info);
   let addonRates = info[0].sheetName
-    ? readFile(folderName, `addon${num > 0 ? num-1 : ""}`, info[0].sheetName)
+    ? readFile(folderName, "addon", info[0].sheetName)
     : [];
   // createFile(
   //   "Addons",
@@ -1056,7 +1054,7 @@ const fetchAddons = (
   // );
 
   // console.log('benefit >> ', benefit._id);
-  if (info.find((v) => v.default.toLowerCase == "true")) {
+  if (info.find((v) => v.default?.toLowerCase == "true")) {
   } else {
     let Addons = [];
     info.forEach((v, i) => {

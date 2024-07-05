@@ -10,16 +10,15 @@ const fetchAddons = (
     num,
     conversion
   ) => {
-    let info = readFile(
-      folderName,
-      "addon",
-      `${addonName.includes(" ") ? addonName.split(" ")[0] : addonName}-info`
-    );
-  ​
-    // console.log('info[0] >> ', info[0]);
-    let addonRates = info[0].sheetName
-      ? readFile(folderName, "addon", info[0].sheetName)
-      : [];
+    console.log('addonName >> ', addonName);
+  let info = readFile(
+    folderName,
+    "addon",
+    `${addonName.includes(" ") ? addonName.split(" ")[0] : addonName}-info`
+  );
+  let addonRates = info[0].sheetName
+    ? readFile(folderName, "addon", info[0].sheetName)
+    : [];
     // createFile(
     //   "Addons",
     //   addonName.includes(" ") ? addonName.split(" ")[0] : addonName,
