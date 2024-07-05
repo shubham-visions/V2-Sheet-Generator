@@ -24,20 +24,7 @@ const {
 } = require("./Code/constants");
 
 const OPCopayOptions = [
-  'op-option-1',  'op-option-2',  'op-option-3',
-  'op-option-4',  'op-option-5',  'op-option-6',
-  'op-option-7',  'op-option-8',  'op-option-9',
-  'op-option-10', 'op-option-11', 'op-option-12',
-  'op-option-13', 'op-option-14', 'op-option-15',
-  'op-option-16', 'op-option-17', 'op-option-18',
-  'op-option-19', 'op-option-20', 'op-option-21',
-  'op-option-22', 'op-option-23', 'op-option-24',
-  'op-option-25', 'op-option-26', 'op-option-27',
-  'op-option-28', 'op-option-29', 'op-option-30',
-  'op-option-31', 'op-option-32', 'op-option-33',
-  'op-option-34', 'op-option-35', 'op-option-36',
-  'op-option-37', 'op-option-38', 'op-option-39',
-  'op-option-40'
+  'op-option-1'
 ]
 
 let residencyIPOptions = 1;
@@ -1292,27 +1279,27 @@ let Arr = new Array(resCount).fill(null);
             : "-Enum.ageCalculationMethod.standard-",
         exchangeRates: [
           {
-            from: "-Enum.currency.AED-",
+            from: "-Enum.currency.EUR-",
             to: "-Enum.currency.USD-",
-            rate: 0.272479564,
+            rate: 1.16,
             type: "-Enum.conversionRateType.benefit-",
           },
           {
-            from: "-Enum.currency.AED-",
+            from: "-Enum.currency.EUR-",
             to: "-Enum.currency.USD-",
-            rate: 0.272294078,
+            rate: 1.16,
             type: "-Enum.conversionRateType.premium-",
           },
           {
             from: "-Enum.currency.USD-",
-            to: "-Enum.currency.AED-",
-            rate: 3.67,
+            to: "-Enum.currency.EUR-",
+            rate: 0.862068966,
             type: "-Enum.conversionRateType.benefit-",
           },
           {
             from: "-Enum.currency.USD-",
-            to: "-Enum.currency.AED-",
-            rate: 3.6725,
+            to: "-Enum.currency.EUR-",
+            rate: 0.862068966,
             type: "-Enum.conversionRateType.premium-",
           },
         ],
@@ -1696,6 +1683,7 @@ let Arr = new Array(resCount).fill(null);
             userType: "-Enum.userType.All-",
             benefitTypes: [
               "-core.benefitTypes.optical-",
+              "-core.benefitTypes.repatriation-",
               "-core.benefitTypes.wellness-",
               "-core.benefitTypes.emergencyEvacution-",
             ],
@@ -1976,7 +1964,7 @@ let Arr = new Array(resCount).fill(null);
                 ? [
                     {
                       currency: `-Enum.currency.${
-                        check ? planValue.split(" ")[0] : "USD"
+                        check ? planValue.split(" ")[0] : "EUR"
                       }-`,
                       value: check
                         ? Number(planValue.split(" ")[1].split(",").join(""))
@@ -2013,13 +2001,13 @@ let Arr = new Array(resCount).fill(null);
             baseAnnualPremium: [
               {
                 fromAge: 0,
-                toAge: 82,
+                toAge: 99,
                 gender: `-Enum.gender.male-`,
                 price: [{ value: 0, currency: `-Enum.currency.USD-` }],
               },
               {
                 fromAge: 0,
-                toAge: 82,
+                toAge: 99,
                 gender: `-Enum.gender.female-`,
                 price: [{ value: 0, currency: `-Enum.currency.USD-` }],
               },
@@ -3961,11 +3949,14 @@ let Arr = new Array(resCount).fill(null);
       let result = [];
       let num = 1;
       store?.plans.forEach((plan, l) => {
+        console.log("plan ", plan);
         store.coverages.forEach((coverages, k) => {
           let coverage = coverages.coverageName;
           ["coPayIP", "coPayOP"].forEach((types, j) => {
             store[types].forEach((copays, i) => {
               let [copay] = copays;
+
+              console.log("copay ", copay);
               let type = types.split("y")[1];
               let Schema = {
                 _id: `-generateMongoIdFromString('${provider} rateTable ${
@@ -3994,14 +3985,18 @@ let Arr = new Array(resCount).fill(null);
               let rates = rateSheet
                 .filter(
                   (v) =>
-                    v.type == type &&
-                    v.planName == plan[1] &&
-                    coverage[1] == v.coverages &&
-                    copay[0] == v.copay
+                    {
+                      return (
+                        v.type == type &&
+                        v.planName == plan[1] &&
+                        coverage[1] == v.coverages &&
+                        copay[0] == (v.copay == 0.1 ? "10%" : v.copay == 0.2 ? "20%" : "NIL")
+                      );
+                    }
                 )
                 .map((v) => {
                   return {
-                    price: { currency: "-Enum.currency.USD-", price: parseFloat(v.rates*12) },
+                    price: { currency: "-Enum.currency.USD-", price: parseFloat(v.rates*1.16) },
                     customer: {
                       from: v.ageStart,
                       to: v.ageEnd,

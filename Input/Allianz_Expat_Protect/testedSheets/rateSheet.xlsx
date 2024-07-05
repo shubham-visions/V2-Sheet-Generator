@@ -1,0 +1,1601 @@
+planName,network,ageStart,ageEnd,code,coverages,rates,dental,type,frequency,curreny,copay
+Pack Premium,In-house Network,0,0,Zone 1,Worldwide excluding USA,1629,277,IP,Annually,USD,NIL
+Pack Premium,In-house Network,0,0,Zone 1,Worldwide excluding USA,761,277,OP,Annually,USD,NIL
+Pack Premium,In-house Network,0,0,Zone 1,Worldwide excluding USA,687,277,OP,Annually,USD,10%
+Pack Premium,In-house Network,0,0,Zone 1,Worldwide excluding USA,610,277,OP,Annually,USD,20%
+Pack Confort,In-house Network,0,0,Zone 1,Worldwide excluding USA,1280,233,IP,Annually,USD,NIL
+Pack Confort,In-house Network,0,0,Zone 1,Worldwide excluding USA,724,233,OP,Annually,USD,NIL
+Pack Confort,In-house Network,0,0,Zone 1,Worldwide excluding USA,653,233,OP,Annually,USD,10%
+Pack Confort,In-house Network,0,0,Zone 1,Worldwide excluding USA,581,233,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,0,0,Zone 1,Worldwide excluding USA,976,165,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,0,0,Zone 1,Worldwide excluding USA,458,165,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,0,0,Zone 1,Worldwide excluding USA,412,165,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,0,0,Zone 1,Worldwide excluding USA,368,165,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,0,0,Zone 1,Worldwide excluding USA,703,127,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,0,0,Zone 1,Worldwide excluding USA,406,127,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,0,0,Zone 1,Worldwide excluding USA,365,127,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,0,0,Zone 1,Worldwide excluding USA,324,127,OP,Annually,USD,20%
+Pack Premium,In-house Network,1,1,Zone 1,Worldwide excluding USA,1545,263,IP,Annually,USD,NIL
+Pack Premium,In-house Network,1,1,Zone 1,Worldwide excluding USA,725,263,OP,Annually,USD,NIL
+Pack Premium,In-house Network,1,1,Zone 1,Worldwide excluding USA,653,263,OP,Annually,USD,10%
+Pack Premium,In-house Network,1,1,Zone 1,Worldwide excluding USA,581,263,OP,Annually,USD,20%
+Pack Confort,In-house Network,1,1,Zone 1,Worldwide excluding USA,1219,218,IP,Annually,USD,NIL
+Pack Confort,In-house Network,1,1,Zone 1,Worldwide excluding USA,691,218,OP,Annually,USD,NIL
+Pack Confort,In-house Network,1,1,Zone 1,Worldwide excluding USA,621,218,OP,Annually,USD,10%
+Pack Confort,In-house Network,1,1,Zone 1,Worldwide excluding USA,552,218,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,1,1,Zone 1,Worldwide excluding USA,928,158,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,1,1,Zone 1,Worldwide excluding USA,434,158,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,1,1,Zone 1,Worldwide excluding USA,391,158,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,1,1,Zone 1,Worldwide excluding USA,348,158,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,1,1,Zone 1,Worldwide excluding USA,667,120,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,1,1,Zone 1,Worldwide excluding USA,389,120,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,1,1,Zone 1,Worldwide excluding USA,351,120,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,1,1,Zone 1,Worldwide excluding USA,311,120,OP,Annually,USD,20%
+Pack Premium,In-house Network,2,2,Zone 1,Worldwide excluding USA,1466,251,IP,Annually,USD,NIL
+Pack Premium,In-house Network,2,2,Zone 1,Worldwide excluding USA,689,251,OP,Annually,USD,NIL
+Pack Premium,In-house Network,2,2,Zone 1,Worldwide excluding USA,619,251,OP,Annually,USD,10%
+Pack Premium,In-house Network,2,2,Zone 1,Worldwide excluding USA,549,251,OP,Annually,USD,20%
+Pack Confort,In-house Network,2,2,Zone 1,Worldwide excluding USA,1153,209,IP,Annually,USD,NIL
+Pack Confort,In-house Network,2,2,Zone 1,Worldwide excluding USA,653,209,OP,Annually,USD,NIL
+Pack Confort,In-house Network,2,2,Zone 1,Worldwide excluding USA,587,209,OP,Annually,USD,10%
+Pack Confort,In-house Network,2,2,Zone 1,Worldwide excluding USA,524,209,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,2,2,Zone 1,Worldwide excluding USA,880,151,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,2,2,Zone 1,Worldwide excluding USA,412,151,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,2,2,Zone 1,Worldwide excluding USA,371,151,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,2,2,Zone 1,Worldwide excluding USA,332,151,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,2,2,Zone 1,Worldwide excluding USA,634,116,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,2,2,Zone 1,Worldwide excluding USA,366,116,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,2,2,Zone 1,Worldwide excluding USA,332,116,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,2,2,Zone 1,Worldwide excluding USA,295,116,OP,Annually,USD,20%
+Pack Premium,In-house Network,3,3,Zone 1,Worldwide excluding USA,1482,252,IP,Annually,USD,NIL
+Pack Premium,In-house Network,3,3,Zone 1,Worldwide excluding USA,694,252,OP,Annually,USD,NIL
+Pack Premium,In-house Network,3,3,Zone 1,Worldwide excluding USA,624,252,OP,Annually,USD,10%
+Pack Premium,In-house Network,3,3,Zone 1,Worldwide excluding USA,554,252,OP,Annually,USD,20%
+Pack Confort,In-house Network,3,3,Zone 1,Worldwide excluding USA,1165,217,IP,Annually,USD,NIL
+Pack Confort,In-house Network,3,3,Zone 1,Worldwide excluding USA,656,217,OP,Annually,USD,NIL
+Pack Confort,In-house Network,3,3,Zone 1,Worldwide excluding USA,589,217,OP,Annually,USD,10%
+Pack Confort,In-house Network,3,3,Zone 1,Worldwide excluding USA,525,217,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,3,3,Zone 1,Worldwide excluding USA,889,155,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,3,3,Zone 1,Worldwide excluding USA,414,155,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,3,3,Zone 1,Worldwide excluding USA,374,155,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,3,3,Zone 1,Worldwide excluding USA,333,155,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,3,3,Zone 1,Worldwide excluding USA,639,119,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,3,3,Zone 1,Worldwide excluding USA,369,119,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,3,3,Zone 1,Worldwide excluding USA,333,119,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,3,3,Zone 1,Worldwide excluding USA,297,119,OP,Annually,USD,20%
+Pack Premium,In-house Network,4,4,Zone 1,Worldwide excluding USA,1492,257,IP,Annually,USD,NIL
+Pack Premium,In-house Network,4,4,Zone 1,Worldwide excluding USA,701,257,OP,Annually,USD,NIL
+Pack Premium,In-house Network,4,4,Zone 1,Worldwide excluding USA,630,257,OP,Annually,USD,10%
+Pack Premium,In-house Network,4,4,Zone 1,Worldwide excluding USA,562,257,OP,Annually,USD,20%
+Pack Confort,In-house Network,4,4,Zone 1,Worldwide excluding USA,1177,217,IP,Annually,USD,NIL
+Pack Confort,In-house Network,4,4,Zone 1,Worldwide excluding USA,669,217,OP,Annually,USD,NIL
+Pack Confort,In-house Network,4,4,Zone 1,Worldwide excluding USA,601,217,OP,Annually,USD,10%
+Pack Confort,In-house Network,4,4,Zone 1,Worldwide excluding USA,534,217,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,4,4,Zone 1,Worldwide excluding USA,897,156,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,4,4,Zone 1,Worldwide excluding USA,420,156,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,4,4,Zone 1,Worldwide excluding USA,378,156,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,4,4,Zone 1,Worldwide excluding USA,336,156,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,4,4,Zone 1,Worldwide excluding USA,647,119,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,4,4,Zone 1,Worldwide excluding USA,377,119,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,4,4,Zone 1,Worldwide excluding USA,338,119,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,4,4,Zone 1,Worldwide excluding USA,301,119,OP,Annually,USD,20%
+Pack Premium,In-house Network,5,5,Zone 1,Worldwide excluding USA,1507,257,IP,Annually,USD,NIL
+Pack Premium,In-house Network,5,5,Zone 1,Worldwide excluding USA,708,257,OP,Annually,USD,NIL
+Pack Premium,In-house Network,5,5,Zone 1,Worldwide excluding USA,637,257,OP,Annually,USD,10%
+Pack Premium,In-house Network,5,5,Zone 1,Worldwide excluding USA,568,257,OP,Annually,USD,20%
+Pack Confort,In-house Network,5,5,Zone 1,Worldwide excluding USA,1187,217,IP,Annually,USD,NIL
+Pack Confort,In-house Network,5,5,Zone 1,Worldwide excluding USA,674,217,OP,Annually,USD,NIL
+Pack Confort,In-house Network,5,5,Zone 1,Worldwide excluding USA,607,217,OP,Annually,USD,10%
+Pack Confort,In-house Network,5,5,Zone 1,Worldwide excluding USA,542,217,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,5,5,Zone 1,Worldwide excluding USA,905,156,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,5,5,Zone 1,Worldwide excluding USA,425,156,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,5,5,Zone 1,Worldwide excluding USA,383,156,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,5,5,Zone 1,Worldwide excluding USA,340,156,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,5,5,Zone 1,Worldwide excluding USA,651,119,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,5,5,Zone 1,Worldwide excluding USA,381,119,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,5,5,Zone 1,Worldwide excluding USA,343,119,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,5,5,Zone 1,Worldwide excluding USA,304,119,OP,Annually,USD,20%
+Pack Premium,In-house Network,6,6,Zone 1,Worldwide excluding USA,1525,261,IP,Annually,USD,NIL
+Pack Premium,In-house Network,6,6,Zone 1,Worldwide excluding USA,714,261,OP,Annually,USD,NIL
+Pack Premium,In-house Network,6,6,Zone 1,Worldwide excluding USA,643,261,OP,Annually,USD,10%
+Pack Premium,In-house Network,6,6,Zone 1,Worldwide excluding USA,572,261,OP,Annually,USD,20%
+Pack Confort,In-house Network,6,6,Zone 1,Worldwide excluding USA,1198,218,IP,Annually,USD,NIL
+Pack Confort,In-house Network,6,6,Zone 1,Worldwide excluding USA,678,218,OP,Annually,USD,NIL
+Pack Confort,In-house Network,6,6,Zone 1,Worldwide excluding USA,611,218,OP,Annually,USD,10%
+Pack Confort,In-house Network,6,6,Zone 1,Worldwide excluding USA,544,218,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,6,6,Zone 1,Worldwide excluding USA,916,157,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,6,6,Zone 1,Worldwide excluding USA,428,157,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,6,6,Zone 1,Worldwide excluding USA,385,157,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,6,6,Zone 1,Worldwide excluding USA,343,157,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,6,6,Zone 1,Worldwide excluding USA,656,120,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,6,6,Zone 1,Worldwide excluding USA,384,120,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,6,6,Zone 1,Worldwide excluding USA,346,120,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,6,6,Zone 1,Worldwide excluding USA,306,120,OP,Annually,USD,20%
+Pack Premium,In-house Network,7,7,Zone 1,Worldwide excluding USA,1539,263,IP,Annually,USD,NIL
+Pack Premium,In-house Network,7,7,Zone 1,Worldwide excluding USA,724,263,OP,Annually,USD,NIL
+Pack Premium,In-house Network,7,7,Zone 1,Worldwide excluding USA,652,263,OP,Annually,USD,10%
+Pack Premium,In-house Network,7,7,Zone 1,Worldwide excluding USA,579,263,OP,Annually,USD,20%
+Pack Confort,In-house Network,7,7,Zone 1,Worldwide excluding USA,1213,220,IP,Annually,USD,NIL
+Pack Confort,In-house Network,7,7,Zone 1,Worldwide excluding USA,683,220,OP,Annually,USD,NIL
+Pack Confort,In-house Network,7,7,Zone 1,Worldwide excluding USA,616,220,OP,Annually,USD,10%
+Pack Confort,In-house Network,7,7,Zone 1,Worldwide excluding USA,547,220,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,7,7,Zone 1,Worldwide excluding USA,925,158,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,7,7,Zone 1,Worldwide excluding USA,434,158,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,7,7,Zone 1,Worldwide excluding USA,391,158,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,7,7,Zone 1,Worldwide excluding USA,348,158,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,7,7,Zone 1,Worldwide excluding USA,663,121,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,7,7,Zone 1,Worldwide excluding USA,385,121,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,7,7,Zone 1,Worldwide excluding USA,349,121,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,7,7,Zone 1,Worldwide excluding USA,308,121,OP,Annually,USD,20%
+Pack Premium,In-house Network,8,8,Zone 1,Worldwide excluding USA,1558,265,IP,Annually,USD,NIL
+Pack Premium,In-house Network,8,8,Zone 1,Worldwide excluding USA,730,265,OP,Annually,USD,NIL
+Pack Premium,In-house Network,8,8,Zone 1,Worldwide excluding USA,656,265,OP,Annually,USD,10%
+Pack Premium,In-house Network,8,8,Zone 1,Worldwide excluding USA,584,265,OP,Annually,USD,20%
+Pack Confort,In-house Network,8,8,Zone 1,Worldwide excluding USA,1225,225,IP,Annually,USD,NIL
+Pack Confort,In-house Network,8,8,Zone 1,Worldwide excluding USA,693,225,OP,Annually,USD,NIL
+Pack Confort,In-house Network,8,8,Zone 1,Worldwide excluding USA,623,225,OP,Annually,USD,10%
+Pack Confort,In-house Network,8,8,Zone 1,Worldwide excluding USA,553,225,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,8,8,Zone 1,Worldwide excluding USA,936,160,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,8,8,Zone 1,Worldwide excluding USA,436,160,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,8,8,Zone 1,Worldwide excluding USA,392,160,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,8,8,Zone 1,Worldwide excluding USA,350,160,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,8,8,Zone 1,Worldwide excluding USA,673,122,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,8,8,Zone 1,Worldwide excluding USA,390,122,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,8,8,Zone 1,Worldwide excluding USA,352,122,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,8,8,Zone 1,Worldwide excluding USA,313,122,OP,Annually,USD,20%
+Pack Premium,In-house Network,9,9,Zone 1,Worldwide excluding USA,1571,267,IP,Annually,USD,NIL
+Pack Premium,In-house Network,9,9,Zone 1,Worldwide excluding USA,738,267,OP,Annually,USD,NIL
+Pack Premium,In-house Network,9,9,Zone 1,Worldwide excluding USA,664,267,OP,Annually,USD,10%
+Pack Premium,In-house Network,9,9,Zone 1,Worldwide excluding USA,590,267,OP,Annually,USD,20%
+Pack Confort,In-house Network,9,9,Zone 1,Worldwide excluding USA,1239,225,IP,Annually,USD,NIL
+Pack Confort,In-house Network,9,9,Zone 1,Worldwide excluding USA,701,225,OP,Annually,USD,NIL
+Pack Confort,In-house Network,9,9,Zone 1,Worldwide excluding USA,631,225,OP,Annually,USD,10%
+Pack Confort,In-house Network,9,9,Zone 1,Worldwide excluding USA,560,225,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,9,9,Zone 1,Worldwide excluding USA,946,161,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,9,9,Zone 1,Worldwide excluding USA,440,161,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,9,9,Zone 1,Worldwide excluding USA,396,161,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,9,9,Zone 1,Worldwide excluding USA,353,161,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,9,9,Zone 1,Worldwide excluding USA,681,122,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,9,9,Zone 1,Worldwide excluding USA,396,122,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,9,9,Zone 1,Worldwide excluding USA,356,122,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,9,9,Zone 1,Worldwide excluding USA,316,122,OP,Annually,USD,20%
+Pack Premium,In-house Network,10,10,Zone 1,Worldwide excluding USA,1590,268,IP,Annually,USD,NIL
+Pack Premium,In-house Network,10,10,Zone 1,Worldwide excluding USA,745,268,OP,Annually,USD,NIL
+Pack Premium,In-house Network,10,10,Zone 1,Worldwide excluding USA,670,268,OP,Annually,USD,10%
+Pack Premium,In-house Network,10,10,Zone 1,Worldwide excluding USA,597,268,OP,Annually,USD,20%
+Pack Confort,In-house Network,10,10,Zone 1,Worldwide excluding USA,1252,226,IP,Annually,USD,NIL
+Pack Confort,In-house Network,10,10,Zone 1,Worldwide excluding USA,706,226,OP,Annually,USD,NIL
+Pack Confort,In-house Network,10,10,Zone 1,Worldwide excluding USA,635,226,OP,Annually,USD,10%
+Pack Confort,In-house Network,10,10,Zone 1,Worldwide excluding USA,565,226,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,10,10,Zone 1,Worldwide excluding USA,955,161,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,10,10,Zone 1,Worldwide excluding USA,444,161,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,10,10,Zone 1,Worldwide excluding USA,400,161,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,10,10,Zone 1,Worldwide excluding USA,355,161,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,10,10,Zone 1,Worldwide excluding USA,687,123,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,10,10,Zone 1,Worldwide excluding USA,399,123,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,10,10,Zone 1,Worldwide excluding USA,359,123,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,10,10,Zone 1,Worldwide excluding USA,320,123,OP,Annually,USD,20%
+Pack Premium,In-house Network,11,11,Zone 1,Worldwide excluding USA,1606,276,IP,Annually,USD,NIL
+Pack Premium,In-house Network,11,11,Zone 1,Worldwide excluding USA,752,276,OP,Annually,USD,NIL
+Pack Premium,In-house Network,11,11,Zone 1,Worldwide excluding USA,675,276,OP,Annually,USD,10%
+Pack Premium,In-house Network,11,11,Zone 1,Worldwide excluding USA,602,276,OP,Annually,USD,20%
+Pack Confort,In-house Network,11,11,Zone 1,Worldwide excluding USA,1265,229,IP,Annually,USD,NIL
+Pack Confort,In-house Network,11,11,Zone 1,Worldwide excluding USA,712,229,OP,Annually,USD,NIL
+Pack Confort,In-house Network,11,11,Zone 1,Worldwide excluding USA,642,229,OP,Annually,USD,10%
+Pack Confort,In-house Network,11,11,Zone 1,Worldwide excluding USA,570,229,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,11,11,Zone 1,Worldwide excluding USA,964,165,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,11,11,Zone 1,Worldwide excluding USA,452,165,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,11,11,Zone 1,Worldwide excluding USA,405,165,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,11,11,Zone 1,Worldwide excluding USA,360,165,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,11,11,Zone 1,Worldwide excluding USA,693,126,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,11,11,Zone 1,Worldwide excluding USA,402,126,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,11,11,Zone 1,Worldwide excluding USA,361,126,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,11,11,Zone 1,Worldwide excluding USA,321,126,OP,Annually,USD,20%
+Pack Premium,In-house Network,12,12,Zone 1,Worldwide excluding USA,1621,277,IP,Annually,USD,NIL
+Pack Premium,In-house Network,12,12,Zone 1,Worldwide excluding USA,759,277,OP,Annually,USD,NIL
+Pack Premium,In-house Network,12,12,Zone 1,Worldwide excluding USA,685,277,OP,Annually,USD,10%
+Pack Premium,In-house Network,12,12,Zone 1,Worldwide excluding USA,607,277,OP,Annually,USD,20%
+Pack Confort,In-house Network,12,12,Zone 1,Worldwide excluding USA,1274,232,IP,Annually,USD,NIL
+Pack Confort,In-house Network,12,12,Zone 1,Worldwide excluding USA,723,232,OP,Annually,USD,NIL
+Pack Confort,In-house Network,12,12,Zone 1,Worldwide excluding USA,652,232,OP,Annually,USD,10%
+Pack Confort,In-house Network,12,12,Zone 1,Worldwide excluding USA,579,232,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,12,12,Zone 1,Worldwide excluding USA,973,165,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,12,12,Zone 1,Worldwide excluding USA,456,165,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,12,12,Zone 1,Worldwide excluding USA,410,165,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,12,12,Zone 1,Worldwide excluding USA,363,165,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,12,12,Zone 1,Worldwide excluding USA,700,127,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,12,12,Zone 1,Worldwide excluding USA,406,127,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,12,12,Zone 1,Worldwide excluding USA,365,127,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,12,12,Zone 1,Worldwide excluding USA,324,127,OP,Annually,USD,20%
+Pack Premium,In-house Network,13,13,Zone 1,Worldwide excluding USA,1638,280,IP,Annually,USD,NIL
+Pack Premium,In-house Network,13,13,Zone 1,Worldwide excluding USA,767,280,OP,Annually,USD,NIL
+Pack Premium,In-house Network,13,13,Zone 1,Worldwide excluding USA,691,280,OP,Annually,USD,10%
+Pack Premium,In-house Network,13,13,Zone 1,Worldwide excluding USA,613,280,OP,Annually,USD,20%
+Pack Confort,In-house Network,13,13,Zone 1,Worldwide excluding USA,1287,233,IP,Annually,USD,NIL
+Pack Confort,In-house Network,13,13,Zone 1,Worldwide excluding USA,731,233,OP,Annually,USD,NIL
+Pack Confort,In-house Network,13,13,Zone 1,Worldwide excluding USA,657,233,OP,Annually,USD,10%
+Pack Confort,In-house Network,13,13,Zone 1,Worldwide excluding USA,585,233,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,13,13,Zone 1,Worldwide excluding USA,984,166,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,13,13,Zone 1,Worldwide excluding USA,459,166,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,13,13,Zone 1,Worldwide excluding USA,413,166,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,13,13,Zone 1,Worldwide excluding USA,368,166,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,13,13,Zone 1,Worldwide excluding USA,707,127,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,13,13,Zone 1,Worldwide excluding USA,410,127,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,13,13,Zone 1,Worldwide excluding USA,369,127,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,13,13,Zone 1,Worldwide excluding USA,329,127,OP,Annually,USD,20%
+Pack Premium,In-house Network,14,14,Zone 1,Worldwide excluding USA,1653,283,IP,Annually,USD,NIL
+Pack Premium,In-house Network,14,14,Zone 1,Worldwide excluding USA,777,283,OP,Annually,USD,NIL
+Pack Premium,In-house Network,14,14,Zone 1,Worldwide excluding USA,700,283,OP,Annually,USD,10%
+Pack Premium,In-house Network,14,14,Zone 1,Worldwide excluding USA,622,283,OP,Annually,USD,20%
+Pack Confort,In-house Network,14,14,Zone 1,Worldwide excluding USA,1303,237,IP,Annually,USD,NIL
+Pack Confort,In-house Network,14,14,Zone 1,Worldwide excluding USA,739,237,OP,Annually,USD,NIL
+Pack Confort,In-house Network,14,14,Zone 1,Worldwide excluding USA,665,237,OP,Annually,USD,10%
+Pack Confort,In-house Network,14,14,Zone 1,Worldwide excluding USA,590,237,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,14,14,Zone 1,Worldwide excluding USA,990,169,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,14,14,Zone 1,Worldwide excluding USA,465,169,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,14,14,Zone 1,Worldwide excluding USA,419,169,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,14,14,Zone 1,Worldwide excluding USA,373,169,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,14,14,Zone 1,Worldwide excluding USA,711,130,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,14,14,Zone 1,Worldwide excluding USA,414,130,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,14,14,Zone 1,Worldwide excluding USA,374,130,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,14,14,Zone 1,Worldwide excluding USA,333,130,OP,Annually,USD,20%
+Pack Premium,In-house Network,15,15,Zone 1,Worldwide excluding USA,1675,284,IP,Annually,USD,NIL
+Pack Premium,In-house Network,15,15,Zone 1,Worldwide excluding USA,783,284,OP,Annually,USD,NIL
+Pack Premium,In-house Network,15,15,Zone 1,Worldwide excluding USA,706,284,OP,Annually,USD,10%
+Pack Premium,In-house Network,15,15,Zone 1,Worldwide excluding USA,626,284,OP,Annually,USD,20%
+Pack Confort,In-house Network,15,15,Zone 1,Worldwide excluding USA,1319,240,IP,Annually,USD,NIL
+Pack Confort,In-house Network,15,15,Zone 1,Worldwide excluding USA,744,240,OP,Annually,USD,NIL
+Pack Confort,In-house Network,15,15,Zone 1,Worldwide excluding USA,670,240,OP,Annually,USD,10%
+Pack Confort,In-house Network,15,15,Zone 1,Worldwide excluding USA,595,240,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,15,15,Zone 1,Worldwide excluding USA,1006,169,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,15,15,Zone 1,Worldwide excluding USA,470,169,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,15,15,Zone 1,Worldwide excluding USA,422,169,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,15,15,Zone 1,Worldwide excluding USA,376,169,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,15,15,Zone 1,Worldwide excluding USA,726,133,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,15,15,Zone 1,Worldwide excluding USA,416,133,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,15,15,Zone 1,Worldwide excluding USA,376,133,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,15,15,Zone 1,Worldwide excluding USA,334,133,OP,Annually,USD,20%
+Pack Premium,In-house Network,16,16,Zone 1,Worldwide excluding USA,1690,286,IP,Annually,USD,NIL
+Pack Premium,In-house Network,16,16,Zone 1,Worldwide excluding USA,792,286,OP,Annually,USD,NIL
+Pack Premium,In-house Network,16,16,Zone 1,Worldwide excluding USA,712,286,OP,Annually,USD,10%
+Pack Premium,In-house Network,16,16,Zone 1,Worldwide excluding USA,634,286,OP,Annually,USD,20%
+Pack Confort,In-house Network,16,16,Zone 1,Worldwide excluding USA,1329,240,IP,Annually,USD,NIL
+Pack Confort,In-house Network,16,16,Zone 1,Worldwide excluding USA,754,240,OP,Annually,USD,NIL
+Pack Confort,In-house Network,16,16,Zone 1,Worldwide excluding USA,678,240,OP,Annually,USD,10%
+Pack Confort,In-house Network,16,16,Zone 1,Worldwide excluding USA,604,240,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,16,16,Zone 1,Worldwide excluding USA,1014,170,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,16,16,Zone 1,Worldwide excluding USA,475,170,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,16,16,Zone 1,Worldwide excluding USA,427,170,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,16,16,Zone 1,Worldwide excluding USA,381,170,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,16,16,Zone 1,Worldwide excluding USA,730,133,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,16,16,Zone 1,Worldwide excluding USA,424,133,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,16,16,Zone 1,Worldwide excluding USA,381,133,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,16,16,Zone 1,Worldwide excluding USA,339,133,OP,Annually,USD,20%
+Pack Premium,In-house Network,17,17,Zone 1,Worldwide excluding USA,1708,288,IP,Annually,USD,NIL
+Pack Premium,In-house Network,17,17,Zone 1,Worldwide excluding USA,801,288,OP,Annually,USD,NIL
+Pack Premium,In-house Network,17,17,Zone 1,Worldwide excluding USA,721,288,OP,Annually,USD,10%
+Pack Premium,In-house Network,17,17,Zone 1,Worldwide excluding USA,642,288,OP,Annually,USD,20%
+Pack Confort,In-house Network,17,17,Zone 1,Worldwide excluding USA,1346,243,IP,Annually,USD,NIL
+Pack Confort,In-house Network,17,17,Zone 1,Worldwide excluding USA,757,243,OP,Annually,USD,NIL
+Pack Confort,In-house Network,17,17,Zone 1,Worldwide excluding USA,681,243,OP,Annually,USD,10%
+Pack Confort,In-house Network,17,17,Zone 1,Worldwide excluding USA,607,243,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,17,17,Zone 1,Worldwide excluding USA,1026,171,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,17,17,Zone 1,Worldwide excluding USA,481,171,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,17,17,Zone 1,Worldwide excluding USA,431,171,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,17,17,Zone 1,Worldwide excluding USA,384,171,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,17,17,Zone 1,Worldwide excluding USA,739,135,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,17,17,Zone 1,Worldwide excluding USA,427,135,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,17,17,Zone 1,Worldwide excluding USA,384,135,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,17,17,Zone 1,Worldwide excluding USA,340,135,OP,Annually,USD,20%
+Pack Premium,In-house Network,18,18,Zone 1,Worldwide excluding USA,1723,292,IP,Annually,USD,NIL
+Pack Premium,In-house Network,18,18,Zone 1,Worldwide excluding USA,810,292,OP,Annually,USD,NIL
+Pack Premium,In-house Network,18,18,Zone 1,Worldwide excluding USA,729,292,OP,Annually,USD,10%
+Pack Premium,In-house Network,18,18,Zone 1,Worldwide excluding USA,647,292,OP,Annually,USD,20%
+Pack Confort,In-house Network,18,18,Zone 1,Worldwide excluding USA,1356,245,IP,Annually,USD,NIL
+Pack Confort,In-house Network,18,18,Zone 1,Worldwide excluding USA,767,245,OP,Annually,USD,NIL
+Pack Confort,In-house Network,18,18,Zone 1,Worldwide excluding USA,692,245,OP,Annually,USD,10%
+Pack Confort,In-house Network,18,18,Zone 1,Worldwide excluding USA,615,245,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,18,18,Zone 1,Worldwide excluding USA,1034,176,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,18,18,Zone 1,Worldwide excluding USA,484,176,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,18,18,Zone 1,Worldwide excluding USA,436,176,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,18,18,Zone 1,Worldwide excluding USA,388,176,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,18,18,Zone 1,Worldwide excluding USA,743,136,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,18,18,Zone 1,Worldwide excluding USA,435,136,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,18,18,Zone 1,Worldwide excluding USA,392,136,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,18,18,Zone 1,Worldwide excluding USA,349,136,OP,Annually,USD,20%
+Pack Premium,In-house Network,19,19,Zone 1,Worldwide excluding USA,2077,348,IP,Annually,USD,NIL
+Pack Premium,In-house Network,19,19,Zone 1,Worldwide excluding USA,973,348,OP,Annually,USD,NIL
+Pack Premium,In-house Network,19,19,Zone 1,Worldwide excluding USA,876,348,OP,Annually,USD,10%
+Pack Premium,In-house Network,19,19,Zone 1,Worldwide excluding USA,777,348,OP,Annually,USD,20%
+Pack Confort,In-house Network,19,19,Zone 1,Worldwide excluding USA,1817,324,IP,Annually,USD,NIL
+Pack Confort,In-house Network,19,19,Zone 1,Worldwide excluding USA,1024,324,OP,Annually,USD,NIL
+Pack Confort,In-house Network,19,19,Zone 1,Worldwide excluding USA,921,324,OP,Annually,USD,10%
+Pack Confort,In-house Network,19,19,Zone 1,Worldwide excluding USA,818,324,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,19,19,Zone 1,Worldwide excluding USA,1248,210,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,19,19,Zone 1,Worldwide excluding USA,581,210,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,19,19,Zone 1,Worldwide excluding USA,523,210,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,19,19,Zone 1,Worldwide excluding USA,465,210,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,19,19,Zone 1,Worldwide excluding USA,996,179,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,19,19,Zone 1,Worldwide excluding USA,576,179,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,19,19,Zone 1,Worldwide excluding USA,516,179,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,19,19,Zone 1,Worldwide excluding USA,460,179,OP,Annually,USD,20%
+Pack Premium,In-house Network,20,20,Zone 1,Worldwide excluding USA,2090,350,IP,Annually,USD,NIL
+Pack Premium,In-house Network,20,20,Zone 1,Worldwide excluding USA,979,350,OP,Annually,USD,NIL
+Pack Premium,In-house Network,20,20,Zone 1,Worldwide excluding USA,882,350,OP,Annually,USD,10%
+Pack Premium,In-house Network,20,20,Zone 1,Worldwide excluding USA,783,350,OP,Annually,USD,20%
+Pack Confort,In-house Network,20,20,Zone 1,Worldwide excluding USA,1825,324,IP,Annually,USD,NIL
+Pack Confort,In-house Network,20,20,Zone 1,Worldwide excluding USA,1031,324,OP,Annually,USD,NIL
+Pack Confort,In-house Network,20,20,Zone 1,Worldwide excluding USA,926,324,OP,Annually,USD,10%
+Pack Confort,In-house Network,20,20,Zone 1,Worldwide excluding USA,825,324,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,20,20,Zone 1,Worldwide excluding USA,1257,211,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,20,20,Zone 1,Worldwide excluding USA,588,211,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,20,20,Zone 1,Worldwide excluding USA,529,211,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,20,20,Zone 1,Worldwide excluding USA,471,211,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,20,20,Zone 1,Worldwide excluding USA,1000,179,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,20,20,Zone 1,Worldwide excluding USA,579,179,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,20,20,Zone 1,Worldwide excluding USA,522,179,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,20,20,Zone 1,Worldwide excluding USA,464,179,OP,Annually,USD,20%
+Pack Premium,In-house Network,21,21,Zone 1,Worldwide excluding USA,2107,352,IP,Annually,USD,NIL
+Pack Premium,In-house Network,21,21,Zone 1,Worldwide excluding USA,987,352,OP,Annually,USD,NIL
+Pack Premium,In-house Network,21,21,Zone 1,Worldwide excluding USA,887,352,OP,Annually,USD,10%
+Pack Premium,In-house Network,21,21,Zone 1,Worldwide excluding USA,789,352,OP,Annually,USD,20%
+Pack Confort,In-house Network,21,21,Zone 1,Worldwide excluding USA,1842,332,IP,Annually,USD,NIL
+Pack Confort,In-house Network,21,21,Zone 1,Worldwide excluding USA,1037,332,OP,Annually,USD,NIL
+Pack Confort,In-house Network,21,21,Zone 1,Worldwide excluding USA,933,332,OP,Annually,USD,10%
+Pack Confort,In-house Network,21,21,Zone 1,Worldwide excluding USA,829,332,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,21,21,Zone 1,Worldwide excluding USA,1266,212,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,21,21,Zone 1,Worldwide excluding USA,590,212,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,21,21,Zone 1,Worldwide excluding USA,531,212,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,21,21,Zone 1,Worldwide excluding USA,472,212,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,21,21,Zone 1,Worldwide excluding USA,1007,181,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,21,21,Zone 1,Worldwide excluding USA,583,181,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,21,21,Zone 1,Worldwide excluding USA,527,181,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,21,21,Zone 1,Worldwide excluding USA,469,181,OP,Annually,USD,20%
+Pack Premium,In-house Network,22,22,Zone 1,Worldwide excluding USA,2119,357,IP,Annually,USD,NIL
+Pack Premium,In-house Network,22,22,Zone 1,Worldwide excluding USA,992,357,OP,Annually,USD,NIL
+Pack Premium,In-house Network,22,22,Zone 1,Worldwide excluding USA,893,357,OP,Annually,USD,10%
+Pack Premium,In-house Network,22,22,Zone 1,Worldwide excluding USA,793,357,OP,Annually,USD,20%
+Pack Confort,In-house Network,22,22,Zone 1,Worldwide excluding USA,1851,332,IP,Annually,USD,NIL
+Pack Confort,In-house Network,22,22,Zone 1,Worldwide excluding USA,1046,332,OP,Annually,USD,NIL
+Pack Confort,In-house Network,22,22,Zone 1,Worldwide excluding USA,942,332,OP,Annually,USD,10%
+Pack Confort,In-house Network,22,22,Zone 1,Worldwide excluding USA,838,332,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,22,22,Zone 1,Worldwide excluding USA,1273,213,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,22,22,Zone 1,Worldwide excluding USA,596,213,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,22,22,Zone 1,Worldwide excluding USA,534,213,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,22,22,Zone 1,Worldwide excluding USA,475,213,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,22,22,Zone 1,Worldwide excluding USA,1013,181,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,22,22,Zone 1,Worldwide excluding USA,589,181,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,22,22,Zone 1,Worldwide excluding USA,531,181,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,22,22,Zone 1,Worldwide excluding USA,472,181,OP,Annually,USD,20%
+Pack Premium,In-house Network,23,23,Zone 1,Worldwide excluding USA,2135,358,IP,Annually,USD,NIL
+Pack Premium,In-house Network,23,23,Zone 1,Worldwide excluding USA,997,358,OP,Annually,USD,NIL
+Pack Premium,In-house Network,23,23,Zone 1,Worldwide excluding USA,898,358,OP,Annually,USD,10%
+Pack Premium,In-house Network,23,23,Zone 1,Worldwide excluding USA,798,358,OP,Annually,USD,20%
+Pack Confort,In-house Network,23,23,Zone 1,Worldwide excluding USA,1866,333,IP,Annually,USD,NIL
+Pack Confort,In-house Network,23,23,Zone 1,Worldwide excluding USA,1052,333,OP,Annually,USD,NIL
+Pack Confort,In-house Network,23,23,Zone 1,Worldwide excluding USA,948,333,OP,Annually,USD,10%
+Pack Confort,In-house Network,23,23,Zone 1,Worldwide excluding USA,842,333,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,23,23,Zone 1,Worldwide excluding USA,1280,214,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,23,23,Zone 1,Worldwide excluding USA,598,214,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,23,23,Zone 1,Worldwide excluding USA,537,214,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,23,23,Zone 1,Worldwide excluding USA,477,214,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,23,23,Zone 1,Worldwide excluding USA,1023,182,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,23,23,Zone 1,Worldwide excluding USA,593,182,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,23,23,Zone 1,Worldwide excluding USA,532,182,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,23,23,Zone 1,Worldwide excluding USA,475,182,OP,Annually,USD,20%
+Pack Premium,In-house Network,24,24,Zone 1,Worldwide excluding USA,2142,358,IP,Annually,USD,NIL
+Pack Premium,In-house Network,24,24,Zone 1,Worldwide excluding USA,1009,358,OP,Annually,USD,NIL
+Pack Premium,In-house Network,24,24,Zone 1,Worldwide excluding USA,907,358,OP,Annually,USD,10%
+Pack Premium,In-house Network,24,24,Zone 1,Worldwide excluding USA,808,358,OP,Annually,USD,20%
+Pack Confort,In-house Network,24,24,Zone 1,Worldwide excluding USA,1872,333,IP,Annually,USD,NIL
+Pack Confort,In-house Network,24,24,Zone 1,Worldwide excluding USA,1061,333,OP,Annually,USD,NIL
+Pack Confort,In-house Network,24,24,Zone 1,Worldwide excluding USA,954,333,OP,Annually,USD,10%
+Pack Confort,In-house Network,24,24,Zone 1,Worldwide excluding USA,848,333,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,24,24,Zone 1,Worldwide excluding USA,1286,214,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,24,24,Zone 1,Worldwide excluding USA,602,214,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,24,24,Zone 1,Worldwide excluding USA,542,214,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,24,24,Zone 1,Worldwide excluding USA,481,214,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,24,24,Zone 1,Worldwide excluding USA,1028,182,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,24,24,Zone 1,Worldwide excluding USA,595,182,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,24,24,Zone 1,Worldwide excluding USA,535,182,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,24,24,Zone 1,Worldwide excluding USA,476,182,OP,Annually,USD,20%
+Pack Premium,In-house Network,25,25,Zone 1,Worldwide excluding USA,2157,359,IP,Annually,USD,NIL
+Pack Premium,In-house Network,25,25,Zone 1,Worldwide excluding USA,1012,359,OP,Annually,USD,NIL
+Pack Premium,In-house Network,25,25,Zone 1,Worldwide excluding USA,909,359,OP,Annually,USD,10%
+Pack Premium,In-house Network,25,25,Zone 1,Worldwide excluding USA,811,359,OP,Annually,USD,20%
+Pack Confort,In-house Network,25,25,Zone 1,Worldwide excluding USA,1887,336,IP,Annually,USD,NIL
+Pack Confort,In-house Network,25,25,Zone 1,Worldwide excluding USA,1066,336,OP,Annually,USD,NIL
+Pack Confort,In-house Network,25,25,Zone 1,Worldwide excluding USA,960,336,OP,Annually,USD,10%
+Pack Confort,In-house Network,25,25,Zone 1,Worldwide excluding USA,851,336,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,25,25,Zone 1,Worldwide excluding USA,1295,214,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,25,25,Zone 1,Worldwide excluding USA,605,214,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,25,25,Zone 1,Worldwide excluding USA,544,214,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,25,25,Zone 1,Worldwide excluding USA,483,214,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,25,25,Zone 1,Worldwide excluding USA,1035,183,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,25,25,Zone 1,Worldwide excluding USA,598,183,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,25,25,Zone 1,Worldwide excluding USA,537,183,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,25,25,Zone 1,Worldwide excluding USA,479,183,OP,Annually,USD,20%
+Pack Premium,In-house Network,26,26,Zone 1,Worldwide excluding USA,2172,361,IP,Annually,USD,NIL
+Pack Premium,In-house Network,26,26,Zone 1,Worldwide excluding USA,1019,361,OP,Annually,USD,NIL
+Pack Premium,In-house Network,26,26,Zone 1,Worldwide excluding USA,917,361,OP,Annually,USD,10%
+Pack Premium,In-house Network,26,26,Zone 1,Worldwide excluding USA,815,361,OP,Annually,USD,20%
+Pack Confort,In-house Network,26,26,Zone 1,Worldwide excluding USA,1898,338,IP,Annually,USD,NIL
+Pack Confort,In-house Network,26,26,Zone 1,Worldwide excluding USA,1072,338,OP,Annually,USD,NIL
+Pack Confort,In-house Network,26,26,Zone 1,Worldwide excluding USA,964,338,OP,Annually,USD,10%
+Pack Confort,In-house Network,26,26,Zone 1,Worldwide excluding USA,858,338,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,26,26,Zone 1,Worldwide excluding USA,1305,215,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,26,26,Zone 1,Worldwide excluding USA,610,215,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,26,26,Zone 1,Worldwide excluding USA,548,215,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,26,26,Zone 1,Worldwide excluding USA,488,215,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,26,26,Zone 1,Worldwide excluding USA,1043,184,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,26,26,Zone 1,Worldwide excluding USA,603,184,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,26,26,Zone 1,Worldwide excluding USA,542,184,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,26,26,Zone 1,Worldwide excluding USA,482,184,OP,Annually,USD,20%
+Pack Premium,In-house Network,27,27,Zone 1,Worldwide excluding USA,2183,363,IP,Annually,USD,NIL
+Pack Premium,In-house Network,27,27,Zone 1,Worldwide excluding USA,1024,363,OP,Annually,USD,NIL
+Pack Premium,In-house Network,27,27,Zone 1,Worldwide excluding USA,921,363,OP,Annually,USD,10%
+Pack Premium,In-house Network,27,27,Zone 1,Worldwide excluding USA,819,363,OP,Annually,USD,20%
+Pack Confort,In-house Network,27,27,Zone 1,Worldwide excluding USA,1910,338,IP,Annually,USD,NIL
+Pack Confort,In-house Network,27,27,Zone 1,Worldwide excluding USA,1079,338,OP,Annually,USD,NIL
+Pack Confort,In-house Network,27,27,Zone 1,Worldwide excluding USA,971,338,OP,Annually,USD,10%
+Pack Confort,In-house Network,27,27,Zone 1,Worldwide excluding USA,863,338,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,27,27,Zone 1,Worldwide excluding USA,1311,216,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,27,27,Zone 1,Worldwide excluding USA,613,216,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,27,27,Zone 1,Worldwide excluding USA,551,216,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,27,27,Zone 1,Worldwide excluding USA,491,216,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,27,27,Zone 1,Worldwide excluding USA,1047,184,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,27,27,Zone 1,Worldwide excluding USA,611,184,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,27,27,Zone 1,Worldwide excluding USA,550,184,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,27,27,Zone 1,Worldwide excluding USA,488,184,OP,Annually,USD,20%
+Pack Premium,In-house Network,28,28,Zone 1,Worldwide excluding USA,2202,366,IP,Annually,USD,NIL
+Pack Premium,In-house Network,28,28,Zone 1,Worldwide excluding USA,1031,366,OP,Annually,USD,NIL
+Pack Premium,In-house Network,28,28,Zone 1,Worldwide excluding USA,930,366,OP,Annually,USD,10%
+Pack Premium,In-house Network,28,28,Zone 1,Worldwide excluding USA,826,366,OP,Annually,USD,20%
+Pack Confort,In-house Network,28,28,Zone 1,Worldwide excluding USA,1925,339,IP,Annually,USD,NIL
+Pack Confort,In-house Network,28,28,Zone 1,Worldwide excluding USA,1082,339,OP,Annually,USD,NIL
+Pack Confort,In-house Network,28,28,Zone 1,Worldwide excluding USA,974,339,OP,Annually,USD,10%
+Pack Confort,In-house Network,28,28,Zone 1,Worldwide excluding USA,867,339,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,28,28,Zone 1,Worldwide excluding USA,1323,217,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,28,28,Zone 1,Worldwide excluding USA,618,217,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,28,28,Zone 1,Worldwide excluding USA,555,217,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,28,28,Zone 1,Worldwide excluding USA,496,217,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,28,28,Zone 1,Worldwide excluding USA,1054,184,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,28,28,Zone 1,Worldwide excluding USA,612,184,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,28,28,Zone 1,Worldwide excluding USA,551,184,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,28,28,Zone 1,Worldwide excluding USA,489,184,OP,Annually,USD,20%
+Pack Premium,In-house Network,29,29,Zone 1,Worldwide excluding USA,2215,370,IP,Annually,USD,NIL
+Pack Premium,In-house Network,29,29,Zone 1,Worldwide excluding USA,1036,370,OP,Annually,USD,NIL
+Pack Premium,In-house Network,29,29,Zone 1,Worldwide excluding USA,933,370,OP,Annually,USD,10%
+Pack Premium,In-house Network,29,29,Zone 1,Worldwide excluding USA,830,370,OP,Annually,USD,20%
+Pack Confort,In-house Network,29,29,Zone 1,Worldwide excluding USA,1937,339,IP,Annually,USD,NIL
+Pack Confort,In-house Network,29,29,Zone 1,Worldwide excluding USA,1093,339,OP,Annually,USD,NIL
+Pack Confort,In-house Network,29,29,Zone 1,Worldwide excluding USA,987,339,OP,Annually,USD,10%
+Pack Confort,In-house Network,29,29,Zone 1,Worldwide excluding USA,873,339,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,29,29,Zone 1,Worldwide excluding USA,1332,219,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,29,29,Zone 1,Worldwide excluding USA,620,219,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,29,29,Zone 1,Worldwide excluding USA,559,219,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,29,29,Zone 1,Worldwide excluding USA,497,219,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,29,29,Zone 1,Worldwide excluding USA,1061,184,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,29,29,Zone 1,Worldwide excluding USA,617,184,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,29,29,Zone 1,Worldwide excluding USA,557,184,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,29,29,Zone 1,Worldwide excluding USA,492,184,OP,Annually,USD,20%
+Pack Premium,In-house Network,30,30,Zone 1,Worldwide excluding USA,2473,409,IP,Annually,USD,NIL
+Pack Premium,In-house Network,30,30,Zone 1,Worldwide excluding USA,1160,409,OP,Annually,USD,NIL
+Pack Premium,In-house Network,30,30,Zone 1,Worldwide excluding USA,1044,409,OP,Annually,USD,10%
+Pack Premium,In-house Network,30,30,Zone 1,Worldwide excluding USA,930,409,OP,Annually,USD,20%
+Pack Confort,In-house Network,30,30,Zone 1,Worldwide excluding USA,1946,343,IP,Annually,USD,NIL
+Pack Confort,In-house Network,30,30,Zone 1,Worldwide excluding USA,1103,343,OP,Annually,USD,NIL
+Pack Confort,In-house Network,30,30,Zone 1,Worldwide excluding USA,993,343,OP,Annually,USD,10%
+Pack Confort,In-house Network,30,30,Zone 1,Worldwide excluding USA,881,343,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,30,30,Zone 1,Worldwide excluding USA,1485,247,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,30,30,Zone 1,Worldwide excluding USA,693,247,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,30,30,Zone 1,Worldwide excluding USA,625,247,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,30,30,Zone 1,Worldwide excluding USA,553,247,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,30,30,Zone 1,Worldwide excluding USA,1067,188,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,30,30,Zone 1,Worldwide excluding USA,620,188,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,30,30,Zone 1,Worldwide excluding USA,559,188,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,30,30,Zone 1,Worldwide excluding USA,497,188,OP,Annually,USD,20%
+Pack Premium,In-house Network,31,31,Zone 1,Worldwide excluding USA,2492,413,IP,Annually,USD,NIL
+Pack Premium,In-house Network,31,31,Zone 1,Worldwide excluding USA,1166,413,OP,Annually,USD,NIL
+Pack Premium,In-house Network,31,31,Zone 1,Worldwide excluding USA,1050,413,OP,Annually,USD,10%
+Pack Premium,In-house Network,31,31,Zone 1,Worldwide excluding USA,935,413,OP,Annually,USD,20%
+Pack Confort,In-house Network,31,31,Zone 1,Worldwide excluding USA,1964,343,IP,Annually,USD,NIL
+Pack Confort,In-house Network,31,31,Zone 1,Worldwide excluding USA,1110,343,OP,Annually,USD,NIL
+Pack Confort,In-house Network,31,31,Zone 1,Worldwide excluding USA,997,343,OP,Annually,USD,10%
+Pack Confort,In-house Network,31,31,Zone 1,Worldwide excluding USA,887,343,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,31,31,Zone 1,Worldwide excluding USA,1496,249,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,31,31,Zone 1,Worldwide excluding USA,696,249,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,31,31,Zone 1,Worldwide excluding USA,628,249,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,31,31,Zone 1,Worldwide excluding USA,559,249,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,31,31,Zone 1,Worldwide excluding USA,1077,188,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,31,31,Zone 1,Worldwide excluding USA,623,188,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,31,31,Zone 1,Worldwide excluding USA,561,188,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,31,31,Zone 1,Worldwide excluding USA,498,188,OP,Annually,USD,20%
+Pack Premium,In-house Network,32,32,Zone 1,Worldwide excluding USA,2505,418,IP,Annually,USD,NIL
+Pack Premium,In-house Network,32,32,Zone 1,Worldwide excluding USA,1173,418,OP,Annually,USD,NIL
+Pack Premium,In-house Network,32,32,Zone 1,Worldwide excluding USA,1056,418,OP,Annually,USD,10%
+Pack Premium,In-house Network,32,32,Zone 1,Worldwide excluding USA,939,418,OP,Annually,USD,20%
+Pack Confort,In-house Network,32,32,Zone 1,Worldwide excluding USA,1974,345,IP,Annually,USD,NIL
+Pack Confort,In-house Network,32,32,Zone 1,Worldwide excluding USA,1114,345,OP,Annually,USD,NIL
+Pack Confort,In-house Network,32,32,Zone 1,Worldwide excluding USA,1002,345,OP,Annually,USD,10%
+Pack Confort,In-house Network,32,32,Zone 1,Worldwide excluding USA,891,345,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,32,32,Zone 1,Worldwide excluding USA,1505,251,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,32,32,Zone 1,Worldwide excluding USA,700,251,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,32,32,Zone 1,Worldwide excluding USA,632,251,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,32,32,Zone 1,Worldwide excluding USA,561,251,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,32,32,Zone 1,Worldwide excluding USA,1081,189,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,32,32,Zone 1,Worldwide excluding USA,626,189,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,32,32,Zone 1,Worldwide excluding USA,563,189,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,32,32,Zone 1,Worldwide excluding USA,500,189,OP,Annually,USD,20%
+Pack Premium,In-house Network,33,33,Zone 1,Worldwide excluding USA,2522,419,IP,Annually,USD,NIL
+Pack Premium,In-house Network,33,33,Zone 1,Worldwide excluding USA,1180,419,OP,Annually,USD,NIL
+Pack Premium,In-house Network,33,33,Zone 1,Worldwide excluding USA,1062,419,OP,Annually,USD,10%
+Pack Premium,In-house Network,33,33,Zone 1,Worldwide excluding USA,943,419,OP,Annually,USD,20%
+Pack Confort,In-house Network,33,33,Zone 1,Worldwide excluding USA,1983,350,IP,Annually,USD,NIL
+Pack Confort,In-house Network,33,33,Zone 1,Worldwide excluding USA,1120,350,OP,Annually,USD,NIL
+Pack Confort,In-house Network,33,33,Zone 1,Worldwide excluding USA,1009,350,OP,Annually,USD,10%
+Pack Confort,In-house Network,33,33,Zone 1,Worldwide excluding USA,898,350,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,33,33,Zone 1,Worldwide excluding USA,1514,252,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,33,33,Zone 1,Worldwide excluding USA,704,252,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,33,33,Zone 1,Worldwide excluding USA,636,252,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,33,33,Zone 1,Worldwide excluding USA,563,252,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,33,33,Zone 1,Worldwide excluding USA,1089,191,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,33,33,Zone 1,Worldwide excluding USA,630,191,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,33,33,Zone 1,Worldwide excluding USA,567,191,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,33,33,Zone 1,Worldwide excluding USA,505,191,OP,Annually,USD,20%
+Pack Premium,In-house Network,34,34,Zone 1,Worldwide excluding USA,2537,421,IP,Annually,USD,NIL
+Pack Premium,In-house Network,34,34,Zone 1,Worldwide excluding USA,1191,421,OP,Annually,USD,NIL
+Pack Premium,In-house Network,34,34,Zone 1,Worldwide excluding USA,1072,421,OP,Annually,USD,10%
+Pack Premium,In-house Network,34,34,Zone 1,Worldwide excluding USA,953,421,OP,Annually,USD,20%
+Pack Confort,In-house Network,34,34,Zone 1,Worldwide excluding USA,1995,352,IP,Annually,USD,NIL
+Pack Confort,In-house Network,34,34,Zone 1,Worldwide excluding USA,1130,352,OP,Annually,USD,NIL
+Pack Confort,In-house Network,34,34,Zone 1,Worldwide excluding USA,1015,352,OP,Annually,USD,10%
+Pack Confort,In-house Network,34,34,Zone 1,Worldwide excluding USA,902,352,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,34,34,Zone 1,Worldwide excluding USA,1524,253,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,34,34,Zone 1,Worldwide excluding USA,713,253,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,34,34,Zone 1,Worldwide excluding USA,641,253,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,34,34,Zone 1,Worldwide excluding USA,570,253,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,34,34,Zone 1,Worldwide excluding USA,1094,193,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,34,34,Zone 1,Worldwide excluding USA,637,193,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,34,34,Zone 1,Worldwide excluding USA,573,193,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,34,34,Zone 1,Worldwide excluding USA,511,193,OP,Annually,USD,20%
+Pack Premium,In-house Network,35,35,Zone 1,Worldwide excluding USA,2557,424,IP,Annually,USD,NIL
+Pack Premium,In-house Network,35,35,Zone 1,Worldwide excluding USA,1198,424,OP,Annually,USD,NIL
+Pack Premium,In-house Network,35,35,Zone 1,Worldwide excluding USA,1077,424,OP,Annually,USD,10%
+Pack Premium,In-house Network,35,35,Zone 1,Worldwide excluding USA,958,424,OP,Annually,USD,20%
+Pack Confort,In-house Network,35,35,Zone 1,Worldwide excluding USA,2012,354,IP,Annually,USD,NIL
+Pack Confort,In-house Network,35,35,Zone 1,Worldwide excluding USA,1133,354,OP,Annually,USD,NIL
+Pack Confort,In-house Network,35,35,Zone 1,Worldwide excluding USA,1020,354,OP,Annually,USD,10%
+Pack Confort,In-house Network,35,35,Zone 1,Worldwide excluding USA,908,354,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,35,35,Zone 1,Worldwide excluding USA,1535,255,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,35,35,Zone 1,Worldwide excluding USA,718,255,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,35,35,Zone 1,Worldwide excluding USA,647,255,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,35,35,Zone 1,Worldwide excluding USA,573,255,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,35,35,Zone 1,Worldwide excluding USA,1103,194,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,35,35,Zone 1,Worldwide excluding USA,639,194,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,35,35,Zone 1,Worldwide excluding USA,576,194,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,35,35,Zone 1,Worldwide excluding USA,512,194,OP,Annually,USD,20%
+Pack Premium,In-house Network,36,36,Zone 1,Worldwide excluding USA,2571,425,IP,Annually,USD,NIL
+Pack Premium,In-house Network,36,36,Zone 1,Worldwide excluding USA,1203,425,OP,Annually,USD,NIL
+Pack Premium,In-house Network,36,36,Zone 1,Worldwide excluding USA,1084,425,OP,Annually,USD,10%
+Pack Premium,In-house Network,36,36,Zone 1,Worldwide excluding USA,964,425,OP,Annually,USD,20%
+Pack Confort,In-house Network,36,36,Zone 1,Worldwide excluding USA,2025,360,IP,Annually,USD,NIL
+Pack Confort,In-house Network,36,36,Zone 1,Worldwide excluding USA,1144,360,OP,Annually,USD,NIL
+Pack Confort,In-house Network,36,36,Zone 1,Worldwide excluding USA,1030,360,OP,Annually,USD,10%
+Pack Confort,In-house Network,36,36,Zone 1,Worldwide excluding USA,915,360,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,36,36,Zone 1,Worldwide excluding USA,1544,255,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,36,36,Zone 1,Worldwide excluding USA,721,255,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,36,36,Zone 1,Worldwide excluding USA,650,255,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,36,36,Zone 1,Worldwide excluding USA,576,255,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,36,36,Zone 1,Worldwide excluding USA,1110,195,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,36,36,Zone 1,Worldwide excluding USA,641,195,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,36,36,Zone 1,Worldwide excluding USA,578,195,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,36,36,Zone 1,Worldwide excluding USA,514,195,OP,Annually,USD,20%
+Pack Premium,In-house Network,37,37,Zone 1,Worldwide excluding USA,2585,429,IP,Annually,USD,NIL
+Pack Premium,In-house Network,37,37,Zone 1,Worldwide excluding USA,1213,429,OP,Annually,USD,NIL
+Pack Premium,In-house Network,37,37,Zone 1,Worldwide excluding USA,1091,429,OP,Annually,USD,10%
+Pack Premium,In-house Network,37,37,Zone 1,Worldwide excluding USA,969,429,OP,Annually,USD,20%
+Pack Confort,In-house Network,37,37,Zone 1,Worldwide excluding USA,2034,364,IP,Annually,USD,NIL
+Pack Confort,In-house Network,37,37,Zone 1,Worldwide excluding USA,1151,364,OP,Annually,USD,NIL
+Pack Confort,In-house Network,37,37,Zone 1,Worldwide excluding USA,1036,364,OP,Annually,USD,10%
+Pack Confort,In-house Network,37,37,Zone 1,Worldwide excluding USA,920,364,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,37,37,Zone 1,Worldwide excluding USA,1552,259,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,37,37,Zone 1,Worldwide excluding USA,726,259,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,37,37,Zone 1,Worldwide excluding USA,652,259,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,37,37,Zone 1,Worldwide excluding USA,579,259,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,37,37,Zone 1,Worldwide excluding USA,1117,198,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,37,37,Zone 1,Worldwide excluding USA,647,198,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,37,37,Zone 1,Worldwide excluding USA,581,198,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,37,37,Zone 1,Worldwide excluding USA,516,198,OP,Annually,USD,20%
+Pack Premium,In-house Network,38,38,Zone 1,Worldwide excluding USA,2600,430,IP,Annually,USD,NIL
+Pack Premium,In-house Network,38,38,Zone 1,Worldwide excluding USA,1219,430,OP,Annually,USD,NIL
+Pack Premium,In-house Network,38,38,Zone 1,Worldwide excluding USA,1098,430,OP,Annually,USD,10%
+Pack Premium,In-house Network,38,38,Zone 1,Worldwide excluding USA,975,430,OP,Annually,USD,20%
+Pack Confort,In-house Network,38,38,Zone 1,Worldwide excluding USA,2047,364,IP,Annually,USD,NIL
+Pack Confort,In-house Network,38,38,Zone 1,Worldwide excluding USA,1158,364,OP,Annually,USD,NIL
+Pack Confort,In-house Network,38,38,Zone 1,Worldwide excluding USA,1041,364,OP,Annually,USD,10%
+Pack Confort,In-house Network,38,38,Zone 1,Worldwide excluding USA,924,364,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,38,38,Zone 1,Worldwide excluding USA,1562,259,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,38,38,Zone 1,Worldwide excluding USA,729,259,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,38,38,Zone 1,Worldwide excluding USA,655,259,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,38,38,Zone 1,Worldwide excluding USA,582,259,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,38,38,Zone 1,Worldwide excluding USA,1124,198,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,38,38,Zone 1,Worldwide excluding USA,651,198,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,38,38,Zone 1,Worldwide excluding USA,586,198,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,38,38,Zone 1,Worldwide excluding USA,520,198,OP,Annually,USD,20%
+Pack Premium,In-house Network,39,39,Zone 1,Worldwide excluding USA,2618,435,IP,Annually,USD,NIL
+Pack Premium,In-house Network,39,39,Zone 1,Worldwide excluding USA,1224,435,OP,Annually,USD,NIL
+Pack Premium,In-house Network,39,39,Zone 1,Worldwide excluding USA,1102,435,OP,Annually,USD,10%
+Pack Premium,In-house Network,39,39,Zone 1,Worldwide excluding USA,979,435,OP,Annually,USD,20%
+Pack Confort,In-house Network,39,39,Zone 1,Worldwide excluding USA,2065,367,IP,Annually,USD,NIL
+Pack Confort,In-house Network,39,39,Zone 1,Worldwide excluding USA,1164,367,OP,Annually,USD,NIL
+Pack Confort,In-house Network,39,39,Zone 1,Worldwide excluding USA,1048,367,OP,Annually,USD,10%
+Pack Confort,In-house Network,39,39,Zone 1,Worldwide excluding USA,931,367,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,39,39,Zone 1,Worldwide excluding USA,1574,260,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,39,39,Zone 1,Worldwide excluding USA,734,260,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,39,39,Zone 1,Worldwide excluding USA,659,260,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,39,39,Zone 1,Worldwide excluding USA,588,260,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,39,39,Zone 1,Worldwide excluding USA,1130,202,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,39,39,Zone 1,Worldwide excluding USA,654,202,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,39,39,Zone 1,Worldwide excluding USA,587,202,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,39,39,Zone 1,Worldwide excluding USA,523,202,OP,Annually,USD,20%
+Pack Premium,In-house Network,40,40,Zone 1,Worldwide excluding USA,2637,440,IP,Annually,USD,NIL
+Pack Premium,In-house Network,40,40,Zone 1,Worldwide excluding USA,1233,440,OP,Annually,USD,NIL
+Pack Premium,In-house Network,40,40,Zone 1,Worldwide excluding USA,1110,440,OP,Annually,USD,10%
+Pack Premium,In-house Network,40,40,Zone 1,Worldwide excluding USA,987,440,OP,Annually,USD,20%
+Pack Confort,In-house Network,40,40,Zone 1,Worldwide excluding USA,2074,369,IP,Annually,USD,NIL
+Pack Confort,In-house Network,40,40,Zone 1,Worldwide excluding USA,1171,369,OP,Annually,USD,NIL
+Pack Confort,In-house Network,40,40,Zone 1,Worldwide excluding USA,1055,369,OP,Annually,USD,10%
+Pack Confort,In-house Network,40,40,Zone 1,Worldwide excluding USA,937,369,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,40,40,Zone 1,Worldwide excluding USA,1583,261,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,40,40,Zone 1,Worldwide excluding USA,738,261,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,40,40,Zone 1,Worldwide excluding USA,663,261,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,40,40,Zone 1,Worldwide excluding USA,590,261,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,40,40,Zone 1,Worldwide excluding USA,1137,204,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,40,40,Zone 1,Worldwide excluding USA,658,204,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,40,40,Zone 1,Worldwide excluding USA,594,204,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,40,40,Zone 1,Worldwide excluding USA,529,204,OP,Annually,USD,20%
+Pack Premium,In-house Network,41,41,Zone 1,Worldwide excluding USA,2652,442,IP,Annually,USD,NIL
+Pack Premium,In-house Network,41,41,Zone 1,Worldwide excluding USA,1242,442,OP,Annually,USD,NIL
+Pack Premium,In-house Network,41,41,Zone 1,Worldwide excluding USA,1119,442,OP,Annually,USD,10%
+Pack Premium,In-house Network,41,41,Zone 1,Worldwide excluding USA,994,442,OP,Annually,USD,20%
+Pack Confort,In-house Network,41,41,Zone 1,Worldwide excluding USA,2089,371,IP,Annually,USD,NIL
+Pack Confort,In-house Network,41,41,Zone 1,Worldwide excluding USA,1179,371,OP,Annually,USD,NIL
+Pack Confort,In-house Network,41,41,Zone 1,Worldwide excluding USA,1062,371,OP,Annually,USD,10%
+Pack Confort,In-house Network,41,41,Zone 1,Worldwide excluding USA,942,371,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,41,41,Zone 1,Worldwide excluding USA,1594,262,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,41,41,Zone 1,Worldwide excluding USA,742,262,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,41,41,Zone 1,Worldwide excluding USA,669,262,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,41,41,Zone 1,Worldwide excluding USA,596,262,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,41,41,Zone 1,Worldwide excluding USA,1145,204,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,41,41,Zone 1,Worldwide excluding USA,666,204,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,41,41,Zone 1,Worldwide excluding USA,601,204,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,41,41,Zone 1,Worldwide excluding USA,532,204,OP,Annually,USD,20%
+Pack Premium,In-house Network,42,42,Zone 1,Worldwide excluding USA,2670,444,IP,Annually,USD,NIL
+Pack Premium,In-house Network,42,42,Zone 1,Worldwide excluding USA,1250,444,OP,Annually,USD,NIL
+Pack Premium,In-house Network,42,42,Zone 1,Worldwide excluding USA,1125,444,OP,Annually,USD,10%
+Pack Premium,In-house Network,42,42,Zone 1,Worldwide excluding USA,999,444,OP,Annually,USD,20%
+Pack Confort,In-house Network,42,42,Zone 1,Worldwide excluding USA,2102,373,IP,Annually,USD,NIL
+Pack Confort,In-house Network,42,42,Zone 1,Worldwide excluding USA,1185,373,OP,Annually,USD,NIL
+Pack Confort,In-house Network,42,42,Zone 1,Worldwide excluding USA,1066,373,OP,Annually,USD,10%
+Pack Confort,In-house Network,42,42,Zone 1,Worldwide excluding USA,948,373,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,42,42,Zone 1,Worldwide excluding USA,1604,263,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,42,42,Zone 1,Worldwide excluding USA,747,263,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,42,42,Zone 1,Worldwide excluding USA,673,263,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,42,42,Zone 1,Worldwide excluding USA,599,263,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,42,42,Zone 1,Worldwide excluding USA,1151,206,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,42,42,Zone 1,Worldwide excluding USA,668,206,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,42,42,Zone 1,Worldwide excluding USA,602,206,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,42,42,Zone 1,Worldwide excluding USA,535,206,OP,Annually,USD,20%
+Pack Premium,In-house Network,43,43,Zone 1,Worldwide excluding USA,2691,445,IP,Annually,USD,NIL
+Pack Premium,In-house Network,43,43,Zone 1,Worldwide excluding USA,1260,445,OP,Annually,USD,NIL
+Pack Premium,In-house Network,43,43,Zone 1,Worldwide excluding USA,1135,445,OP,Annually,USD,10%
+Pack Premium,In-house Network,43,43,Zone 1,Worldwide excluding USA,1009,445,OP,Annually,USD,20%
+Pack Confort,In-house Network,43,43,Zone 1,Worldwide excluding USA,2120,371,IP,Annually,USD,NIL
+Pack Confort,In-house Network,43,43,Zone 1,Worldwide excluding USA,1199,371,OP,Annually,USD,NIL
+Pack Confort,In-house Network,43,43,Zone 1,Worldwide excluding USA,1079,371,OP,Annually,USD,10%
+Pack Confort,In-house Network,43,43,Zone 1,Worldwide excluding USA,960,371,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,43,43,Zone 1,Worldwide excluding USA,1620,264,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,43,43,Zone 1,Worldwide excluding USA,756,264,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,43,43,Zone 1,Worldwide excluding USA,679,264,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,43,43,Zone 1,Worldwide excluding USA,605,264,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,43,43,Zone 1,Worldwide excluding USA,1161,204,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,43,43,Zone 1,Worldwide excluding USA,674,204,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,43,43,Zone 1,Worldwide excluding USA,607,204,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,43,43,Zone 1,Worldwide excluding USA,538,204,OP,Annually,USD,20%
+Pack Premium,In-house Network,44,44,Zone 1,Worldwide excluding USA,2713,447,IP,Annually,USD,NIL
+Pack Premium,In-house Network,44,44,Zone 1,Worldwide excluding USA,1270,447,OP,Annually,USD,NIL
+Pack Premium,In-house Network,44,44,Zone 1,Worldwide excluding USA,1143,447,OP,Annually,USD,10%
+Pack Premium,In-house Network,44,44,Zone 1,Worldwide excluding USA,1017,447,OP,Annually,USD,20%
+Pack Confort,In-house Network,44,44,Zone 1,Worldwide excluding USA,2136,375,IP,Annually,USD,NIL
+Pack Confort,In-house Network,44,44,Zone 1,Worldwide excluding USA,1206,375,OP,Annually,USD,NIL
+Pack Confort,In-house Network,44,44,Zone 1,Worldwide excluding USA,1087,375,OP,Annually,USD,10%
+Pack Confort,In-house Network,44,44,Zone 1,Worldwide excluding USA,965,375,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,44,44,Zone 1,Worldwide excluding USA,1629,265,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,44,44,Zone 1,Worldwide excluding USA,761,265,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,44,44,Zone 1,Worldwide excluding USA,685,265,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,44,44,Zone 1,Worldwide excluding USA,610,265,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,44,44,Zone 1,Worldwide excluding USA,1172,207,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,44,44,Zone 1,Worldwide excluding USA,679,207,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,44,44,Zone 1,Worldwide excluding USA,612,207,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,44,44,Zone 1,Worldwide excluding USA,542,207,OP,Annually,USD,20%
+Pack Premium,In-house Network,45,45,Zone 1,Worldwide excluding USA,2737,452,IP,Annually,USD,NIL
+Pack Premium,In-house Network,45,45,Zone 1,Worldwide excluding USA,1282,452,OP,Annually,USD,NIL
+Pack Premium,In-house Network,45,45,Zone 1,Worldwide excluding USA,1153,452,OP,Annually,USD,10%
+Pack Premium,In-house Network,45,45,Zone 1,Worldwide excluding USA,1026,452,OP,Annually,USD,20%
+Pack Confort,In-house Network,45,45,Zone 1,Worldwide excluding USA,2155,379,IP,Annually,USD,NIL
+Pack Confort,In-house Network,45,45,Zone 1,Worldwide excluding USA,1217,379,OP,Annually,USD,NIL
+Pack Confort,In-house Network,45,45,Zone 1,Worldwide excluding USA,1094,379,OP,Annually,USD,10%
+Pack Confort,In-house Network,45,45,Zone 1,Worldwide excluding USA,973,379,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,45,45,Zone 1,Worldwide excluding USA,1643,271,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,45,45,Zone 1,Worldwide excluding USA,766,271,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,45,45,Zone 1,Worldwide excluding USA,689,271,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,45,45,Zone 1,Worldwide excluding USA,613,271,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,45,45,Zone 1,Worldwide excluding USA,1182,209,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,45,45,Zone 1,Worldwide excluding USA,685,209,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,45,45,Zone 1,Worldwide excluding USA,614,209,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,45,45,Zone 1,Worldwide excluding USA,549,209,OP,Annually,USD,20%
+Pack Premium,In-house Network,46,46,Zone 1,Worldwide excluding USA,2760,454,IP,Annually,USD,NIL
+Pack Premium,In-house Network,46,46,Zone 1,Worldwide excluding USA,1293,454,OP,Annually,USD,NIL
+Pack Premium,In-house Network,46,46,Zone 1,Worldwide excluding USA,1163,454,OP,Annually,USD,10%
+Pack Premium,In-house Network,46,46,Zone 1,Worldwide excluding USA,1034,454,OP,Annually,USD,20%
+Pack Confort,In-house Network,46,46,Zone 1,Worldwide excluding USA,2173,379,IP,Annually,USD,NIL
+Pack Confort,In-house Network,46,46,Zone 1,Worldwide excluding USA,1227,379,OP,Annually,USD,NIL
+Pack Confort,In-house Network,46,46,Zone 1,Worldwide excluding USA,1105,379,OP,Annually,USD,10%
+Pack Confort,In-house Network,46,46,Zone 1,Worldwide excluding USA,983,379,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,46,46,Zone 1,Worldwide excluding USA,1660,273,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,46,46,Zone 1,Worldwide excluding USA,774,273,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,46,46,Zone 1,Worldwide excluding USA,695,273,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,46,46,Zone 1,Worldwide excluding USA,619,273,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,46,46,Zone 1,Worldwide excluding USA,1191,209,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,46,46,Zone 1,Worldwide excluding USA,692,209,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,46,46,Zone 1,Worldwide excluding USA,622,209,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,46,46,Zone 1,Worldwide excluding USA,555,209,OP,Annually,USD,20%
+Pack Premium,In-house Network,47,47,Zone 1,Worldwide excluding USA,2783,460,IP,Annually,USD,NIL
+Pack Premium,In-house Network,47,47,Zone 1,Worldwide excluding USA,1305,460,OP,Annually,USD,NIL
+Pack Premium,In-house Network,47,47,Zone 1,Worldwide excluding USA,1174,460,OP,Annually,USD,10%
+Pack Premium,In-house Network,47,47,Zone 1,Worldwide excluding USA,1042,460,OP,Annually,USD,20%
+Pack Confort,In-house Network,47,47,Zone 1,Worldwide excluding USA,2191,388,IP,Annually,USD,NIL
+Pack Confort,In-house Network,47,47,Zone 1,Worldwide excluding USA,1235,388,OP,Annually,USD,NIL
+Pack Confort,In-house Network,47,47,Zone 1,Worldwide excluding USA,1112,388,OP,Annually,USD,10%
+Pack Confort,In-house Network,47,47,Zone 1,Worldwide excluding USA,989,388,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,47,47,Zone 1,Worldwide excluding USA,1672,276,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,47,47,Zone 1,Worldwide excluding USA,779,276,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,47,47,Zone 1,Worldwide excluding USA,701,276,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,47,47,Zone 1,Worldwide excluding USA,625,276,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,47,47,Zone 1,Worldwide excluding USA,1200,212,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,47,47,Zone 1,Worldwide excluding USA,695,212,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,47,47,Zone 1,Worldwide excluding USA,628,212,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,47,47,Zone 1,Worldwide excluding USA,558,212,OP,Annually,USD,20%
+Pack Premium,In-house Network,48,48,Zone 1,Worldwide excluding USA,2810,466,IP,Annually,USD,NIL
+Pack Premium,In-house Network,48,48,Zone 1,Worldwide excluding USA,1312,466,OP,Annually,USD,NIL
+Pack Premium,In-house Network,48,48,Zone 1,Worldwide excluding USA,1181,466,OP,Annually,USD,10%
+Pack Premium,In-house Network,48,48,Zone 1,Worldwide excluding USA,1049,466,OP,Annually,USD,20%
+Pack Confort,In-house Network,48,48,Zone 1,Worldwide excluding USA,2211,389,IP,Annually,USD,NIL
+Pack Confort,In-house Network,48,48,Zone 1,Worldwide excluding USA,1248,389,OP,Annually,USD,NIL
+Pack Confort,In-house Network,48,48,Zone 1,Worldwide excluding USA,1121,389,OP,Annually,USD,10%
+Pack Confort,In-house Network,48,48,Zone 1,Worldwide excluding USA,997,389,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,48,48,Zone 1,Worldwide excluding USA,1689,279,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,48,48,Zone 1,Worldwide excluding USA,784,279,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,48,48,Zone 1,Worldwide excluding USA,705,279,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,48,48,Zone 1,Worldwide excluding USA,628,279,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,48,48,Zone 1,Worldwide excluding USA,1211,212,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,48,48,Zone 1,Worldwide excluding USA,701,212,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,48,48,Zone 1,Worldwide excluding USA,630,212,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,48,48,Zone 1,Worldwide excluding USA,560,212,OP,Annually,USD,20%
+Pack Premium,In-house Network,49,49,Zone 1,Worldwide excluding USA,2833,467,IP,Annually,USD,NIL
+Pack Premium,In-house Network,49,49,Zone 1,Worldwide excluding USA,1325,467,OP,Annually,USD,NIL
+Pack Premium,In-house Network,49,49,Zone 1,Worldwide excluding USA,1194,467,OP,Annually,USD,10%
+Pack Premium,In-house Network,49,49,Zone 1,Worldwide excluding USA,1061,467,OP,Annually,USD,20%
+Pack Confort,In-house Network,49,49,Zone 1,Worldwide excluding USA,2230,389,IP,Annually,USD,NIL
+Pack Confort,In-house Network,49,49,Zone 1,Worldwide excluding USA,1258,389,OP,Annually,USD,NIL
+Pack Confort,In-house Network,49,49,Zone 1,Worldwide excluding USA,1132,389,OP,Annually,USD,10%
+Pack Confort,In-house Network,49,49,Zone 1,Worldwide excluding USA,1007,389,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,49,49,Zone 1,Worldwide excluding USA,1700,279,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,49,49,Zone 1,Worldwide excluding USA,792,279,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,49,49,Zone 1,Worldwide excluding USA,713,279,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,49,49,Zone 1,Worldwide excluding USA,635,279,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,49,49,Zone 1,Worldwide excluding USA,1224,212,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,49,49,Zone 1,Worldwide excluding USA,708,212,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,49,49,Zone 1,Worldwide excluding USA,637,212,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,49,49,Zone 1,Worldwide excluding USA,566,212,OP,Annually,USD,20%
+Pack Premium,In-house Network,50,50,Zone 1,Worldwide excluding USA,2856,472,IP,Annually,USD,NIL
+Pack Premium,In-house Network,50,50,Zone 1,Worldwide excluding USA,1337,472,OP,Annually,USD,NIL
+Pack Premium,In-house Network,50,50,Zone 1,Worldwide excluding USA,1202,472,OP,Annually,USD,10%
+Pack Premium,In-house Network,50,50,Zone 1,Worldwide excluding USA,1070,472,OP,Annually,USD,20%
+Pack Confort,In-house Network,50,50,Zone 1,Worldwide excluding USA,2249,394,IP,Annually,USD,NIL
+Pack Confort,In-house Network,50,50,Zone 1,Worldwide excluding USA,1269,394,OP,Annually,USD,NIL
+Pack Confort,In-house Network,50,50,Zone 1,Worldwide excluding USA,1142,394,OP,Annually,USD,10%
+Pack Confort,In-house Network,50,50,Zone 1,Worldwide excluding USA,1015,394,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,50,50,Zone 1,Worldwide excluding USA,1716,284,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,50,50,Zone 1,Worldwide excluding USA,799,284,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,50,50,Zone 1,Worldwide excluding USA,720,284,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,50,50,Zone 1,Worldwide excluding USA,639,284,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,50,50,Zone 1,Worldwide excluding USA,1234,216,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,50,50,Zone 1,Worldwide excluding USA,711,216,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,50,50,Zone 1,Worldwide excluding USA,640,216,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,50,50,Zone 1,Worldwide excluding USA,568,216,OP,Annually,USD,20%
+Pack Premium,In-house Network,51,51,Zone 1,Worldwide excluding USA,2970,489,IP,Annually,USD,NIL
+Pack Premium,In-house Network,51,51,Zone 1,Worldwide excluding USA,1392,489,OP,Annually,USD,NIL
+Pack Premium,In-house Network,51,51,Zone 1,Worldwide excluding USA,1255,489,OP,Annually,USD,10%
+Pack Premium,In-house Network,51,51,Zone 1,Worldwide excluding USA,1114,489,OP,Annually,USD,20%
+Pack Confort,In-house Network,51,51,Zone 1,Worldwide excluding USA,2339,411,IP,Annually,USD,NIL
+Pack Confort,In-house Network,51,51,Zone 1,Worldwide excluding USA,1323,411,OP,Annually,USD,NIL
+Pack Confort,In-house Network,51,51,Zone 1,Worldwide excluding USA,1191,411,OP,Annually,USD,10%
+Pack Confort,In-house Network,51,51,Zone 1,Worldwide excluding USA,1057,411,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,51,51,Zone 1,Worldwide excluding USA,1784,293,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,51,51,Zone 1,Worldwide excluding USA,832,293,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,51,51,Zone 1,Worldwide excluding USA,749,293,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,51,51,Zone 1,Worldwide excluding USA,667,293,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,51,51,Zone 1,Worldwide excluding USA,1283,225,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,51,51,Zone 1,Worldwide excluding USA,745,225,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,51,51,Zone 1,Worldwide excluding USA,669,225,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,51,51,Zone 1,Worldwide excluding USA,597,225,OP,Annually,USD,20%
+Pack Premium,In-house Network,52,52,Zone 1,Worldwide excluding USA,3096,509,IP,Annually,USD,NIL
+Pack Premium,In-house Network,52,52,Zone 1,Worldwide excluding USA,1446,509,OP,Annually,USD,NIL
+Pack Premium,In-house Network,52,52,Zone 1,Worldwide excluding USA,1303,509,OP,Annually,USD,10%
+Pack Premium,In-house Network,52,52,Zone 1,Worldwide excluding USA,1156,509,OP,Annually,USD,20%
+Pack Confort,In-house Network,52,52,Zone 1,Worldwide excluding USA,2438,424,IP,Annually,USD,NIL
+Pack Confort,In-house Network,52,52,Zone 1,Worldwide excluding USA,1375,424,OP,Annually,USD,NIL
+Pack Confort,In-house Network,52,52,Zone 1,Worldwide excluding USA,1237,424,OP,Annually,USD,10%
+Pack Confort,In-house Network,52,52,Zone 1,Worldwide excluding USA,1099,424,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,52,52,Zone 1,Worldwide excluding USA,1862,303,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,52,52,Zone 1,Worldwide excluding USA,867,303,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,52,52,Zone 1,Worldwide excluding USA,778,303,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,52,52,Zone 1,Worldwide excluding USA,693,303,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,52,52,Zone 1,Worldwide excluding USA,1336,232,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,52,52,Zone 1,Worldwide excluding USA,775,232,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,52,52,Zone 1,Worldwide excluding USA,695,232,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,52,52,Zone 1,Worldwide excluding USA,619,232,OP,Annually,USD,20%
+Pack Premium,In-house Network,53,53,Zone 1,Worldwide excluding USA,3220,531,IP,Annually,USD,NIL
+Pack Premium,In-house Network,53,53,Zone 1,Worldwide excluding USA,1505,531,OP,Annually,USD,NIL
+Pack Premium,In-house Network,53,53,Zone 1,Worldwide excluding USA,1355,531,OP,Annually,USD,10%
+Pack Premium,In-house Network,53,53,Zone 1,Worldwide excluding USA,1204,531,OP,Annually,USD,20%
+Pack Confort,In-house Network,53,53,Zone 1,Worldwide excluding USA,2533,448,IP,Annually,USD,NIL
+Pack Confort,In-house Network,53,53,Zone 1,Worldwide excluding USA,1428,448,OP,Annually,USD,NIL
+Pack Confort,In-house Network,53,53,Zone 1,Worldwide excluding USA,1287,448,OP,Annually,USD,10%
+Pack Confort,In-house Network,53,53,Zone 1,Worldwide excluding USA,1144,448,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,53,53,Zone 1,Worldwide excluding USA,1933,315,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,53,53,Zone 1,Worldwide excluding USA,899,315,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,53,53,Zone 1,Worldwide excluding USA,810,315,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,53,53,Zone 1,Worldwide excluding USA,720,315,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,53,53,Zone 1,Worldwide excluding USA,1389,246,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,53,53,Zone 1,Worldwide excluding USA,805,246,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,53,53,Zone 1,Worldwide excluding USA,725,246,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,53,53,Zone 1,Worldwide excluding USA,644,246,OP,Annually,USD,20%
+Pack Premium,In-house Network,54,54,Zone 1,Worldwide excluding USA,3352,552,IP,Annually,USD,NIL
+Pack Premium,In-house Network,54,54,Zone 1,Worldwide excluding USA,1570,552,OP,Annually,USD,NIL
+Pack Premium,In-house Network,54,54,Zone 1,Worldwide excluding USA,1414,552,OP,Annually,USD,10%
+Pack Premium,In-house Network,54,54,Zone 1,Worldwide excluding USA,1256,552,OP,Annually,USD,20%
+Pack Confort,In-house Network,54,54,Zone 1,Worldwide excluding USA,2638,463,IP,Annually,USD,NIL
+Pack Confort,In-house Network,54,54,Zone 1,Worldwide excluding USA,1489,463,OP,Annually,USD,NIL
+Pack Confort,In-house Network,54,54,Zone 1,Worldwide excluding USA,1340,463,OP,Annually,USD,10%
+Pack Confort,In-house Network,54,54,Zone 1,Worldwide excluding USA,1193,463,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,54,54,Zone 1,Worldwide excluding USA,2015,332,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,54,54,Zone 1,Worldwide excluding USA,937,332,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,54,54,Zone 1,Worldwide excluding USA,846,332,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,54,54,Zone 1,Worldwide excluding USA,753,332,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,54,54,Zone 1,Worldwide excluding USA,1445,253,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,54,54,Zone 1,Worldwide excluding USA,837,253,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,54,54,Zone 1,Worldwide excluding USA,755,253,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,54,54,Zone 1,Worldwide excluding USA,669,253,OP,Annually,USD,20%
+Pack Premium,In-house Network,55,55,Zone 1,Worldwide excluding USA,3522,578,IP,Annually,USD,NIL
+Pack Premium,In-house Network,55,55,Zone 1,Worldwide excluding USA,1646,578,OP,Annually,USD,NIL
+Pack Premium,In-house Network,55,55,Zone 1,Worldwide excluding USA,1482,578,OP,Annually,USD,10%
+Pack Premium,In-house Network,55,55,Zone 1,Worldwide excluding USA,1318,578,OP,Annually,USD,20%
+Pack Confort,In-house Network,55,55,Zone 1,Worldwide excluding USA,2772,481,IP,Annually,USD,NIL
+Pack Confort,In-house Network,55,55,Zone 1,Worldwide excluding USA,1569,481,OP,Annually,USD,NIL
+Pack Confort,In-house Network,55,55,Zone 1,Worldwide excluding USA,1411,481,OP,Annually,USD,10%
+Pack Confort,In-house Network,55,55,Zone 1,Worldwide excluding USA,1255,481,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,55,55,Zone 1,Worldwide excluding USA,2115,348,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,55,55,Zone 1,Worldwide excluding USA,988,348,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,55,55,Zone 1,Worldwide excluding USA,889,348,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,55,55,Zone 1,Worldwide excluding USA,790,348,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,55,55,Zone 1,Worldwide excluding USA,1521,262,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,55,55,Zone 1,Worldwide excluding USA,881,262,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,55,55,Zone 1,Worldwide excluding USA,792,262,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,55,55,Zone 1,Worldwide excluding USA,705,262,OP,Annually,USD,20%
+Pack Premium,In-house Network,56,56,Zone 1,Worldwide excluding USA,3702,607,IP,Annually,USD,NIL
+Pack Premium,In-house Network,56,56,Zone 1,Worldwide excluding USA,1732,607,OP,Annually,USD,NIL
+Pack Premium,In-house Network,56,56,Zone 1,Worldwide excluding USA,1560,607,OP,Annually,USD,10%
+Pack Premium,In-house Network,56,56,Zone 1,Worldwide excluding USA,1385,607,OP,Annually,USD,20%
+Pack Confort,In-house Network,56,56,Zone 1,Worldwide excluding USA,2913,508,IP,Annually,USD,NIL
+Pack Confort,In-house Network,56,56,Zone 1,Worldwide excluding USA,1645,508,OP,Annually,USD,NIL
+Pack Confort,In-house Network,56,56,Zone 1,Worldwide excluding USA,1481,508,OP,Annually,USD,10%
+Pack Confort,In-house Network,56,56,Zone 1,Worldwide excluding USA,1317,508,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,56,56,Zone 1,Worldwide excluding USA,2223,364,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,56,56,Zone 1,Worldwide excluding USA,1036,364,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,56,56,Zone 1,Worldwide excluding USA,932,364,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,56,56,Zone 1,Worldwide excluding USA,829,364,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,56,56,Zone 1,Worldwide excluding USA,1595,278,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,56,56,Zone 1,Worldwide excluding USA,924,278,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,56,56,Zone 1,Worldwide excluding USA,832,278,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,56,56,Zone 1,Worldwide excluding USA,739,278,OP,Annually,USD,20%
+Pack Premium,In-house Network,57,57,Zone 1,Worldwide excluding USA,3888,634,IP,Annually,USD,NIL
+Pack Premium,In-house Network,57,57,Zone 1,Worldwide excluding USA,1823,634,OP,Annually,USD,NIL
+Pack Premium,In-house Network,57,57,Zone 1,Worldwide excluding USA,1640,634,OP,Annually,USD,10%
+Pack Premium,In-house Network,57,57,Zone 1,Worldwide excluding USA,1459,634,OP,Annually,USD,20%
+Pack Confort,In-house Network,57,57,Zone 1,Worldwide excluding USA,3062,530,IP,Annually,USD,NIL
+Pack Confort,In-house Network,57,57,Zone 1,Worldwide excluding USA,1732,530,OP,Annually,USD,NIL
+Pack Confort,In-house Network,57,57,Zone 1,Worldwide excluding USA,1559,530,OP,Annually,USD,10%
+Pack Confort,In-house Network,57,57,Zone 1,Worldwide excluding USA,1383,530,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,57,57,Zone 1,Worldwide excluding USA,2338,381,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,57,57,Zone 1,Worldwide excluding USA,1090,381,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,57,57,Zone 1,Worldwide excluding USA,984,381,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,57,57,Zone 1,Worldwide excluding USA,872,381,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,57,57,Zone 1,Worldwide excluding USA,1678,289,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,57,57,Zone 1,Worldwide excluding USA,972,289,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,57,57,Zone 1,Worldwide excluding USA,875,289,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,57,57,Zone 1,Worldwide excluding USA,779,289,OP,Annually,USD,20%
+Pack Premium,In-house Network,58,58,Zone 1,Worldwide excluding USA,4092,668,IP,Annually,USD,NIL
+Pack Premium,In-house Network,58,58,Zone 1,Worldwide excluding USA,1911,668,OP,Annually,USD,NIL
+Pack Premium,In-house Network,58,58,Zone 1,Worldwide excluding USA,1721,668,OP,Annually,USD,10%
+Pack Premium,In-house Network,58,58,Zone 1,Worldwide excluding USA,1529,668,OP,Annually,USD,20%
+Pack Confort,In-house Network,58,58,Zone 1,Worldwide excluding USA,3218,560,IP,Annually,USD,NIL
+Pack Confort,In-house Network,58,58,Zone 1,Worldwide excluding USA,1816,560,OP,Annually,USD,NIL
+Pack Confort,In-house Network,58,58,Zone 1,Worldwide excluding USA,1635,560,OP,Annually,USD,10%
+Pack Confort,In-house Network,58,58,Zone 1,Worldwide excluding USA,1452,560,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,58,58,Zone 1,Worldwide excluding USA,2457,399,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,58,58,Zone 1,Worldwide excluding USA,1145,399,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,58,58,Zone 1,Worldwide excluding USA,1030,399,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,58,58,Zone 1,Worldwide excluding USA,915,399,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,58,58,Zone 1,Worldwide excluding USA,1766,304,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,58,58,Zone 1,Worldwide excluding USA,1022,304,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,58,58,Zone 1,Worldwide excluding USA,918,304,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,58,58,Zone 1,Worldwide excluding USA,817,304,OP,Annually,USD,20%
+Pack Premium,In-house Network,59,59,Zone 1,Worldwide excluding USA,4296,699,IP,Annually,USD,NIL
+Pack Premium,In-house Network,59,59,Zone 1,Worldwide excluding USA,2012,699,OP,Annually,USD,NIL
+Pack Premium,In-house Network,59,59,Zone 1,Worldwide excluding USA,1812,699,OP,Annually,USD,10%
+Pack Premium,In-house Network,59,59,Zone 1,Worldwide excluding USA,1609,699,OP,Annually,USD,20%
+Pack Confort,In-house Network,59,59,Zone 1,Worldwide excluding USA,3382,586,IP,Annually,USD,NIL
+Pack Confort,In-house Network,59,59,Zone 1,Worldwide excluding USA,1908,586,OP,Annually,USD,NIL
+Pack Confort,In-house Network,59,59,Zone 1,Worldwide excluding USA,1716,586,OP,Annually,USD,10%
+Pack Confort,In-house Network,59,59,Zone 1,Worldwide excluding USA,1526,586,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,59,59,Zone 1,Worldwide excluding USA,2580,419,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,59,59,Zone 1,Worldwide excluding USA,1204,419,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,59,59,Zone 1,Worldwide excluding USA,1083,419,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,59,59,Zone 1,Worldwide excluding USA,962,419,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,59,59,Zone 1,Worldwide excluding USA,1852,318,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,59,59,Zone 1,Worldwide excluding USA,1074,318,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,59,59,Zone 1,Worldwide excluding USA,967,318,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,59,59,Zone 1,Worldwide excluding USA,861,318,OP,Annually,USD,20%
+Pack Premium,In-house Network,60,60,Zone 1,Worldwide excluding USA,4519,735,IP,Annually,USD,NIL
+Pack Premium,In-house Network,60,60,Zone 1,Worldwide excluding USA,2117,735,OP,Annually,USD,NIL
+Pack Premium,In-house Network,60,60,Zone 1,Worldwide excluding USA,1905,735,OP,Annually,USD,10%
+Pack Premium,In-house Network,60,60,Zone 1,Worldwide excluding USA,1693,735,OP,Annually,USD,20%
+Pack Confort,In-house Network,60,60,Zone 1,Worldwide excluding USA,3556,613,IP,Annually,USD,NIL
+Pack Confort,In-house Network,60,60,Zone 1,Worldwide excluding USA,2009,613,OP,Annually,USD,NIL
+Pack Confort,In-house Network,60,60,Zone 1,Worldwide excluding USA,1807,613,OP,Annually,USD,10%
+Pack Confort,In-house Network,60,60,Zone 1,Worldwide excluding USA,1606,613,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,60,60,Zone 1,Worldwide excluding USA,2710,440,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,60,60,Zone 1,Worldwide excluding USA,1267,440,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,60,60,Zone 1,Worldwide excluding USA,1142,440,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,60,60,Zone 1,Worldwide excluding USA,1013,440,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,60,60,Zone 1,Worldwide excluding USA,1947,336,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,60,60,Zone 1,Worldwide excluding USA,1131,336,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,60,60,Zone 1,Worldwide excluding USA,1017,336,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,60,60,Zone 1,Worldwide excluding USA,905,336,OP,Annually,USD,20%
+Pack Premium,In-house Network,61,61,Zone 1,Worldwide excluding USA,4933,800,IP,Annually,USD,NIL
+Pack Premium,In-house Network,61,61,Zone 1,Worldwide excluding USA,2307,800,OP,Annually,USD,NIL
+Pack Premium,In-house Network,61,61,Zone 1,Worldwide excluding USA,2078,800,OP,Annually,USD,10%
+Pack Premium,In-house Network,61,61,Zone 1,Worldwide excluding USA,1845,800,OP,Annually,USD,20%
+Pack Confort,In-house Network,61,61,Zone 1,Worldwide excluding USA,3883,672,IP,Annually,USD,NIL
+Pack Confort,In-house Network,61,61,Zone 1,Worldwide excluding USA,2190,672,OP,Annually,USD,NIL
+Pack Confort,In-house Network,61,61,Zone 1,Worldwide excluding USA,1969,672,OP,Annually,USD,10%
+Pack Confort,In-house Network,61,61,Zone 1,Worldwide excluding USA,1751,672,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,61,61,Zone 1,Worldwide excluding USA,2962,480,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,61,61,Zone 1,Worldwide excluding USA,1380,480,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,61,61,Zone 1,Worldwide excluding USA,1242,480,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,61,61,Zone 1,Worldwide excluding USA,1106,480,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,61,61,Zone 1,Worldwide excluding USA,2128,367,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,61,61,Zone 1,Worldwide excluding USA,1233,367,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,61,61,Zone 1,Worldwide excluding USA,1109,367,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,61,61,Zone 1,Worldwide excluding USA,988,367,OP,Annually,USD,20%
+Pack Premium,In-house Network,62,62,Zone 1,Worldwide excluding USA,5324,862,IP,Annually,USD,NIL
+Pack Premium,In-house Network,62,62,Zone 1,Worldwide excluding USA,2493,862,OP,Annually,USD,NIL
+Pack Premium,In-house Network,62,62,Zone 1,Worldwide excluding USA,2243,862,OP,Annually,USD,10%
+Pack Premium,In-house Network,62,62,Zone 1,Worldwide excluding USA,1994,862,OP,Annually,USD,20%
+Pack Confort,In-house Network,62,62,Zone 1,Worldwide excluding USA,4192,725,IP,Annually,USD,NIL
+Pack Confort,In-house Network,62,62,Zone 1,Worldwide excluding USA,2366,725,OP,Annually,USD,NIL
+Pack Confort,In-house Network,62,62,Zone 1,Worldwide excluding USA,2128,725,OP,Annually,USD,10%
+Pack Confort,In-house Network,62,62,Zone 1,Worldwide excluding USA,1892,725,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,62,62,Zone 1,Worldwide excluding USA,3197,516,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,62,62,Zone 1,Worldwide excluding USA,1490,516,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,62,62,Zone 1,Worldwide excluding USA,1341,516,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,62,62,Zone 1,Worldwide excluding USA,1191,516,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,62,62,Zone 1,Worldwide excluding USA,2296,396,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,62,62,Zone 1,Worldwide excluding USA,1330,396,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,62,62,Zone 1,Worldwide excluding USA,1196,396,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,62,62,Zone 1,Worldwide excluding USA,1063,396,OP,Annually,USD,20%
+Pack Premium,In-house Network,63,63,Zone 1,Worldwide excluding USA,5592,906,IP,Annually,USD,NIL
+Pack Premium,In-house Network,63,63,Zone 1,Worldwide excluding USA,2616,906,OP,Annually,USD,NIL
+Pack Premium,In-house Network,63,63,Zone 1,Worldwide excluding USA,2355,906,OP,Annually,USD,10%
+Pack Premium,In-house Network,63,63,Zone 1,Worldwide excluding USA,2092,906,OP,Annually,USD,20%
+Pack Confort,In-house Network,63,63,Zone 1,Worldwide excluding USA,4403,763,IP,Annually,USD,NIL
+Pack Confort,In-house Network,63,63,Zone 1,Worldwide excluding USA,2485,763,OP,Annually,USD,NIL
+Pack Confort,In-house Network,63,63,Zone 1,Worldwide excluding USA,2236,763,OP,Annually,USD,10%
+Pack Confort,In-house Network,63,63,Zone 1,Worldwide excluding USA,1988,763,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,63,63,Zone 1,Worldwide excluding USA,3358,542,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,63,63,Zone 1,Worldwide excluding USA,1564,542,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,63,63,Zone 1,Worldwide excluding USA,1409,542,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,63,63,Zone 1,Worldwide excluding USA,1251,542,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,63,63,Zone 1,Worldwide excluding USA,2412,414,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,63,63,Zone 1,Worldwide excluding USA,1396,414,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,63,63,Zone 1,Worldwide excluding USA,1259,414,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,63,63,Zone 1,Worldwide excluding USA,1117,414,OP,Annually,USD,20%
+Pack Premium,In-house Network,64,64,Zone 1,Worldwide excluding USA,5920,955,IP,Annually,USD,NIL
+Pack Premium,In-house Network,64,64,Zone 1,Worldwide excluding USA,2769,955,OP,Annually,USD,NIL
+Pack Premium,In-house Network,64,64,Zone 1,Worldwide excluding USA,2492,955,OP,Annually,USD,10%
+Pack Premium,In-house Network,64,64,Zone 1,Worldwide excluding USA,2215,955,OP,Annually,USD,20%
+Pack Confort,In-house Network,64,64,Zone 1,Worldwide excluding USA,4660,802,IP,Annually,USD,NIL
+Pack Confort,In-house Network,64,64,Zone 1,Worldwide excluding USA,2629,802,OP,Annually,USD,NIL
+Pack Confort,In-house Network,64,64,Zone 1,Worldwide excluding USA,2366,802,OP,Annually,USD,10%
+Pack Confort,In-house Network,64,64,Zone 1,Worldwide excluding USA,2105,802,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,64,64,Zone 1,Worldwide excluding USA,3555,572,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,64,64,Zone 1,Worldwide excluding USA,1657,572,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,64,64,Zone 1,Worldwide excluding USA,1490,572,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,64,64,Zone 1,Worldwide excluding USA,1324,572,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,64,64,Zone 1,Worldwide excluding USA,2555,439,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,64,64,Zone 1,Worldwide excluding USA,1479,439,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,64,64,Zone 1,Worldwide excluding USA,1331,439,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,64,64,Zone 1,Worldwide excluding USA,1185,439,OP,Annually,USD,20%
+Pack Premium,In-house Network,65,65,Zone 1,Worldwide excluding USA,6264,1010,IP,Annually,USD,NIL
+Pack Premium,In-house Network,65,65,Zone 1,Worldwide excluding USA,2932,1010,OP,Annually,USD,NIL
+Pack Premium,In-house Network,65,65,Zone 1,Worldwide excluding USA,2638,1010,OP,Annually,USD,10%
+Pack Premium,In-house Network,65,65,Zone 1,Worldwide excluding USA,2345,1010,OP,Annually,USD,20%
+Pack Confort,In-house Network,65,65,Zone 1,Worldwide excluding USA,4929,850,IP,Annually,USD,NIL
+Pack Confort,In-house Network,65,65,Zone 1,Worldwide excluding USA,2780,850,OP,Annually,USD,NIL
+Pack Confort,In-house Network,65,65,Zone 1,Worldwide excluding USA,2502,850,OP,Annually,USD,10%
+Pack Confort,In-house Network,65,65,Zone 1,Worldwide excluding USA,2223,850,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,65,65,Zone 1,Worldwide excluding USA,3761,605,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,65,65,Zone 1,Worldwide excluding USA,1755,605,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,65,65,Zone 1,Worldwide excluding USA,1578,605,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,65,65,Zone 1,Worldwide excluding USA,1403,605,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,65,65,Zone 1,Worldwide excluding USA,2704,464,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,65,65,Zone 1,Worldwide excluding USA,1565,464,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,65,65,Zone 1,Worldwide excluding USA,1407,464,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,65,65,Zone 1,Worldwide excluding USA,1251,464,OP,Annually,USD,20%
+Pack Premium,In-house Network,66,66,Zone 1,Worldwide excluding USA,6841,1101,IP,Annually,USD,NIL
+Pack Premium,In-house Network,66,66,Zone 1,Worldwide excluding USA,3203,1101,OP,Annually,USD,NIL
+Pack Premium,In-house Network,66,66,Zone 1,Worldwide excluding USA,2884,1101,OP,Annually,USD,10%
+Pack Premium,In-house Network,66,66,Zone 1,Worldwide excluding USA,2564,1101,OP,Annually,USD,20%
+Pack Confort,In-house Network,66,66,Zone 1,Worldwide excluding USA,5388,922,IP,Annually,USD,NIL
+Pack Confort,In-house Network,66,66,Zone 1,Worldwide excluding USA,3041,922,OP,Annually,USD,NIL
+Pack Confort,In-house Network,66,66,Zone 1,Worldwide excluding USA,2737,922,OP,Annually,USD,10%
+Pack Confort,In-house Network,66,66,Zone 1,Worldwide excluding USA,2432,922,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,66,66,Zone 1,Worldwide excluding USA,4111,658,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,66,66,Zone 1,Worldwide excluding USA,1918,658,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,66,66,Zone 1,Worldwide excluding USA,1724,658,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,66,66,Zone 1,Worldwide excluding USA,1534,658,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,66,66,Zone 1,Worldwide excluding USA,2953,502,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,66,66,Zone 1,Worldwide excluding USA,1710,502,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,66,66,Zone 1,Worldwide excluding USA,1539,502,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,66,66,Zone 1,Worldwide excluding USA,1367,502,OP,Annually,USD,20%
+Pack Premium,In-house Network,67,67,Zone 1,Worldwide excluding USA,7741,1244,IP,Annually,USD,NIL
+Pack Premium,In-house Network,67,67,Zone 1,Worldwide excluding USA,3624,1244,OP,Annually,USD,NIL
+Pack Premium,In-house Network,67,67,Zone 1,Worldwide excluding USA,3262,1244,OP,Annually,USD,10%
+Pack Premium,In-house Network,67,67,Zone 1,Worldwide excluding USA,2900,1244,OP,Annually,USD,20%
+Pack Confort,In-house Network,67,67,Zone 1,Worldwide excluding USA,6097,1042,IP,Annually,USD,NIL
+Pack Confort,In-house Network,67,67,Zone 1,Worldwide excluding USA,3442,1042,OP,Annually,USD,NIL
+Pack Confort,In-house Network,67,67,Zone 1,Worldwide excluding USA,3098,1042,OP,Annually,USD,10%
+Pack Confort,In-house Network,67,67,Zone 1,Worldwide excluding USA,2754,1042,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,67,67,Zone 1,Worldwide excluding USA,4647,745,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,67,67,Zone 1,Worldwide excluding USA,2166,745,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,67,67,Zone 1,Worldwide excluding USA,1947,745,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,67,67,Zone 1,Worldwide excluding USA,1731,745,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,67,67,Zone 1,Worldwide excluding USA,3341,566,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,67,67,Zone 1,Worldwide excluding USA,1936,566,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,67,67,Zone 1,Worldwide excluding USA,1744,566,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,67,67,Zone 1,Worldwide excluding USA,1550,566,OP,Annually,USD,20%
+Pack Premium,In-house Network,68,68,Zone 1,Worldwide excluding USA,7978,1284,IP,Annually,USD,NIL
+Pack Premium,In-house Network,68,68,Zone 1,Worldwide excluding USA,3730,1284,OP,Annually,USD,NIL
+Pack Premium,In-house Network,68,68,Zone 1,Worldwide excluding USA,3358,1284,OP,Annually,USD,10%
+Pack Premium,In-house Network,68,68,Zone 1,Worldwide excluding USA,2984,1284,OP,Annually,USD,20%
+Pack Confort,In-house Network,68,68,Zone 1,Worldwide excluding USA,6281,1075,IP,Annually,USD,NIL
+Pack Confort,In-house Network,68,68,Zone 1,Worldwide excluding USA,3541,1075,OP,Annually,USD,NIL
+Pack Confort,In-house Network,68,68,Zone 1,Worldwide excluding USA,3190,1075,OP,Annually,USD,10%
+Pack Confort,In-house Network,68,68,Zone 1,Worldwide excluding USA,2832,1075,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,68,68,Zone 1,Worldwide excluding USA,4789,769,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,68,68,Zone 1,Worldwide excluding USA,2231,769,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,68,68,Zone 1,Worldwide excluding USA,2007,769,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,68,68,Zone 1,Worldwide excluding USA,1784,769,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,68,68,Zone 1,Worldwide excluding USA,3442,586,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,68,68,Zone 1,Worldwide excluding USA,1995,586,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,68,68,Zone 1,Worldwide excluding USA,1795,586,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,68,68,Zone 1,Worldwide excluding USA,1594,586,OP,Annually,USD,20%
+Pack Premium,In-house Network,69,69,Zone 1,Worldwide excluding USA,8392,1346,IP,Annually,USD,NIL
+Pack Premium,In-house Network,69,69,Zone 1,Worldwide excluding USA,3923,1346,OP,Annually,USD,NIL
+Pack Premium,In-house Network,69,69,Zone 1,Worldwide excluding USA,3531,1346,OP,Annually,USD,10%
+Pack Premium,In-house Network,69,69,Zone 1,Worldwide excluding USA,3138,1346,OP,Annually,USD,20%
+Pack Confort,In-house Network,69,69,Zone 1,Worldwide excluding USA,6604,1132,IP,Annually,USD,NIL
+Pack Confort,In-house Network,69,69,Zone 1,Worldwide excluding USA,3724,1132,OP,Annually,USD,NIL
+Pack Confort,In-house Network,69,69,Zone 1,Worldwide excluding USA,3352,1132,OP,Annually,USD,10%
+Pack Confort,In-house Network,69,69,Zone 1,Worldwide excluding USA,2980,1132,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,69,69,Zone 1,Worldwide excluding USA,5038,806,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,69,69,Zone 1,Worldwide excluding USA,2345,806,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,69,69,Zone 1,Worldwide excluding USA,2109,806,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,69,69,Zone 1,Worldwide excluding USA,1877,806,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,69,69,Zone 1,Worldwide excluding USA,3620,617,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,69,69,Zone 1,Worldwide excluding USA,2094,617,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,69,69,Zone 1,Worldwide excluding USA,1883,617,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,69,69,Zone 1,Worldwide excluding USA,1673,617,OP,Annually,USD,20%
+Pack Premium,In-house Network,70,70,Zone 1,Worldwide excluding USA,8833,1417,IP,Annually,USD,NIL
+Pack Premium,In-house Network,70,70,Zone 1,Worldwide excluding USA,4131,1417,OP,Annually,USD,NIL
+Pack Premium,In-house Network,70,70,Zone 1,Worldwide excluding USA,3717,1417,OP,Annually,USD,10%
+Pack Premium,In-house Network,70,70,Zone 1,Worldwide excluding USA,3306,1417,OP,Annually,USD,20%
+Pack Confort,In-house Network,70,70,Zone 1,Worldwide excluding USA,6953,1187,IP,Annually,USD,NIL
+Pack Confort,In-house Network,70,70,Zone 1,Worldwide excluding USA,3921,1187,OP,Annually,USD,NIL
+Pack Confort,In-house Network,70,70,Zone 1,Worldwide excluding USA,3531,1187,OP,Annually,USD,10%
+Pack Confort,In-house Network,70,70,Zone 1,Worldwide excluding USA,3137,1187,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,70,70,Zone 1,Worldwide excluding USA,5302,846,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,70,70,Zone 1,Worldwide excluding USA,2471,846,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,70,70,Zone 1,Worldwide excluding USA,2223,846,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,70,70,Zone 1,Worldwide excluding USA,1976,846,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,70,70,Zone 1,Worldwide excluding USA,3812,650,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,70,70,Zone 1,Worldwide excluding USA,2205,650,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,70,70,Zone 1,Worldwide excluding USA,1984,650,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,70,70,Zone 1,Worldwide excluding USA,1763,650,OP,Annually,USD,20%
+Pack Premium,In-house Network,71,71,Zone 1,Worldwide excluding USA,9293,1488,IP,Annually,USD,NIL
+Pack Premium,In-house Network,71,71,Zone 1,Worldwide excluding USA,4347,1488,OP,Annually,USD,NIL
+Pack Premium,In-house Network,71,71,Zone 1,Worldwide excluding USA,3912,1488,OP,Annually,USD,10%
+Pack Premium,In-house Network,71,71,Zone 1,Worldwide excluding USA,3477,1488,OP,Annually,USD,20%
+Pack Confort,In-house Network,71,71,Zone 1,Worldwide excluding USA,7316,1252,IP,Annually,USD,NIL
+Pack Confort,In-house Network,71,71,Zone 1,Worldwide excluding USA,4123,1252,OP,Annually,USD,NIL
+Pack Confort,In-house Network,71,71,Zone 1,Worldwide excluding USA,3712,1252,OP,Annually,USD,10%
+Pack Confort,In-house Network,71,71,Zone 1,Worldwide excluding USA,3299,1252,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,71,71,Zone 1,Worldwide excluding USA,5580,890,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,71,71,Zone 1,Worldwide excluding USA,2599,890,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,71,71,Zone 1,Worldwide excluding USA,2339,890,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,71,71,Zone 1,Worldwide excluding USA,2080,890,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,71,71,Zone 1,Worldwide excluding USA,4012,685,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,71,71,Zone 1,Worldwide excluding USA,2318,685,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,71,71,Zone 1,Worldwide excluding USA,2086,685,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,71,71,Zone 1,Worldwide excluding USA,1855,685,OP,Annually,USD,20%
+Pack Premium,In-house Network,72,72,Zone 1,Worldwide excluding USA,9856,1579,IP,Annually,USD,NIL
+Pack Premium,In-house Network,72,72,Zone 1,Worldwide excluding USA,4610,1579,OP,Annually,USD,NIL
+Pack Premium,In-house Network,72,72,Zone 1,Worldwide excluding USA,4150,1579,OP,Annually,USD,10%
+Pack Premium,In-house Network,72,72,Zone 1,Worldwide excluding USA,3688,1579,OP,Annually,USD,20%
+Pack Confort,In-house Network,72,72,Zone 1,Worldwide excluding USA,7758,1324,IP,Annually,USD,NIL
+Pack Confort,In-house Network,72,72,Zone 1,Worldwide excluding USA,4376,1324,OP,Annually,USD,NIL
+Pack Confort,In-house Network,72,72,Zone 1,Worldwide excluding USA,3940,1324,OP,Annually,USD,10%
+Pack Confort,In-house Network,72,72,Zone 1,Worldwide excluding USA,3501,1324,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,72,72,Zone 1,Worldwide excluding USA,5914,944,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,72,72,Zone 1,Worldwide excluding USA,2755,944,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,72,72,Zone 1,Worldwide excluding USA,2480,944,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,72,72,Zone 1,Worldwide excluding USA,2204,944,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,72,72,Zone 1,Worldwide excluding USA,4250,720,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,72,72,Zone 1,Worldwide excluding USA,2461,720,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,72,72,Zone 1,Worldwide excluding USA,2215,720,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,72,72,Zone 1,Worldwide excluding USA,1969,720,OP,Annually,USD,20%
+Pack Premium,In-house Network,73,73,Zone 1,Worldwide excluding USA,10272,1646,IP,Annually,USD,NIL
+Pack Premium,In-house Network,73,73,Zone 1,Worldwide excluding USA,4804,1646,OP,Annually,USD,NIL
+Pack Premium,In-house Network,73,73,Zone 1,Worldwide excluding USA,4324,1646,OP,Annually,USD,10%
+Pack Premium,In-house Network,73,73,Zone 1,Worldwide excluding USA,3843,1646,OP,Annually,USD,20%
+Pack Confort,In-house Network,73,73,Zone 1,Worldwide excluding USA,8087,1382,IP,Annually,USD,NIL
+Pack Confort,In-house Network,73,73,Zone 1,Worldwide excluding USA,4559,1382,OP,Annually,USD,NIL
+Pack Confort,In-house Network,73,73,Zone 1,Worldwide excluding USA,4102,1382,OP,Annually,USD,10%
+Pack Confort,In-house Network,73,73,Zone 1,Worldwide excluding USA,3647,1382,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,73,73,Zone 1,Worldwide excluding USA,6167,984,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,73,73,Zone 1,Worldwide excluding USA,2873,984,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,73,73,Zone 1,Worldwide excluding USA,2584,984,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,73,73,Zone 1,Worldwide excluding USA,2299,984,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,73,73,Zone 1,Worldwide excluding USA,4433,755,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,73,73,Zone 1,Worldwide excluding USA,2564,755,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,73,73,Zone 1,Worldwide excluding USA,2307,755,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,73,73,Zone 1,Worldwide excluding USA,2052,755,OP,Annually,USD,20%
+Pack Premium,In-house Network,74,74,Zone 1,Worldwide excluding USA,10703,1714,IP,Annually,USD,NIL
+Pack Premium,In-house Network,74,74,Zone 1,Worldwide excluding USA,5004,1714,OP,Annually,USD,NIL
+Pack Premium,In-house Network,74,74,Zone 1,Worldwide excluding USA,4503,1714,OP,Annually,USD,10%
+Pack Premium,In-house Network,74,74,Zone 1,Worldwide excluding USA,4004,1714,OP,Annually,USD,20%
+Pack Confort,In-house Network,74,74,Zone 1,Worldwide excluding USA,8424,1437,IP,Annually,USD,NIL
+Pack Confort,In-house Network,74,74,Zone 1,Worldwide excluding USA,4750,1437,OP,Annually,USD,NIL
+Pack Confort,In-house Network,74,74,Zone 1,Worldwide excluding USA,4275,1437,OP,Annually,USD,10%
+Pack Confort,In-house Network,74,74,Zone 1,Worldwide excluding USA,3799,1437,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,74,74,Zone 1,Worldwide excluding USA,6426,1026,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,74,74,Zone 1,Worldwide excluding USA,2992,1026,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,74,74,Zone 1,Worldwide excluding USA,2693,1026,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,74,74,Zone 1,Worldwide excluding USA,2393,1026,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,74,74,Zone 1,Worldwide excluding USA,4617,785,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,74,74,Zone 1,Worldwide excluding USA,2671,785,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,74,74,Zone 1,Worldwide excluding USA,2403,785,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,74,74,Zone 1,Worldwide excluding USA,2137,785,OP,Annually,USD,20%
+Pack Premium,In-house Network,75,75,Zone 1,Worldwide excluding USA,11133,1784,IP,Annually,USD,NIL
+Pack Premium,In-house Network,75,75,Zone 1,Worldwide excluding USA,5207,1784,OP,Annually,USD,NIL
+Pack Premium,In-house Network,75,75,Zone 1,Worldwide excluding USA,4688,1784,OP,Annually,USD,10%
+Pack Premium,In-house Network,75,75,Zone 1,Worldwide excluding USA,4167,1784,OP,Annually,USD,20%
+Pack Confort,In-house Network,75,75,Zone 1,Worldwide excluding USA,8762,1500,IP,Annually,USD,NIL
+Pack Confort,In-house Network,75,75,Zone 1,Worldwide excluding USA,4942,1500,OP,Annually,USD,NIL
+Pack Confort,In-house Network,75,75,Zone 1,Worldwide excluding USA,4449,1500,OP,Annually,USD,10%
+Pack Confort,In-house Network,75,75,Zone 1,Worldwide excluding USA,3953,1500,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,75,75,Zone 1,Worldwide excluding USA,6682,1064,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,75,75,Zone 1,Worldwide excluding USA,3114,1064,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,75,75,Zone 1,Worldwide excluding USA,2802,1064,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,75,75,Zone 1,Worldwide excluding USA,2491,1064,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,75,75,Zone 1,Worldwide excluding USA,4804,816,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,75,75,Zone 1,Worldwide excluding USA,2780,816,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,75,75,Zone 1,Worldwide excluding USA,2502,816,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,75,75,Zone 1,Worldwide excluding USA,2224,816,OP,Annually,USD,20%
+Pack Premium,In-house Network,76,76,Zone 1,Worldwide excluding USA,11578,1859,IP,Annually,USD,NIL
+Pack Premium,In-house Network,76,76,Zone 1,Worldwide excluding USA,5418,1859,OP,Annually,USD,NIL
+Pack Premium,In-house Network,76,76,Zone 1,Worldwide excluding USA,4875,1859,OP,Annually,USD,10%
+Pack Premium,In-house Network,76,76,Zone 1,Worldwide excluding USA,4332,1859,OP,Annually,USD,20%
+Pack Confort,In-house Network,76,76,Zone 1,Worldwide excluding USA,9114,1557,IP,Annually,USD,NIL
+Pack Confort,In-house Network,76,76,Zone 1,Worldwide excluding USA,5143,1557,OP,Annually,USD,NIL
+Pack Confort,In-house Network,76,76,Zone 1,Worldwide excluding USA,4629,1557,OP,Annually,USD,10%
+Pack Confort,In-house Network,76,76,Zone 1,Worldwide excluding USA,4114,1557,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,76,76,Zone 1,Worldwide excluding USA,6949,1111,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,76,76,Zone 1,Worldwide excluding USA,3238,1111,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,76,76,Zone 1,Worldwide excluding USA,2915,1111,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,76,76,Zone 1,Worldwide excluding USA,2590,1111,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,76,76,Zone 1,Worldwide excluding USA,4997,848,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,76,76,Zone 1,Worldwide excluding USA,2890,848,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,76,76,Zone 1,Worldwide excluding USA,2600,848,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,76,76,Zone 1,Worldwide excluding USA,2312,848,OP,Annually,USD,20%
+Pack Premium,In-house Network,77,77,Zone 1,Worldwide excluding USA,12044,1933,IP,Annually,USD,NIL
+Pack Premium,In-house Network,77,77,Zone 1,Worldwide excluding USA,5637,1933,OP,Annually,USD,NIL
+Pack Premium,In-house Network,77,77,Zone 1,Worldwide excluding USA,5071,1933,OP,Annually,USD,10%
+Pack Premium,In-house Network,77,77,Zone 1,Worldwide excluding USA,4508,1933,OP,Annually,USD,20%
+Pack Confort,In-house Network,77,77,Zone 1,Worldwide excluding USA,9480,1622,IP,Annually,USD,NIL
+Pack Confort,In-house Network,77,77,Zone 1,Worldwide excluding USA,5349,1622,OP,Annually,USD,NIL
+Pack Confort,In-house Network,77,77,Zone 1,Worldwide excluding USA,4813,1622,OP,Annually,USD,10%
+Pack Confort,In-house Network,77,77,Zone 1,Worldwide excluding USA,4278,1622,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,77,77,Zone 1,Worldwide excluding USA,7230,1156,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,77,77,Zone 1,Worldwide excluding USA,3370,1156,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,77,77,Zone 1,Worldwide excluding USA,3033,1156,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,77,77,Zone 1,Worldwide excluding USA,2695,1156,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,77,77,Zone 1,Worldwide excluding USA,5194,885,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,77,77,Zone 1,Worldwide excluding USA,3007,885,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,77,77,Zone 1,Worldwide excluding USA,2707,885,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,77,77,Zone 1,Worldwide excluding USA,2405,885,OP,Annually,USD,20%
+Pack Premium,In-house Network,78,78,Zone 1,Worldwide excluding USA,12526,2015,IP,Annually,USD,NIL
+Pack Premium,In-house Network,78,78,Zone 1,Worldwide excluding USA,5861,2015,OP,Annually,USD,NIL
+Pack Premium,In-house Network,78,78,Zone 1,Worldwide excluding USA,5276,2015,OP,Annually,USD,10%
+Pack Premium,In-house Network,78,78,Zone 1,Worldwide excluding USA,4689,2015,OP,Annually,USD,20%
+Pack Confort,In-house Network,78,78,Zone 1,Worldwide excluding USA,9860,1683,IP,Annually,USD,NIL
+Pack Confort,In-house Network,78,78,Zone 1,Worldwide excluding USA,5562,1683,OP,Annually,USD,NIL
+Pack Confort,In-house Network,78,78,Zone 1,Worldwide excluding USA,5004,1683,OP,Annually,USD,10%
+Pack Confort,In-house Network,78,78,Zone 1,Worldwide excluding USA,4449,1683,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,78,78,Zone 1,Worldwide excluding USA,7520,1202,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,78,78,Zone 1,Worldwide excluding USA,3505,1202,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,78,78,Zone 1,Worldwide excluding USA,3155,1202,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,78,78,Zone 1,Worldwide excluding USA,2804,1202,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,78,78,Zone 1,Worldwide excluding USA,5403,920,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,78,78,Zone 1,Worldwide excluding USA,3127,920,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,78,78,Zone 1,Worldwide excluding USA,2815,920,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,78,78,Zone 1,Worldwide excluding USA,2502,920,OP,Annually,USD,20%
+Pack Premium,In-house Network,79,79,Zone 1,Worldwide excluding USA,13026,2092,IP,Annually,USD,NIL
+Pack Premium,In-house Network,79,79,Zone 1,Worldwide excluding USA,6096,2092,OP,Annually,USD,NIL
+Pack Premium,In-house Network,79,79,Zone 1,Worldwide excluding USA,5488,2092,OP,Annually,USD,10%
+Pack Premium,In-house Network,79,79,Zone 1,Worldwide excluding USA,4876,2092,OP,Annually,USD,20%
+Pack Confort,In-house Network,79,79,Zone 1,Worldwide excluding USA,10253,1753,IP,Annually,USD,NIL
+Pack Confort,In-house Network,79,79,Zone 1,Worldwide excluding USA,5785,1753,OP,Annually,USD,NIL
+Pack Confort,In-house Network,79,79,Zone 1,Worldwide excluding USA,5206,1753,OP,Annually,USD,10%
+Pack Confort,In-house Network,79,79,Zone 1,Worldwide excluding USA,4627,1753,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,79,79,Zone 1,Worldwide excluding USA,7822,1251,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,79,79,Zone 1,Worldwide excluding USA,3645,1251,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,79,79,Zone 1,Worldwide excluding USA,3280,1251,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,79,79,Zone 1,Worldwide excluding USA,2916,1251,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,79,79,Zone 1,Worldwide excluding USA,5618,955,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,79,79,Zone 1,Worldwide excluding USA,3252,955,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,79,79,Zone 1,Worldwide excluding USA,2927,955,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,79,79,Zone 1,Worldwide excluding USA,2602,955,OP,Annually,USD,20%
+Pack Premium,In-house Network,80,80,Zone 1,Worldwide excluding USA,13550,2178,IP,Annually,USD,NIL
+Pack Premium,In-house Network,80,80,Zone 1,Worldwide excluding USA,6343,2178,OP,Annually,USD,NIL
+Pack Premium,In-house Network,80,80,Zone 1,Worldwide excluding USA,5710,2178,OP,Annually,USD,10%
+Pack Premium,In-house Network,80,80,Zone 1,Worldwide excluding USA,5075,2178,OP,Annually,USD,20%
+Pack Confort,In-house Network,80,80,Zone 1,Worldwide excluding USA,10667,1824,IP,Annually,USD,NIL
+Pack Confort,In-house Network,80,80,Zone 1,Worldwide excluding USA,6020,1824,OP,Annually,USD,NIL
+Pack Confort,In-house Network,80,80,Zone 1,Worldwide excluding USA,5418,1824,OP,Annually,USD,10%
+Pack Confort,In-house Network,80,80,Zone 1,Worldwide excluding USA,4815,1824,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,80,80,Zone 1,Worldwide excluding USA,8133,1303,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,80,80,Zone 1,Worldwide excluding USA,3792,1303,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,80,80,Zone 1,Worldwide excluding USA,3413,1303,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,80,80,Zone 1,Worldwide excluding USA,3034,1303,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,80,80,Zone 1,Worldwide excluding USA,5844,994,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,80,80,Zone 1,Worldwide excluding USA,3385,994,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,80,80,Zone 1,Worldwide excluding USA,3045,994,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,80,80,Zone 1,Worldwide excluding USA,2708,994,OP,Annually,USD,20%
+Pack Premium,In-house Network,81,81,Zone 1,Worldwide excluding USA,14091,2266,IP,Annually,USD,NIL
+Pack Premium,In-house Network,81,81,Zone 1,Worldwide excluding USA,6595,2266,OP,Annually,USD,NIL
+Pack Premium,In-house Network,81,81,Zone 1,Worldwide excluding USA,5937,2266,OP,Annually,USD,10%
+Pack Premium,In-house Network,81,81,Zone 1,Worldwide excluding USA,5279,2266,OP,Annually,USD,20%
+Pack Confort,In-house Network,81,81,Zone 1,Worldwide excluding USA,11094,1900,IP,Annually,USD,NIL
+Pack Confort,In-house Network,81,81,Zone 1,Worldwide excluding USA,6260,1900,OP,Annually,USD,NIL
+Pack Confort,In-house Network,81,81,Zone 1,Worldwide excluding USA,5634,1900,OP,Annually,USD,10%
+Pack Confort,In-house Network,81,81,Zone 1,Worldwide excluding USA,5007,1900,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,81,81,Zone 1,Worldwide excluding USA,8459,1353,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,81,81,Zone 1,Worldwide excluding USA,3944,1353,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,81,81,Zone 1,Worldwide excluding USA,3549,1353,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,81,81,Zone 1,Worldwide excluding USA,3156,1353,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,81,81,Zone 1,Worldwide excluding USA,6079,1037,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,81,81,Zone 1,Worldwide excluding USA,3520,1037,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,81,81,Zone 1,Worldwide excluding USA,3168,1037,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,81,81,Zone 1,Worldwide excluding USA,2815,1037,OP,Annually,USD,20%
+Pack Premium,In-house Network,82,82,Zone 1,Worldwide excluding USA,14658,2361,IP,Annually,USD,NIL
+Pack Premium,In-house Network,82,82,Zone 1,Worldwide excluding USA,6859,2361,OP,Annually,USD,NIL
+Pack Premium,In-house Network,82,82,Zone 1,Worldwide excluding USA,6176,2361,OP,Annually,USD,10%
+Pack Premium,In-house Network,82,82,Zone 1,Worldwide excluding USA,5489,2361,OP,Annually,USD,20%
+Pack Confort,In-house Network,82,82,Zone 1,Worldwide excluding USA,11536,1977,IP,Annually,USD,NIL
+Pack Confort,In-house Network,82,82,Zone 1,Worldwide excluding USA,6512,1977,OP,Annually,USD,NIL
+Pack Confort,In-house Network,82,82,Zone 1,Worldwide excluding USA,5861,1977,OP,Annually,USD,10%
+Pack Confort,In-house Network,82,82,Zone 1,Worldwide excluding USA,5209,1977,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,82,82,Zone 1,Worldwide excluding USA,8800,1409,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,82,82,Zone 1,Worldwide excluding USA,4103,1409,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,82,82,Zone 1,Worldwide excluding USA,3691,1409,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,82,82,Zone 1,Worldwide excluding USA,3282,1409,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,82,82,Zone 1,Worldwide excluding USA,6323,1079,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,82,82,Zone 1,Worldwide excluding USA,3661,1079,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,82,82,Zone 1,Worldwide excluding USA,3296,1079,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,82,82,Zone 1,Worldwide excluding USA,2928,1079,OP,Annually,USD,20%
+Pack Premium,In-house Network,83,83,Zone 1,Worldwide excluding USA,15245,2455,IP,Annually,USD,NIL
+Pack Premium,In-house Network,83,83,Zone 1,Worldwide excluding USA,7137,2455,OP,Annually,USD,NIL
+Pack Premium,In-house Network,83,83,Zone 1,Worldwide excluding USA,6423,2455,OP,Annually,USD,10%
+Pack Premium,In-house Network,83,83,Zone 1,Worldwide excluding USA,5710,2455,OP,Annually,USD,20%
+Pack Confort,In-house Network,83,83,Zone 1,Worldwide excluding USA,12000,2056,IP,Annually,USD,NIL
+Pack Confort,In-house Network,83,83,Zone 1,Worldwide excluding USA,6774,2056,OP,Annually,USD,NIL
+Pack Confort,In-house Network,83,83,Zone 1,Worldwide excluding USA,6098,2056,OP,Annually,USD,10%
+Pack Confort,In-house Network,83,83,Zone 1,Worldwide excluding USA,5421,2056,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,83,83,Zone 1,Worldwide excluding USA,9151,1468,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,83,83,Zone 1,Worldwide excluding USA,4267,1468,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,83,83,Zone 1,Worldwide excluding USA,3841,1468,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,83,83,Zone 1,Worldwide excluding USA,3413,1468,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,83,83,Zone 1,Worldwide excluding USA,6575,1121,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,83,83,Zone 1,Worldwide excluding USA,3808,1121,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,83,83,Zone 1,Worldwide excluding USA,3428,1121,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,83,83,Zone 1,Worldwide excluding USA,3045,1121,OP,Annually,USD,20%
+Pack Premium,In-house Network,84,84,Zone 1,Worldwide excluding USA,15857,2555,IP,Annually,USD,NIL
+Pack Premium,In-house Network,84,84,Zone 1,Worldwide excluding USA,7423,2555,OP,Annually,USD,NIL
+Pack Premium,In-house Network,84,84,Zone 1,Worldwide excluding USA,6680,2555,OP,Annually,USD,10%
+Pack Premium,In-house Network,84,84,Zone 1,Worldwide excluding USA,5937,2555,OP,Annually,USD,20%
+Pack Confort,In-house Network,84,84,Zone 1,Worldwide excluding USA,12482,2140,IP,Annually,USD,NIL
+Pack Confort,In-house Network,84,84,Zone 1,Worldwide excluding USA,7047,2140,OP,Annually,USD,NIL
+Pack Confort,In-house Network,84,84,Zone 1,Worldwide excluding USA,6343,2140,OP,Annually,USD,10%
+Pack Confort,In-house Network,84,84,Zone 1,Worldwide excluding USA,5638,2140,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,84,84,Zone 1,Worldwide excluding USA,9520,1527,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,84,84,Zone 1,Worldwide excluding USA,4438,1527,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,84,84,Zone 1,Worldwide excluding USA,3993,1527,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,84,84,Zone 1,Worldwide excluding USA,3550,1527,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,84,84,Zone 1,Worldwide excluding USA,6839,1167,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,84,84,Zone 1,Worldwide excluding USA,3962,1167,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,84,84,Zone 1,Worldwide excluding USA,3566,1167,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,84,84,Zone 1,Worldwide excluding USA,3170,1167,OP,Annually,USD,20%
+Pack Premium,In-house Network,85,85,Zone 1,Worldwide excluding USA,16491,2657,IP,Annually,USD,NIL
+Pack Premium,In-house Network,85,85,Zone 1,Worldwide excluding USA,7722,2657,OP,Annually,USD,NIL
+Pack Premium,In-house Network,85,85,Zone 1,Worldwide excluding USA,6950,2657,OP,Annually,USD,10%
+Pack Premium,In-house Network,85,85,Zone 1,Worldwide excluding USA,6178,2657,OP,Annually,USD,20%
+Pack Confort,In-house Network,85,85,Zone 1,Worldwide excluding USA,12981,2229,IP,Annually,USD,NIL
+Pack Confort,In-house Network,85,85,Zone 1,Worldwide excluding USA,7331,2229,OP,Annually,USD,NIL
+Pack Confort,In-house Network,85,85,Zone 1,Worldwide excluding USA,6599,2229,OP,Annually,USD,10%
+Pack Confort,In-house Network,85,85,Zone 1,Worldwide excluding USA,5864,2229,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,85,85,Zone 1,Worldwide excluding USA,9899,1587,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,85,85,Zone 1,Worldwide excluding USA,4617,1587,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,85,85,Zone 1,Worldwide excluding USA,4156,1587,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,85,85,Zone 1,Worldwide excluding USA,3692,1587,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,85,85,Zone 1,Worldwide excluding USA,7115,1214,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,85,85,Zone 1,Worldwide excluding USA,4122,1214,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,85,85,Zone 1,Worldwide excluding USA,3710,1214,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,85,85,Zone 1,Worldwide excluding USA,3299,1214,OP,Annually,USD,20%
+Pack Premium,In-house Network,86,86,Zone 1,Worldwide excluding USA,17153,2764,IP,Annually,USD,NIL
+Pack Premium,In-house Network,86,86,Zone 1,Worldwide excluding USA,8030,2764,OP,Annually,USD,NIL
+Pack Premium,In-house Network,86,86,Zone 1,Worldwide excluding USA,7226,2764,OP,Annually,USD,10%
+Pack Premium,In-house Network,86,86,Zone 1,Worldwide excluding USA,6424,2764,OP,Annually,USD,20%
+Pack Confort,In-house Network,86,86,Zone 1,Worldwide excluding USA,13503,2315,IP,Annually,USD,NIL
+Pack Confort,In-house Network,86,86,Zone 1,Worldwide excluding USA,7625,2315,OP,Annually,USD,NIL
+Pack Confort,In-house Network,86,86,Zone 1,Worldwide excluding USA,6864,2315,OP,Annually,USD,10%
+Pack Confort,In-house Network,86,86,Zone 1,Worldwide excluding USA,6100,2315,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,86,86,Zone 1,Worldwide excluding USA,10296,1651,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,86,86,Zone 1,Worldwide excluding USA,4800,1651,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,86,86,Zone 1,Worldwide excluding USA,4318,1651,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,86,86,Zone 1,Worldwide excluding USA,3841,1651,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,86,86,Zone 1,Worldwide excluding USA,7400,1261,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,86,86,Zone 1,Worldwide excluding USA,4288,1261,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,86,86,Zone 1,Worldwide excluding USA,3861,1261,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,86,86,Zone 1,Worldwide excluding USA,3430,1261,OP,Annually,USD,20%
+Pack Premium,In-house Network,87,87,Zone 1,Worldwide excluding USA,17837,2875,IP,Annually,USD,NIL
+Pack Premium,In-house Network,87,87,Zone 1,Worldwide excluding USA,8352,2875,OP,Annually,USD,NIL
+Pack Premium,In-house Network,87,87,Zone 1,Worldwide excluding USA,7518,2875,OP,Annually,USD,10%
+Pack Premium,In-house Network,87,87,Zone 1,Worldwide excluding USA,6681,2875,OP,Annually,USD,20%
+Pack Confort,In-house Network,87,87,Zone 1,Worldwide excluding USA,14043,2412,IP,Annually,USD,NIL
+Pack Confort,In-house Network,87,87,Zone 1,Worldwide excluding USA,7932,2412,OP,Annually,USD,NIL
+Pack Confort,In-house Network,87,87,Zone 1,Worldwide excluding USA,7139,2412,OP,Annually,USD,10%
+Pack Confort,In-house Network,87,87,Zone 1,Worldwide excluding USA,6345,2412,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,87,87,Zone 1,Worldwide excluding USA,10708,1720,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,87,87,Zone 1,Worldwide excluding USA,4993,1720,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,87,87,Zone 1,Worldwide excluding USA,4495,1720,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,87,87,Zone 1,Worldwide excluding USA,3995,1720,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,87,87,Zone 1,Worldwide excluding USA,7693,1313,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,87,87,Zone 1,Worldwide excluding USA,4457,1313,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,87,87,Zone 1,Worldwide excluding USA,4012,1313,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,87,87,Zone 1,Worldwide excluding USA,3566,1313,OP,Annually,USD,20%
+Pack Premium,In-house Network,88,88,Zone 1,Worldwide excluding USA,18551,2992,IP,Annually,USD,NIL
+Pack Premium,In-house Network,88,88,Zone 1,Worldwide excluding USA,8690,2992,OP,Annually,USD,NIL
+Pack Premium,In-house Network,88,88,Zone 1,Worldwide excluding USA,7820,2992,OP,Annually,USD,10%
+Pack Premium,In-house Network,88,88,Zone 1,Worldwide excluding USA,6953,2992,OP,Annually,USD,20%
+Pack Confort,In-house Network,88,88,Zone 1,Worldwide excluding USA,14605,2510,IP,Annually,USD,NIL
+Pack Confort,In-house Network,88,88,Zone 1,Worldwide excluding USA,8252,2510,OP,Annually,USD,NIL
+Pack Confort,In-house Network,88,88,Zone 1,Worldwide excluding USA,7426,2510,OP,Annually,USD,10%
+Pack Confort,In-house Network,88,88,Zone 1,Worldwide excluding USA,6603,2510,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,88,88,Zone 1,Worldwide excluding USA,11137,1789,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,88,88,Zone 1,Worldwide excluding USA,5193,1789,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,88,88,Zone 1,Worldwide excluding USA,4675,1789,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,88,88,Zone 1,Worldwide excluding USA,4154,1789,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,88,88,Zone 1,Worldwide excluding USA,8003,1366,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,88,88,Zone 1,Worldwide excluding USA,4640,1366,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,88,88,Zone 1,Worldwide excluding USA,4177,1366,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,88,88,Zone 1,Worldwide excluding USA,3710,1366,OP,Annually,USD,20%
+Pack Premium,In-house Network,89,89,Zone 1,Worldwide excluding USA,19295,3116,IP,Annually,USD,NIL
+Pack Premium,In-house Network,89,89,Zone 1,Worldwide excluding USA,9037,3116,OP,Annually,USD,NIL
+Pack Premium,In-house Network,89,89,Zone 1,Worldwide excluding USA,8133,3116,OP,Annually,USD,10%
+Pack Premium,In-house Network,89,89,Zone 1,Worldwide excluding USA,7229,3116,OP,Annually,USD,20%
+Pack Confort,In-house Network,89,89,Zone 1,Worldwide excluding USA,15191,2610,IP,Annually,USD,NIL
+Pack Confort,In-house Network,89,89,Zone 1,Worldwide excluding USA,8581,2610,OP,Annually,USD,NIL
+Pack Confort,In-house Network,89,89,Zone 1,Worldwide excluding USA,7724,2610,OP,Annually,USD,10%
+Pack Confort,In-house Network,89,89,Zone 1,Worldwide excluding USA,6866,2610,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,89,89,Zone 1,Worldwide excluding USA,11582,1863,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,89,89,Zone 1,Worldwide excluding USA,5405,1863,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,89,89,Zone 1,Worldwide excluding USA,4862,1863,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,89,89,Zone 1,Worldwide excluding USA,4324,1863,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,89,89,Zone 1,Worldwide excluding USA,8324,1424,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,89,89,Zone 1,Worldwide excluding USA,4825,1424,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,89,89,Zone 1,Worldwide excluding USA,4344,1424,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,89,89,Zone 1,Worldwide excluding USA,3861,1424,OP,Annually,USD,20%
+Pack Premium,In-house Network,90,90,Zone 1,Worldwide excluding USA,20067,3244,IP,Annually,USD,NIL
+Pack Premium,In-house Network,90,90,Zone 1,Worldwide excluding USA,9402,3244,OP,Annually,USD,NIL
+Pack Premium,In-house Network,90,90,Zone 1,Worldwide excluding USA,8462,3244,OP,Annually,USD,10%
+Pack Premium,In-house Network,90,90,Zone 1,Worldwide excluding USA,7522,3244,OP,Annually,USD,20%
+Pack Confort,In-house Network,90,90,Zone 1,Worldwide excluding USA,15798,2718,IP,Annually,USD,NIL
+Pack Confort,In-house Network,90,90,Zone 1,Worldwide excluding USA,8926,2718,OP,Annually,USD,NIL
+Pack Confort,In-house Network,90,90,Zone 1,Worldwide excluding USA,8033,2718,OP,Annually,USD,10%
+Pack Confort,In-house Network,90,90,Zone 1,Worldwide excluding USA,7141,2718,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,90,90,Zone 1,Worldwide excluding USA,12047,1939,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,90,90,Zone 1,Worldwide excluding USA,5618,1939,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,90,90,Zone 1,Worldwide excluding USA,5057,1939,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,90,90,Zone 1,Worldwide excluding USA,4497,1939,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,90,90,Zone 1,Worldwide excluding USA,8657,1483,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,90,90,Zone 1,Worldwide excluding USA,5019,1483,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,90,90,Zone 1,Worldwide excluding USA,4518,1483,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,90,90,Zone 1,Worldwide excluding USA,4015,1483,OP,Annually,USD,20%
+Pack Premium,In-house Network,91,91,Zone 1,Worldwide excluding USA,20870,3375,IP,Annually,USD,NIL
+Pack Premium,In-house Network,91,91,Zone 1,Worldwide excluding USA,9777,3375,OP,Annually,USD,NIL
+Pack Premium,In-house Network,91,91,Zone 1,Worldwide excluding USA,8800,3375,OP,Annually,USD,10%
+Pack Premium,In-house Network,91,91,Zone 1,Worldwide excluding USA,7822,3375,OP,Annually,USD,20%
+Pack Confort,In-house Network,91,91,Zone 1,Worldwide excluding USA,16432,2824,IP,Annually,USD,NIL
+Pack Confort,In-house Network,91,91,Zone 1,Worldwide excluding USA,9285,2824,OP,Annually,USD,NIL
+Pack Confort,In-house Network,91,91,Zone 1,Worldwide excluding USA,8356,2824,OP,Annually,USD,10%
+Pack Confort,In-house Network,91,91,Zone 1,Worldwide excluding USA,7427,2824,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,91,91,Zone 1,Worldwide excluding USA,12529,2018,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,91,91,Zone 1,Worldwide excluding USA,5845,2018,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,91,91,Zone 1,Worldwide excluding USA,5261,2018,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,91,91,Zone 1,Worldwide excluding USA,4677,2018,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,91,91,Zone 1,Worldwide excluding USA,9003,1541,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,91,91,Zone 1,Worldwide excluding USA,5221,1541,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,91,91,Zone 1,Worldwide excluding USA,4698,1541,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,91,91,Zone 1,Worldwide excluding USA,4177,1541,OP,Annually,USD,20%
+Pack Premium,In-house Network,92,92,Zone 1,Worldwide excluding USA,21709,3512,IP,Annually,USD,NIL
+Pack Premium,In-house Network,92,92,Zone 1,Worldwide excluding USA,10169,3512,OP,Annually,USD,NIL
+Pack Premium,In-house Network,92,92,Zone 1,Worldwide excluding USA,9152,3512,OP,Annually,USD,10%
+Pack Premium,In-house Network,92,92,Zone 1,Worldwide excluding USA,8136,3512,OP,Annually,USD,20%
+Pack Confort,In-house Network,92,92,Zone 1,Worldwide excluding USA,17093,2942,IP,Annually,USD,NIL
+Pack Confort,In-house Network,92,92,Zone 1,Worldwide excluding USA,9657,2942,OP,Annually,USD,NIL
+Pack Confort,In-house Network,92,92,Zone 1,Worldwide excluding USA,8691,2942,OP,Annually,USD,10%
+Pack Confort,In-house Network,92,92,Zone 1,Worldwide excluding USA,7725,2942,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,92,92,Zone 1,Worldwide excluding USA,13033,2098,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,92,92,Zone 1,Worldwide excluding USA,6079,2098,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,92,92,Zone 1,Worldwide excluding USA,5471,2098,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,92,92,Zone 1,Worldwide excluding USA,4862,2098,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,92,92,Zone 1,Worldwide excluding USA,9367,1602,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,92,92,Zone 1,Worldwide excluding USA,5429,1602,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,92,92,Zone 1,Worldwide excluding USA,4887,1602,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,92,92,Zone 1,Worldwide excluding USA,4344,1602,OP,Annually,USD,20%
+Pack Premium,In-house Network,93,93,Zone 1,Worldwide excluding USA,22576,3653,IP,Annually,USD,NIL
+Pack Premium,In-house Network,93,93,Zone 1,Worldwide excluding USA,10577,3653,OP,Annually,USD,NIL
+Pack Premium,In-house Network,93,93,Zone 1,Worldwide excluding USA,9520,3653,OP,Annually,USD,10%
+Pack Premium,In-house Network,93,93,Zone 1,Worldwide excluding USA,8462,3653,OP,Annually,USD,20%
+Pack Confort,In-house Network,93,93,Zone 1,Worldwide excluding USA,17774,3059,IP,Annually,USD,NIL
+Pack Confort,In-house Network,93,93,Zone 1,Worldwide excluding USA,10047,3059,OP,Annually,USD,NIL
+Pack Confort,In-house Network,93,93,Zone 1,Worldwide excluding USA,9044,3059,OP,Annually,USD,10%
+Pack Confort,In-house Network,93,93,Zone 1,Worldwide excluding USA,8037,3059,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,93,93,Zone 1,Worldwide excluding USA,13551,2185,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,93,93,Zone 1,Worldwide excluding USA,6324,2185,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,93,93,Zone 1,Worldwide excluding USA,5691,2185,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,93,93,Zone 1,Worldwide excluding USA,5058,2185,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,93,93,Zone 1,Worldwide excluding USA,9741,1668,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,93,93,Zone 1,Worldwide excluding USA,5650,1668,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,93,93,Zone 1,Worldwide excluding USA,5085,1668,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,93,93,Zone 1,Worldwide excluding USA,4519,1668,OP,Annually,USD,20%
+Pack Premium,In-house Network,94,94,Zone 1,Worldwide excluding USA,23482,3800,IP,Annually,USD,NIL
+Pack Premium,In-house Network,94,94,Zone 1,Worldwide excluding USA,11003,3800,OP,Annually,USD,NIL
+Pack Premium,In-house Network,94,94,Zone 1,Worldwide excluding USA,9903,3800,OP,Annually,USD,10%
+Pack Premium,In-house Network,94,94,Zone 1,Worldwide excluding USA,8802,3800,OP,Annually,USD,20%
+Pack Confort,In-house Network,94,94,Zone 1,Worldwide excluding USA,18489,3185,IP,Annually,USD,NIL
+Pack Confort,In-house Network,94,94,Zone 1,Worldwide excluding USA,10445,3185,OP,Annually,USD,NIL
+Pack Confort,In-house Network,94,94,Zone 1,Worldwide excluding USA,9401,3185,OP,Annually,USD,10%
+Pack Confort,In-house Network,94,94,Zone 1,Worldwide excluding USA,8357,3185,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,94,94,Zone 1,Worldwide excluding USA,14094,2269,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,94,94,Zone 1,Worldwide excluding USA,6577,2269,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,94,94,Zone 1,Worldwide excluding USA,5921,2269,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,94,94,Zone 1,Worldwide excluding USA,5263,2269,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,94,94,Zone 1,Worldwide excluding USA,10133,1737,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,94,94,Zone 1,Worldwide excluding USA,5873,1737,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,94,94,Zone 1,Worldwide excluding USA,5285,1737,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,94,94,Zone 1,Worldwide excluding USA,4698,1737,OP,Annually,USD,20%
+Pack Premium,In-house Network,95,95,Zone 1,Worldwide excluding USA,24420,3953,IP,Annually,USD,NIL
+Pack Premium,In-house Network,95,95,Zone 1,Worldwide excluding USA,11445,3953,OP,Annually,USD,NIL
+Pack Premium,In-house Network,95,95,Zone 1,Worldwide excluding USA,10301,3953,OP,Annually,USD,10%
+Pack Premium,In-house Network,95,95,Zone 1,Worldwide excluding USA,9156,3953,OP,Annually,USD,20%
+Pack Confort,In-house Network,95,95,Zone 1,Worldwide excluding USA,19227,3315,IP,Annually,USD,NIL
+Pack Confort,In-house Network,95,95,Zone 1,Worldwide excluding USA,10867,3315,OP,Annually,USD,NIL
+Pack Confort,In-house Network,95,95,Zone 1,Worldwide excluding USA,9781,3315,OP,Annually,USD,10%
+Pack Confort,In-house Network,95,95,Zone 1,Worldwide excluding USA,8694,3315,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,95,95,Zone 1,Worldwide excluding USA,14660,2362,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,95,95,Zone 1,Worldwide excluding USA,6841,2362,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,95,95,Zone 1,Worldwide excluding USA,6156,2362,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,95,95,Zone 1,Worldwide excluding USA,5472,2362,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,95,95,Zone 1,Worldwide excluding USA,10539,1806,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,95,95,Zone 1,Worldwide excluding USA,6110,1806,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,95,95,Zone 1,Worldwide excluding USA,5499,1806,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,95,95,Zone 1,Worldwide excluding USA,4889,1806,OP,Annually,USD,20%
+Pack Premium,In-house Network,96,96,Zone 1,Worldwide excluding USA,25398,4112,IP,Annually,USD,NIL
+Pack Premium,In-house Network,96,96,Zone 1,Worldwide excluding USA,11904,4112,OP,Annually,USD,NIL
+Pack Premium,In-house Network,96,96,Zone 1,Worldwide excluding USA,10716,4112,OP,Annually,USD,10%
+Pack Premium,In-house Network,96,96,Zone 1,Worldwide excluding USA,9523,4112,OP,Annually,USD,20%
+Pack Confort,In-house Network,96,96,Zone 1,Worldwide excluding USA,19999,3450,IP,Annually,USD,NIL
+Pack Confort,In-house Network,96,96,Zone 1,Worldwide excluding USA,11304,3450,OP,Annually,USD,NIL
+Pack Confort,In-house Network,96,96,Zone 1,Worldwide excluding USA,10173,3450,OP,Annually,USD,10%
+Pack Confort,In-house Network,96,96,Zone 1,Worldwide excluding USA,9045,3450,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,96,96,Zone 1,Worldwide excluding USA,15244,2457,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,96,96,Zone 1,Worldwide excluding USA,7116,2457,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,96,96,Zone 1,Worldwide excluding USA,6405,2457,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,96,96,Zone 1,Worldwide excluding USA,5693,2457,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,96,96,Zone 1,Worldwide excluding USA,10959,1880,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,96,96,Zone 1,Worldwide excluding USA,6355,1880,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,96,96,Zone 1,Worldwide excluding USA,5721,1880,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,96,96,Zone 1,Worldwide excluding USA,5085,1880,OP,Annually,USD,20%
+Pack Premium,In-house Network,97,97,Zone 1,Worldwide excluding USA,26417,4276,IP,Annually,USD,NIL
+Pack Premium,In-house Network,97,97,Zone 1,Worldwide excluding USA,12382,4276,OP,Annually,USD,NIL
+Pack Premium,In-house Network,97,97,Zone 1,Worldwide excluding USA,11144,4276,OP,Annually,USD,10%
+Pack Premium,In-house Network,97,97,Zone 1,Worldwide excluding USA,9904,4276,OP,Annually,USD,20%
+Pack Confort,In-house Network,97,97,Zone 1,Worldwide excluding USA,20801,3588,IP,Annually,USD,NIL
+Pack Confort,In-house Network,97,97,Zone 1,Worldwide excluding USA,11756,3588,OP,Annually,USD,NIL
+Pack Confort,In-house Network,97,97,Zone 1,Worldwide excluding USA,10580,3588,OP,Annually,USD,10%
+Pack Confort,In-house Network,97,97,Zone 1,Worldwide excluding USA,9405,3588,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,97,97,Zone 1,Worldwide excluding USA,15855,2557,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,97,97,Zone 1,Worldwide excluding USA,7403,2557,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,97,97,Zone 1,Worldwide excluding USA,6660,2557,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,97,97,Zone 1,Worldwide excluding USA,5922,2557,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,97,97,Zone 1,Worldwide excluding USA,11398,1957,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,97,97,Zone 1,Worldwide excluding USA,6608,1957,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,97,97,Zone 1,Worldwide excluding USA,5947,1957,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,97,97,Zone 1,Worldwide excluding USA,5287,1957,OP,Annually,USD,20%
+Pack Premium,In-house Network,98,98,Zone 1,Worldwide excluding USA,27478,4449,IP,Annually,USD,NIL
+Pack Premium,In-house Network,98,98,Zone 1,Worldwide excluding USA,12880,4449,OP,Annually,USD,NIL
+Pack Premium,In-house Network,98,98,Zone 1,Worldwide excluding USA,11594,4449,OP,Annually,USD,10%
+Pack Premium,In-house Network,98,98,Zone 1,Worldwide excluding USA,10304,4449,OP,Annually,USD,20%
+Pack Confort,In-house Network,98,98,Zone 1,Worldwide excluding USA,21634,3732,IP,Annually,USD,NIL
+Pack Confort,In-house Network,98,98,Zone 1,Worldwide excluding USA,12229,3732,OP,Annually,USD,NIL
+Pack Confort,In-house Network,98,98,Zone 1,Worldwide excluding USA,11007,3732,OP,Annually,USD,10%
+Pack Confort,In-house Network,98,98,Zone 1,Worldwide excluding USA,9783,3732,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,98,98,Zone 1,Worldwide excluding USA,16496,2660,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,98,98,Zone 1,Worldwide excluding USA,7701,2660,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,98,98,Zone 1,Worldwide excluding USA,6930,2660,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,98,98,Zone 1,Worldwide excluding USA,6160,2660,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,98,98,Zone 1,Worldwide excluding USA,11854,2036,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,98,98,Zone 1,Worldwide excluding USA,6874,2036,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,98,98,Zone 1,Worldwide excluding USA,6186,2036,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,98,98,Zone 1,Worldwide excluding USA,5498,2036,OP,Annually,USD,20%
+Pack Premium,In-house Network,99,99,Zone 1,Worldwide excluding USA,28577,4629,IP,Annually,USD,NIL
+Pack Premium,In-house Network,99,99,Zone 1,Worldwide excluding USA,13396,4629,OP,Annually,USD,NIL
+Pack Premium,In-house Network,99,99,Zone 1,Worldwide excluding USA,12055,4629,OP,Annually,USD,10%
+Pack Premium,In-house Network,99,99,Zone 1,Worldwide excluding USA,10718,4629,OP,Annually,USD,20%
+Pack Confort,In-house Network,99,99,Zone 1,Worldwide excluding USA,22500,3885,IP,Annually,USD,NIL
+Pack Confort,In-house Network,99,99,Zone 1,Worldwide excluding USA,12719,3885,OP,Annually,USD,NIL
+Pack Confort,In-house Network,99,99,Zone 1,Worldwide excluding USA,11447,3885,OP,Annually,USD,10%
+Pack Confort,In-house Network,99,99,Zone 1,Worldwide excluding USA,10177,3885,OP,Annually,USD,20%
+Pack Premium CFE,In-house Network,99,99,Zone 1,Worldwide excluding USA,17154,2767,IP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,99,99,Zone 1,Worldwide excluding USA,8007,2767,OP,Annually,USD,NIL
+Pack Premium CFE,In-house Network,99,99,Zone 1,Worldwide excluding USA,7206,2767,OP,Annually,USD,10%
+Pack Premium CFE,In-house Network,99,99,Zone 1,Worldwide excluding USA,6406,2767,OP,Annually,USD,20%
+Pack Confort CFE,In-house Network,99,99,Zone 1,Worldwide excluding USA,12330,2116,IP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,99,99,Zone 1,Worldwide excluding USA,7152,2116,OP,Annually,USD,NIL
+Pack Confort CFE,In-house Network,99,99,Zone 1,Worldwide excluding USA,6437,2116,OP,Annually,USD,10%
+Pack Confort CFE,In-house Network,99,99,Zone 1,Worldwide excluding USA,5721,2116,OP,Annually,USD,20%

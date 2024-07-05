@@ -1029,16 +1029,12 @@ const fetchAddons = (
   num,
   conversion
 ) => {
-  console.log("addonName >> ", addonName);
   let info = readFile(
     folderName,
     "addon",
     `${addonName}`
   );
 
-  console.log("folderName ", folderName);
-
-  console.log("info >> ", info);
   let addonRates = info[0].sheetName
     ? readFile(folderName, "addon", info[0].sheetName)
     : [];
@@ -1057,83 +1053,231 @@ const fetchAddons = (
   if (info.find((v) => v.default?.toLowerCase == "true")) {
   } else {
     let Addons = [];
-    info.forEach((v, i) => {
+    // info.forEach((v, i) => {
+    //   let obj = {
+    //     id: "option-" + (i + 1),
+    //     label: v.label,
+    //     description: v.description,
+    //   };
+    //   if (v.plan) {
+    //     // let p_ = benefit.plans.find(
+    //     //   (p) => p.split(".")[2].replace("-", "") == remove(v.plan)[0]
+    //     // );
+    //     // obj.conditions = [
+    //     //   {
+    //     //     type: "-Enum.conditions.plans-",
+    //     //     value: [p_],
+    //     //   },
+    //     // ];
+
+    //     let p_ = benefit.plans.filter((p) =>
+    //       v.plan.includes(",")
+    //         ? v.plan
+    //             .split(",")
+    //             .map((v) => remove(v)[0])
+    //             .includes(p.split(".")[2].replace("-", ""))
+    //         : p.split(".")[2].replace("-", "") == remove(v.plan)[0]
+    //     );
+    //     // console.log(">>", benefit.plans, p_, v.plan);
+    //     obj.conditions = [
+    //       {
+    //         type: "-Enum.conditions.plans-",
+    //         value: [...p_],
+    //       },
+    //     ];
+    //   }
+    //   let Enums = {
+    //     planName: "-Enum.conditions.plans-",
+    //     ageStart: "-Enum.customer.min_age-",
+    //     ageEnd: "-Enum.customer.max_age-",
+    //     gender: "-Enum.customer.gender-",
+    //     married: "-Enum.customer.maritalStatus-",
+    //     network: "-Enum.conditions.modifier-",
+    //     coverages: "-Enum.conditions.coverage-",
+    //     frequency: "-Enum.conditions.modifier-",
+    //     copay: "-Enum.conditions.deductible-",
+    //   };
+
+    //   // console.log('addonRates.length >> ', addonRates.length);
+    //   if (addonRates.length > 0)
+    //     obj.addonCost = {
+    //       type: v.type,
+    //       conditionalPrices: addonRates
+    //         .filter((r) => r.flag == v.flag)
+    //         .map((rate) => {
+    //           let res = {
+    //             conditions: [],
+    //             price: [
+    //               {
+    //                 value: parseFloat(rate.rates*12),
+    //                 currency: "-Enum.currency.USD-",
+    //               },
+    //             ],
+    //           };
+    //           for (let col in rate) {
+    //             let con = { type: Enums[col], value: [] };
+    //             if (col == "ageStart" || col == "ageEnd") con.value = rate[col];
+    //             else if (col == "gender")
+    //               con.value = `-Enum.gender.${rate[col].toLowerCase()}-`;
+    //             else if (col == "copay" || col == "network")
+    //               con.value = [rate[col]];
+    //             else if (col == "married") {
+    //               if (rate[col] == 0)
+    //                 con.value = "-Enum.maritalStatus.married-";
+    //               else con.value = "-Enum.maritalStatus.single-";
+    //             } else if (col == "planName" || col == "coverages")
+    //               con.value = `-${provider}.${col == "planName" ? "plans" : "coverages"}${num}.${remove(rate[col])[0]}-`;
+    //             else if (col == "singleChild")
+    //               con = singleChild[`_${rate[col]}`];
+    //               // else if (col == "code")
+    //               // con = singleChild[`_${rate[col]}`];
+    //             else if (col == "frequency") {
+    //               if (rate[col] == "Annually")
+    //                 con.value = ["annual-payment-surcharge"];
+    //               else if (rate[col] == "Quarterly")
+    //                 con.value = ["quarterly-payment-surcharge"];
+    //             } else continue;
+    //             res.conditions.push(con);
+    //           }
+    //           return res;
+    //         }),
+    //     };
+    //   if (addonRates.length > 0 && obj.addonCost.conditionalPrices.length == 0)
+    //     delete obj.addonCost;
+    //   Addons.push(obj);
+    // });
+    let count = 1;
+
+info.forEach((v, i) => {
+
+  if (v.description?.includes("$")) {
+
+    ["NIL", "10%", "20%"].forEach((copay, j) => {
       let obj = {
-        id: "option-" + (i + 1),
+        id: "option-" + (count),
         label: v.label,
-        description: v.description,
+        description: v.description.replaceAll("$", copay),
       };
       if (v.plan) {
-        let p_ = benefit.plans.find(
-          (p) => p.split(".")[2].replace("-", "") == remove(v.plan)[0]
+        // let p_ = benefit.plans.find(
+        //   (p) => p.split(".")[2].replace("-", "") == remove(v.plan)[0]
+        // );
+        // obj.conditions = [
+        //   {
+        //     type: "-Enum.conditions.plans-",
+        //     value: [p_],
+        //   },
+        // ];
+
+        let p_ = benefit.plans.filter((p) =>
+          v.plan.includes(",")
+            ? v.plan
+                .split(",")
+                .map((v) => remove(v)[0])
+                .includes(p.split(".")[2].replace("-", ""))
+            : p.split(".")[2].replace("-", "") == remove(v.plan)[0]
         );
+        // console.log(">>", benefit.plans, p_, v.plan);
         obj.conditions = [
           {
             type: "-Enum.conditions.plans-",
-            value: [p_],
+            value: [...p_],
+          },
+          {
+            type: "-Enum.conditions.deductible-",
+            value: [`option-${j + 1}`],
           },
         ];
       }
-      let Enums = {
-        planName: "-Enum.conditions.plans-",
-        ageStart: "-Enum.customer.min_age-",
-        ageEnd: "-Enum.customer.max_age-",
-        gender: "-Enum.customer.gender-",
-        married: "-Enum.customer.maritalStatus-",
-        network: "-Enum.conditions.modifier-",
-        coverages: "-Enum.conditions.coverage-",
-        frequency: "-Enum.conditions.modifier-",
-        copay: "-Enum.conditions.deductible-",
-      };
 
-      // console.log('addonRates.length >> ', addonRates.length);
-      if (addonRates.length > 0)
-        obj.addonCost = {
-          type: v.type,
-          conditionalPrices: addonRates
-            .filter((r) => r.flag == v.flag)
-            .map((rate) => {
-              let res = {
-                conditions: [],
-                price: [
-                  {
-                    value: parseFloat(rate.rates*12),
-                    currency: "-Enum.currency.USD-",
-                  },
-                ],
-              };
-              for (let col in rate) {
-                let con = { type: Enums[col], value: [] };
-                if (col == "ageStart" || col == "ageEnd") con.value = rate[col];
-                else if (col == "gender")
-                  con.value = `-Enum.gender.${rate[col].toLowerCase()}-`;
-                else if (col == "copay" || col == "network")
-                  con.value = [rate[col]];
-                else if (col == "married") {
-                  if (rate[col] == 0)
-                    con.value = "-Enum.maritalStatus.married-";
-                  else con.value = "-Enum.maritalStatus.single-";
-                } else if (col == "planName" || col == "coverages")
-                  con.value = `-${provider}.${col == "planName" ? "plans" : "coverages"}${num}.${remove(rate[col])[0]}-`;
-                else if (col == "singleChild")
-                  con = singleChild[`_${rate[col]}`];
-                  // else if (col == "code")
-                  // con = singleChild[`_${rate[col]}`];
-                else if (col == "frequency") {
-                  if (rate[col] == "Annually")
-                    con.value = ["annual-payment-surcharge"];
-                  else if (rate[col] == "Quarterly")
-                    con.value = ["quarterly-payment-surcharge"];
-                } else continue;
-                res.conditions.push(con);
-              }
-              return res;
-            }),
-        };
-      if (addonRates.length > 0 && obj.addonCost.conditionalPrices.length == 0)
-        delete obj.addonCost;
       Addons.push(obj);
+      count++
     });
+  } else {
+    let obj = {
+      id: "option-" + (i + 1),
+      label: v.label,
+      description: v.description,
+    };
+    if (v.plan) {
+      let p_ = benefit.plans.filter((p) =>
+        v.plan.includes(",")
+          ? v.plan
+              .split(",")
+              .map((v) => remove(v)[0])
+              .includes(p.split(".")[2].replace("-", ""))
+          : p.split(".")[2].replace("-", "") == remove(v.plan)[0]
+      );
+      // console.log(">>", benefit.plans, p_, v.plan);
+      obj.conditions = [
+        {
+          type: "-Enum.conditions.plans-",
+          value: [...p_],
+        },
+      ];
+    }
+    let Enums = {
+      planName: "-Enum.conditions.plans-",
+      ageStart: "-Enum.customer.min_age-",
+      ageEnd: "-Enum.customer.max_age-",
+      gender: "-Enum.customer.gender-",
+      married: "-Enum.customer.maritalStatus-",
+      network: "-Enum.conditions.modifier-",
+      coverages: "-Enum.conditions.coverage-",
+      frequency: "-Enum.conditions.modifier-",
+      copay: "-Enum.conditions.deductible-",
+    };
+
+    // console.log('addonRates.length >> ', addonRates.length);
+    if (addonRates.length > 0)
+      obj.addonCost = {
+        type: v.type,
+        conditionalPrices: addonRates
+          .filter((r) => r.flag == v.flag)
+          .map((rate) => {
+            let res = {
+              conditions: [],
+              price: [
+                {
+                  value: parseFloat(rate.rates * 1.16),
+                  currency: "-Enum.currency.USD-",
+                },
+              ],
+            };
+            for (let col in rate) {
+              let con = { type: Enums[col], value: [] };
+              if (col == "ageStart" || col == "ageEnd") con.value = rate[col];
+              else if (col == "gender")
+                con.value = `-Enum.gender.${rate[col].toLowerCase()}-`;
+              else if (col == "copay" || col == "network")
+                con.value = [rate[col]];
+              else if (col == "married") {
+                if (rate[col] == 0) con.value = "-Enum.maritalStatus.married-";
+                else con.value = "-Enum.maritalStatus.single-";
+              } else if (col == "planName" || col == "coverages")
+                con.value = `-${provider}.${
+                  col == "planName" ? "plans" : "coverages"
+                }${num}.${remove(rate[col])[0]}-`;
+              else if (col == "singleChild") con = singleChild[`_${rate[col]}`];
+              // else if (col == "code")
+              // con = singleChild[`_${rate[col]}`];
+              else if (col == "frequency") {
+                if (rate[col] == "Annually")
+                  con.value = ["annual-payment-surcharge"];
+                else if (rate[col] == "Quarterly")
+                  con.value = ["quarterly-payment-surcharge"];
+              } else continue;
+              res.conditions.push(con);
+            }
+            return res;
+          }),
+      };
+    if (addonRates.length > 0 && obj.addonCost.conditionalPrices.length == 0)
+      delete obj.addonCost;
+    Addons.push(obj);
+  }
+});
+
     benefit.options = Addons;
     return benefit;
   }
