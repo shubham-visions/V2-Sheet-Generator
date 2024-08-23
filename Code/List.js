@@ -873,8 +873,6 @@ const getList = (arr) => {
         Global.filters.dependentBenefits.push({ core, dependent });
       });
 
-      console.log('Global >> ', Global);
-
     return Global;
   } catch (error) {
     console.log({ err: error.message, stack: error.stack });

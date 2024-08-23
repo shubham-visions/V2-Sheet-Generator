@@ -24,633 +24,927 @@ const {
 } = require("./Code/constants");
 
 const OPCopayOptions = [
-  'op-option-1',  'op-option-2',  'op-option-3',
-  'op-option-4',  'op-option-5',  'op-option-6',
-  'op-option-7',  'op-option-8',  'op-option-9',
-  'op-option-10', 'op-option-11', 'op-option-12',
-  'op-option-13', 'op-option-14', 'op-option-15',
-  'op-option-16', 'op-option-17', 'op-option-18',
-  'op-option-19', 'op-option-20', 'op-option-21',
-  'op-option-22', 'op-option-23', 'op-option-24',
-  'op-option-25', 'op-option-26', 'op-option-27',
-  'op-option-28', 'op-option-29', 'op-option-30',
-  'op-option-31', 'op-option-32', 'op-option-33',
-  'op-option-34', 'op-option-35', 'op-option-36',
-  'op-option-37', 'op-option-38', 'op-option-39',
-  'op-option-40'
-]
+  "op-option-1",
+  "op-option-2",
+  "op-option-3",
+  "op-option-4",
+  "op-option-5",
+  "op-option-6",
+  "op-option-7",
+  "op-option-8",
+  "op-option-9",
+  "op-option-10",
+  "op-option-11",
+  "op-option-12",
+  "op-option-13",
+  "op-option-14",
+  "op-option-15",
+  "op-option-16",
+  "op-option-17",
+  "op-option-18",
+  "op-option-19",
+  "op-option-20",
+  "op-option-21",
+  "op-option-22",
+  "op-option-23",
+  "op-option-24",
+  "op-option-25",
+  "op-option-26",
+  "op-option-27",
+  "op-option-28",
+  "op-option-29",
+  "op-option-30",
+  "op-option-31",
+  "op-option-32",
+  "op-option-33",
+  "op-option-34",
+  "op-option-35",
+  "op-option-36",
+  "op-option-37",
+  "op-option-38",
+  "op-option-39",
+  "op-option-40",
+];
 
 let residencyIPOptions = 1;
 let residencyOPOptions = 1;
 let residencyIPOptionsRatetable = 1;
 let residencyOPOptionsRatetable = 1;
 
+// const countryCodes = [
+//   {
+//     code: "Medium-Asia - Low-Asia - Low",
+//     countries: [
+//       "Abkhazia",
+//       "Afghanistan",
+//       "Armenia",
+//       "Azerbaijan",
+//       "Bangladesh",
+//       "Bhutan",
+//       "British Indian Ocean Territory",
+//       "Brunei Darussalam",
+//       "Cambodia",
+//       "Christmas Island",
+//       "Cocos (Keeling) Islands",
+//       "Georgia",
+//       "Kazakhstan",
+//       "Kyrgyzstan",
+//       "Lao People's Democratic Republic",
+//       "Malaysia",
+//       "Maldives",
+//       "Mongolia",
+//       "Myanmar",
+//       "Nagorno-Karabakh",
+//       "Nepal",
+//       "North Korea",
+//       "Pakistan",
+//       "Philippines",
+//       "South Korea",
+//       "South Ossetia",
+//       "Sri Lanka",
+//       "Tajikistan",
+//       "Thailand",
+//       "Timor-Leste",
+//       "Transnistria",
+//       "Turkmenistan",
+//       "Uzbekistan",
+//     ],
+//     count: 33,
+//     alphaCodes: [
+//       "AF",
+//       "AM",
+//       "AZ",
+//       "BD",
+//       "BT",
+//       "IO",
+//       "BN",
+//       "KH",
+//       "CX",
+//       "CC",
+//       "GE",
+//       "KZ",
+//       "KP",
+//       "KG",
+//       "LA",
+//       "MY",
+//       "MV",
+//       "MN",
+//       "MM",
+//       "NP",
+//       "PK",
+//       "PH",
+//       "LK",
+//       "TJ",
+//       "TH",
+//       "TL",
+//       "TM",
+//       "UZ",
+//     ],
+//   },
+//   {
+//     code: "Medium-Europe - Middle-Europe - Middle",
+//     countries: [
+//       "Aland Islands",
+//       "Andorra",
+//       "Austria",
+//       "Belarus",
+//       "Belgium",
+//       "Bulgaria",
+//       "Czech Republic",
+//       "Estonia",
+//       "Finland",
+//       "France",
+//       "Germany",
+//       "Gibraltar",
+//       "Greece",
+//       "Guernsey",
+//       "Holy See (Vatican City State)",
+//       "Ireland",
+//       "Isle of Man",
+//       "Italy",
+//       "Jersey",
+//       "Latvia",
+//       "Liechtenstein",
+//       "Lithuania",
+//       "Moldova",
+//       "Monaco",
+//       "Montenegro",
+//       "Portugal",
+//       "San Marino",
+//       "Serbia",
+//       "Spain",
+//       "Svalbard and Jan Mayen",
+//       "Ukraine",
+//     ],
+//     count: 31,
+//     alphaCodes: [
+//       "AX",
+//       "AD",
+//       "AT",
+//       "BY",
+//       "BE",
+//       "BG",
+//       "CZ",
+//       "EE",
+//       "FI",
+//       "FR",
+//       "DE",
+//       "GI",
+//       "GR",
+//       "GG",
+//       "VA",
+//       "IE",
+//       "IT",
+//       "JE",
+//       "LV",
+//       "LI",
+//       "LT",
+//       "MD",
+//       "MC",
+//       "ME",
+//       "PT",
+//       "SM",
+//       "RS",
+//       "ES",
+//       "UA",
+//     ],
+//   },
+//   {
+//     code: "Low-Europe - Low-Europe - Low",
+//     countries: [
+//       "Albania",
+//       "Bosnia and Herzegovina",
+//       "Croatia",
+//       "Denmark",
+//       "Faroe Islands",
+//       "Hungary",
+//       "Iceland",
+//       "Kosovo",
+//       "Luxembourg",
+//       "Macedonia",
+//       "Malta",
+//       "Netherlands",
+//       "Norway",
+//       "Poland",
+//       "Romania",
+//       "Slovakia",
+//       "Slovenia",
+//       "Sweden",
+//     ],
+//     count: 18,
+//     alphaCodes: [
+//       "AL",
+//       "HR",
+//       "DK",
+//       "FO",
+//       "HU",
+//       "IS",
+//       "LU",
+//       "MK",
+//       "MT",
+//       "NL",
+//       "NO",
+//       "PL",
+//       "RO",
+//       "SK",
+//       "SI",
+//       "SE",
+//     ],
+//   },
+//   {
+//     code: "High-Africa - Low-Africa - Low",
+//     countries: [
+//       "Algeria",
+//       "Angola",
+//       "Benin",
+//       "Botswana",
+//       "Burkina Faso",
+//       "Burundi",
+//       "Cameroon",
+//       "Cape Verde",
+//       "Central African Republic",
+//       "Chad",
+//       "Comoros",
+//       "Congo",
+//       "Congo, DR of",
+//       "Djibouti",
+//       "Equatorial Guinea",
+//       "Eritrea",
+//       "Ethiopia",
+//       "Gabon",
+//       "Gambia",
+//       "Ghana",
+//       "Guinea",
+//       "Guinea-Bissau",
+//       "Lesotho",
+//       "Liberia",
+//       "Libyan Arab Jamahiriya",
+//       "Madagascar",
+//       "Malawi",
+//       "Mali",
+//       "Mauritania",
+//       "Mauritius",
+//       "Mayotte",
+//       "Morocco",
+//       "Mozambique",
+//       "Namibia",
+//       "Niger",
+//       "Reunion",
+//       "Rwanda",
+//       "Sao Tome and Principe",
+//       "Senegal",
+//       "Seychelles",
+//       "Sierra Leone",
+//       "Somalia",
+//       "Somaliland",
+//       "Sudan",
+//       "Swaziland",
+//       "Togo",
+//       "Tunisia",
+//       "Uganda",
+//       "Western Sahara",
+//       "Zambia",
+//       "Zimbabwe",
+//     ],
+//     count: 51,
+//     alphaCodes: [
+//       "DZ",
+//       "AO",
+//       "BJ",
+//       "BW",
+//       "BF",
+//       "BI",
+//       "CM",
+//       "CV",
+//       "CF",
+//       "TD",
+//       "KM",
+//       "CG",
+//       "DJ",
+//       "GQ",
+//       "ER",
+//       "ET",
+//       "GA",
+//       "GM",
+//       "GH",
+//       "GN",
+//       "GW",
+//       "LS",
+//       "LR",
+//       "LY",
+//       "MG",
+//       "MW",
+//       "ML",
+//       "MR",
+//       "MU",
+//       "YT",
+//       "MA",
+//       "MZ",
+//       "NA",
+//       "NE",
+//       "RE",
+//       "RW",
+//       "SN",
+//       "SC",
+//       "SL",
+//       "SO",
+//       "SD",
+//       "SZ",
+//       "TG",
+//       "TN",
+//       "UG",
+//       "EH",
+//       "ZM",
+//       "ZW",
+//     ],
+//   },
+//   {
+//     code: "Medium-Oceania-Oceania",
+//     countries: [
+//       "American Samoa",
+//       "Antarctica",
+//       "Australia",
+//       "Cook Islands",
+//       "Federated States of Micronesia",
+//       "Fiji",
+//       "French Polynesia",
+//       "French Southern Territories",
+//       "Guam",
+//       "Heard Islands and McDonald Islands",
+//       "Kiribati",
+//       "Marshall Islands",
+//       "Nauru",
+//       "New Caledonia",
+//       "Niue",
+//       "Norfolk Island",
+//       "Northern Mariana Islands",
+//       "Palau",
+//       "Papua New Guinea",
+//       "Pitcairn Islands",
+//       "Samoa",
+//       "Solomon Islands",
+//       "South Georgia and the South Sandwich Islands",
+//       "Tokelau",
+//       "Tonga",
+//       "Tuvalu",
+//       "Vanuatu",
+//       "Wallis and Futuna",
+//     ],
+//     count: 28,
+//     alphaCodes: [
+//       "AS",
+//       "AQ",
+//       "AU",
+//       "CK",
+//       "FJ",
+//       "PF",
+//       "TF",
+//       "GU",
+//       "KI",
+//       "MH",
+//       "NR",
+//       "NC",
+//       "NU",
+//       "NF",
+//       "MP",
+//       "PW",
+//       "PG",
+//       "WS",
+//       "SB",
+//       "TK",
+//       "TO",
+//       "TV",
+//       "VU",
+//     ],
+//   },
+//   {
+//     code: "Medium-Americas - Middle-Americas - Middle",
+//     countries: [
+//       "Anguilla",
+//       "Antigua and Barbuda",
+//       "Aruba",
+//       "Bahamas",
+//       "Barbados",
+//       "Belize",
+//       "Bermuda",
+//       "Bolivia",
+//       "Chile",
+//       "Colombia",
+//       "Costa Rica",
+//       "Cuba",
+//       "Dominica",
+//       "Dominican Republic",
+//       "Ecuador",
+//       "El Salvador",
+//       "Falkland Islands",
+//       "French Guiana",
+//       "Greenland",
+//       "Grenada",
+//       "Guadeloupe",
+//       "Guatemala",
+//       "Guyana",
+//       "Honduras",
+//       "Jamaica",
+//       "Martinique",
+//       "Montserrat",
+//       "Netherlands Antilles",
+//       "Nicaragua",
+//       "Panama",
+//       "Paraguay",
+//       "Puerto Rico",
+//       "Saint Barthelemy",
+//       "Saint Kitts and Nevis",
+//       "Saint Lucia",
+//       "Saint Martin",
+//       "Saint Pierre and Miquelon",
+//       "Saint Vincent and the Grenadines",
+//       "Suriname",
+//       "Trinidad and Tobago",
+//       "Uruguay",
+//       "Venezuela",
+//       "Virgin Islands (British)",
+//       "Virgin Islands (US)",
+//     ],
+//     count: 44,
+//     alphaCodes: [
+//       "AI",
+//       "AG",
+//       "AW",
+//       "BS",
+//       "BB",
+//       "BZ",
+//       "BM",
+//       "BO",
+//       "CL",
+//       "CO",
+//       "CR",
+//       "CU",
+//       "DM",
+//       "DO",
+//       "EC",
+//       "SV",
+//       "GF",
+//       "GL",
+//       "GD",
+//       "GP",
+//       "GT",
+//       "GY",
+//       "HN",
+//       "JM",
+//       "MQ",
+//       "MS",
+//       "AN",
+//       "NI",
+//       "PA",
+//       "PY",
+//       "PR",
+//       "BL",
+//       "KN",
+//       "LC",
+//       "MF",
+//       "PM",
+//       "SR",
+//       "TT",
+//       "UY",
+//       "VE",
+//       "VG",
+//       "VI",
+//     ],
+//   },
+//   {
+//     code: "Medium-Americas - Low-Americas - Middle",
+//     countries: ["Argentina", "Peru", "Turks and Caicos Islands"],
+//     count: 3,
+//     alphaCodes: ["AR", "PE", "TC"],
+//   },
+//   {
+//     code: "High-Middle East-Middle East",
+//     countries: [
+//       "Bahrain",
+//       "Cyprus",
+//       "Cyprus Northern",
+//       "Egypt",
+//       "Iran",
+//       "Iraq",
+//       "Israel",
+//       "Jordan",
+//       "Kuwait",
+//       "Lebanon",
+//       "Oman",
+//       "Palestine",
+//       "Qatar",
+//       "Saudi Arabia",
+//       "Syria",
+//       "Turkey",
+//       "Yemen",
+//     ],
+//     count: 17,
+//     alphaCodes: [
+//       "BH",
+//       "CY",
+//       "EG",
+//       "IQ",
+//       "IL",
+//       "JO",
+//       "KW",
+//       "LB",
+//       "OM",
+//       "QA",
+//       "SA",
+//       "TR",
+//       "YE",
+//     ],
+//   },
+//   {
+//     code: "Medium-Americas - Mid-High-Americas - Mid-High",
+//     countries: ["Brazil"],
+//     count: 1,
+//     alphaCodes: ["BR"],
+//   },
+//   {
+//     code: "Medium-Americas - Low-Americas - Low",
+//     countries: ["Canada"],
+//     count: 1,
+//     alphaCodes: ["CA"],
+//   },
+//   {
+//     code: "Medium-Americas - High-Americas - Middle",
+//     countries: ["Cayman Islands", "Haiti"],
+//     count: 2,
+//     alphaCodes: ["KY", "HT"],
+//   },
+//   {
+//     code: "High-Asia - Middle-Asia - Mid-High",
+//     countries: ["China", "Macao"],
+//     count: 2,
+//     alphaCodes: ["CN", "MO"],
+//   },
+//   {
+//     code: "High-Africa - High-Africa - Low",
+//     countries: ["Cote d'Ivoire", "Nigeria", "Tanzania"],
+//     count: 3,
+//     alphaCodes: ["CI", "NG", "TZ"],
+//   },
+//   {
+//     code: "High-Asia - High-Asia - High",
+//     countries: ["Hong Kong"],
+//     count: 1,
+//     alphaCodes: ["HK"],
+//   },
+//   {
+//     code: "Low-Asia - Low-Asia - Low",
+//     countries: ["India"],
+//     count: 1,
+//     alphaCodes: ["IN"],
+//   },
+//   {
+//     code: "Medium-Asia - Mid-Low-Asia - Mid-Low",
+//     countries: ["Indonesia", "Taiwan"],
+//     count: 2,
+//     alphaCodes: ["ID", "TW"],
+//   },
+//   {
+//     code: "Low-Asia - Mid-Low-Asia - Mid-Low",
+//     countries: ["Japan"],
+//     count: 1,
+//     alphaCodes: ["JP"],
+//   },
+//   {
+//     code: "Medium-Africa - High-Africa - High",
+//     countries: [
+//       "Kenya",
+//       "Saint Helena, Ascension and Tristan da Cunha",
+//       "South Africa",
+//     ],
+//     count: 3,
+//     alphaCodes: ["SH", 'KE', 'ZA' ],
+//   },
+//   {
+//     code: "Medium-Americas - High-Americas - High",
+//     countries: ["Mexico"],
+//     count: 1,
+//     alphaCodes: ["MX"],
+//   },
+//   {
+//     code: "Low-Oceania-Oceania",
+//     countries: ["New Zealand"],
+//     count: 1,
+//     alphaCodes: ["NZ"],
+//   },
+//   {
+//     code: "Medium-Europe - Mid-High-Europe - Mid-High",
+//     countries: ["Russia", "Switzerland"],
+//     count: 2,
+//     alphaCodes: ["RU", "CH"],
+//   },
+//   {
+//     code: "High-Asia - Mid-High-Asia - Mid-High",
+//     countries: ["Singapore", "Singapore"],
+//     count: 2,
+//     alphaCodes: ["SG"],
+//   },
+//   {
+//     code: "Medium-Asia - Middle-Asia - Middle",
+//     countries: [
+//       "UAE-Abu Dhabi",
+//       "UAE-Ajman",
+//       "UAE-Dubai",
+//       "UAE-Fujairah",
+//       "UAE-Ras al-Khaimah",
+//       "UAE-Sharjah",
+//       "UAE-Umm al-Quwain",
+//     ],
+//     count: 7,
+//     alphaCodes: [],
+//   },
+//   {
+//     code: "Medium-Europe - High-Europe - High",
+//     countries: ["United Kingdom"],
+//     count: 1,
+//     alphaCodes: ["GB"],
+//   },
+//   {
+//     code: "United States-United States-United States",
+//     countries: [
+//       "United States Minor Outlying Islands",
+//       "United States of America",
+//     ],
+//     count: 2,
+//     alphaCodes: ["UM", "US"],
+//   },
+//   {
+//     code: "Medium-Asia - Mid-Low-Asia - Low",
+//     countries: ["Vietnam"],
+//     count: 1,
+//     alphaCodes: ["VN"],
+//   },
+// ];
+
 const countryCodes = [
   {
-    code: "Medium-Asia - Low-Asia - Low",
-    countries: [
-      "Abkhazia",
-      "Afghanistan",
-      "Armenia",
-      "Azerbaijan",
-      "Bangladesh",
-      "Bhutan",
-      "British Indian Ocean Territory",
-      "Brunei Darussalam",
-      "Cambodia",
-      "Christmas Island",
-      "Cocos (Keeling) Islands",
-      "Georgia",
-      "Kazakhstan",
-      "Kyrgyzstan",
-      "Lao People's Democratic Republic",
-      "Malaysia",
-      "Maldives",
-      "Mongolia",
-      "Myanmar",
-      "Nagorno-Karabakh",
-      "Nepal",
-      "North Korea",
-      "Pakistan",
-      "Philippines",
-      "South Korea",
-      "South Ossetia",
-      "Sri Lanka",
-      "Tajikistan",
-      "Thailand",
-      "Timor-Leste",
-      "Transnistria",
-      "Turkmenistan",
-      "Uzbekistan",
-    ],
-    count: 33,
+    code: "A",
+    countries: ["United Kingdom"],
+    count: 1,
     alphaCodes: [
-      "AF",
-      "AM",
-      "AZ",
       "BD",
       "BT",
-      "IO",
-      "BN",
-      "KH",
-      "CX",
-      "CC",
-      "GE",
-      "KZ",
-      "KP",
-      "KG",
-      "LA",
-      "MY",
+      "IN",
+      "JO",
+      "LB",
       "MV",
-      "MN",
-      "MM",
       "NP",
       "PK",
       "PH",
+      "ZA",
       "LK",
-      "TJ",
-      "TH",
-      "TL",
-      "TM",
-      "UZ",
+      "EU",
     ],
   },
   {
-    code: "Medium-Europe - Middle-Europe - Middle",
-    countries: [
-      "Aland Islands",
-      "Andorra",
-      "Austria",
-      "Belarus",
-      "Belgium",
-      "Bulgaria",
-      "Czech Republic",
-      "Estonia",
-      "Finland",
-      "France",
-      "Germany",
-      "Gibraltar",
-      "Greece",
-      "Guernsey",
-      "Holy See (Vatican City State)",
-      "Ireland",
-      "Isle of Man",
-      "Italy",
-      "Jersey",
-      "Latvia",
-      "Liechtenstein",
-      "Lithuania",
-      "Moldova",
-      "Monaco",
-      "Montenegro",
-      "Portugal",
-      "San Marino",
-      "Serbia",
-      "Spain",
-      "Svalbard and Jan Mayen",
-      "Ukraine",
-    ],
-    count: 31,
+    code: "B",
+    countries: ["United Kingdom"],
+    count: 1,
+    alphaCodes: ["BN", "KH", "MY", "MM", "PH", "TH", "TL", "VN", "LA"],
+  },
+  {
+    code: "C",
+    countries: ["United Kingdom"],
+    count: 1,
+    alphaCodes: ["EU"],
+  },
+  {
+    code: "D",
+    countries: ["United Kingdom"],
+    count: 1,
     alphaCodes: [
+      "AF",
       "AX",
+      "AL",
+      "DZ",
+      "AS",
       "AD",
+      "AO",
+      "AI",
+      "AQ",
+      "AG",
+      "AR",
+      "AM",
+      "AW",
+      "AU",
       "AT",
+      "AZ",
+      "BS",
+      "BH",
+      "BB",
       "BY",
       "BE",
-      "BG",
-      "CZ",
-      "EE",
-      "FI",
-      "FR",
-      "DE",
-      "GI",
-      "GR",
-      "GG",
-      "VA",
-      "IE",
-      "IT",
-      "JE",
-      "LV",
-      "LI",
-      "LT",
-      "MD",
-      "MC",
-      "ME",
-      "PT",
-      "SM",
-      "RS",
-      "ES",
-      "UA",
-    ],
-  },
-  {
-    code: "Low-Europe - Low-Europe - Low",
-    countries: [
-      "Albania",
-      "Bosnia and Herzegovina",
-      "Croatia",
-      "Denmark",
-      "Faroe Islands",
-      "Hungary",
-      "Iceland",
-      "Kosovo",
-      "Luxembourg",
-      "Macedonia",
-      "Malta",
-      "Netherlands",
-      "Norway",
-      "Poland",
-      "Romania",
-      "Slovakia",
-      "Slovenia",
-      "Sweden",
-    ],
-    count: 18,
-    alphaCodes: [
-      "AL",
-      "HR",
-      "DK",
-      "FO",
-      "HU",
-      "IS",
-      "LU",
-      "MK",
-      "MT",
-      "NL",
-      "NO",
-      "PL",
-      "RO",
-      "SK",
-      "SI",
-      "SE",
-    ],
-  },
-  {
-    code: "High-Africa - Low-Africa - Low",
-    countries: [
-      "Algeria",
-      "Angola",
-      "Benin",
-      "Botswana",
-      "Burkina Faso",
-      "Burundi",
-      "Cameroon",
-      "Cape Verde",
-      "Central African Republic",
-      "Chad",
-      "Comoros",
-      "Congo",
-      "Congo, DR of",
-      "Djibouti",
-      "Equatorial Guinea",
-      "Eritrea",
-      "Ethiopia",
-      "Gabon",
-      "Gambia",
-      "Ghana",
-      "Guinea",
-      "Guinea-Bissau",
-      "Lesotho",
-      "Liberia",
-      "Libyan Arab Jamahiriya",
-      "Madagascar",
-      "Malawi",
-      "Mali",
-      "Mauritania",
-      "Mauritius",
-      "Mayotte",
-      "Morocco",
-      "Mozambique",
-      "Namibia",
-      "Niger",
-      "Reunion",
-      "Rwanda",
-      "Sao Tome and Principe",
-      "Senegal",
-      "Seychelles",
-      "Sierra Leone",
-      "Somalia",
-      "Somaliland",
-      "Sudan",
-      "Swaziland",
-      "Togo",
-      "Tunisia",
-      "Uganda",
-      "Western Sahara",
-      "Zambia",
-      "Zimbabwe",
-    ],
-    count: 51,
-    alphaCodes: [
-      "DZ",
-      "AO",
+      "BZ",
       "BJ",
+      "BM",
+      "BO",
+      "BA",
       "BW",
+      "BV",
+      "BR",
+      "IO",
+      "BG",
       "BF",
       "BI",
       "CM",
+      "CA",
       "CV",
+      "KY",
       "CF",
       "TD",
+      "CL",
+      "CN",
+      "CX",
+      "CC",
+      "CO",
       "KM",
       "CG",
-      "DJ",
-      "GQ",
-      "ER",
-      "ET",
-      "GA",
-      "GM",
-      "GH",
-      "GN",
-      "GW",
-      "LS",
-      "LR",
-      "LY",
-      "MG",
-      "MW",
-      "ML",
-      "MR",
-      "MU",
-      "YT",
-      "MA",
-      "MZ",
-      "NA",
-      "NE",
-      "RE",
-      "RW",
-      "SN",
-      "SC",
-      "SL",
-      "SO",
-      "SD",
-      "SZ",
-      "TG",
-      "TN",
-      "UG",
-      "EH",
-      "ZM",
-      "ZW",
-    ],
-  },
-  {
-    code: "Medium-Oceania-Oceania",
-    countries: [
-      "American Samoa",
-      "Antarctica",
-      "Australia",
-      "Cook Islands",
-      "Federated States of Micronesia",
-      "Fiji",
-      "French Polynesia",
-      "French Southern Territories",
-      "Guam",
-      "Heard Islands and McDonald Islands",
-      "Kiribati",
-      "Marshall Islands",
-      "Nauru",
-      "New Caledonia",
-      "Niue",
-      "Norfolk Island",
-      "Northern Mariana Islands",
-      "Palau",
-      "Papua New Guinea",
-      "Pitcairn Islands",
-      "Samoa",
-      "Solomon Islands",
-      "South Georgia and the South Sandwich Islands",
-      "Tokelau",
-      "Tonga",
-      "Tuvalu",
-      "Vanuatu",
-      "Wallis and Futuna",
-    ],
-    count: 28,
-    alphaCodes: [
-      "AS",
-      "AQ",
-      "AU",
+      "CD",
       "CK",
-      "FJ",
-      "PF",
-      "TF",
-      "GU",
-      "KI",
-      "MH",
-      "NR",
-      "NC",
-      "NU",
-      "NF",
-      "MP",
-      "PW",
-      "PG",
-      "WS",
-      "SB",
-      "TK",
-      "TO",
-      "TV",
-      "VU",
-    ],
-  },
-  {
-    code: "Medium-Americas - Middle-Americas - Middle",
-    countries: [
-      "Anguilla",
-      "Antigua and Barbuda",
-      "Aruba",
-      "Bahamas",
-      "Barbados",
-      "Belize",
-      "Bermuda",
-      "Bolivia",
-      "Chile",
-      "Colombia",
-      "Costa Rica",
-      "Cuba",
-      "Dominica",
-      "Dominican Republic",
-      "Ecuador",
-      "El Salvador",
-      "Falkland Islands",
-      "French Guiana",
-      "Greenland",
-      "Grenada",
-      "Guadeloupe",
-      "Guatemala",
-      "Guyana",
-      "Honduras",
-      "Jamaica",
-      "Martinique",
-      "Montserrat",
-      "Netherlands Antilles",
-      "Nicaragua",
-      "Panama",
-      "Paraguay",
-      "Puerto Rico",
-      "Saint Barthelemy",
-      "Saint Kitts and Nevis",
-      "Saint Lucia",
-      "Saint Martin",
-      "Saint Pierre and Miquelon",
-      "Saint Vincent and the Grenadines",
-      "Suriname",
-      "Trinidad and Tobago",
-      "Uruguay",
-      "Venezuela",
-      "Virgin Islands (British)",
-      "Virgin Islands (US)",
-    ],
-    count: 44,
-    alphaCodes: [
-      "AI",
-      "AG",
-      "AW",
-      "BS",
-      "BB",
-      "BZ",
-      "BM",
-      "BO",
-      "CL",
-      "CO",
       "CR",
+      "CI",
+      "HR",
       "CU",
+      "CY",
+      "CZ",
+      "DK",
+      "DJ",
       "DM",
       "DO",
       "EC",
+      "EG",
       "SV",
+      "GQ",
+      "ER",
+      "EE",
+      "ET",
+      "FK",
+      "FO",
+      "FJ",
+      "FI",
+      "FR",
       "GF",
+      "PF",
+      "TF",
+      "GA",
+      "GM",
+      "GE",
+      "DE",
+      "GH",
+      "GI",
+      "GR",
       "GL",
       "GD",
       "GP",
+      "GU",
       "GT",
+      "GG",
+      "GN",
+      "GW",
       "GY",
+      "HT",
+      "HM",
+      "VA",
       "HN",
+      "HK",
+      "HU",
+      "IS",
+      "ID",
+      "IR",
+      "IQ",
+      "IE",
+      "IM",
+      "IL",
+      "IT",
       "JM",
+      "JP",
+      "JE",
+      "KZ",
+      "KE",
+      "KI",
+      "KR",
+      "KP",
+      "KW",
+      "KG",
+      "LV",
+      "LS",
+      "LR",
+      "LY",
+      "LI",
+      "LT",
+      "LU",
+      "MO",
+      "MK",
+      "MG",
+      "MW",
+      "ML",
+      "MT",
+      "MH",
       "MQ",
+      "MR",
+      "MU",
+      "YT",
+      "MX",
+      "FM",
+      "MD",
+      "MC",
+      "MN",
+      "ME",
       "MS",
+      "MA",
+      "MZ",
+      "NA",
+      "NR",
+      "NL",
       "AN",
+      "NC",
+      "NZ",
       "NI",
+      "NE",
+      "NG",
+      "NU",
+      "NF",
+      "MP",
+      "NO",
+      "OM",
+      "PW",
+      "PS",
       "PA",
+      "PG",
       "PY",
+      "PE",
+      "PN",
+      "PL",
+      "PT",
       "PR",
+      "QA",
+      "RE",
+      "RO",
+      "RU",
+      "RW",
       "BL",
+      "SH",
       "KN",
       "LC",
       "MF",
       "PM",
+      "VC",
+      "WS",
+      "SM",
+      "ST",
+      "SA",
+      "SN",
+      "RS",
+      "SC",
+      "SL",
+      "SG",
+      "SK",
+      "SI",
+      "SB",
+      "SO",
+      "GS",
+      "ES",
+      "SD",
       "SR",
+      "SJ",
+      "SZ",
+      "SE",
+      "CH",
+      "SY",
+      "TW",
+      "TJ",
+      "TZ",
+      "TG",
+      "TK",
+      "TO",
       "TT",
+      "TN",
+      "TR",
+      "TM",
+      "TC",
+      "TV",
+      "UG",
+      "UA",
+      "AE",
+      "GB",
+      "US",
+      "UM",
       "UY",
+      "UZ",
+      "VU",
       "VE",
       "VG",
       "VI",
-    ],
-  },
-  {
-    code: "Medium-Americas - Low-Americas - Middle",
-    countries: ["Argentina", "Peru", "Turks and Caicos Islands"],
-    count: 3,
-    alphaCodes: ["AR", "PE", "TC"],
-  },
-  {
-    code: "High-Middle East-Middle East",
-    countries: [
-      "Bahrain",
-      "Cyprus",
-      "Cyprus Northern",
-      "Egypt",
-      "Iran",
-      "Iraq",
-      "Israel",
-      "Jordan",
-      "Kuwait",
-      "Lebanon",
-      "Oman",
-      "Palestine",
-      "Qatar",
-      "Saudi Arabia",
-      "Syria",
-      "Turkey",
-      "Yemen",
-    ],
-    count: 17,
-    alphaCodes: [
-      "BH",
-      "CY",
-      "EG",
-      "IQ",
-      "IL",
-      "JO",
-      "KW",
-      "LB",
-      "OM",
-      "QA",
-      "SA",
-      "TR",
+      "WF",
+      "EH",
       "YE",
+      "ZM",
+      "ZW",
     ],
-  },
-  {
-    code: "Medium-Americas - Mid-High-Americas - Mid-High",
-    countries: ["Brazil"],
-    count: 1,
-    alphaCodes: ["BR"],
-  },
-  {
-    code: "Medium-Americas - Low-Americas - Low",
-    countries: ["Canada"],
-    count: 1,
-    alphaCodes: ["CA"],
-  },
-  {
-    code: "Medium-Americas - High-Americas - Middle",
-    countries: ["Cayman Islands", "Haiti"],
-    count: 2,
-    alphaCodes: ["KY", "HT"],
-  },
-  {
-    code: "High-Asia - Middle-Asia - Mid-High",
-    countries: ["China", "Macao"],
-    count: 2,
-    alphaCodes: ["CN", "MO"],
-  },
-  {
-    code: "High-Africa - High-Africa - Low",
-    countries: ["Cote d'Ivoire", "Nigeria", "Tanzania"],
-    count: 3,
-    alphaCodes: ["CI", "NG", "TZ"],
-  },
-  {
-    code: "High-Asia - High-Asia - High",
-    countries: ["Hong Kong"],
-    count: 1,
-    alphaCodes: ["HK"],
-  },
-  {
-    code: "Low-Asia - Low-Asia - Low",
-    countries: ["India"],
-    count: 1,
-    alphaCodes: ["IN"],
-  },
-  {
-    code: "Medium-Asia - Mid-Low-Asia - Mid-Low",
-    countries: ["Indonesia", "Taiwan"],
-    count: 2,
-    alphaCodes: ["ID", "TW"],
-  },
-  {
-    code: "Low-Asia - Mid-Low-Asia - Mid-Low",
-    countries: ["Japan"],
-    count: 1,
-    alphaCodes: ["JP"],
-  },
-  {
-    code: "Medium-Africa - High-Africa - High",
-    countries: [
-      "Kenya",
-      "Saint Helena, Ascension and Tristan da Cunha",
-      "South Africa",
-    ],
-    count: 3,
-    alphaCodes: ["SH", 'KE', 'ZA' ],
-  },
-  {
-    code: "Medium-Americas - High-Americas - High",
-    countries: ["Mexico"],
-    count: 1,
-    alphaCodes: ["MX"],
-  },
-  {
-    code: "Low-Oceania-Oceania",
-    countries: ["New Zealand"],
-    count: 1,
-    alphaCodes: ["NZ"],
-  },
-  {
-    code: "Medium-Europe - Mid-High-Europe - Mid-High",
-    countries: ["Russia", "Switzerland"],
-    count: 2,
-    alphaCodes: ["RU", "CH"],
-  },
-  {
-    code: "High-Asia - Mid-High-Asia - Mid-High",
-    countries: ["Singapore", "Singapore"],
-    count: 2,
-    alphaCodes: ["SG"],
-  },
-  {
-    code: "Medium-Asia - Middle-Asia - Middle",
-    countries: [
-      "UAE-Abu Dhabi",
-      "UAE-Ajman",
-      "UAE-Dubai",
-      "UAE-Fujairah",
-      "UAE-Ras al-Khaimah",
-      "UAE-Sharjah",
-      "UAE-Umm al-Quwain",
-    ],
-    count: 7,
-    alphaCodes: [],
-  },
-  {
-    code: "Medium-Europe - High-Europe - High",
-    countries: ["United Kingdom"],
-    count: 1,
-    alphaCodes: ["GB"],
-  },
-  {
-    code: "United States-United States-United States",
-    countries: [
-      "United States Minor Outlying Islands",
-      "United States of America",
-    ],
-    count: 2,
-    alphaCodes: ["UM", "US"],
-  },
-  {
-    code: "Medium-Asia - Mid-Low-Asia - Low",
-    countries: ["Vietnam"],
-    count: 1,
-    alphaCodes: ["VN"],
   },
 ];
 
@@ -685,8 +979,8 @@ rateUSD = rateUSD ? (rateUSD.split(":")[1] == "USD" ? true : false) : false;
 
 let Arr = new Array(resCount).fill(null);
 
-console.log('resCount >> ', resCount);
-console.log('Arr.length >> ', Arr.length);
+console.log("resCount >> ", resCount);
+console.log("Arr.length >> ", Arr.length);
 
 (function () {
   const replaceChar = (word) => {
@@ -758,7 +1052,6 @@ console.log('Arr.length >> ', Arr.length);
   );
 
   const provider = DATAs[0][0].companyName;
-
 
   const Ids = GlobalDatas.map((v, i) =>
     generateCodeIndex(v, Benefits, DATAs[i], resCount > 1 ? i + 1 : "")
@@ -1122,7 +1415,6 @@ console.log('Arr.length >> ', Arr.length);
     ];
 
     let coverage_data = store.coverages.map((v) => {
-
       let clone = {
         _id: `-${provider}.coverages${id}.${v.coverageName[0]}-`,
         title: v.coverageName[1],
@@ -1148,8 +1440,12 @@ console.log('Arr.length >> ', Arr.length);
         //     ? NE_Dubai[1]
         //     : AbuDhabi[1],
 
-        includedResidence: countryCodes.find(codes => codes.code == DATA[0].residency.trim())?.alphaCodes,
-        excludedResidence: countryCodes.filter(codes => codes.code != DATA[0].residency.trim())?.alphaCodes,
+        includedResidence: countryCodes.find(
+          (codes) => codes.code == DATA[0].residency.trim()
+        )?.alphaCodes,
+        excludedResidence: countryCodes.filter(
+          (codes) => codes.code != DATA[0].residency.trim()
+        )?.alphaCodes,
         coveredCountries,
         notes: "",
       };
@@ -1385,6 +1681,9 @@ console.log('Arr.length >> ', Arr.length);
           : 3.6725;
       let PricingTable = [];
       let tableCount = 1;
+
+      // console.log("pricingTables ", Id.pricingTables)
+
       for (const key in Id.pricingTables) {
         let plan = Id.pricingTables[key];
         addUp[1] = 1;
@@ -1405,6 +1704,8 @@ console.log('Arr.length >> ', Arr.length);
         let plan_network = rateSheet.find(
           (r) => r.planName == originalName(key)
         )?.network;
+
+        console.log("plan_network ", plan_network);
         for (let v in plan) {
           // console.log("key --> ", v, key, n);
           let pricing = rateSheet.filter((n) => {
@@ -1434,9 +1735,9 @@ console.log('Arr.length >> ', Arr.length);
             if (DATA[0].planCopay == "single") {
               return (
                 n.planName == originalName(key) &&
-                n.coverage ==
-                  store.coverages.find((k) => k.coverageName[0] == v)
-                    .coverageName[1] &&
+                // n.coverage ==
+                //   store.coverages.find((k) => k.coverageName[0] == v)
+                //     .coverageName[1] &&
                 // n.copay == store.coPays[0][0] &&
                 n.frequency == store.frequency[0]
               );
@@ -1444,7 +1745,8 @@ console.log('Arr.length >> ', Arr.length);
             return (
               n.planName == originalName(key) &&
               n.coverage ==
-                store.coverages.find((k) => k.coverageName[0] == v).coverageName[1] &&
+                store.coverages.find((k) => k.coverageName[0] == v)
+                  .coverageName[1] &&
               n.copay == plan_copay &&
               n.frequency == store.frequency[0]
             );
@@ -1452,8 +1754,8 @@ console.log('Arr.length >> ', Arr.length);
 
           if (
             pricing.length == 0 &&
-            DATA[0].planCopay != "single" &&
-            !DATA[0].copayIP
+            DATA[0].planCopay != "single" /*  &&
+            !DATA[0].copayIP */
           )
             throw new Error(
               store.coPays[0][0][0] +
@@ -1473,7 +1775,7 @@ console.log('Arr.length >> ', Arr.length);
               let str = {
                 fromAge: t.ageStart,
                 toAge: t.ageEnd,
-                gender: `-Enum.gender.${t.gender.toLowerCase()}-`,
+                // gender: `-Enum.gender.${t.gender.toLowerCase()}-`,
                 price: [
                   {
                     value: parseFloat(t.rates / conversion),
@@ -1496,7 +1798,7 @@ console.log('Arr.length >> ', Arr.length);
               if (acc.includes(v.network)) return acc;
               else return [...acc, v.network];
             }, []);
-            pricing = pricing.filter((v) => v.network == plan_network);
+            // pricing = pricing.filter((v) => v.network == plan_network);
             table = [
               {
                 fromAge: pricing[0].ageStart,
@@ -1581,8 +1883,12 @@ console.log('Arr.length >> ', Arr.length);
             //     ? NE_Dubai[1]
             //     : AbuDhabi[1],
 
-            includedResidence: countryCodes.find(codes => codes.code == DATA[0].residency.trim())?.alphaCodes,
-            excludedResidence: countryCodes.filter(codes => codes.code != DATA[0].residency.trim())?.alphaCodes,
+            includedResidence: countryCodes.find(
+              (codes) => codes.code == DATA[0].residency.trim()
+            )?.alphaCodes,
+            excludedResidence: countryCodes.filter(
+              (codes) => codes.code != DATA[0].residency.trim()
+            )?.alphaCodes,
             coverage: [`-${provider}.coverages${n}.${v}-`],
             baseAnnualPremium: [
               {
@@ -1597,7 +1903,7 @@ console.log('Arr.length >> ', Arr.length);
                 gender: `-Enum.gender.female-`,
                 price: [{ value: 0, currency: `-Enum.currency.USD-` }],
               },
-            ]
+            ],
           };
           addUp[1]++;
           PricingTable.push({ ...clone });
@@ -1706,13 +2012,18 @@ console.log('Arr.length >> ', Arr.length);
       planIds.push(`-${provider}.plans${n}.${key}-`);
     }
 
-    let addonBeneits = ["Dental", "Optical Benefits", "Dental_Waiting_Period", "Wellness & Health Screening", "Alternative Medicines"]
-    let perCustomer = ["Dental"]
+    let addonBeneits = [
+      "Dental",
+      "Optical Benefits",
+      "Dental_Waiting_Period",
+      "Wellness & Health Screening",
+      "Alternative Medicines",
+    ];
+    let perCustomer = ["Dental"];
     store.Modifiers.forEach((key) => {
-
       // benefits --------------------------------------------
       if (key == "benefits") {
-        console.log("modifiers >> ", modifiers)
+        console.log("modifiers >> ", modifiers);
         for (const key in modifiers) {
           if (
             key.charCodeAt(key.length - 1) == 160 ||
@@ -1735,7 +2046,19 @@ console.log('Arr.length >> ', Arr.length);
             );
           }
 
-          console.log("key >> ", key)
+          console.log("key >> ", key);
+
+          if (
+            key == "companyName" ||
+            key == "startDate" ||
+            key == "residency" ||
+            key == "frequency" ||
+            key == "copay" ||
+            key == "coverages" ||
+            key == "planCopay"
+          )
+            continue;
+
           let str = {
             _id: `-${provider}.modifiers${n}.benefits.${
               Benefits.find((v) => v.benefits[1] == key).benefits[0]
@@ -1744,7 +2067,9 @@ console.log('Arr.length >> ', Arr.length);
             title: key,
             label: key,
             type: "-core.modifierTypes.benefit-",
-            assignmentType: !addonBeneits.includes(key) ? "PER_PLAN" : "PER_CUSTOMER",
+            assignmentType: !addonBeneits.includes(key)
+              ? "PER_PLAN"
+              : "PER_CUSTOMER",
             includedBenefits: [benefitCore.find((v) => v[0] == key)[1]],
             isOptional: false,
             description: "",
@@ -1759,9 +2084,12 @@ console.log('Arr.length >> ', Arr.length);
               ? ""
               : modifiers[key][0].value.toString().includes(" $ ")
               ? ""
-              : (modifiers[key][0].value.toString().includes("$copay") || modifiers[key][0].value.toString().includes("$outPatient")
-            || modifiers[key][0].value.toString().includes("$vaccination") || modifiers[key][0].value.toString().includes("$physiotherepy")
-          ||modifiers[key][0].value.toString().includes("$medicines") ||modifiers[key][0].value.toString().includes("$scans") )
+              : modifiers[key][0].value.toString().includes("$copay") ||
+                modifiers[key][0].value.toString().includes("$outPatient") ||
+                modifiers[key][0].value.toString().includes("$vaccination") ||
+                modifiers[key][0].value.toString().includes("$physiotherepy") ||
+                modifiers[key][0].value.toString().includes("$medicines") ||
+                modifiers[key][0].value.toString().includes("$scans")
               ? "Optional Benefits"
               : modifiers[key][0].value;
           // str.isOptional = false;
@@ -1769,16 +2097,22 @@ console.log('Arr.length >> ', Arr.length);
           // str.isOptional = addonBeneits.includes(key) && key != "Dental_Waiting_Period" && key != "Optical Benefits" ? true : false;
           str.isOptional = key == "Dental" ? true : false;
 
-          str.hasOptions = addonBeneits.includes(key) ? true : modifiers[key].length > 1;
+          str.hasOptions = addonBeneits.includes(key)
+            ? true
+            : modifiers[key].length > 1;
           if (!modifiers[key][0].value.toString().includes("$copay")) {
+            // console.log('in benefit ', modifiers[key])
             str.options = [];
             let count = 1;
             modifiers[key].forEach((m) => {
               if (!m.value) console.log("m --> ", m, modifiers[key], key, n);
+              // console.log("loggggg ", m.value.toString().includes(" $ "),
+              // modifiers[key].length == 1)
               if (
                 m.value.toString().includes(" $ ") &&
                 modifiers[key].length == 1
               ) {
+                console.log("in options")
                 store.coPays.forEach((v) => {
                   let [copay, scope] = v;
                   if (!scope.includes("all") && scope.includes(m.plans)) return;
@@ -1877,24 +2211,24 @@ console.log('Arr.length >> ', Arr.length);
                 const benefitsVal = v.split(" ^ ");
                 benefitsVal.forEach((e) => {
                   let [value, copays, planName] = e.split(" - ");
-                let cc = {
-                  id: "option-" + count,
-                  label: value,
-                  description: value,
-                  conditions: [
-                    {
-                      type: "-Enum.conditions.deductible-",
-                      value: OPCopayOptions
-                    },
-                    {
-                      type: "-Enum.conditions.plans-",
-                      value: [`-${provider}.plans${n}.CloseCare-`]
-                    }
-                  ],
-                };
-                str.options.push(cc);
-                count++;
-                })
+                  let cc = {
+                    id: "option-" + count,
+                    label: value,
+                    description: value,
+                    conditions: [
+                      {
+                        type: "-Enum.conditions.deductible-",
+                        value: OPCopayOptions,
+                      },
+                      {
+                        type: "-Enum.conditions.plans-",
+                        value: [`-${provider}.plans${n}.CloseCare-`],
+                      },
+                    ],
+                  };
+                  str.options.push(cc);
+                  count++;
+                });
               });
             } else
               store.coPays.forEach((v) => {
@@ -1939,24 +2273,24 @@ console.log('Arr.length >> ', Arr.length);
                 const benefitsVal = v.split(" ^ ");
                 benefitsVal.forEach((e) => {
                   let [value, copays, planName] = e.split(" - ");
-                let cc = {
-                  id: "option-" + count,
-                  label: value,
-                  description: value,
-                  conditions: [
-                    {
-                      type: "-Enum.conditions.deductible-",
-                      value: OPCopayOptions
-                    },
-                    {
-                      type: "-Enum.conditions.plans-",
-                      value: [`-${provider}.plans${n}.CloseCare-`]
-                    }
-                  ],
-                };
-                str.options.push(cc);
-                count++;
-                })
+                  let cc = {
+                    id: "option-" + count,
+                    label: value,
+                    description: value,
+                    conditions: [
+                      {
+                        type: "-Enum.conditions.deductible-",
+                        value: OPCopayOptions,
+                      },
+                      {
+                        type: "-Enum.conditions.plans-",
+                        value: [`-${provider}.plans${n}.CloseCare-`],
+                      },
+                    ],
+                  };
+                  str.options.push(cc);
+                  count++;
+                });
               });
             } else
               store.coPays.forEach((v) => {
@@ -2001,24 +2335,24 @@ console.log('Arr.length >> ', Arr.length);
                 const benefitsVal = v.split(" ^ ");
                 benefitsVal.forEach((e) => {
                   let [value, copays, planName] = e.split(" - ");
-                let cc = {
-                  id: "option-" + count,
-                  label: value,
-                  description: value,
-                  conditions: [
-                    {
-                      type: "-Enum.conditions.deductible-",
-                      value: OPCopayOptions
-                    },
-                    {
-                      type: "-Enum.conditions.plans-",
-                      value: [`-${provider}.plans${n}.CloseCare-`]
-                    }
-                  ],
-                };
-                str.options.push(cc);
-                count++;
-                })
+                  let cc = {
+                    id: "option-" + count,
+                    label: value,
+                    description: value,
+                    conditions: [
+                      {
+                        type: "-Enum.conditions.deductible-",
+                        value: OPCopayOptions,
+                      },
+                      {
+                        type: "-Enum.conditions.plans-",
+                        value: [`-${provider}.plans${n}.CloseCare-`],
+                      },
+                    ],
+                  };
+                  str.options.push(cc);
+                  count++;
+                });
               });
             } else
               store.coPays.forEach((v) => {
@@ -2063,24 +2397,24 @@ console.log('Arr.length >> ', Arr.length);
                 const benefitsVal = v.split(" ^ ");
                 benefitsVal.forEach((e) => {
                   let [value, copays, planName] = e.split(" - ");
-                let cc = {
-                  id: "option-" + count,
-                  label: value,
-                  description: value,
-                  conditions: [
-                    {
-                      type: "-Enum.conditions.deductible-",
-                      value: OPCopayOptions
-                    },
-                    {
-                      type: "-Enum.conditions.plans-",
-                      value: [`-${provider}.plans${n}.CloseCare-`]
-                    }
-                  ],
-                };
-                str.options.push(cc);
-                count++;
-                })
+                  let cc = {
+                    id: "option-" + count,
+                    label: value,
+                    description: value,
+                    conditions: [
+                      {
+                        type: "-Enum.conditions.deductible-",
+                        value: OPCopayOptions,
+                      },
+                      {
+                        type: "-Enum.conditions.plans-",
+                        value: [`-${provider}.plans${n}.CloseCare-`],
+                      },
+                    ],
+                  };
+                  str.options.push(cc);
+                  count++;
+                });
               });
             } else
               store.coPays.forEach((v) => {
@@ -2125,24 +2459,24 @@ console.log('Arr.length >> ', Arr.length);
                 const benefitsVal = v.split(" ^ ");
                 benefitsVal.forEach((e) => {
                   let [value, copays, planName] = e.split(" - ");
-                let cc = {
-                  id: "option-" + count,
-                  label: value,
-                  description: value,
-                  conditions: [
-                    {
-                      type: "-Enum.conditions.deductible-",
-                      value: OPCopayOptions
-                    },
-                    {
-                      type: "-Enum.conditions.plans-",
-                      value: [`-${provider}.plans${n}.CloseCare-`]
-                    }
-                  ],
-                };
-                str.options.push(cc);
-                count++;
-                })
+                  let cc = {
+                    id: "option-" + count,
+                    label: value,
+                    description: value,
+                    conditions: [
+                      {
+                        type: "-Enum.conditions.deductible-",
+                        value: OPCopayOptions,
+                      },
+                      {
+                        type: "-Enum.conditions.plans-",
+                        value: [`-${provider}.plans${n}.CloseCare-`],
+                      },
+                    ],
+                  };
+                  str.options.push(cc);
+                  count++;
+                });
               });
             } else
               store.coPays.forEach((v) => {
@@ -2187,24 +2521,24 @@ console.log('Arr.length >> ', Arr.length);
                 const benefitsVal = v.split(" ^ ");
                 benefitsVal.forEach((e) => {
                   let [value, copays, planName] = e.split(" - ");
-                let cc = {
-                  id: "option-" + count,
-                  label: value,
-                  description: value,
-                  conditions: [
-                    {
-                      type: "-Enum.conditions.deductible-",
-                      value: OPCopayOptions
-                    },
-                    {
-                      type: "-Enum.conditions.plans-",
-                      value: [`-${provider}.plans${n}.CloseCare-`]
-                    }
-                  ],
-                };
-                str.options.push(cc);
-                count++;
-                })
+                  let cc = {
+                    id: "option-" + count,
+                    label: value,
+                    description: value,
+                    conditions: [
+                      {
+                        type: "-Enum.conditions.deductible-",
+                        value: OPCopayOptions,
+                      },
+                      {
+                        type: "-Enum.conditions.plans-",
+                        value: [`-${provider}.plans${n}.CloseCare-`],
+                      },
+                    ],
+                  };
+                  str.options.push(cc);
+                  count++;
+                });
               });
             } else
               store.coPays.forEach((v) => {
@@ -2260,14 +2594,14 @@ console.log('Arr.length >> ', Arr.length);
           fetchAddons(newArr[i_], addon, folderName, provider, n, conversion);
         });
 
-                // Dependent benefits --------------------------------------------
-                store.filters.dependentBenefits.map(({ core, dependent }) => {
-                  let benefit = newArr.find((b) => b.title == dependent);
-                  if (!benefit) throw new Error(`not found ${benefit}`);
-                  benefit.dependsOn = `-${provider}.modifiers${n}.benefits.${
-                    Benefits.find((v) => v.benefits[1] == core).benefits[0]
-                  }-`;
-                });
+        // Dependent benefits --------------------------------------------
+        store.filters.dependentBenefits.map(({ core, dependent }) => {
+          let benefit = newArr.find((b) => b.title == dependent);
+          if (!benefit) throw new Error(`not found ${benefit}`);
+          benefit.dependsOn = `-${provider}.modifiers${n}.benefits.${
+            Benefits.find((v) => v.benefits[1] == core).benefits[0]
+          }-`;
+        });
 
         // bundle benefits --------------------------------------------
         store.filters.bundleBenefits.map((v) => {
@@ -2285,8 +2619,6 @@ console.log('Arr.length >> ', Arr.length);
             }, []),
           ];
         });
-
-
       }
       if (key == "discount") {
         let str = {
@@ -2829,7 +3161,7 @@ console.log('Arr.length >> ', Arr.length);
                   }
                   let copayArr = [];
                   clone = {
-                    id: "ip-option-" + (index+1),
+                    id: "ip-option-" + (index + 1),
                     label: copay,
                     conditions: [
                       {
@@ -2849,7 +3181,7 @@ console.log('Arr.length >> ', Arr.length);
                   clonearray.push(clone);
                   count++;
                   addUp2[1]++;
-                  residencyIPOptions++
+                  residencyIPOptions++;
                 });
               });
             });
@@ -2914,7 +3246,7 @@ console.log('Arr.length >> ', Arr.length);
                   }
                   let copayArr = [];
                   clone = {
-                    id: "op-option-" + (index+1),
+                    id: "op-option-" + (index + 1),
                     label: copay,
                     conditions: [
                       {
@@ -2934,7 +3266,7 @@ console.log('Arr.length >> ', Arr.length);
                   clonearray.push(clone);
                   count++;
                   addUp2[1]++;
-                  residencyOPOptions++
+                  residencyOPOptions++;
                 });
               });
             });
@@ -3548,7 +3880,7 @@ console.log('Arr.length >> ', Arr.length);
                     // values: [`${type.toLowerCase()}-option-${l + 1} ${k + 1} ${j + 1} ${i + 1}`],
                     // value: `-cigna_global_health.modifiers.deductible.${type}-`,
                     // value: `${type.toLowerCase()}-option-${type.toLowerCase() == "ip" ? residencyIPOptionsRatetable : residencyOPOptionsRatetable}`,
-                    value: `${type.toLowerCase()}-option-${i+1}`,
+                    value: `${type.toLowerCase()}-option-${i + 1}`,
                   },
                   {
                     type: "COVERAGE",
@@ -3567,7 +3899,10 @@ console.log('Arr.length >> ', Arr.length);
                 )
                 .map((v) => {
                   return {
-                    price: { currency: "-Enum.currency.USD-", price: parseFloat(v.rates*12) },
+                    price: {
+                      currency: "-Enum.currency.USD-",
+                      price: parseFloat(v.rates * 12),
+                    },
                     customer: {
                       from: v.ageStart,
                       to: v.ageEnd,
@@ -3575,8 +3910,8 @@ console.log('Arr.length >> ', Arr.length);
                   };
                 });
 
-                // !rates.length && console.log('rates >> ', type, plan[1], coverage[1], copay[0]);
-                // rates.length && console.log('found rates >> ', type, plan[1], coverage[1], copay[0]);
+              // !rates.length && console.log('rates >> ', type, plan[1], coverage[1], copay[0]);
+              // rates.length && console.log('found rates >> ', type, plan[1], coverage[1], copay[0]);
               // if (rates.length == 0) {
               //   console.log("--> ", type, plan[1], coverage[1], copay);
 
@@ -3585,7 +3920,9 @@ console.log('Arr.length >> ', Arr.length);
 
               Schema.rates = rates;
               result.push(Schema);
-              type.toLowerCase() == "ip" ? residencyIPOptionsRatetable++ : residencyOPOptionsRatetable++
+              type.toLowerCase() == "ip"
+                ? residencyIPOptionsRatetable++
+                : residencyOPOptionsRatetable++;
             });
           });
         });
@@ -3595,19 +3932,19 @@ console.log('Arr.length >> ', Arr.length);
       console.log("error --> ", { msg: error.message, stack: error.stack });
     }
   }
-    fs.mkdirSync(`Output/RateTable`);
-    let residenciesRequire = ``;
-    let rateArr = Arr.reduce((acc, v, i) => {
-      let data = rateTable(GlobalDatas[i], Ids[i], rateSheets[i], provider, i);
-      const residencyName = DATAs[i][0].residency
-        .replaceAll(" ", "")
-        .replaceAll("-", "");
+  fs.mkdirSync(`Output/RateTable`);
+  let residenciesRequire = ``;
+  let rateArr = Arr.reduce((acc, v, i) => {
+    let data = rateTable(GlobalDatas[i], Ids[i], rateSheets[i], provider, i);
+    const residencyName = DATAs[i][0].residency
+      .replaceAll(" ", "")
+      .replaceAll("-", "");
 
-      data = JSON.stringify(data);
-      data = data.replace(/"-/g, "");
-      data = data.replace(/-"/g, "");
-      data = data.replace(/\n/g, "");
-      let str = `
+    data = JSON.stringify(data);
+    data = data.replace(/"-/g, "");
+    data = data.replace(/-"/g, "");
+    data = data.replace(/\n/g, "");
+    let str = `
     const ${provider} = require("../../core-index.js");
     const Enum = require("../../../enum.js")
     const Utils = require("../../../../services/utils/utils");
@@ -3616,24 +3953,24 @@ console.log('Arr.length >> ', Arr.length);
     let ${residencyName} = ${data} ;
     module.exports = ${residencyName} ;`;
 
-      if (!fs.existsSync(`Output/RateTable/${residencyName}`)) {
-        fs.mkdirSync(`Output/RateTable/${residencyName}`);
-        fs.appendFileSync(`Output/RateTable/${residencyName}/index.js`, str);
-      }
+    if (!fs.existsSync(`Output/RateTable/${residencyName}`)) {
+      fs.mkdirSync(`Output/RateTable/${residencyName}`);
+      fs.appendFileSync(`Output/RateTable/${residencyName}/index.js`, str);
+    }
 
-      residenciesRequire += `const ${residencyName} = require("./${residencyName}/index.js");`;
+    residenciesRequire += `const ${residencyName} = require("./${residencyName}/index.js");`;
 
-      return [...acc, `-...${residencyName}-`];
-    }, []);
-    createFile(
-      "RateTable",
-      "index",
-      rateArr,
-      provider,
-      false,
-      true,
-      false,
-      false,
-      residenciesRequire
-    );
+    return [...acc, `-...${residencyName}-`];
+  }, []);
+  createFile(
+    "RateTable",
+    "index",
+    rateArr,
+    provider,
+    false,
+    true,
+    false,
+    false,
+    residenciesRequire
+  );
 })();
