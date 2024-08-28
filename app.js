@@ -2112,7 +2112,6 @@ console.log("Arr.length >> ", Arr.length);
                 m.value.toString().includes(" $ ") &&
                 modifiers[key].length == 1
               ) {
-                console.log("in options")
                 store.coPays.forEach((v) => {
                   let [copay, scope] = v;
                   if (!scope.includes("all") && scope.includes(m.plans)) return;

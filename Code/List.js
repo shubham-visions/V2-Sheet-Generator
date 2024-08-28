@@ -1030,16 +1030,14 @@ const fetchAddons = (
   num,
   conversion
 ) => {
+  addonName == "Out-patient Medicines" && console.log("benefit ", benefit);
   let info = readFile(
     folderName,
     `addon${num > 0 ? num-1 : ""}`,
-    `${addonName.includes(" ") ? addonName.split(" ")[0] : addonName}-info`
+    `${/* addonName.includes(" ") ? addonName.split(" ")[0] : addonName */addonName}`
   );
 
-  // console.log('benefit >> ', benefit);
-
-  // console.log('info[0] >> ', info[0]);
-  let addonRates = info[0].sheetName
+  let addonRates = info[0]?.sheetName
     ? readFile(folderName, `addon${num > 0 ? num-1 : ""}`, info[0].sheetName)
     : [];
   // createFile(
@@ -1053,8 +1051,7 @@ const fetchAddons = (
   //   addonRates
   // );
 
-  // console.log('benefit >> ', benefit._id);
-  if (info.find((v) => v.default.toLowerCase == "true")) {
+  if (info.find((v) => v.default?.toLowerCase == "true")) {
   } else {
     let Addons = [];
     info.forEach((v, i) => {
@@ -1063,6 +1060,8 @@ const fetchAddons = (
         label: v.label,
         description: v.description,
       };
+
+      // console.log("benefit ", benefit)
       if (v.plan) {
         let p_ = benefit.plans.find(
           (p) => p.split(".")[2].replace("-", "") == remove(v.plan)[0]

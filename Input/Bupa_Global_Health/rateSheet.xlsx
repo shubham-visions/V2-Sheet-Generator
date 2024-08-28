@@ -1,0 +1,6 @@
+planName,network,copay,ageStart,ageEnd,coverage,rates,type,frequency,currency
+Major Medical,In-house Network,NIL,0,99,Worldwide including USA,0,IP,Annually,USD
+Select,In-house Network,NIL,0,99,Worldwide including USA,0,IP,Annually,USD
+Premier,In-house Network,NIL,0,99,Worldwide including USA,0,IP,Annually,USD
+Elite,In-house Network,NIL,0,99,Worldwide including USA,0,IP,Annually,USD
+Ultimate,In-house Network,NIL,0,99,Worldwide including USA,0,IP,Annually,USD
