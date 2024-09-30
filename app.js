@@ -2023,7 +2023,6 @@ console.log("Arr.length >> ", Arr.length);
     store.Modifiers.forEach((key) => {
       // benefits --------------------------------------------
       if (key == "benefits") {
-        console.log("modifiers >> ", modifiers);
         for (const key in modifiers) {
           if (
             key.charCodeAt(key.length - 1) == 160 ||
@@ -2045,8 +2044,6 @@ console.log("Arr.length >> ", Arr.length);
               benefit_plans.includes(id.split(".")[2].replace("-", ""))
             );
           }
-
-          console.log("key >> ", key);
 
           if (
             key == "companyName" ||
@@ -2112,7 +2109,6 @@ console.log("Arr.length >> ", Arr.length);
                 m.value.toString().includes(" $ ") &&
                 modifiers[key].length == 1
               ) {
-                console.log("in options")
                 store.coPays.forEach((v) => {
                   let [copay, scope] = v;
                   if (!scope.includes("all") && scope.includes(m.plans)) return;
@@ -3153,16 +3149,60 @@ console.log("Arr.length >> ", Arr.length);
                     cc[1]
                   } (coverage) \n`;
                 }
-                store["coPayIP"].forEach((v1, index) => {
+                // store["coPayIP"].forEach((v1, index) => {
+                  [
+                    "USD 500",
+                    "Nil",
+                    "USD 150",
+                    "USD 250",
+                    "USD 1,000",
+                    "USD 2,500",
+                    "USD 5,000",
+                    "USD 10,000",
+                    "USD 15,000",
+                    "GBP 310",
+                    "Nil",
+                    "GBP 95",
+                    "GBP 155",
+                    "GBP 625",
+                    "GBP 1,550",
+                    "GBP 3,125",
+                    "GBP 6,250",
+                    "GBP 9,375",
+                    "EUR 400",
+                    "Nil",
+                    "EUR 120",
+                    "EUR 200",
+                    "EUR 800",
+                    "EUR 2,000",
+                    "EUR 4,000",
+                    "EUR 8,000",
+                    "EUR 12,000",
+                  ].forEach((v1, index) => {
                   let [copays, scope] = v1;
                   let [copay] = copays;
                   if (!scope.includes("all") && scope.includes(planName[1])) {
                     return;
                   }
+
+                  const opCount = index+1;
+
+                  const linkedOptions = [1,1,1].map((val, i) => {
+                    // console.log("opCount ", opCount)
+                    // console.log("i >> ", i)
+                    if(i==0) {
+                      return opCount < 10 ? `ip-option-${opCount}` : opCount < 19 ? `ip-option-${opCount-9}` : `ip-option-${opCount}` ;
+                    } else if(i==1) {
+                      return opCount < 10 ? `ip-option-${opCount+9}` : opCount < 19 ? `ip-option-${opCount}` : `ip-option-${opCount-18}` ;
+                    } else {
+                      return opCount < 10 ? `ip-option-${opCount+18}` : opCount < 19 ? `ip-option-${opCount+9}` : `ip-option-${opCount-9}` ;
+                    }
+                  })
                   let copayArr = [];
                   clone = {
                     id: "ip-option-" + (index + 1),
-                    label: copay,
+                    // label: copay,
+                    label: v1,
                     conditions: [
                       {
                         type: "-Enum.conditions.modifier-", // Network modifier with OPTION ID Network_B included
@@ -3175,6 +3215,14 @@ console.log("Arr.length >> ", Arr.length);
                       {
                         type: "-Enum.conditions.plans-",
                         value: [`-${provider}.plans${n}.${planName[0]}-`],
+                      },
+                      {
+                        type: "-Enum.conditions.deductible-",
+                        value: linkedOptions,
+                      },
+                      {
+                        type: "-Enum.conditions.currency-",
+                        value: opCount < 10 ? "USD" : opCount < 19 ? "GBP" : "EUR",
                       },
                     ],
                   };
@@ -3238,16 +3286,41 @@ console.log("Arr.length >> ", Arr.length);
                     cc[1]
                   } (coverage) \n`;
                 }
-                store["coPayOP"].forEach((v1, index) => {
+                // store["coPayOP"].forEach((v1, index) => {
+                [
+                  "20% co-pay",
+                  "USD 25 excess",
+                  "20% co-pay",
+                  "GBP 15 excess",
+                  "20% co-pay",
+                  "EUR 20 excess"
+                ].forEach((v1, index) => {
                   let [copays, scope] = v1;
                   let [copay] = copays;
                   if (!scope.includes("all") && scope.includes(planName[1])) {
                     return;
                   }
+
+                  const opCount = index+1;
+                  const linkedOptions = [1,1,1].map((val, i) => {
+                    // console.log("opCount ", opCount)
+                    // console.log("i >> ", i)
+                    if(i==0) {
+                      return opCount < 3 ? `op-option-${opCount}` : opCount < 5 ? `op-option-${opCount-2}` : `op-option-${opCount}` ;
+                    } else if(i==1) {
+                      return opCount < 3 ? `op-option-${opCount+2}` : opCount < 5 ? `op-option-${opCount}` : `op-option-${opCount-4}` ;
+                    } else {
+                      return opCount < 3 ? `ip-option-${opCount+4}` : opCount < 5 ? `ip-option-${opCount+2}` : `ip-option-${opCount-2}` ;
+                    }
+                  })
+
+                  console.log("linkedOptions OPP ", linkedOptions)
+
                   let copayArr = [];
                   clone = {
                     id: "op-option-" + (index + 1),
-                    label: copay,
+                    // label: copay,
+                    label: v1,
                     conditions: [
                       {
                         type: "-Enum.conditions.modifier-", // Network modifier with OPTION ID Network_B included
@@ -3260,6 +3333,14 @@ console.log("Arr.length >> ", Arr.length);
                       {
                         type: "-Enum.conditions.plans-",
                         value: [`-${provider}.plans${n}.${planName[0]}-`],
+                      },
+                      {
+                        type: "-Enum.conditions.deductible-",
+                        value: linkedOptions,
+                      },
+                      {
+                        type: "-Enum.conditions.currency-",
+                        value: opCount < 3 ? "USD" : opCount < 5 ? "GBP" : "EUR",
                       },
                     ],
                   };
