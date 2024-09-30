@@ -2106,11 +2106,12 @@ let Arr = new Array(resCount).fill(null);
                 modifiers[key].length == 1
               ) {
                 console.log("store.coPays ", store.coPays)
-                store.coPays.forEach((v) => {
+                store.coPays.forEach((v, j) => {
                   let [copay, scope] = v;
                   if (!scope.includes("all") && scope.includes(m.plans)) return;
                   let text = m.value;
-                  const currency = copay[0].split(" ")[0]
+                  const currency = j == 0 ? "USD" : j == 2 ? "GBP" : j == 4 ? "EUR" : copay[0].split(" ")[0]
+
                   copay.forEach((co, i) => {
                     if (i == 0) return;
                     text = text.replace("$", co);
@@ -2139,10 +2140,12 @@ let Arr = new Array(resCount).fill(null);
                 modifiers[key].length > 1
               ) {
 
-                store.coPays.forEach((v) => {
+                const noCurr = [0,2,4]
+                store.coPays.forEach((v, j) => {
 
                   let [copay, scope] = v;
-                const currency = copay[0].split(" ")[0]
+                const currency = j == 0 ? "USD" : j == 2 ? "GBP" : j == 4 ? "EUR" : copay[0].split(" ")[0]
+                console.log("currency ", currency)
 
                   if (!scope.includes("all") && scope.includes(m.plans)) return;
                   let text = m.value;
