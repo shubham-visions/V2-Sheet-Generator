@@ -979,9 +979,6 @@ rateUSD = rateUSD ? (rateUSD.split(":")[1] == "USD" ? true : false) : false;
 
 let Arr = new Array(resCount).fill(null);
 
-console.log("resCount >> ", resCount);
-console.log("Arr.length >> ", Arr.length);
-
 (function () {
   const replaceChar = (word) => {
     word = word.replace(" ", "");
@@ -1705,7 +1702,6 @@ console.log("Arr.length >> ", Arr.length);
           (r) => r.planName == originalName(key)
         )?.network;
 
-        console.log("plan_network ", plan_network);
         for (let v in plan) {
           // console.log("key --> ", v, key, n);
           let pricing = rateSheet.filter((n) => {
@@ -2023,7 +2019,6 @@ console.log("Arr.length >> ", Arr.length);
     store.Modifiers.forEach((key) => {
       // benefits --------------------------------------------
       if (key == "benefits") {
-        console.log("modifiers >> ", modifiers);
         for (const key in modifiers) {
           if (
             key.charCodeAt(key.length - 1) == 160 ||
@@ -2045,8 +2040,6 @@ console.log("Arr.length >> ", Arr.length);
               benefit_plans.includes(id.split(".")[2].replace("-", ""))
             );
           }
-
-          console.log("key >> ", key);
 
           if (
             key == "companyName" ||
@@ -2112,11 +2105,13 @@ console.log("Arr.length >> ", Arr.length);
                 m.value.toString().includes(" $ ") &&
                 modifiers[key].length == 1
               ) {
-                console.log("in options")
-                store.coPays.forEach((v) => {
+                console.log("store.coPays ", store.coPays)
+                store.coPays.forEach((v, j) => {
                   let [copay, scope] = v;
                   if (!scope.includes("all") && scope.includes(m.plans)) return;
                   let text = m.value;
+                  const currency = j == 0 ? "USD" : j == 2 ? "GBP" : j == 4 ? "EUR" : copay[0].split(" ")[0]
+
                   copay.forEach((co, i) => {
                     if (i == 0) return;
                     text = text.replace("$", co);
@@ -2130,6 +2125,10 @@ console.log("Arr.length >> ", Arr.length);
                         type: "-Enum.conditions.deductible-",
                         value: [copay[0]],
                       },
+                      {
+                        type: "-Enum.conditions.currency-",
+                        value: `-Enum.currency.${currency}-`
+                      },
                     ],
                   };
                   str.hasOptions = true;
@@ -2140,8 +2139,14 @@ console.log("Arr.length >> ", Arr.length);
                 m.value.toString().includes(" $ ") &&
                 modifiers[key].length > 1
               ) {
-                store.coPays.forEach((v) => {
+
+                const noCurr = [0,2,4]
+                store.coPays.forEach((v, j) => {
+
                   let [copay, scope] = v;
+                const currency = j == 0 ? "USD" : j == 2 ? "GBP" : j == 4 ? "EUR" : copay[0].split(" ")[0]
+                console.log("currency ", currency)
+
                   if (!scope.includes("all") && scope.includes(m.plans)) return;
                   let text = m.value;
                   copay.forEach((co, i) => {
@@ -2167,6 +2172,10 @@ console.log("Arr.length >> ", Arr.length);
                             ];
                           }, []),
                         ],
+                      },
+                      {
+                        type: "-Enum.conditions.currency-",
+                        value: `-Enum.currency.${currency}-`
                       },
                     ],
                   };
@@ -3214,8 +3223,6 @@ console.log("Arr.length >> ", Arr.length);
                         : {id: `ip-option-${opCount - 9}`, currency: "EUR"};
                     }
                   });
-
-                  console.log("linkedOptions ",linkedOptions)
 
                   let copayArr = [];
                   clone = {
