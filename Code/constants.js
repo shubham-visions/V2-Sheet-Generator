@@ -294,6 +294,86 @@ const singleChild = {
     orderType: "desc",
     orderBy: "age",
     index: ">=3",
+  }, 
+  _3a: {
+    type: "-Enum.customer.config-",
+    value: [
+      {
+        type: "-Enum.customer.category-",
+        value: "-Enum.category.primary-",
+        count: "==1",
+      },
+      {
+        type: "-Enum.customer.relation-",
+        value: "-Enum.relation.Spouse-",
+        count: "==0",
+      },
+      {
+        type: "-Enum.customer.relation-",
+        value: "-Enum.relation.Child-",
+        count: "<=1",
+      },
+    ],
+  },
+  _3b: {
+    type: "-Enum.customer.config-",
+    value: [
+      {
+        type: "-Enum.customer.category-",
+        value: "-Enum.category.primary-",
+        count: "==1",
+      },
+      {
+        type: "-Enum.customer.relation-",
+        value: "-Enum.relation.Spouse-",
+        count: "==1",
+      },
+      {
+        type: "-Enum.customer.relation-",
+        value: "-Enum.relation.Child-",
+        count: "<=1",
+      },
+    ],
+  },
+  _4a: {
+    type: "-Enum.customer.config-",
+    value: [
+      {
+        type: "-Enum.customer.category-",
+        value: "-Enum.category.primary-",
+        count: "==1",
+      },
+      {
+        type: "-Enum.customer.relation-",
+        value: "-Enum.relation.Spouse-",
+        count: "==0",
+      },
+      {
+        type: "-Enum.customer.relation-",
+        value: "-Enum.relation.Child-",
+        count: ">=2",
+      },
+    ],
+  },
+  _4b: {
+    type: "-Enum.customer.config-",
+    value: [
+      {
+        type: "-Enum.customer.category-",
+        value: "-Enum.category.primary-",
+        count: "==1",
+      },
+      {
+        type: "-Enum.customer.relation-",
+        value: "-Enum.relation.Spouse-",
+        count: "==1",
+      },
+      {
+        type: "-Enum.customer.relation-",
+        value: "-Enum.relation.Child-",
+        count: ">=2",
+      },
+    ],
   },
 };
 

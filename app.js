@@ -3991,62 +3991,68 @@ let Arr = new Array(resCount).fill(null);
 
               // console.log("copay ", copay);
               let type = types.split("y")[1];
-              let Schema = {
-                _id: `-generateMongoIdFromString('${provider} rateTable ${
-                  l + Math.floor(Math.random() * 900) + 100
-                } ${k + Math.floor(Math.random() * 900) + 100} ${
-                  j + Math.floor(Math.random() * 900) + 100
-                } ${i + Math.floor(Math.random() * 900) + 100}')-`,
-                plans: [
-                  `-${provider}.plans${count + 1}.${plan[1].replaceAll(" ", "")}-`,
-                ],
-                filters: [
-                  {
-                    type: "DEDUCTIBLE",
-                    // values: [`${type.toLowerCase()}-option-${l + 1} ${k + 1} ${j + 1} ${i + 1}`],
-                    // value: `-cigna_global_health.modifiers.deductible.${type}-`,
-                    // value: `${type.toLowerCase()}-option-${type.toLowerCase() == "ip" ? residencyIPOptionsRatetable : residencyOPOptionsRatetable}`,
-                    value: `${type.toLowerCase()}-option-${i+1}`,
-                  },
-                  {
-                    type: "COVERAGE",
-                    value: `-${provider}.coverages${count + 1}.${coverage[0]}-`,
-                  },
-                ],
-                rates: [],
-              };
-              let rates = rateSheet
-                .filter(
-                  (v) =>
-                    {
-                      return (
-                        v.type == type &&
-                        v.planName == plan[1] &&
-                        coverage[1] == v.coverages &&
-                        copay[0] == (v.copay == 0.1 ? "10%" : v.copay == 0.2 ? "20%" : "NIL")
-                      );
-                    }
-                )
-                .map((v) => {
-                  return {
-                    price: { currency: "-Enum.currency.USD-", price: parseFloat(v.rates*1.16) },
-                    customer: {
-                      from: v.ageStart,
-                      to: v.ageEnd,
-                    },
+
+              if (["3a", "3b", "4a", "4b"].includes(rateSheet[0].singleChild)) {
+                ["3a", "3b", "4a", "4b"].forEach((sc) => {
+                  
+                   let Schema = {
+                    _id: `-generateMongoIdFromString('${provider} rateTable ${
+                      l + Math.floor(Math.random() * 900) + 100
+                    } ${k + Math.floor(Math.random() * 900) + 100} ${
+                      j + Math.floor(Math.random() * 900) + 100
+                    } ${i + Math.floor(Math.random() * 900) + 100}')-`,
+                    plans: [
+                      `-${provider}.plans${count + 1}.${plan[1].replaceAll(" ", "")}-`,
+                    ],
+                    filters: [
+                      {
+                        type: "DEDUCTIBLE",
+                        // values: [`${type.toLowerCase()}-option-${l + 1} ${k + 1} ${j + 1} ${i + 1}`],
+                        // value: `-cigna_global_health.modifiers.deductible.${type}-`,
+                        // value: `${type.toLowerCase()}-option-${type.toLowerCase() == "ip" ? residencyIPOptionsRatetable : residencyOPOptionsRatetable}`,
+                        value: `${type.toLowerCase()}-option-${i+1}`,
+                      },
+                      {
+                        type: "COVERAGE",
+                        value: `-${provider}.coverages${count + 1}.${coverage[0]}-`,
+                      },
+                      singleChild[`_${sc}`],
+                    ],
+                    rates: [],
                   };
-                });
 
-                // !rates.length && console.log('rates >> ', type, plan[1], coverage[1], copay[0]);
-                // rates.length && console.log('found rates >> ', type, plan[1], coverage[1], copay[0]);
-              // if (rates.length == 0) {
-              //   console.log("--> ", type, plan[1], coverage[1], copay);
 
-              //   throw new Error("rates 0");
-              // }
+                  let rates = rateSheet
+                    .filter(
+                      (v) =>
+                        {
+                          return (
+                            v.type == type &&
+                            v.planName == plan[1] &&
+                            coverage[1] == v.coverages &&
+                            copay[0] == (v.copay == 0.1 ? "10%" : v.copay == 0.2 ? "20%" : "NIL") &&
+                            v.singleChild == sc
+                          );
+                        }
+                    )
+                    .map((v) => {
+                      return {
+                        price: { currency: "-Enum.currency.USD-", price: parseFloat(v.rates*1.16) },
+                        customer: {
+                          from: v.ageStart,
+                          to: v.ageEnd,
+                        },
+                      };
+                      
+                    });
+                    Schema.rates = rates;
+    
+                    result.push(Schema);
 
-              Schema.rates = rates;
-              result.push(Schema);
+                })
+              }
+
+              
               type.toLowerCase() == "ip" ? residencyIPOptionsRatetable++ : residencyOPOptionsRatetable++
             });
           });
