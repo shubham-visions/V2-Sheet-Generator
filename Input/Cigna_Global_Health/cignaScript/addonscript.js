@@ -28,7 +28,7 @@ let codes = [
   ];
 
   const files = [
-    "/home/support/Desktop/Saleslab/V2-Sheet-Generator/Input/Cigna_Global_Health/cignaScript/inputRates/addon.xlsx",
+    "/home/support/Desktop/saleslabb/V2-Sheet-Generator-Forked/Input/Cigna_Global_Health/cignaScript/inputRates/addon.xlsx",
   ];
 
   const xlsx = require("xlsx")
@@ -36,14 +36,17 @@ let codes = [
   
   var wholeData = []
   files.forEach((path, p) => {
-    console.log('path >> ', path)
+    try {
+      console.log('path >> ', path)
     const rate = xlsx.readFile(path);
 
     console.log('rate >> ', rate.SheetNames);
 
     codes.forEach((codeName, i) => {
+      console.log("codeName ",codeName)
         const wb = xlsx.utils.book_new();
         rate.SheetNames.forEach((sheet, j) => {
+          console.log("sheet ", sheet)
             const columnsArray = xlsx.utils.sheet_to_json(rate.Sheets[sheet], { header: 1 })[0];
             let sheetData = xlsx.utils.sheet_to_json(rate.Sheets[sheet]);
 
@@ -57,9 +60,12 @@ let codes = [
         })
         xlsx.writeFile(
           wb,
-          `/home/support/Desktop/Saleslab/V2-Sheet-Generator/Input/Cigna_Global_Health/cignaScript/output/addons/addon${i}.xlsx`
+          `/home/support/Desktop/saleslabb/V2-Sheet-Generator-Forked/Input/Cigna_Global_Health/cignaScript/output/addons/addon${i}.xlsx`
         );
     })
+    } catch (error) {
+      console.log("error :>> ", error)
+    }
     
   })
 

@@ -103,7 +103,7 @@ const opcopay = [
 ]
   
     const files = [
-      "/home/support/Desktop/Saleslab/V2-Sheet-Generator/Input/Cigna_Global_Health/cignaScript/inputRates/benefits.xlsx",
+      "/home/support/Desktop/saleslabb/V2-Sheet-Generator-Forked/Input/Cigna_Global_Health/cignaScript/inputRates/benefits.xlsx",
     ];
   
     const xlsx = require("xlsx")
@@ -135,7 +135,7 @@ const opcopay = [
           })
           xlsx.writeFile(
             wb,
-            `/home/support/Desktop/Saleslab/V2-Sheet-Generator/Input/Cigna_Global_Health/cignaScript/output/benefits/benefits${i}.xlsx`
+            `/home/support/Desktop/saleslabb/V2-Sheet-Generator-Forked/Input/Cigna_Global_Health/cignaScript/output/benefits/benefits${i}.xlsx`
           );
       })
       

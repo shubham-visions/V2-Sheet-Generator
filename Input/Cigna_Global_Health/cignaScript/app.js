@@ -1062,10 +1062,10 @@ let Arr = new Array(resCount).fill(null);
           ) {
             key = key.slice(0, -1);
           }
-          !Benefits.find((v) => v.benefits[1] == key) &&
-            console.log("k ", n, key, Benefits);
-          !benefitCore.find((v) => v[0] == key) &&
-            console.log("core-", n, key, benefitCore);
+          // !Benefits.find((v) => v.benefits[1] == key) &&
+          //   console.log("k ", n, key, Benefits);
+          // !benefitCore.find((v) => v[0] == key) &&
+          //   console.log("core-", n, key, benefitCore);
           let benefits_plans_ids = [...planIds];
           if (store.filters.notIncludedBenefits.length > 0) {
             let benefit_plans = modifiers[key].reduce((acc, v) => {

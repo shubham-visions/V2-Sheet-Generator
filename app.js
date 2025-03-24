@@ -1789,9 +1789,9 @@ let Arr = new Array(resCount).fill(null);
           ||modifiers[key][0].value.toString().includes("$medicines"))
               ? ""
               : modifiers[key][0].value;
-          // str.isOptional = false;
+          str.isOptional = false;
           // str.hasOptions = modifiers[key].length > 1;
-          str.isOptional = addonBeneits.includes(key) && key != "Dental_Waiting_Period" && key != "Optical Benefits" && key != "Out-patient benefits" && key != "Emergency Evacuation" ? true : false;
+          // str.isOptional = addonBeneits.includes(key) && key != "Dental_Waiting_Period" && key != "Optical Benefits" && key != "Out-patient benefits" && key != "Emergency Evacuation" ? true : false;
           str.hasOptions = addonBeneits.includes(key) ? true : modifiers[key].length > 1;
           if (!modifiers[key][0].value.toString().includes("$copay")) {
             str.options = [];
@@ -2243,8 +2243,8 @@ let Arr = new Array(resCount).fill(null);
             }, []),
           ];
         });
-
       }
+
       if (key == "discount") {
         let str = {
           _id: `-${provider}.modifiers${n}.discount-`,
@@ -2262,28 +2262,6 @@ let Arr = new Array(resCount).fill(null);
           hasOptions: true,
           options: []
         };
-        // store[key].forEach((v1) => {
-        //   let [discount, numCustomer] = v1;
-          // str.options = {
-          //   id: `${discount}-discount`,
-          //   label: `${discount} Discount`,
-          //   premiumMod: {
-          //     type: "percentage",
-          //     price: [{ value: -Number(discount.replace("%", "")) }],
-          //   },
-          //   description: `${discount} Discount`,
-          //   conditions: [
-          //     {
-          //       type: "NUM_CUSTOMERS",
-          //       value: Number(numCustomer),
-          //     },
-          //   ],
-          // };
-          // newArr.push(str);
-        // });
-
-        // [1,2].forEach((v) => {
-          // if(v == 1) {
             str.options.push({
               id: `option-1`,
               label: `10% Discount`,
@@ -2307,9 +2285,6 @@ let Arr = new Array(resCount).fill(null);
                 },
               ],
             });
-              // newArr.push(str);
-
-          // } else {
             str.options.push({
               id: "option-2",
               label: "10% Discount",
@@ -2338,12 +2313,306 @@ let Arr = new Array(resCount).fill(null);
                 },
               ],
             })
-              // newArr.push(str);
-
-          // }
-
-        // })
         newArr.push(str);
+      }
+      if (key == "baseDiscount") {
+        let str = {
+          _id: `-${provider}.modifiers${n}.discount.base-`,
+          plans: [...planIds],
+          title: "",
+          label: "",
+          type: `-core.modifierTypes.discount-`,
+          assignmentType: "PER_CUSTOMER",
+          includedBenefits: [],
+          isOptional: false,
+          description: "",
+          addonCost: {},
+          premiumMod: "",
+          conditions: [],
+          hasOptions: true,
+          showAddon: false,
+          options: []
+        };
+        // store[key].forEach((v1) => {
+        //   let [discount, numCustomer] = v1;
+          // str.options = {
+          //   id: `${discount}-discount`,
+          //   label: `${discount} Discount`,
+          //   premiumMod: {
+          //     type: "percentage",
+          //     price: [{ value: -Number(discount.replace("%", "")) }],
+          //   },
+          //   description: `${discount} Discount`,
+          //   conditions: [
+          //     {
+          //       type: "NUM_CUSTOMERS",
+          //       value: Number(numCustomer),
+          //     },
+          //   ],
+          // };
+          // newArr.push(str);
+        // });
+
+        // [1,2].forEach((v) => {
+          // if(v == 1) {
+            str.options.push({
+              id: "quarterly-discount",
+              title: "",
+              label: "",
+              description: "",
+              premiumMod: {
+                type: "percentage",
+                price: [{ value: 7 }],
+                appliesOn: "",
+              },
+              conditions: [
+                {
+                  type: `-Enum.conditions.modifier-`,
+                  value: ["quarterly-payment-surcharge"],
+                },
+              ],
+            },
+            {
+              id: "monthly-discount",
+              title: "",
+              label: "",
+              description: "",
+              premiumMod: {
+                type: "percentage",
+                price: [{ value: 10 }],
+                appliesOn: "",
+              },
+              conditions: [
+                {
+                  type: `-Enum.conditions.modifier-`,
+                  value: ["monthly-payment-surcharge"],
+                },
+              ],
+            },);
+
+            newArr.push(str);
+        
+
+      }
+      if (key == "dentalDiscount") {
+        let str = {
+          _id: `-${provider}.modifiers${n}.discountDental-`,
+          plans: [...planIds],
+          title: "",
+          label: "",
+          type: `-core.modifierTypes.discount-`,
+          assignmentType: "PER_CUSTOMER",
+          includedBenefits: [],
+          isOptional: false,
+          description: "",
+          addonCost: {},
+          premiumMod: "",
+          conditions: [],
+          hasOptions: true,
+          showAddon: false,
+          options: []
+        };
+        // store[key].forEach((v1) => {
+        //   let [discount, numCustomer] = v1;
+          // str.options = {
+          //   id: `${discount}-discount`,
+          //   label: `${discount} Discount`,
+          //   premiumMod: {
+          //     type: "percentage",
+          //     price: [{ value: -Number(discount.replace("%", "")) }],
+          //   },
+          //   description: `${discount} Discount`,
+          //   conditions: [
+          //     {
+          //       type: "NUM_CUSTOMERS",
+          //       value: Number(numCustomer),
+          //     },
+          //   ],
+          // };
+          // newArr.push(str);
+        // });
+
+        // [1,2].forEach((v) => {
+          // if(v == 1) {
+            str.options.push(
+              {
+                id: "quarterly-discount",
+                title: "",
+                label: "",
+                description: "",
+                premiumMod: {
+                  type: "percentage",
+                  price: [{ value: 7 }],
+                  appliesOn: `-${provider}.modifiers${n}.benefits.Dental-`,
+                },
+                conditions: [
+                  {
+                    type: `-Enum.conditions.modifier-`,
+                    value: ["quarterly-payment-surcharge"],
+                  },
+                ],
+              },
+              {
+                id: "monthly-discount",
+                title: "",
+                label: "",
+                description: "",
+                premiumMod: {
+                  type: "percentage",
+                  price: [{ value: 10 }],
+                  appliesOn: `-${provider}.modifiers${n}.benefits.Dental-`,
+                },
+                conditions: [
+                  {
+                    type: `-Enum.conditions.modifier-`,
+                    value: ["monthly-payment-surcharge"],
+                  },
+                ],
+              },
+            );
+
+            newArr.push(str);
+        
+
+      }
+      if (key == "wellnessDiscount") {
+        let str = {
+          _id: `-${provider}.modifiers${n}.discountWellness-`,
+          plans: [...planIds],
+          title: "",
+          label: "",
+          type: `-core.modifierTypes.discount-`,
+          assignmentType: "PER_CUSTOMER",
+          includedBenefits: [],
+          isOptional: false,
+          description: "",
+          addonCost: {},
+          premiumMod: "",
+          conditions: [],
+          hasOptions: true,
+          showAddon: false,
+          options: []
+        };
+        // store[key].forEach((v1) => {
+        //   let [discount, numCustomer] = v1;
+          // str.options = {
+          //   id: `${discount}-discount`,
+          //   label: `${discount} Discount`,
+          //   premiumMod: {
+          //     type: "percentage",
+          //     price: [{ value: -Number(discount.replace("%", "")) }],
+          //   },
+          //   description: `${discount} Discount`,
+          //   conditions: [
+          //     {
+          //       type: "NUM_CUSTOMERS",
+          //       value: Number(numCustomer),
+          //     },
+          //   ],
+          // };
+          // newArr.push(str);
+        // });
+
+        // [1,2].forEach((v) => {
+          // if(v == 1) {
+            str.options.push(
+              {
+                id: "quarterly-discount",
+                title: "",
+                label: "",
+                description: "",
+                premiumMod: {
+                  type: "percentage",
+                  price: [{ value: 7 }],
+                  appliesOn: `-${provider}.modifiers${n}.benefits.WellnessAndHealthScreening-`,
+                },
+                conditions: [
+                  {
+                    type: `-Enum.conditions.modifier-`,
+                    value: ["quarterly-payment-surcharge"],
+                  },
+                ],
+              },
+              {
+                id: "monthly-discount",
+                title: "",
+                label: "",
+                description: "",
+                premiumMod: {
+                  type: "percentage",
+                  price: [{ value: 10 }],
+                  appliesOn: `-${provider}.modifiers${n}.benefits.WellnessAndHealthScreening-`,
+                },
+                conditions: [
+                  {
+                    type: `-Enum.conditions.modifier-`,
+                    value: ["monthly-payment-surcharge"],
+                  },
+                ],
+              },
+            );
+
+            newArr.push(str);
+        
+
+      }
+
+      if (key == "maternityDiscount") {
+        let str = {
+          _id: `-${provider}.modifiers${n}.discountMaternity-`,
+          plans: [...planIds],
+          title: "",
+          label: "",
+          type: `-core.modifierTypes.discount-`,
+          assignmentType: "PER_CUSTOMER",
+          includedBenefits: [],
+          isOptional: false,
+          description: "",
+          addonCost: {},
+          premiumMod: "",
+          conditions: [],
+          hasOptions: true,
+          showAddon: false,
+          options: []
+        };
+            str.options.push(
+              {
+                id: "quarterly-discount",
+                title: "",
+                label: "",
+                description: "",
+                premiumMod: {
+                  type: "percentage",
+                  price: [{ value: 7 }],
+                  appliesOn: `-${provider}.modifiers${n}.benefits.MaternityConsultationsScansAndDelivery-`,
+                },
+                conditions: [
+                  {
+                    type: `-Enum.conditions.modifier-`,
+                    value: ["quarterly-payment-surcharge"],
+                  },
+                ],
+              },
+              {
+                id: "monthly-discount",
+                title: "",
+                label: "",
+                description: "",
+                premiumMod: {
+                  type: "percentage",
+                  price: [{ value: 10 }],
+                  appliesOn: `-${provider}.modifiers${n}.benefits.MaternityConsultationsScansAndDelivery-`,
+                },
+                conditions: [
+                  {
+                    type: `-Enum.conditions.modifier-`,
+                    value: ["monthly-payment-surcharge"],
+                  },
+                ],
+              },
+            );
+
+            newArr.push(str);
         
 
       }
@@ -3285,15 +3554,16 @@ let Arr = new Array(resCount).fill(null);
               if (DATA.find((v) => v.frequency == "Quarterly")) {
                 rateExtraction("Quarterly", quarterly, str.options);
               } else {
-                quarterly.premiumMod = {
-                  type: "percentage",
-                  price: [
-                    {
-                      // value: +parseInt(DATA[0]["Quarterly Surcharge"]),
-                      value: 7,
-                    },
-                  ],
-                };
+                // quarterly.premiumMod = {
+                //   type: "percentage",
+                //   price: [
+                //     {
+                //       // value: +parseInt(DATA[0]["Quarterly Surcharge"]),
+                //       value: 7,
+                //     },
+                //   ],
+                //   applicationType: `-Enum.applicationType.postBenefit-`
+                // };
                 str.options.push(quarterly);
               }
             }
@@ -3308,15 +3578,17 @@ let Arr = new Array(resCount).fill(null);
               if (DATA.find((v) => v.frequency == "Monthly")) {
                 rateExtraction("Monthly", monthly, str.options);
               } else {
-                monthly.premiumMod = {
-                  type: "percentage",
-                  price: [
-                    {
-                      // value: +parseInt(DATA[0]["Monthly Surcharge"]),
-                      value: 11.111111111,
-                    },
-                  ],
-                };
+                // monthly.premiumMod = {
+                //   type: "percentage",
+                //   price: [
+                //     {
+                //       // value: +parseInt(DATA[0]["Monthly Surcharge"]),
+                //       // value: 11.111111111,
+                //       value: 10,
+                //     },
+                //   ],
+                //   applicationType: `-Enum.applicationType.postBenefit-`
+                // };
                 str.options.push(monthly);
               }
             }

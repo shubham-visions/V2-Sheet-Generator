@@ -28,12 +28,12 @@ let codes = [
 ];
 
 const files = [
-  "/home/support/Desktop/Saleslab/V2-Sheet-Generator/Input/Cigna_Global_Health/cignaScript/inputRates/IP_1.xlsx",
-  "/home/support/Desktop/Saleslab/V2-Sheet-Generator/Input/Cigna_Global_Health/cignaScript/inputRates/IP_2.xlsx",
-  "/home/support/Desktop/Saleslab/V2-Sheet-Generator/Input/Cigna_Global_Health/cignaScript/inputRates/IP_3.xlsx",
-  "/home/support/Desktop/Saleslab/V2-Sheet-Generator/Input/Cigna_Global_Health/cignaScript/inputRates/OP_1.xlsx",
-  "/home/support/Desktop/Saleslab/V2-Sheet-Generator/Input/Cigna_Global_Health/cignaScript/inputRates/OP_2.xlsx",
-  "/home/support/Desktop/Saleslab/V2-Sheet-Generator/Input/Cigna_Global_Health/cignaScript/inputRates/OP_2.xlsx",
+  "/home/support/Desktop/saleslabb/V2-Sheet-Generator-Forked/Input/Cigna_Global_Health/cignaScript/inputRates/IP_1.xlsx",
+  "/home/support/Desktop/saleslabb/V2-Sheet-Generator-Forked/Input/Cigna_Global_Health/cignaScript/inputRates/IP_2.xlsx",
+  "/home/support/Desktop/saleslabb/V2-Sheet-Generator-Forked/Input/Cigna_Global_Health/cignaScript/inputRates/IP_3.xlsx",
+  "/home/support/Desktop/saleslabb/V2-Sheet-Generator-Forked/Input/Cigna_Global_Health/cignaScript/inputRates/OP_1.xlsx",
+  "/home/support/Desktop/saleslabb/V2-Sheet-Generator-Forked/Input/Cigna_Global_Health/cignaScript/inputRates/OP_2.xlsx",
+  "/home/support/Desktop/saleslabb/V2-Sheet-Generator-Forked/Input/Cigna_Global_Health/cignaScript/inputRates/OP_2.xlsx",
 ];
 
 const ipcopay = {
@@ -180,8 +180,9 @@ const jsonToCSV = require("json-to-csv");
 
 var wholeData = [];
 files.forEach((path, p) => {
-  console.log("path >> ", path);
+  // console.log("path >> ", path);
   const rate = xlsx.readFile(path);
+  console.log("rate.SheetNames[0] ", rate.SheetNames[0])
   let sheetData = xlsx.utils.sheet_to_json(rate.Sheets[rate.SheetNames[0]]);
 
   console.log(`sheetData ${p + 1} data >> `, sheetData.length);
@@ -207,7 +208,7 @@ files.forEach((path, p) => {
           code: data.code,
           coverages: data.coverages,
           rates: data.rates,
-          type: data.type,
+          type: data.type == "IP" ? "IP" : "OP",
           frequency: "Annually",
           curreny: "USD",
         };
@@ -217,7 +218,7 @@ files.forEach((path, p) => {
     console.log("cData >> ", cData.length);
     await jsonToCSV(
       cData,
-      `/home/support/Desktop/Saleslab/V2-Sheet-Generator/Input/Cigna_Global_Health/cignaScript/output/latestRates/rateSheet${i}.xlsx`
+      `/home/support/Desktop/saleslabb/V2-Sheet-Generator-Forked/Input/Cigna_Global_Health/cignaScript/output/latestRates/rateSheet${i}.xlsx`
     )
       .then(() => {
         console.log("Sheet Generated Successfully!");

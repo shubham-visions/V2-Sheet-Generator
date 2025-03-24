@@ -653,7 +653,11 @@ const getList = (arr) => {
         "benefits",
         "paymentFrequency",
         "deductible",
+        "dentalDiscount",
         "discount",
+        "baseDiscount",
+        "wellnessDiscount",
+        "maternityDiscount",
         "network",
       ],
       Networks: [],
@@ -1029,6 +1033,7 @@ const fetchAddons = (
   num,
   conversion
 ) => {
+  // console.log("addonName ", addonName)
   let info = readFile(
     folderName,
     `addon${num > 0 ? num-1 : ""}`,
@@ -1094,7 +1099,7 @@ const fetchAddons = (
                 conditions: [],
                 price: [
                   {
-                    value: parseFloat(rate.rates*12),
+                    value: addonName.includes("Repatriation-Benefit") ? parseFloat(rate.rates*12) / 1.1 : parseFloat(rate.rates*12),
                     currency: "-Enum.currency.USD-",
                   },
                 ],
